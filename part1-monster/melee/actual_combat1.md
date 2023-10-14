@@ -220,6 +220,7 @@ public class ModEntityRenderers {
 }
 ```
 到此我们就做完了强化僵尸的全部内容。  
+
 [源代码（ReinforcedZombie类）](https://github.com/Gravelord-Lych/polonium-ExampleMod/blob/main/src/main/java/lych/polonium/entity/monster/ReinforcedZombie.java)  
 [源代码（ReinforcedZombieRenderer类）](https://github.com/Gravelord-Lych/polonium-ExampleMod/blob/main/src/main/java/lych/polonium/client/renderer/ReinforcedZombieRenderer.java)
 
