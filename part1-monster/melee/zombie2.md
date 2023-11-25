@@ -30,8 +30,8 @@ public abstract class AbstractZombieModel<T extends Monster> extends HumanoidMod
     public abstract boolean isAggressive(T zombie);
 }
 ```
-不难发现，僵尸的模型ZombieModel只是继承了AbstractZombieModel抽象类并实现了抽象方法isAggressive。而在AbstractZombieModel中，也只是在HumanoidModel（旧称BipedModel，用来提供人形的模型）的基础上调用了AnimationUtils.animateZombieArms方法来重写手臂的动画（僵尸的手臂不会自然下垂，攻击玩家时会双手同时攻击）。  
-@OnlyIn(Dist.CLIENT)用来标记只在客户端存在的包，类，成员变量或方法等，实体模型只会在客户端用到，因此最好**不要省略这个注解**。
+不难发现，僵尸的模型`ZombieModel`只是继承了`AbstractZombieModel`抽象类并实现了抽象方法`isAggressive`。而在`AbstractZombieModel`中，也只是在`HumanoidModel`（旧称`BipedModel`，用来提供人形的模型）的基础上调用了`AnimationUtils.animateZombieArms`方法来重写手臂的动画（僵尸的手臂不会自然下垂，攻击玩家时会双手同时攻击）。  
+``@OnlyIn(Dist.CLIENT)``用来标记只在客户端存在的包，类，成员变量或方法等，实体模型只会在客户端用到，因此**不要省略这个注解**。
 
 然后是僵尸的渲染
 ```java
@@ -67,7 +67,7 @@ public abstract class AbstractZombieRenderer<T extends Zombie, M extends ZombieM
     }
 }
 ```
-这里僵尸的渲染器也只是继承了AbstractZombieRenderer。这儿说一下AbstractZombieRenderer的构造方法中的三个模型参数：
+这里僵尸的渲染器也只是继承了`AbstractZombieRenderer`。这儿说一下`AbstractZombieRenderer`的构造方法中的三个模型参数：
 - 第一个参数表示的是**主要的模型**，也就是渲染僵尸材质时用的模型
 - 第二个参数表示的是**盔甲的内层使用的模型**，这个模型只会在渲染护腿时使用
 - 第三个参数表示的是**盔甲的外层使用的模型**，这个模型会在渲染除护腿外盔甲时使用  

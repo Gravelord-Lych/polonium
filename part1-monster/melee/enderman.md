@@ -1,6 +1,6 @@
 # 末影人的底层实现
 
-末影人是比僵尸稍复杂的近战怪物。因为EnderMan类中有约40%的代码是继承了Goal的非公有静态内部类，也就是末影人独有的AI，内容较多，所以我们现在先不谈论它们。  
+末影人是比僵尸稍复杂的近战怪物。因为`EnderMan`类中有约40%的代码是继承了`Goal`的非公有静态内部类，也就是末影人独有的AI，内容较多，所以我们现在先不谈论它们。  
 本节将以讨论末影人瞬移、搬运方块等能力与特性的实现为主。
 
 先来看Fields：
@@ -30,9 +30,9 @@ private int remainingPersistentAngerTime;
 private UUID persistentAngerTarget;
 ```
 
-各Field的用途已经在注释中标注出来了。除了1.2.1.1节讲的修饰符和EntityDataAccessor外，你需要注意这里时间戳的运用。时间戳可以减少更新值的次数，因此一般会在Map<?, Integer>或CompoundTag里存时间戳，而不是每刻数值减少1的“变量”。这里的时间戳的作用可以**近似**地理解为“标识了**这次打开游戏后自实体首次被tick以来经过的tick数**（前提是实体一直在被更新）”。因为实体的tickCount不会存到实体的NBT中，所以**在实体NBT中保存基于tickCount的时间戳无意义**。  
+各Field的用途已经在注释中标注出来了。除了1.2.1.1节讲的修饰符和`EntityDataAccessor`外，你需要注意这里时间戳（timestamp）的运用。时间戳可以减少更新值的次数，因此一般会在`Map<?, Integer>`或`CompoundTag`里存时间戳，而不是每刻数值减少1的“变量”。这里的时间戳的作用可以**近似**地理解为“标识了**这次打开游戏后自实体首次被tick以来经过的tick数**（前提是实体一直在被更新）”。因为实体的`tickCount`不会存到实体的NBT中，所以**在实体NBT中保存基于tickCount的时间戳无意义**。  
 
-时间戳的运用也十分常见，LivingEntity里的lastHurtByPlayerTime、lastHurtByMobTimestamp以及lastHurtMobTimestamp等成员变量都是基于tickCount的时间戳。  
+时间戳的运用也十分常见，`LivingEntity`里的`lastHurtByPlayerTime`、`lastHurtByMobTimestamp`以及`lastHurtMobTimestamp`等成员变量都是基于`tickCount`的时间戳。  
 
 接下来是构造方法。这个构造方法成分复杂，所以我们来细细研究一下233。
 ```java
@@ -42,7 +42,7 @@ public EnderMan(EntityType<? extends EnderMan> type, Level level) {
     setPathfindingMalus(BlockPathTypes.WATER, -1.0F);
 }
 ```
-（IForgeEntity）
+（`IForgeEntity`）
 ```java
 default float getStepHeight() {
     float vanillaStep = self().maxUpStep();
@@ -58,13 +58,13 @@ default float getStepHeight() {
 ```
 先是`setMaxUpStep(1.0F);`。  
 
-setMaxUpStep方法设置了实体的maxUpStep。maxUpStep变量的值（默认为0.6）和Forge提供的`ForgeMod.STEP_HEIGHT_ADDITION.get()`属性，一同决定了实体不需要跳跃就能一下走上去的方块的最低高度，例如，当getStepHeight的返回值大于等于0.5时，实体能不跳跃走上半砖，返回值大于等于1（如铁傀儡）时就可以一步走上大多数方块。  
+`setMaxUpStep`方法设置了实体的`maxUpStep`。`maxUpStep`变量的值（默认为0.6）和Forge提供的`ForgeMod.STEP_HEIGHT_ADDITION.get()`属性，一同决定了实体不需要跳跃就能一下走上去的方块的最低高度，例如，当`getStepHeight`的返回值大于等于0.5时，实体能不跳跃走上半砖，返回值大于等于1（如铁傀儡）时就可以一步走上大多数方块。  
 
 然后是`setPathfindingMalus(BlockPathTypes.WATER, -1.0F);`。  
 
-MC中使用了一个**基于“可变堆内元素位置”的二叉堆**（为什么要这样设计而不使用现成的PriorityQueue呢？因为Node是可变的）的A\*寻路算法。如果你对A\*算法比较陌生，你可以看看[这篇教程](https://zhuanlan.zhihu.com/p/54510444)，或者暂时跳过下面一段内容，因为本节的重点并不是寻路算法。
+MC中使用了一个**基于“可变堆内元素位置”的二叉堆**（为什么要这样设计而不使用现成的`PriorityQueue`呢？因为`Node`是可变的）的A\*寻路算法。如果你对A\*算法比较陌生，你可以看看[这篇教程](https://zhuanlan.zhihu.com/p/54510444)，或者暂时跳过下面一段内容，因为本节的重点并不是寻路算法。
 
-setPathfindingMalus方法**间接地影响了NodeEvaluator（路径节点计算器）对符合BlockPathTypes.WATER类型的Node（可以理解为水上的路径节点）计算的costMalus的结果**，Node的costMalus会影响Node的g值。这里简要说一下第二个参数一般的取值方式（以下内容将BlockPathTypes译为“方块路径类型”）。
+`setPathfindingMalus`方法**间接地影响了NodeEvaluator（路径节点计算器）对符合BlockPathTypes.WATER类型的Node（可以理解为水上的路径节点）计算的costMalus的结果**，`Node`的`costMalus`会影响`Node`的g值。这里简要说一下第二个参数一般的取值方式（以下内容将类名`BlockPathTypes`译为“方块路径类型”）。
 - 如果你的Mob**一定需要避免某一类方块**（例如对TA有严重的危险），就把那类方块对应的方块路径类型对应的malus设置为**-1**  
 - 如果你的Mob**需要尽量避免某一类方块**（例如对TA有较低的危险），就把那类方块对应的方块路径类型对应的malus设置得**高一些**
 - 如果你的Mob**需要尽量在某一类方块上行走**，就把那类方块对应的方块路径类型对应的malus设置得**低一些**（但**一定要非负**）  
@@ -82,7 +82,7 @@ public Blaze(EntityType<? extends Blaze> type, Level level) {
     xpReward = 10;
 }
 ```
-因为烈焰人不怕火却怕水（isSensitiveToWater），所以火焰（DAMAGE_FIRE和DANGER_FIRE）的malus都被设为了0，就连默认malus为-1，一般的生物都尽量避免的岩浆，malus也被设为了8，但水的malus却被设为了-1。  
+因为烈焰人不怕火却怕水（`isSensitiveToWater`），所以火焰（`DAMAGE_FIRE`和`DANGER_FIRE`）的malus都被设为了0，就连默认malus为-1，一般的生物都尽量避免的岩浆，`malus`也被设为了8，但水的malus却被设为了-1。  
 
 水生生物：
 ```java
@@ -95,7 +95,7 @@ protected WaterAnimal(EntityType<? extends WaterAnimal> type, Level level) {
 
 *提示：新版中BlockPathTypes实现了IExtensibleEnum接口，也就是说你可以实例化属于自己的方块路径类型。建议有需求的Modder重写IForgeBlock的getBlockPathType方法，以给方块自定义的路径类型。*
 
-回到末影人，现在应该能理解第二个参数“-1”的含义了。因为末影人遇水会受到伤害，所以把水的malus设置为了-1。今后在写自己的Mob时，也可以通过这个方式调整TA的寻路系统，让TA变得更聪明或更难对付~  
+回到末影人，现在应该能理解第二个参数“-1”的含义了。因为末影人遇水会受到伤害，所以把水的malus设置为了-1。今后在写自己的`Mob`时，也可以通过这个方式调整TA的寻路系统，让TA变得更聪明或更难对付~  
 
 AI部分这节先不讲。
 
@@ -109,7 +109,7 @@ public static AttributeSupplier.Builder createAttributes() {
         .add(Attributes.FOLLOW_RANGE, 64.0D);
 }
 ```
-属性注册应该理解起来没有什么难点。再接着是被大改的setTarget的方法。
+属性注册应该理解起来没有什么难点。再接着是被大改的`setTarget`的方法。
 ```java
 @Override
 public void setTarget(@Nullable LivingEntity target) {
@@ -131,7 +131,7 @@ public void setTarget(@Nullable LivingEntity target) {
     super.setTarget(target); //Forge: Moved down to allow event handlers to write data manager values.
 }
 ```
-以及Mob类的setTarget。
+以及`Mob`类的`setTarget`。
 ```java
 public void setTarget(@Nullable LivingEntity target) {
     LivingChangeTargetEvent changeTargetEvent = ForgeHooks.onLivingChangeTarget(this, target, LivingChangeTargetEvent.LivingTargetType.MOB_TARGET);
@@ -140,11 +140,11 @@ public void setTarget(@Nullable LivingEntity target) {
     }
 }
 ```
-首先要感谢Forge的一点是，新版的Forge大幅度优化了LivingChangeTargetEvent。以前这个事件既不能被取消，也不能改变target，而且如果使用Brain的Mob（例如猪灵）设置攻击的目标，这个事件甚至不会被post，可以说是几乎没什么用。现在这几个问题被彻底解决了！  
+首先要感谢Forge的一点是，新版的Forge大幅度优化了`LivingChangeTargetEvent`。以前这个事件既不能被取消，也不能改变target，而且如果使用`Brain`的Mob（例如猪灵）设置攻击的目标，这个事件甚至不会被`post`，可以说是几乎没什么用。现在这几个问题被彻底解决了！  
 
-接着看EnderMan类里重写的一部分：如果target为null，就**重置时间戳targetChangeTime和末影人的几个状态**，并**移除速度修饰符**。否则**给targetChangeTime赋值当前的tickCount**，并**设置末影人为愤怒状态**，**添加速度修饰符**。这为我们设计生物提供了一个有用的思路：要想让Mob在设置目标时有特殊的行为，可以**重写setTarget方法**或者**监听事件LivingChangeTargetEvent**。  
+接着看`EnderMan`类里重写的一部分：如果`target`为null，就**重置时间戳targetChangeTime和末影人的几个状态**，并**移除速度修饰符**。否则**给targetChangeTime赋值当前的tickCount**，并**设置末影人为愤怒状态**，**添加速度修饰符**。这为我们设计生物提供了一个有用的思路：要想让Mob在设置目标时有特殊的行为，可以**重写setTarget方法**或者**监听事件LivingChangeTargetEvent**。  
 
-另外要说的是，在setTarget的过程中，不难发现**移除属性修饰符不需要hasModifier的检查**，但**添加属性修饰符一定要检查以前有没有添加过**，不然会抛出IllegalArgumentException（*Modifier is already applied on this attribute!*）。
+另外要说的是，在`setTarget`的过程中，不难发现**移除属性修饰符不需要hasModifier的检查**，但**添加属性修饰符一定要检查以前有没有添加过**，不然会抛出`IllegalArgumentException`（*Modifier is already applied on this attribute!*）。
 
 下面是示威声的播放。
 ```java
@@ -166,9 +166,9 @@ public void playStareSound() {
     }
 }
 ```
-因为lastStareSound成员变量只在客户端被使用，所以无需数据同步。有一个注意点是，如果你要用除Entity的playSound方法外的方式（例如上面用Level的playLocalSound方法）播放**来自你的实体的**声音，**务必要进行**`if (!isSlient())`**的检查**（playSound方法内置了检查，所以不需要额外判断一次）。  
+因为`lastStareSound`成员变量只在客户端被使用，所以无需数据同步。有一个注意点是，如果你要用除`Entity`的`playSound`方法外的方式（例如上面用`Level`的`playLocalSound`方法）播放**来自你的实体的**声音，**务必要进行**`if (!isSlient())`**的检查**（`playSound`方法内置了检查，所以不需要额外判断一次）。  
 
-任何与播放声音有关的方法往往要涉及到两个float参数，一般**前面一个表示音量**（volume），**后面一个表示音调**（pitch）。部分情况下，可能用`random.nextFloat()`等实现音调和音量的随机化，使声音更自然。*~~要是我也能随意改变嗓音的音调就好了~~*
+任何与播放声音有关的方法往往要涉及到两个`float`参数，一般**前面一个表示音量**（volume），**后面一个表示音调**（pitch）。部分情况下，可能用`random.nextFloat()`等实现音调和音量的随机化，使声音更自然。
 
 接下来是数据保存与加载的部分。
 ```java
@@ -197,9 +197,9 @@ public void readAdditionalSaveData(CompoundTag tag) {
      readPersistentAngerSaveData(level(), tag);
 }
 ```
-这里储存BlockState用的是NbtUtils里的writeBlockState方法，其余应该不难理解。但注意readBlockState在未找到NBT里的BlockState时，返回`Blocks.AIR.defaultBlockState()`而非null。  
+这里储存`BlockState`用的是`NbtUtils`里的`writeBlockState`方法，其余应该不难理解。但注意`readBlockState`在未找到NBT里的`BlockState`时，返回`Blocks.AIR.defaultBlockState()`而非null。  
 
-接着来看一个重点，isLookingAtMe。
+接着来看一个重点，`isLookingAtMe`。
 ```java
 // 这个方法的访问权限就是default
 boolean isLookingAtMe(Player player) {
@@ -227,7 +227,7 @@ boolean isLookingAtMe(Player player) {
 
 就返回true，否则返回false。  
 
-可见**良好的数学基础在Mod开发中也起着重要作用**（虽然我数学不好）。这个方法的调用位置在末影人的AI里，下节再详细讲。  
+可见**良好的数学基础在Mod开发中也起着重要作用**（~~虽然我数学不好~~）。这个方法的调用位置在末影人的AI里，下节再详细讲。  
 
 在进入下一个重点前，先看三个Override。
 ```java
@@ -249,8 +249,8 @@ public boolean requiresCustomPersistence() {
 ```
 简要解释一下这三项：  
 1. 因为末影人眼睛的高度偏高，高于默认值_0.85 * 身高2.9 = 2.465_，所以重新指定了眼睛的高度。  
-2. isSensitiveToWater如果返回true，就说明LivingEntity遇任何形式的水会受到伤害。  
-3. 手持方块的末影人不应该被刷掉，所以requiresCustomPersistence返回了true（意味着不会刷掉末影人）。  
+2. `isSensitiveToWater`如果返回`true`，就说明`LivingEntity`遇任何形式的水会受到伤害。  
+3. 手持方块的末影人不应该被刷掉，所以`requiresCustomPersistence`返回了`true`（意味着不会刷掉末影人）。  
 
 然后是实体更新。
 ```java
@@ -283,9 +283,9 @@ protected void customServerAiStep() {
     super.customServerAiStep();
 }
 ```
-customServerAiStep与aiStep方法的区别在于customServerAiStep方法**只会在服务端被调用**，而aiStep是**双端被调用**的。因此在customServerAiStep中无需`level().isClientSide`（或`level().isClientSide()`）的检查。  
+`customServerAiStep`与`aiStep`方法的区别在于`customServerAiStep`方法**只会在服务端被调用**，而`aiStep`是**双端被调用**的。因此在`customServerAiStep`中无需`level().isClientSide`（或`level().isClientSide()`）的检查。  
 
-分析代码可以发现，末影人的瞬移频率与亮度值呈正相关，且只有lightLevelDependentMagicValue（这个值与实际亮度和维度的环境光照都有关，不过getLightLevelDependentMagicValue方法被弃用了）大于0.5时才会尝试随机遗忘攻击目标并瞬移。
+分析代码可以发现，末影人的瞬移频率与亮度值呈正相关，且只有`lightLevelDependentMagicValue`（这个值与实际亮度和维度的环境光照都有关，不过`getLightLevelDependentMagicValue`方法被弃用了）大于0.5时才会尝试随机遗忘攻击目标并瞬移。
 
 接下来讲下一个重点：瞬移。
 ```java
@@ -353,20 +353,20 @@ private boolean teleport(double x, double y, double z) {
   1. 找大致方向
   2. 添加水平随机扰动
   3. 确定下一步调整y坐标时使用的y坐标的基准值（简称为基准y坐标）
-2. **在y上调整**，直至找到合适的y坐标（这一步主要应用于LivingEntity的瞬移，对于弹射物等实体的瞬移可以省略）
+2. **在y上调整**，直至找到合适的y坐标（这一步主要应用于`LivingEntity`的瞬移，对于弹射物等实体的瞬移可以省略）
 
 前两个方法主要实现了上述步骤的第1步。确定水平位置有两种常用的基本方法：
 - 随机生成**x、z坐标**，直接作为水平传送位置（适用于在**矩形**内生成水平位置）
 - 随机生成**角度和半径**，利用三角函数算出水平传送位置（适用于在**圆**内生成水平位置）  
 
-如果有更复杂的需求，可以考虑重复尝试生成随机坐标，一成功就break。
+如果有更复杂的需求，可以考虑重复尝试生成随机坐标，一成功就`break`。
 
 *瞬移和重复尝试思想可以结合使用。在末影人受伤害瞬移时、及1.2.1.1节说过的盖亚守护者随机传送时，就利用到了这种结合。[暮色森林的巫妖（Lich）](https://github.com/TeamTwilight/twilightforest/blob/1.20.x/src/main/java/twilightforest/entity/boss/Lich.java)（第552~619行）也用到了很多的瞬移技巧，如果有需求或感兴趣，可以去阅读巫妖的源代码。*
 
-第3个方法就实现了上述步骤的第2步。在有基准y坐标的情况下，常用的调整最终y坐标的方式是使用MutableBlockPos类，这种情况多见于对实体传送位置或召唤物生成位置的计算。而在没有基准y坐标的情况下，常常借助高度图（Heightmap）获取适宜的y坐标，这种情况多见于袭击等事件中对袭击者生成位置的计算。
+第3个方法就实现了上述步骤的第2步。在有基准y坐标的情况下，常用的调整最终y坐标的方式是使用`MutableBlockPos`类，这种情况多见于对实体传送位置或召唤物生成位置的计算。而在没有基准y坐标的情况下，常常借助高度图（`Heightmap`）获取适宜的y坐标，这种情况多见于袭击等事件中对袭击者生成位置的计算。
 
-在第一次用MutableBlockPos调整完后，接下来又用randomTeleport方法做了第二步调整。  
-最后简单看一下randomTeleport的实现（不要被方法名带偏了，这个方法中没有生成任何随机坐标）：
+在第一次用`MutableBlockPos`调整完后，接下来又用`randomTeleport`方法做了第二步调整。  
+最后简单看一下`randomTeleport`的实现（不要被方法名带偏了，这个方法中没有生成任何随机坐标）：
 ```java
 public boolean randomTeleport(double randomX, double randomY, double randomZ, boolean showParticles) {
     double x = getX();
@@ -416,7 +416,7 @@ public boolean randomTeleport(double randomX, double randomY, double randomZ, bo
     }
 }
 ```
-再看dropCustomDeathLoot方法。
+再看`dropCustomDeathLoot`方法。
 ```java
 @Override
 protected void dropCustomDeathLoot(DamageSource source, int lootingLevel, boolean killedByPlayer) {
@@ -438,7 +438,7 @@ protected void dropCustomDeathLoot(DamageSource source, int lootingLevel, boolea
 }
 ```
 不难发现，杀死末影人后，如果末影人有手持的方块，会先获取末影人手持的方块**被附魔了精准采集的钻石斧采集时**的战利品表，根据这个战利品表再生成掉落物。
-接下来是hurt方法。
+接下来是`hurt`方法。
 ```java
 @Override
 public boolean hurt(DamageSource source, float amount) {
@@ -475,7 +475,7 @@ private boolean hurtWithCleanWater(DamageSource source, ThrownPotion potionEntit
     return empty ? super.hurt(source, amount) : false;
 }
 ```
-这部分内容主要实现了“末影人不会被弹射物伤害（只会被喷溅水瓶伤害）”的特性。注意这里巧妙地调用了super.hurt，以避免出现无限递归。还要注意，这里末影人虽然没有成功受到伤害，hurt方法也返回了true，此时末影人会“变红”，但不会损失生命值。
+这部分内容主要实现了“末影人不会被弹射物伤害（只会被喷溅水瓶伤害）”的特性。注意这里巧妙地调用了`super.hurt`，以避免出现无限递归。还要注意，这里末影人虽然没有成功受到伤害，`hurt`方法也返回了`true`，此时末影人会“变红”，但不会损失生命值。
 
 最后就是音效了。末影人实体类型的注册与僵尸大同小异，没有新的要点，因此此处不再分析。  
 ```java

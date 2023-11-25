@@ -302,6 +302,27 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../ranged/perform_ranged_attack.html">
+            
+                <a href="../ranged/perform_ranged_attack.html">
+            
+                    
+                        <b>1.2.2.1.</b>
+                    
+                    performRangedAttack - 远击の基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="1.2.3" data-path="../ranged-special/">
@@ -433,7 +454,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x672B;&#x5F71;&#x4EBA;&#x7684;&#x6A21;&#x578B;&#x4E0E;&#x6E32;&#x67D3;">&#x672B;&#x5F71;&#x4EBA;&#x7684;&#x6A21;&#x578B;&#x4E0E;&#x6E32;&#x67D3;</h1>
-<p>&#x672C;&#x8282;&#x5C06;&#x4E3B;&#x8981;&#x5206;&#x6790;&#x672B;&#x5F71;&#x4EBA;&#x7684;&#x6A21;&#x578B;&#x7684;&#x7279;&#x6B8A;&#x4E4B;&#x5904;&#xFF0C;&#x4EE5;&#x53CA;&#x672B;&#x5F71;&#x4EBA;&#x7684;&#x6E32;&#x67D3;&#x5668;&#x4E2D;&#x4F7F;&#x7528;&#x7684;Layer<em>&#xFF08;RenderLayer&#xFF0C;&#x4E0D;&#x662F;&#x65E7;&#x7248;&#x751F;&#x7269;&#x7FA4;&#x7CFB;&#x4F7F;&#x7528;&#x7684;Layer&#xFF09;</em></p>
+<p>&#x672C;&#x8282;&#x5C06;&#x4E3B;&#x8981;&#x5206;&#x6790;&#x672B;&#x5F71;&#x4EBA;&#x7684;&#x6A21;&#x578B;&#x7684;&#x7279;&#x6B8A;&#x4E4B;&#x5904;&#xFF0C;&#x4EE5;&#x53CA;&#x672B;&#x5F71;&#x4EBA;&#x7684;&#x6E32;&#x67D3;&#x5668;&#x4E2D;&#x4F7F;&#x7528;&#x7684;<code>Layer</code><em>&#xFF08;<code>RenderLayer</code>&#xFF0C;&#x4E0D;&#x662F;&#x65E7;&#x7248;&#x751F;&#x7269;&#x7FA4;&#x7CFB;&#x4F7F;&#x7528;&#x7684;<code>Layer</code>&#xFF09;</em></p>
 <p>&#x5148;&#x662F;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x4E0E;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x3002;</p>
 <pre><code class="lang-java"><span class="hljs-meta">@OnlyIn</span>(Dist.CLIENT)
 <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EndermanModel</span>&lt;<span class="hljs-title">T</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">LivingEntity</span>&gt; <span class="hljs-keyword">extends</span> <span class="hljs-title">HumanoidModel</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
@@ -448,7 +469,7 @@
 }
 </code></pre>
 <p>&#x56E0;&#x4E3A;&#x672B;&#x5F71;&#x4EBA;&#x6709;2&#x7EC4;&#x4E0D;&#x540C;&#x7684;&#x72B6;&#x6001;&#xFF08;&#x751F;&#x6C14;-&#x4E0D;&#x751F;&#x6C14;&#xFF0C;&#x642C;&#x7740;&#x65B9;&#x5757;-&#x7A7A;&#x624B;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x6A21;&#x578B;&#x4E2D;&#x6709;&#x4E24;&#x4E2A;&#x516C;&#x5171;&#x4E14;&#x53EF;&#x53D8;&#x7684;boolean&#x6210;&#x5458;&#x53D8;&#x91CF;&#xFF0C;&#x7528;&#x6765;&#x63A7;&#x5236;&#x672B;&#x5F71;&#x4EBA;&#x7684;&#x6A21;&#x578B;&#x3002;<em>&#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x4E2D;&#xFF0C;&#x4E0D;&#x63D0;&#x5021;&#x8FD9;&#x79CD;&#x66B4;&#x9732;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;getter&#x548C;setter&#x3002;</em>  </p>
-<p>&#x7136;&#x540E;&#x662F;&#x9759;&#x6001;&#x65B9;&#x6CD5;createBodyLayer&#xFF0C;&#x56E0;&#x4E3A;&#x672B;&#x5F71;&#x4EBA;&#x7684;&#x6A21;&#x578B;&#x4E0E;&#x6807;&#x51C6;&#x7684;&#x201C;&#x4EBA;&#x7C7B;&#x6A21;&#x578B;&#x201D;&#x4E0D;&#x540C;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x91CD;&#x65B0;&#x5199;&#x4E00;&#x4E2A;LayerDefinition&#x3002;</p>
+<p>&#x7136;&#x540E;&#x662F;&#x9759;&#x6001;&#x65B9;&#x6CD5;<code>createBodyLayer</code>&#xFF0C;&#x56E0;&#x4E3A;&#x672B;&#x5F71;&#x4EBA;&#x7684;&#x6A21;&#x578B;&#x4E0E;&#x6807;&#x51C6;&#x7684;&#x201C;&#x4EBA;&#x7C7B;&#x6A21;&#x578B;&#x201D;&#x4E0D;&#x540C;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x91CD;&#x65B0;&#x5199;&#x4E00;&#x4E2A;<code>LayerDefinition</code>&#x3002;</p>
 <pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> LayerDefinition <span class="hljs-title">createBodyLayer</span><span class="hljs-params">()</span> </span>{
     MeshDefinition meshDef = HumanoidModel.createMesh(CubeDeformation.NONE, -<span class="hljs-number">14.0F</span>);
     PartDefinition partDef = meshDef.getRoot();
@@ -471,8 +492,8 @@
     <span class="hljs-keyword">return</span> LayerDefinition.create(meshDef, <span class="hljs-number">64</span>, <span class="hljs-number">32</span>); <span class="hljs-comment">// &#x6A21;&#x578B;&#x4F7F;&#x7528;&#x7684;&#x6750;&#x8D28;&#x7684;&#x5C3A;&#x5BF8;</span>
 }
 </code></pre>
-<p>&#x8FD9;&#x4E00;&#x90E8;&#x5206;&#x58F0;&#x660E;&#x4E86;&#x672B;&#x5F71;&#x4EBA;&#x4F7F;&#x7528;&#x7684;&#x6A21;&#x578B;&#xFF0C;&#x867D;&#x7136;&#x6BD4;&#x8F83;&#x62BD;&#x8C61;&#xFF0C;&#x4F46;&#x7406;&#x89E3;&#x96BE;&#x5EA6;&#x4E0D;&#x662F;&#x7279;&#x522B;&#x5927;&#x3002;<strong>&#x53EA;&#x8981;&#x4F60;&#x7684;&#x751F;&#x7269;&#x7684;&#x6A21;&#x578B;&#x4E0E;&#x4F60;&#x7EE7;&#x627F;&#x7684;&#x7236;&#x7C7B;&#x63D0;&#x4F9B;&#x7684;&#x6A21;&#x578B;&#x6709;&#x51FA;&#x5165;</strong>&#xFF08;&#x4F8B;&#x5982;&#x672B;&#x5F71;&#x4EBA;&#x7684;&#x6A21;&#x578B;&#x548C;&#x4E00;&#x822C;&#x7684;HumanoidModel&#x4E0D;&#x540C;&#xFF09;<strong>&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x5199;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x7528;&#x6765;&#x521B;&#x5EFA;LayerDefinition</strong>&#x3002;&#x540C;&#x65F6;&#x522B;&#x5FD8;&#x4E86;&#x6CE8;&#x518C;LayerDefinition&#x3002;  </p>
-<p>&#x7136;&#x540E;&#x662F;setUpAnim&#xFF0C;&#x672B;&#x5F71;&#x4EBA;&#x7684;&#x624B;&#x81C2;&#x7684;&#x52A8;&#x753B;&#x4E0E;other&#x4EBA;&#x5F62;&#x602A;&#x7269;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x91CD;&#x5199;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;&#x4E3A;&#x65B9;&#x4FBF;&#x9605;&#x8BFB;&#xFF0C;&#x8C03;&#x6362;&#x4E86;&#x53EF;&#x8C03;&#x6362;&#x7684;&#x8BED;&#x53E5;&#x5E76;&#x5220;&#x9664;&#x4E86;&#x4F8B;&#x5982;<code>x -= 0</code>&#x7684;&#x65E0;&#x610F;&#x4E49;&#x7684;&#x90E8;&#x5206;&#x3002;</p>
+<p>&#x8FD9;&#x4E00;&#x90E8;&#x5206;&#x58F0;&#x660E;&#x4E86;&#x672B;&#x5F71;&#x4EBA;&#x4F7F;&#x7528;&#x7684;&#x6A21;&#x578B;&#xFF0C;&#x867D;&#x7136;&#x6BD4;&#x8F83;&#x62BD;&#x8C61;&#xFF0C;&#x4F46;&#x7406;&#x89E3;&#x96BE;&#x5EA6;&#x4E0D;&#x662F;&#x7279;&#x522B;&#x5927;&#x3002;<strong>&#x53EA;&#x8981;&#x4F60;&#x7684;&#x751F;&#x7269;&#x7684;&#x6A21;&#x578B;&#x4E0E;&#x4F60;&#x7EE7;&#x627F;&#x7684;&#x7236;&#x7C7B;&#x63D0;&#x4F9B;&#x7684;&#x6A21;&#x578B;&#x6709;&#x51FA;&#x5165;</strong>&#xFF08;&#x4F8B;&#x5982;&#x672B;&#x5F71;&#x4EBA;&#x7684;&#x6A21;&#x578B;&#x548C;&#x4E00;&#x822C;&#x7684;<code>HumanoidModel</code>&#x4E0D;&#x540C;&#xFF09;<strong>&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x5199;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x7528;&#x6765;&#x521B;&#x5EFA;LayerDefinition</strong>&#x3002;&#x540C;&#x65F6;&#x522B;&#x5FD8;&#x4E86;&#x6CE8;&#x518C;<code>LayerDefinition</code>&#x3002;  </p>
+<p>&#x7136;&#x540E;&#x662F;<code>setUpAnim</code>&#xFF0C;&#x672B;&#x5F71;&#x4EBA;&#x7684;&#x624B;&#x81C2;&#x7684;&#x52A8;&#x753B;&#x4E0E;other&#x4EBA;&#x5F62;&#x602A;&#x7269;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x91CD;&#x5199;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;&#x4E3A;&#x65B9;&#x4FBF;&#x9605;&#x8BFB;&#xFF0C;&#x8C03;&#x6362;&#x4E86;&#x53EF;&#x8C03;&#x6362;&#x7684;&#x8BED;&#x53E5;&#x5E76;&#x5220;&#x9664;&#x4E86;&#x4F8B;&#x5982;<code>x -= 0</code>&#x7684;&#x65E0;&#x610F;&#x4E49;&#x7684;&#x90E8;&#x5206;&#x3002;</p>
 <pre><code class="lang-java"><span class="hljs-meta">@Override</span>
 <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setupAnim</span><span class="hljs-params">(T enderman, <span class="hljs-keyword">float</span> limbSwing, <span class="hljs-keyword">float</span> limbSwingAmount, <span class="hljs-keyword">float</span> ageInTicks, <span class="hljs-keyword">float</span> netHeadYaw, <span class="hljs-keyword">float</span> headPitch)</span> </span>{
     <span class="hljs-keyword">super</span>.setupAnim(enderman, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
@@ -538,7 +559,7 @@
     }    
 }
 </code></pre>
-<p>&#x9996;&#x5148;&#x662F;&#x6A21;&#x578B;box&#x7684;&#x91CD;&#x7F6E;&#x3002;&#x4E4B;&#x6240;&#x4EE5;&#x8981;&#x8FD9;&#x6837;&#x91CD;&#x7F6E;&#x4E00;&#x904D;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x672B;&#x5F71;&#x4EBA;&#x7684;&#x6A21;&#x578B;&#x548C;&#x4E00;&#x822C;&#x7684;HumanoidModel&#x4E0D;&#x540C;&#xFF0C;&#x56E0;&#x6B64;box&#x7684;&#x4F4D;&#x7F6E;&#x4E5F;&#x4F1A;&#x6709;&#x5DEE;&#x5F02;&#xFF0C;&#x9700;&#x8981;&#x5728;<strong>&#x8C03;&#x7528;super&#x65B9;&#x6CD5;&#x540E;</strong>&#x91CD;&#x7F6E;&#x3002;  </p>
+<p>&#x9996;&#x5148;&#x662F;&#x6A21;&#x578B;box&#x7684;&#x91CD;&#x7F6E;&#x3002;&#x4E4B;&#x6240;&#x4EE5;&#x8981;&#x8FD9;&#x6837;&#x91CD;&#x7F6E;&#x4E00;&#x904D;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x672B;&#x5F71;&#x4EBA;&#x7684;&#x6A21;&#x578B;&#x548C;&#x4E00;&#x822C;&#x7684;<code>HumanoidModel</code>&#x4E0D;&#x540C;&#xFF0C;&#x56E0;&#x6B64;box&#x7684;&#x4F4D;&#x7F6E;&#x4E5F;&#x4F1A;&#x6709;&#x5DEE;&#x5F02;&#xFF0C;&#x9700;&#x8981;&#x5728;<strong>&#x8C03;&#x7528;super&#x65B9;&#x6CD5;&#x540E;</strong>&#x91CD;&#x7F6E;&#x3002;  </p>
 <pre><code class="lang-java">head.visible = <span class="hljs-keyword">true</span>;
 body.xRot = <span class="hljs-number">0.0F</span>;
 body.y = -<span class="hljs-number">14.0F</span>;
@@ -640,15 +661,15 @@ leftLeg.xRot *= <span class="hljs-number">0.5F</span>;
     }
 }
 </code></pre>
-<p>&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x4E2D;&#x6DFB;&#x52A0;&#x4E86;EnderEyesLayer&#x4E0E;CarriedBlockLayer&#x8FD9;&#x4E24;&#x4E2A;Layer&#x3002;EnderEyesLayer&#x7EE7;&#x627F;&#x4E86;EyesLayer&#xFF0C;&#x53EF;&#x4EE5;&#x4EE5;&#x7279;&#x6B8A;&#x7684;RenderType&#x6E32;&#x67D3;&#x773C;&#x775B;&#xFF0C;&#x540C;&#x65F6;&#x7528;EyesLayer&#x6DFB;&#x52A0;&#x7684;&#x773C;&#x775B;&#x4E0D;&#x4F1A;&#x56E0;&#x4E3A;&#x5B9E;&#x4F53;&#x9690;&#x8EAB;&#x800C;&#x6D88;&#x5931;&#x3002;  </p>
-<p>&#x60F3;&#x77E5;&#x9053;&#x8FD9;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x5417;&#xFF1F;&#x5148;&#x6765;&#x770B;EyesLayer&#x7684;render&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x4E2D;&#x6DFB;&#x52A0;&#x4E86;<code>EnderEyesLayer</code>&#x4E0E;<code>CarriedBlockLayer</code>&#x8FD9;&#x4E24;&#x4E2A;Layer&#x3002;<code>EnderEyesLayer</code>&#x7EE7;&#x627F;&#x4E86;<code>EyesLayer</code>&#xFF0C;&#x53EF;&#x4EE5;&#x4EE5;&#x7279;&#x6B8A;&#x7684;<code>RenderType</code>&#x6E32;&#x67D3;&#x773C;&#x775B;&#xFF0C;&#x540C;&#x65F6;&#x7528;<code>EyesLayer</code>&#x6DFB;&#x52A0;&#x7684;&#x773C;&#x775B;&#x4E0D;&#x4F1A;&#x56E0;&#x4E3A;&#x5B9E;&#x4F53;&#x9690;&#x8EAB;&#x800C;&#x6D88;&#x5931;&#x3002;  </p>
+<p>&#x60F3;&#x77E5;&#x9053;&#x8FD9;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x5417;&#xFF1F;&#x5148;&#x6765;&#x770B;<code>EyesLayer</code>&#x7684;<code>render</code>&#x65B9;&#x6CD5;&#x3002;</p>
 <pre><code class="lang-java"><span class="hljs-meta">@Override</span>
 <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">render</span><span class="hljs-params">(PoseStack stack, MultiBufferSource source, <span class="hljs-keyword">int</span> packedLight, T entity, <span class="hljs-keyword">float</span> limbSwing, <span class="hljs-keyword">float</span> limbSwingAmount, <span class="hljs-keyword">float</span> partialTicks, <span class="hljs-keyword">float</span> ageInTicks, <span class="hljs-keyword">float</span> netHeadYaw, <span class="hljs-keyword">float</span> headPitch)</span> </span>{
     VertexConsumer consumer = source.getBuffer(renderType());
     getParentModel().renderToBuffer(stack, consumer, <span class="hljs-number">15728640</span>, OverlayTexture.NO_OVERLAY, <span class="hljs-number">1.0F</span>, <span class="hljs-number">1.0F</span>, <span class="hljs-number">1.0F</span>, <span class="hljs-number">1.0F</span>);
 }
 </code></pre>
-<p>&#x800C;&#x6E38;&#x620F;&#x4E2D;&#x72FC;&#x5374;&#x4E0D;&#x4F1A;&#x5728;&#x9690;&#x8EAB;&#x65F6;&#x663E;&#x793A;&#x9879;&#x5708;&#xFF0C;&#x5BF9;&#x6BD4;&#x4E00;&#x4E0B;WolfCollarLayer&#x7684;&#x7247;&#x6BB5;&#x3002;</p>
+<p>&#x800C;&#x6E38;&#x620F;&#x4E2D;&#x72FC;&#x5374;&#x4E0D;&#x4F1A;&#x5728;&#x9690;&#x8EAB;&#x65F6;&#x663E;&#x793A;&#x9879;&#x5708;&#xFF0C;&#x5BF9;&#x6BD4;&#x4E00;&#x4E0B;<code>WolfCollarLayer</code>&#x7684;&#x7247;&#x6BB5;&#x3002;</p>
 <pre><code class="lang-java"><span class="hljs-meta">@Override</span>
 <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">render</span><span class="hljs-params">(PoseStack stack, MultiBufferSource source, <span class="hljs-keyword">int</span> packedLight, Wolf wolf, <span class="hljs-keyword">float</span> limbSwing, <span class="hljs-keyword">float</span> limbSwingAmount, <span class="hljs-keyword">float</span> partialTicks, <span class="hljs-keyword">float</span> ageInTicks, <span class="hljs-keyword">float</span> netHeadYaw, <span class="hljs-keyword">float</span> headPitch)</span> </span>{
     <span class="hljs-keyword">if</span> (wolf.isTame() &amp;&amp; !wolf.isInvisible()) {
@@ -657,8 +678,8 @@ leftLeg.xRot *= <span class="hljs-number">0.5F</span>;
     }
 }
 </code></pre>
-<p>&#x771F;&#x76F8;&#x5C31;&#x5927;&#x767D;&#x4E86;&#xFF01;WolfCollarLayer&#x4E2D;<strong>&#x5224;&#x65AD;&#x4E86;&#x72FC;&#x662F;&#x5426;&#x9690;&#x8EAB;</strong>&#xFF0C;&#x5982;&#x679C;&#x9690;&#x8EAB;&#x5C31;&#x4E0D;&#x6E32;&#x67D3;&#x9879;&#x5708;&#xFF0C;&#x6240;&#x4EE5;&#x9690;&#x8EAB;&#x7684;&#x72FC;&#x7684;&#x9879;&#x5708;&#x662F;&#x770B;&#x4E0D;&#x89C1;&#x7684;&#x3002;EyesLayer&#x4E2D;<strong>&#x6CA1;&#x6709;&#x5224;&#x65AD;&#x672B;&#x5F71;&#x4EBA;&#x662F;&#x5426;&#x9690;&#x8EAB;</strong>&#xFF0C;&#x56E0;&#x6B64;&#x9690;&#x8EAB;&#x7684;&#x672B;&#x5F71;&#x4EBA;&#x773C;&#x775B;&#x53EF;&#x89C1;&#x3002;</p>
-<p>CarriedBlockLayer&#x5219;&#x7528;rotate, translate, scale&#x7B49;&#x64CD;&#x4F5C;&#x6E32;&#x67D3;&#x4E86;&#x672B;&#x5F71;&#x4EBA;&#x624B;&#x4E0A;&#x62FF;&#x7740;&#x7684;&#x65B9;&#x5757;&#xFF0C;&#x5E76;&#x5C06;&#x5B83;&#x79FB;&#x52A8;&#x5230;&#x6B63;&#x786E;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>&#x771F;&#x76F8;&#x5C31;&#x5927;&#x767D;&#x4E86;&#xFF01;<code>WolfCollarLayer</code>&#x4E2D;<strong>&#x5224;&#x65AD;&#x4E86;&#x72FC;&#x662F;&#x5426;&#x9690;&#x8EAB;</strong>&#xFF0C;&#x5982;&#x679C;&#x9690;&#x8EAB;&#x5C31;&#x4E0D;&#x6E32;&#x67D3;&#x9879;&#x5708;&#xFF0C;&#x6240;&#x4EE5;&#x9690;&#x8EAB;&#x7684;&#x72FC;&#x7684;&#x9879;&#x5708;&#x662F;&#x770B;&#x4E0D;&#x89C1;&#x7684;&#x3002;<code>EyesLayer</code>&#x4E2D;<strong>&#x6CA1;&#x6709;&#x5224;&#x65AD;&#x672B;&#x5F71;&#x4EBA;&#x662F;&#x5426;&#x9690;&#x8EAB;</strong>&#xFF0C;&#x56E0;&#x6B64;&#x9690;&#x8EAB;&#x7684;&#x672B;&#x5F71;&#x4EBA;&#x773C;&#x775B;&#x53EF;&#x89C1;&#x3002;</p>
+<p><code>CarriedBlockLayer</code>&#x5219;&#x7528;<code>rotate</code>, <code>translate</code>, <code>scale</code>&#x7B49;&#x64CD;&#x4F5C;&#x6E32;&#x67D3;&#x4E86;&#x672B;&#x5F71;&#x4EBA;&#x624B;&#x4E0A;&#x62FF;&#x7740;&#x7684;&#x65B9;&#x5757;&#xFF0C;&#x5E76;&#x5C06;&#x5B83;&#x79FB;&#x52A8;&#x5230;&#x6B63;&#x786E;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code class="lang-java"><span class="hljs-meta">@Override</span>
 <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">render</span><span class="hljs-params">(PoseStack stack, MultiBufferSource source, <span class="hljs-keyword">int</span> packedLight, Wolf wolf, <span class="hljs-keyword">float</span> limbSwing, <span class="hljs-keyword">float</span> limbSwingAmount, <span class="hljs-keyword">float</span> partialTicks, <span class="hljs-keyword">float</span> ageInTicks, <span class="hljs-keyword">float</span> netHeadYaw, <span class="hljs-keyword">float</span> headPitch)</span> </span>{
     BlockState carriedBlock = enderman.getCarriedBlock();
@@ -676,8 +697,8 @@ leftLeg.xRot *= <span class="hljs-number">0.5F</span>;
     }
 }
 </code></pre>
-<p>&#x5E94;&#x8BE5;&#x4E0D;&#x96BE;&#x7406;&#x89E3;&#x5176;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5982;&#x679C;&#x5BF9;PoseStack&#xFF08;&#x65E7;&#x79F0;MatrixStack&#xFF09;&#x7684;&#x64CD;&#x4F5C;&#x4E0D;&#x592A;&#x719F;&#x6089;&#xFF0C;&#x53EF;&#x4EE5;&#x53BB;&#x9605;&#x8BFB;&#x76F8;&#x5173;&#x7684;&#x6E32;&#x67D3;&#x65B9;&#x9762;&#x7684;&#x6559;&#x7A0B;&#xFF0C;&#x6B64;&#x5904;&#x4E0D;&#x505A;&#x8FC7;&#x591A;&#x8D58;&#x8FF0;&#x3002;</p>
-<p>&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x96BE;&#x70B9;&#x4E86;&#x3002;&#x7136;&#x540E;&#x6765;&#x770B;render&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x5E94;&#x8BE5;&#x4E0D;&#x96BE;&#x7406;&#x89E3;&#x5176;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5982;&#x679C;&#x5BF9;<code>PoseStack</code>&#xFF08;&#x65E7;&#x79F0;<code>MatrixStack</code>&#xFF09;&#x7684;&#x64CD;&#x4F5C;&#x4E0D;&#x592A;&#x719F;&#x6089;&#xFF0C;&#x53EF;&#x4EE5;&#x53BB;&#x9605;&#x8BFB;&#x76F8;&#x5173;&#x7684;&#x6E32;&#x67D3;&#x65B9;&#x9762;&#x7684;&#x6559;&#x7A0B;&#xFF0C;&#x6B64;&#x5904;&#x4E0D;&#x505A;&#x8FC7;&#x591A;&#x8D58;&#x8FF0;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x96BE;&#x70B9;&#x4E86;&#x3002;&#x7136;&#x540E;&#x6765;&#x770B;<code>render</code>&#x65B9;&#x6CD5;&#x3002;</p>
 <pre><code class="lang-java"><span class="hljs-meta">@Override</span>
 <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">render</span><span class="hljs-params">(EnderMan enderman, <span class="hljs-keyword">float</span> rotation, <span class="hljs-keyword">float</span> delta, PoseStack stack, MultiBufferSource bufferSource, <span class="hljs-keyword">int</span> packedLight)</span> </span>{
     BlockState carriedBlock = enderman.getCarriedBlock();
@@ -688,7 +709,7 @@ leftLeg.xRot *= <span class="hljs-number">0.5F</span>;
 }
 </code></pre>
 <p>render&#x65B9;&#x6CD5;&#x91CD;&#x5199;&#x7684;&#x5185;&#x5BB9;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x53EA;&#x662F;&#x6839;&#x636E;&#x672B;&#x5F71;&#x4EBA;&#x7684;&#x72B6;&#x6001;&#x66F4;&#x65B0;&#x4E86;&#x6A21;&#x578B;&#x7684;<code>carrying</code>&#x548C;<code>creepy</code>&#x4E24;&#x4E2A;boolean&#x7684;&#x503C;&#x3002;  </p>
-<p>&#x6700;&#x540E;&#x8981;&#x8BB2;&#x7684;&#x5C31;&#x662F;getRenderOffset&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x6700;&#x540E;&#x8981;&#x8BB2;&#x7684;&#x5C31;&#x662F;<code>getRenderOffset</code>&#x65B9;&#x6CD5;&#x3002;</p>
 <pre><code class="lang-java"><span class="hljs-meta">@Override</span>
 <span class="hljs-function"><span class="hljs-keyword">public</span> Vec3 <span class="hljs-title">getRenderOffset</span><span class="hljs-params">(EnderMan enderman, <span class="hljs-keyword">float</span> delta)</span> </span>{
     <span class="hljs-keyword">if</span> (enderman.isCreepy()) {
@@ -698,7 +719,7 @@ leftLeg.xRot *= <span class="hljs-number">0.5F</span>;
     }
 }
 </code></pre>
-<p>getRenderOffset&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x88AB;&#x7528;&#x6765;translate&#x6E32;&#x67D3;&#x5B9E;&#x4F53;&#x7528;&#x7684;PoseStack&#x3002;&#x56E0;&#x4E3A;&#x672B;&#x5F71;&#x4EBA;&#x6124;&#x6012;&#x65F6;&#x8EAB;&#x4F53;&#x4F1A;&#x6296;&#x52A8;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x91CD;&#x5199;&#x6B64;&#x65B9;&#x6CD5;&#x3002;  </p>
+<p><code>getRenderOffset</code>&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x88AB;&#x7528;&#x6765;&#x201C;translate&#x201D;&#x6E32;&#x67D3;&#x5B9E;&#x4F53;&#x7528;&#x7684;<code>PoseStack</code>&#x3002;&#x56E0;&#x4E3A;&#x672B;&#x5F71;&#x4EBA;&#x6124;&#x6012;&#x65F6;&#x8EAB;&#x4F53;&#x4F1A;&#x6296;&#x52A8;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x91CD;&#x5199;&#x6B64;&#x65B9;&#x6CD5;&#x3002;  </p>
 <p>&#x672C;&#x8282;&#x7684;&#x5185;&#x5BB9;&#x5C31;&#x5230;&#x6B64;&#x4E3A;&#x6B62;&#x4E86;&#xFF0C;&#x672C;&#x7AE0;&#x7684;&#x5185;&#x5BB9;&#x4E5F;&#x5FEB;&#x8981;&#x7ED3;&#x675F;&#x4E86;&#x3002;&#x4E0B;&#x4E00;&#x8282;&#x6211;&#x4EEC;&#x518D;&#x6765;&#x8BB2;&#x4E00;&#x4E2A;&#x66F4;&#x590D;&#x6742;&#x7684;&#x8FD1;&#x6218;&#x602A;&#x7269;&#x7684;&#x5B9E;&#x4F8B;~</p>
 
                                 
@@ -759,7 +780,7 @@ leftLeg.xRot *= <span class="hljs-number">0.5F</span>;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"末影人的模型与渲染","level":"1.2.1.7","depth":3,"next":{"title":"实战2 - 食尸鬼","level":"1.2.1.8","depth":3,"path":"part1-monster/melee/actual_combat2.md","ref":"part1-monster/melee/actual_combat2.md","articles":[]},"previous":{"title":"末影人的AI","level":"1.2.1.6","depth":3,"path":"part1-monster/melee/enderman2.md","ref":"part1-monster/melee/enderman2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","chapter-fold","code","hide-element","insert-logo","katex","search-pro","sharing-plus","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":true,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 80px","url":"https://lych.top/images/polonium.png"}},"theme":"default","author":"Lych","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Polonium 1.20 实体进阶教程","language":"zh-hans","gitbook":"*","description":"给Mod开发的初学者提供一个对实体的更深入的了解"},"file":{"path":"part1-monster/melee/enderman3.md","mtime":"2023-08-04T15:22:43.152Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-22T16:44:20.583Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"末影人的模型与渲染","level":"1.2.1.7","depth":3,"next":{"title":"实战2 - 食尸鬼","level":"1.2.1.8","depth":3,"path":"part1-monster/melee/actual_combat2.md","ref":"part1-monster/melee/actual_combat2.md","articles":[]},"previous":{"title":"末影人的AI","level":"1.2.1.6","depth":3,"path":"part1-monster/melee/enderman2.md","ref":"part1-monster/melee/enderman2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","chapter-fold","code","hide-element","insert-logo","katex","search-pro","sharing-plus","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":true,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 80px","url":"https://lych.top/images/polonium.png"}},"theme":"default","author":"Lych","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Polonium 1.20 实体进阶教程","language":"zh-hans","gitbook":"*","description":"给Mod开发的初学者提供一个对实体的更深入的了解"},"file":{"path":"part1-monster/melee/enderman3.md","mtime":"2023-11-25T12:38:56.202Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-11-25T14:44:08.091Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

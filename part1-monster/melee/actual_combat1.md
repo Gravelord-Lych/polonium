@@ -18,7 +18,7 @@
 ---
 
 ### 参考步骤
-首先创建ReinforcementZombie类，因为强化僵尸是一种特殊的僵尸，所以继承Zombie类。  
+首先创建`ReinforcementZombie`类，因为强化僵尸是一种特殊的僵尸，所以继承`Zombie`类。  
 ```java
 public class ReinforcedZombie extends Zombie {
     public ReinforcedZombie(EntityType<? extends ReinforcedZombie> type, Level level) {
@@ -26,20 +26,20 @@ public class ReinforcedZombie extends Zombie {
     }
 }
 ```
-以及createAttributes方法。  
+以及`createAttributes`方法。  
 ```java
 public static AttributeSupplier.Builder createAttributes() {
     return Zombie.createAttributes().add(Attributes.MAX_HEALTH, 40);
 }
 ```
-因为“强化僵尸的生命值低于（<）最大生命值的一半时，在阳光下不会燃烧”，所以重写isSunSensitive方法。
+因为“强化僵尸的生命值低于（<）最大生命值的一半时，在阳光下不会燃烧”，所以重写`isSunSensitive`方法。
 ```java
 @Override
 protected boolean isSunSensitive() {
     return getHealth() >= getMaxHealth() * 0.5F;
 }
 ```  
-然后重写doHurtTarget方法，实现添加缓慢II的效果。
+然后重写`doHurtTarget`方法，实现添加缓慢II的效果。
 ```java
 @Override
 public boolean doHurtTarget(Entity target) {
@@ -50,7 +50,7 @@ public boolean doHurtTarget(Entity target) {
     return hurt;
 }
 ```
-这里我们通过调用addEffect方法并实例化了一个MobEffectInstance，给非怪物生物添加了20s的缓慢II效果（MobEffectInstance构造方法中的第三个参数是“倍率”而非等级，而**倍率比等级小1**）。  
+这里我们通过调用`addEffect`方法并实例化了一个`MobEffectInstance`，给非怪物生物添加了20s的缓慢II效果（`MobEffectInstance`构造方法中的第三个参数是“倍率”而非等级，而**倍率比等级小1**）。  
 比较复杂的是要求5，我们先**用一个成员变量保存剩余的尝试生成增援的次数**。
 ```java
 private static final String AIDS_REMAINING = "aids_remaining";
@@ -78,7 +78,7 @@ public void readAdditionalSaveData(CompoundTag tag) {
     }
 }
 ```
-根据要求5，直接使用Attributes.SPAWN_REINFORCEMENTS_CHANCE来控制增援的生成是不行的。我们选择**用事件监听器，并监听ZombieEvent.SummonAidEvent**。
+根据要求5，直接使用`Attributes.SPAWN_REINFORCEMENTS_CHANCE`来控制增援的生成是不行的。我们选择**用事件监听器，并监听ZombieEvent.SummonAidEvent**。
 ```java
 @Mod.EventBusSubscriber(modid = Polonium.MOD_ID)
 public final class EntityEventListener {
@@ -199,7 +199,7 @@ public final class ModModelLayers {
     }
 }
 ```
-别忘了注册实体渲染器以及LayerDefinition。
+别忘了注册实体渲染器以及`LayerDefinition`。
 ```java
 @Mod.EventBusSubscriber(modid = Polonium.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModEntityRenderers {

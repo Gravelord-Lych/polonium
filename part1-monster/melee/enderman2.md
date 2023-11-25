@@ -1,8 +1,8 @@
 # 末影人的AI
 
-接下来到了末影人的AI。因为末影人的行为较简单，所以用Goal系统已经足够。因为这一节属于末影人部分，所以本节的内容以分析末影人**特有**的AI为主，其余的通用AI以后找机会再讲吧~  
+接下来到了末影人的AI。因为末影人的行为较简单，所以用`Goal`系统已经足够。因为这一节属于末影人部分，所以本节的内容以分析末影人**特有**的AI为主，其余的通用AI以后找机会再讲吧~  
 
-下面来看registerGoals方法：  
+下面来看`registerGoals`方法：  
 ```java
 @Override
 protected void registerGoals() {
@@ -31,7 +31,7 @@ protected void registerGoals() {
     targetSelector.addGoal(1, new EnderMan.EndermanLookForPlayerGoal(this, this::isAngryAt));
 }
 ```
-我们先看EndermanFreezeWhenLookedAt这个类。
+我们先看`EndermanFreezeWhenLookedAt`这个类。
 ```java
 static class EndermanFreezeWhenLookedAt extends Goal {
     private final EnderMan enderman;
@@ -178,12 +178,12 @@ static class EndermanTakeBlockGoal extends Goal {
 ```
 _可以发现，`ForgeEventFactory.getMobGriefingEvent(enderman.level(), enderman)`总是在canUse中被调用。这首先是因为**GameRule只是标签**，在操作前一定要确认GameRule允许你的行为，其次也因为**Forge提供了EntityMobGriefingEvent这一事件**。如果Forge有相关的事件（例如上面有EntityMobGriefingEvent和EntityPlaceEvent），不要忘记直接或间接post它们。_  
 
-EndermanLeaveBlockGoal相对容易理解一些。每两刻如果AI可用，首先会生成一个随机方块坐标，然后检查这个方块坐标是否可以放下手中的方块。如果可以，那么canContinueToUse就会返回false，这个AI就会stop，否则这个AI就会继续运行并寻找方块。  
+`EndermanLeaveBlockGoal`相对容易理解一些。每两刻如果AI可用，首先会生成一个随机方块坐标，然后检查这个方块坐标是否可以放下手中的方块。如果可以，那么`canContinueToUse`就会返回`false`，这个AI就会`stop`，否则这个AI就会继续运行并寻找方块。  
 
-EndermanTakeBlockGoal也用了类似的机制，但是该AI被“触发”的概率更大（因为搬起方块更难找到合适的，有可搬运方块的坐标）。  
+`EndermanTakeBlockGoal`也用了类似的机制，但是该AI被“触发”的概率更大（因为搬起方块更难找到合适的，有可搬运方块的坐标）。  
 
-提一下EndermanTakeBlockGoal用到的HitResult（旧称RayTraceResult），不论是用于描述指向的方块的BlockHitResult，还是用于描述指向的实体的EntityHitResult，使用频率都很高。在这个AI中的作用，则是判断末影人坐标到尝试搬起方块的坐标间是否有障碍。  
-下表对比了BlockHitResult与EntityHitResult的一些区别：  
+提一下`EndermanTakeBlockGoal`用到的`HitResult`（旧称`RayTraceResult`），不论是用于描述指向的方块的`BlockHitResult`，还是用于描述指向的实体的`EntityHitResult`，使用频率都很高。在这个AI中的作用，则是判断末影人坐标到尝试搬起方块的坐标间是否有障碍。  
+下表对比了`BlockHitResult`与`EntityHitResult`的一些区别：  
 
 |      类别      | BlockHitResult | EntityHitResult |
 |:--------------:|:------------------:|:-------------------:|
@@ -191,7 +191,7 @@ EndermanTakeBlockGoal也用了类似的机制，但是该AI被“触发”的概
 |    用途举例    |         方块的放置（如在地上放置草方块）  |         与实体的交互（如用骨头喂狼）             |
 | 一般的获取方式 |        Level类的clip实例方法            |         ProjectileUtil类中的一系列静态方法        |
 
-最后是代码最长的AI，EndermanLookForPlayerGoal。Wiki上这样写：_“玩家在64格距离内注视末影人的头部达到5游戏刻（0.25秒）也会激怒它们。”_，这是怎么实现的呢？
+最后是代码最长的AI，`EndermanLookForPlayerGoal`。Wiki上这样写：_“玩家在64格距离内注视末影人的头部达到5游戏刻（0.25秒）也会激怒它们。”_，这是怎么实现的呢？
 ```java
 static class EndermanLookForPlayerGoal extends NearestAttackableTargetGoal<Player> {
     private final EnderMan enderman;
@@ -283,6 +283,6 @@ static class EndermanLookForPlayerGoal extends NearestAttackableTargetGoal<Playe
     }
 }
 ```
-EndermanLookForPlayerGoal中**先用pendingTarget临时记录了待定的攻击目标**，等到注视5游戏刻后，再将其设置为真正的攻击目标。注意canUse被重写了，也就是说只要附近有玩家，这个AI就会start。
+`EndermanLookForPlayerGoal`中**先用pendingTarget临时记录了待定的攻击目标**，等到注视5游戏刻后，再将其设置为真正的攻击目标。注意`canUse`被重写了，也就是说只要附近有玩家，这个AI就会“start”。
 
 本节的内容就到此为止了，下一节将会简单讲一下末影人的模型与渲染~

@@ -19,7 +19,7 @@
 ---
 
 ### 参考步骤
-先是Ghoul类（此处未展示音效部分）。
+先是`Ghoul`类（此处未展示音效部分）。
 ```java
 public class Ghoul extends Monster {
     public Ghoul(EntityType<? extends Monster> type, Level level) {
@@ -64,9 +64,9 @@ public class Ghoul extends Monster {
     }
 }
 ```
-Ghoul类的内容不多，注意到这里定义了一个isHighHealth方法，为达到要求4和5提供便利，同时在registerGoals方法内（第17，19，20行）注册了3个AI，用来达到要求6。  
+`Ghoul`类的内容不多，注意到这里定义了一个`isHighHealth`方法，为达到要求4和5提供便利，同时在`registerGoals`方法内（第17，19，20行）注册了3个AI，用来达到要求6。  
 
-下面来看此处为了达到要求2而重写的aiStep方法。
+下面来看此处为了达到要求2而重写的`aiStep`方法。
 ```java
 @Override
 public void aiStep() {
@@ -80,9 +80,9 @@ public void aiStep() {
     }
 }
 ```
-此处用表达式`tickCount % 20 == 0`来判断是否需要回血。tickCount在实体被更新时会每tick自增一次，所以每20个游戏刻该表达式的值会有1刻为true。
+此处用表达式`tickCount % 20 == 0`来判断是否需要回血。`tickCount`在实体被更新时会每tick自增一次，所以每20个游戏刻该表达式的值会有1刻为true。
 
-然后是我们新写的AI——GhoulTargetAllMobsGoal。内容很简单，只是比原版的NearestAttackableTargetGoal多了一个判断。
+然后是我们新写的AI——`GhoulTargetAllMobsGoal`。内容很简单，只是比原版的`NearestAttackableTargetGoal`多了一个判断。
 ```java
 public class GhoulTargetAllMobsGoal extends NearestAttackableTargetGoal<Mob> {
     public GhoulTargetAllMobsGoal(Ghoul ghoul) {
@@ -96,7 +96,7 @@ public class GhoulTargetAllMobsGoal extends NearestAttackableTargetGoal<Mob> {
     }
 }
 ```
-要求3、5可以用事件监听器来达到。下面是实战1中提到的EntityEventListener类里的新增内容。
+要求3、5可以用事件监听器来达到。下面是实战1中提到的`EntityEventListener`类里的新增内容。
 ```java
 @SubscribeEvent
 public static void onLivingDeath(LivingDeathEvent event) {

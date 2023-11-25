@@ -18,16 +18,16 @@
 public class Zombie extends Monster {}
 public abstract class Monster extends PathfinderMob implements Enemy {}
 ```
-其中PathFinderMob在普通的Mob的基础上，添加了拴绳相关的行为（重写了tickLeash()方法）
-而Enemy接口，则是在**写任何怪物时都必须直接或间接实现的一个标记接口**。
+其中`PathFinderMob`在普通的`Mob`的基础上，添加了拴绳相关的行为（重写了`tickLeash()`方法）
+而`Enemy`接口，则是在**写任何怪物时都必须直接或间接实现的一个标记接口**。
 
-具体来说，Minecraft对实现Enemy接口的实体（以下简称Enemy）规定了一些特殊的性质与行为。例如：
+具体来说，Minecraft对实现`Enemy`接口的实体（以下简称Enemy）规定了一些特殊的性质与行为。例如：
 - 铁傀儡会主动攻击Enemy
 - Enemy不能被栓绳牵引
 - 潮涌核心会对Enemy造成伤害
 - ......
 
-相较于Enemy，Monster实际上是可继承可不继承的，因为Monster类中只重写了一些方法，比如isPreventingPlayerRest(Player)，并更改了一些音效（使用敌对生物的音效）
+相较于`Enemy`接口，`Monster`实际上是可继承可不继承的，因为`Monster`类中只重写了一些方法，比如`isPreventingPlayerRest(Player)`，并更改了一些音效（使用敌对生物的音效）
 
 接下来看下面的常量与变量
 ```java
@@ -53,7 +53,7 @@ private int inWaterTime;
 // 僵尸转化为溺尸（或尸壳转化为僵尸）剩余的时间
 private int conversionTime;
 ```
-大家应该知道EntityDataAccessor（原名DataParameter）具有在服务端与客户端之间自动同步数据的功能，不过当数据**无需同步**时，使用EntityDataAccessor却是多余的。在上面的例子中，小僵尸和僵尸的**模型不同**，但**僵尸的尺寸却是在服务端决定的**，所以我们需要同步数据，在僵尸转化为溺尸时，客户端**只需要知道是否开始了转化**（正在转化的僵尸会颤抖），**不需要知道僵尸泡在水里的时间和转化剩余的时间**，因此inWaterTime和conversionTime并没有同步，只同步了DATA_DROWNED_CONVERSION_ID。还有，不要忘记在defineSynchedData方法或实体的构造方法中定义EntityDataAccessor。
+大家应该知道`EntityDataAccessor`（原名DataParameter）具有在服务端与客户端之间自动同步数据的功能，不过当数据**无需同步**时，使用`EntityDataAccessor`却是多余的。在上面的例子中，小僵尸和僵尸的**模型不同**，但**僵尸的尺寸却是在服务端决定的**，所以我们需要同步数据，在僵尸转化为溺尸时，客户端**只需要知道是否开始了转化**（正在转化的僵尸会颤抖），**不需要知道僵尸泡在水里的时间和转化剩余的时间**，因此`inWaterTime`和`conversionTime`并没有同步，只同步了`DATA_DROWNED_CONVERSION_ID`。还有，不要忘记在`defineSynchedData`方法或实体的构造方法中定义`EntityDataAccessor`。
 
 同时我们还要留意到以下关于僵尸体型设置的细节：
 ```java
@@ -86,9 +86,9 @@ public int getExperienceReward() {
     return super.getExperienceReward();
 }
 ```
-首先要留意到setBaby方法不仅仅是设置了DATA_BABY_ID的值，而是在这之后还进行了这样一步：移除僵尸身上的SPEED_MODIFIER_BABY，如果僵尸是小僵尸，就给该僵尸**临时**添加这个修饰符。AttributeInstance类中还有addPermanentModifier方法（这个方法添加的修饰符将会保存到实体的NBT中），但因为setBaby方法还会在readAdditionalSaveData方法中被调用，因此不需要添加到实体的永久修饰符中。
+首先要留意到`setBaby`方法不仅仅是设置了`DATA_BABY_ID`的值，而是在这之后还进行了这样一步：移除僵尸身上的`SPEED_MODIFIER_BABY`，如果僵尸是小僵尸，就给该僵尸**临时**添加这个修饰符。`AttributeInstance`类中还有`addPermanentModifier`方法（这个方法添加的修饰符将会保存到实体的NBT中），但因为`setBaby`方法还会在`readAdditionalSaveData`方法中被调用，因此不需要添加到实体的永久修饰符中。
 
-其次还要注意onSyncedDataUpdated方法，在DATA_BABY_ID改变后，实体的尺寸也要在客户端随之改变，因此要调用refreshDimensions方法。
+其次还要注意`onSyncedDataUpdated`方法，在`DATA_BABY_ID`改变后，实体的尺寸也要在客户端随之改变，因此要调用`refreshDimensions`方法。
 
 下面是僵尸的AI与属性注册：
 ```java
@@ -128,12 +128,12 @@ public boolean canBreakDoors() {
     return canBreakDoors;
 }
 ```
-如果你对Mob的AI不是很熟悉，推荐阅读[这篇教程](https://www.mcbbs.net/thread-1285618-1-1.html)（当然本文中不会涉及到Brain）。该文章中的后记也很好地解释了为什么大多数Boss都不会使用Goal和Brain。  
+如果你对Mob的AI不是很熟悉，推荐阅读[这篇教程](https://www.mcbbs.net/thread-1285618-1-1.html)（当然本文中不会涉及到`Brain`）。该文章中的后记也很好地解释了为什么大多数Boss都不会使用`Goal`和`Brain`。  
 
-不难发现僵尸在注册AI的registerGoals方法中调用了addBehaviourGoals方法，这是一种多态（在Husk等Zombie的子类中将会重写这个方法），在Zombie类中大多数被定义为protected的方法都用到了多态的思想。
+不难发现僵尸在注册AI的`registerGoals`方法中调用了`addBehaviourGoals`方法，这是一种多态（在`Husk`等`Zombie`的子类中将会重写这个方法），在`Zombie`类中大多数被定义为`protected`的方法都用到了多态的思想。
 注意这里**没有注册breakDoorGoal**，我们马上会讲到它。  
 
-接下来是setCanBreakDoors方法。setCanBreakDoors方法将在僵尸的finalizeSpawn中被调用，而后者是在Mob即将生成完毕时会被调用的方法，这个我们后面再讲。
+接下来是`setCanBreakDoors`方法。`setCanBreakDoors`方法将在僵尸的`finalizeSpawn`中被调用，而后者是在`Mob`即将生成完毕时会被调用的方法，这个我们后面再讲。
 ```java
 public void setCanBreakDoors(boolean canBreakDoors) {
 //  如果Mob的一个实例mob使用的PathNavigation是GroundPathNavigation的实例（instanceof GroundPathNavigation），GoalUtils.hasGroundPathNavigation(mob) 就会返回true
@@ -158,9 +158,9 @@ protected boolean supportsBreakDoorGoal() {
     return true;
 }
 ```
-我们发现，实际注册与更新了breakDoorGoal的位置就是在setCanBreakDoors这个方法里。这说明了**Mob的AI的注册与更新不只局限在registerGoals中**（但注意isClientSide的判断，不要在客户端注册与更新实体AI）。  
+我们发现，实际注册与更新了`breakDoorGoal`的位置就是在`setCanBreakDoors`这个方法里。这说明了**Mob的AI的注册与更新不只局限在registerGoals中**（但注意`isClientSide`的判断，不要在客户端注册与更新实体AI）。  
 
-接下来一部分是实体的更新，**实体每tick的更新极其重要**，不论是Mob的AI、寻路系统，还是弹射物的飞行，都在实体每tick的更新中完成。
+接下来一部分是实体的更新，**实体每tick的更新极其重要**，不论是`Mob`的AI、寻路系统，还是弹射物的飞行，都在实体每tick的更新中完成。
 ```java
 @Override
 public void tick() {
@@ -240,10 +240,10 @@ public void aiStep() {
     super.aiStep();
 }
 ```
-如果一个LivingEntity未被移除，那么这个实体的aiStep方法会在LivingEntity的tick方法中被调用（即每tick调用1次），在调用完aiStep后，将会更新实体的旋转角度。  
-这里重写的tick方法中，主要更新了僵尸的转化（尸壳->僵尸->溺尸）；而这里重写的aiStep方法，使僵尸在阳光下着火（同样的逻辑在AbstractSkeleton里，以几乎一样的代码，又出现了一次...）。  
+如果一个`LivingEntity`未被移除，那么这个实体的`aiStep`方法会在`LivingEntity`的`tick`方法中被调用（即每tick调用1次），在调用完`aiStep`后，将会更新实体的旋转角度。  
+这里重写的`tick`方法中，主要更新了僵尸的转化（尸壳->僵尸->溺尸）；而这里重写的`aiStep`方法，使僵尸在阳光下着火（同样的逻辑在`AbstractSkeleton`里，以几乎一样的代码，又出现了一次...）。  
 
-然后就到了分别与被打与打人有关的hurt和doHurtTarget方法，这两个方法在复杂实体的开发中也非常常用。
+然后就到了分别与受击和攻击有关的`hurt`和`doHurtTarget`方法，这两个方法在复杂实体的开发中也非常常用。
 ```java
 @Override
 public boolean hurt(DamageSource source, float amount) {
@@ -323,7 +323,7 @@ public boolean doHurtTarget(Entity target) {
     return success;
 }
 ```
-重写hurt方法让僵尸有了呼叫增援的能力，简单说一下如何实现僵尸的呼叫增援，这个思路也是不少召唤型Boss所采用的。
+重写`hurt`方法让僵尸有了呼叫增援的能力，简单说一下如何实现僵尸的呼叫增援，这个思路也是不少召唤型Boss所采用的。
 
 1. 获取攻击的目标
 2. 判断是否满足呼叫增援的条件
@@ -331,13 +331,13 @@ public boolean doHurtTarget(Entity target) {
 
 其中**重复尝试的思想是一个重要的思想**，我们在1.2.1.5节还会去讲。往往当你苦于如何生成满足要求的随机坐标时，它会派上大用场。植物魔法中[盖亚守护者的随机传送位置的选定](https://github.com/VazkiiMods/Botania/blob/1.20.x/Xplat/src/main/java/vazkii/botania/common/entity/GaiaGuardianEntity.java)（第917行），就用到了这种思想。  
 
-重写doHurtTarget方法主要目的是为了让僵尸能在一定难度下传火给僵尸攻击的目标。这里的代码不难理解，关于区域难度的计算不是本教程的重点，如果你感兴趣，可以阅读DifficultyInstance类的源代码。
+重写`doHurtTarget`方法主要目的是为了让僵尸能在一定难度下传火给僵尸攻击的目标。这里的代码不难理解，关于区域难度的计算不是本教程的重点，如果你感兴趣，可以阅读`DifficultyInstance`类的源代码。
 
-doHurtTarget和hurt方法都有返回值，如果成功造成了伤害（doHurtTarget）或受到了伤害（hurt），就应该返回true，否则一般返回false
+`doHurtTarget`和`hurt`方法都有返回值，如果成功造成了伤害（`doHurtTarget`）或受到了伤害（`hurt`），就应该返回true，否则一般返回false
 
-_还有一点需要注意，不管是上文所述的代码高度重复，还是这部分出现的if语句中使用长条件，都是不好的开发习惯，需要**尽量避免**。毕竟开发Mod不是参加OI，要保证代码的可读性。_
+_还有一点需要注意，不管是上文所述的代码高度重复，还是这部分出现的if语句中使用长条件，都是不好的开发习惯，需要**尽量避免**。毕竟开发Mod不是参加OI（这种算法竞赛中只要你能AC，你全用单字母变量名与函数名都没人管你），要保证代码的可读性。_
 
-接着是killedEntity方法，这个方法虽不经常被重写，但对于僵尸依然重要。
+接着是`killedEntity`方法，这个方法虽不经常被重写，但对于僵尸依然重要。
 ```java
 @Override
 public boolean killedEntity(ServerLevel level, LivingEntity entity) {
@@ -370,7 +370,7 @@ public boolean killedEntity(ServerLevel level, LivingEntity entity) {
 ```
 Minecraft中并没有很好的复制实体数据到另一个实体的方法，因此上面的代码中出现了许多`a.set(b.get())`的操作。  
 
-注意这个方法也有返回值，如果返回了false（MC里还没这样干过），那么GameEvent.ENTITY_DIE（GameEvent与新版本的“声音”有关）就不会被广播，实体也不会有任何掉落物（包括凋零玫瑰）。
+注意这个方法也有返回值，如果返回了`false`（MC里还没这样干过），那么`GameEvent.ENTITY_DIE`（`GameEvent`与新版本的“声音”有关）就不会被广播，实体也不会有任何掉落物（包括凋零玫瑰）。
 
 然后是数据保存与加载。
 ```java
@@ -395,10 +395,10 @@ public void readAdditionalSaveData(CompoundTag tag) {
     }
 }
 ```
-数据保存的部分在较基础的教程中都有涉及，因此不做过多的赘述，等到后面讲到较复杂的数据结构（如List，Map）的保存时，再讲保存方式。  
-需要注意的是，如果一个成员变量的初始值不是默认的初始值（0，false，null）或者该成员变量在addAdditionalSaveData保存时使用了条件（eg.`if (a != null) tag.put(a);`），那么在readAdditionalSaveData中就**必须进行tag.contains（UUID可以用tag.hasUUID）的检查**（否则一调用完这个方法就会给你换成0，false或null，甚至给你抛一个NPE）。
+数据保存的部分在较基础的教程中都有涉及，因此不做过多的赘述，等到后面如果讲到较复杂的数据结构（如`List`，`Map`）的保存时，再讲保存方式。  
+需要注意的是，如果一个成员变量的初始值不是默认的初始值（`0`，`false`，`null`）或者该成员变量在`addAdditionalSaveData`保存时使用了条件（eg.`if (a != null) tag.put(a);`），那么在`readAdditionalSaveData`中就**必须进行tag.contains（UUID可以用tag.hasUUID）的检查**（否则一调用完这个方法就会给你换成0，false或null，甚至给你抛一个NPE）。
 
-最后一个重点了！finalizeSpawn方法。
+最后一个重点了！`finalizeSpawn`方法。
 ```java
 @Nullable
 @Override
@@ -505,11 +505,11 @@ protected void populateDefaultEquipmentSlots(RandomSource random, DifficultyInst
     }
 }
 ```
-finalizeSpawn方法为Mob的最终生成做了最后的调整。Zombie类重写了这个方法，使僵尸在生成时获得了加强。其中特别容易遗忘的一点是，populateDefaultEquipmentSlots（一般用来给予Mob生成时的装备）和populateDefaultEquipmentEnchantments（一般用来给Mob生成时的装备附魔）两个方法，虽然在Mob类中就声明了，但是**必须在finalizeSpawn方法手动调用**。举一个有关finalizeSpawn方法用途的例子：蜘蛛生成时所携带的药水效果，便是在这个方法中添加的。
+`finalizeSpawn`方法为`Mob`的最终生成做了最后的调整。`Zombie`类重写了这个方法，使僵尸在生成时获得了加强。其中特别容易遗忘的一点是，`populateDefaultEquipmentSlots`（一般用来给予Mob生成时的装备）和`populateDefaultEquipmentEnchantments`（一般用来给Mob生成时的装备附魔）两个方法，虽然在`Mob`类中就声明了，但是**必须在finalizeSpawn方法手动调用**。举一个有关`finalizeSpawn`方法用途的例子：蜘蛛生成时所携带的药水效果，便是在这个方法中添加的。
 
 _注意事项：forge明确说明：在目前的forge版本中，这个方法**只能被重写**，**直接调用finalizeSpawn方法会导致StackOverflowError**！因此**一定要使用ForgeEventFactory.onFinalizeSpawn**！_
 
-然后是dropCustomDeathLoot，本节的内容也接近尾声了。
+然后是`dropCustomDeathLoot`，本节的内容也接近尾声了。
 ```java
 @Override
 protected void dropCustomDeathLoot(DamageSource source, int lootingLevel, boolean killedByPlayer) {
@@ -530,7 +530,7 @@ protected ItemStack getSkull() {
     return new ItemStack(Items.ZOMBIE_HEAD);
 }
 ```
-dropCustomDeathLoot主要让LivingEntity可以掉落**较复杂的，常规战利品表难以实现的**掉落物（比如被特殊的（高压且没炸掉过头的）苦力怕炸死时会掉落头颅），当然能用战利品表就用战利品表，不要掉什么都用dropCustomDeathLoot来实现。
+`dropCustomDeathLoot`主要让`LivingEntity`可以掉落**较复杂的，常规战利品表难以实现的**掉落物（比如被特殊的（高压且没炸掉过头的）苦力怕炸死时会掉落头颅），当然能用战利品表就用战利品表，不要掉什么都用`dropCustomDeathLoot`来实现。
 
 最后是一些杂项。
 ```java
@@ -583,12 +583,12 @@ public double getMyRidingOffset() {
     return isBaby() ? 0.0D : -0.45D;
 }
 ```
-简单提及一下僵尸实体类型（EntityType）的注册  
+简单提及一下僵尸实体类型（`EntityType`）的注册  
 ```java
 public static final EntityType<Zombie> ZOMBIE = register("zombie", EntityType.Builder.<Zombie>of(Zombie::new, MobCategory.MONSTER).sized(0.6F, 1.95F).clientTrackingRange(8));
 ```
 这部分理解难度不大，并且在基础的教程中也提到了一部分，不过尤其要注意一点：**千万不要忽视这些细节**！许多优秀的Mod，便优秀在对细节的重视。  
-顺便说一下clientTrackingRange（单位为区块），**当一个实体在这个追踪距离内时，这个实体将会被更新**。一般战场面积越大的实体，clientTrackingRange越大（比如末影水晶是16）
+顺便说一下`clientTrackingRange`（单位为区块），**当一个实体在这个追踪距离内时，这个实体将会被更新**。一般“战场”面积越大的实体，`clientTrackingRange`越大（比如末影水晶是16）
 
 僵尸的行为和底层实现便分析到这里了。虽然僵尸看上去很容易实现（也好打），可是与僵尸相关的实现细节却不少，需要一段时间才能理清楚。  
 

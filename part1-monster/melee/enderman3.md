@@ -1,6 +1,6 @@
 #末影人的模型与渲染  
 
-本节将主要分析末影人的模型的特殊之处，以及末影人的渲染器中使用的Layer*（RenderLayer，不是旧版生物群系使用的Layer）*
+本节将主要分析末影人的模型的特殊之处，以及末影人的渲染器中使用的`Layer`*（`RenderLayer`，不是旧版生物群系使用的`Layer`）*
 
 先是成员变量与构造方法。
 ```java
@@ -18,7 +18,7 @@ public class EndermanModel<T extends LivingEntity> extends HumanoidModel<T> {
 ```
 因为末影人有2组不同的状态（生气-不生气，搬着方块-空手），所以模型中有两个公共且可变的boolean成员变量，用来控制末影人的模型。*实际开发中，不提倡这种暴露成员变量的方式，尽量使用getter和setter。*  
 
-然后是静态方法createBodyLayer，因为末影人的模型与标准的“人类模型”不同，所以要重新写一个LayerDefinition。
+然后是静态方法`createBodyLayer`，因为末影人的模型与标准的“人类模型”不同，所以要重新写一个`LayerDefinition`。
 ```java
 public static LayerDefinition createBodyLayer() {
     MeshDefinition meshDef = HumanoidModel.createMesh(CubeDeformation.NONE, -14.0F);
@@ -42,9 +42,9 @@ public static LayerDefinition createBodyLayer() {
     return LayerDefinition.create(meshDef, 64, 32); // 模型使用的材质的尺寸
 }
 ```
-这一部分声明了末影人使用的模型，虽然比较抽象，但理解难度不是特别大。**只要你的生物的模型与你继承的父类提供的模型有出入**（例如末影人的模型和一般的HumanoidModel不同）**，就需要重新写一个静态方法，用来创建LayerDefinition**。同时别忘了注册LayerDefinition。  
+这一部分声明了末影人使用的模型，虽然比较抽象，但理解难度不是特别大。**只要你的生物的模型与你继承的父类提供的模型有出入**（例如末影人的模型和一般的`HumanoidModel`不同）**，就需要重新写一个静态方法，用来创建LayerDefinition**。同时别忘了注册`LayerDefinition`。  
 
-然后是setUpAnim，末影人的手臂的动画与other人形怪物不一样，所以需要重写这个方法。为方便阅读，调换了可调换的语句并删除了例如`x -= 0`的无意义的部分。
+然后是`setUpAnim`，末影人的手臂的动画与other人形怪物不一样，所以需要重写这个方法。为方便阅读，调换了可调换的语句并删除了例如`x -= 0`的无意义的部分。
 ```java
 @Override
 public void setupAnim(T enderman, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -111,7 +111,7 @@ public void setupAnim(T enderman, float limbSwing, float limbSwingAmount, float 
     }    
 }
 ```
-首先是模型box的重置。之所以要这样重置一遍，是因为末影人的模型和一般的HumanoidModel不同，因此box的位置也会有差异，需要在**调用super方法后**重置。  
+首先是模型box的重置。之所以要这样重置一遍，是因为末影人的模型和一般的`HumanoidModel`不同，因此box的位置也会有差异，需要在**调用super方法后**重置。  
 ```java
 head.visible = true;
 body.xRot = 0.0F;
@@ -217,9 +217,9 @@ public class EndermanRenderer extends MobRenderer<EnderMan, EndermanModel<EnderM
     }
 }
 ```
-构造方法中添加了EnderEyesLayer与CarriedBlockLayer这两个Layer。EnderEyesLayer继承了EyesLayer，可以以特殊的RenderType渲染眼睛，同时用EyesLayer添加的眼睛不会因为实体隐身而消失。  
+构造方法中添加了`EnderEyesLayer`与`CarriedBlockLayer`这两个Layer。`EnderEyesLayer`继承了`EyesLayer`，可以以特殊的`RenderType`渲染眼睛，同时用`EyesLayer`添加的眼睛不会因为实体隐身而消失。  
 
-想知道这是为什么吗？先来看EyesLayer的render方法。
+想知道这是为什么吗？先来看`EyesLayer`的`render`方法。
 ```java
 @Override
 public void render(PoseStack stack, MultiBufferSource source, int packedLight, T entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -227,7 +227,7 @@ public void render(PoseStack stack, MultiBufferSource source, int packedLight, T
     getParentModel().renderToBuffer(stack, consumer, 15728640, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
 }
 ```
-而游戏中狼却不会在隐身时显示项圈，对比一下WolfCollarLayer的片段。
+而游戏中狼却不会在隐身时显示项圈，对比一下`WolfCollarLayer`的片段。
 ```java
 @Override
 public void render(PoseStack stack, MultiBufferSource source, int packedLight, Wolf wolf, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -237,9 +237,9 @@ public void render(PoseStack stack, MultiBufferSource source, int packedLight, W
     }
 }
 ```
-真相就大白了！WolfCollarLayer中**判断了狼是否隐身**，如果隐身就不渲染项圈，所以隐身的狼的项圈是看不见的。EyesLayer中**没有判断末影人是否隐身**，因此隐身的末影人眼睛可见。
+真相就大白了！`WolfCollarLayer`中**判断了狼是否隐身**，如果隐身就不渲染项圈，所以隐身的狼的项圈是看不见的。`EyesLayer`中**没有判断末影人是否隐身**，因此隐身的末影人眼睛可见。
 
-CarriedBlockLayer则用rotate, translate, scale等操作渲染了末影人手上拿着的方块，并将它移动到正确的位置。这个方法如下：
+`CarriedBlockLayer`则用`rotate`, `translate`, `scale`等操作渲染了末影人手上拿着的方块，并将它移动到正确的位置。这个方法如下：
 ```java
 @Override
 public void render(PoseStack stack, MultiBufferSource source, int packedLight, Wolf wolf, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -258,9 +258,9 @@ public void render(PoseStack stack, MultiBufferSource source, int packedLight, W
     }
 }
 ```
-应该不难理解其中的内容，如果对PoseStack（旧称MatrixStack）的操作不太熟悉，可以去阅读相关的渲染方面的教程，此处不做过多赘述。
+应该不难理解其中的内容，如果对`PoseStack`（旧称`MatrixStack`）的操作不太熟悉，可以去阅读相关的渲染方面的教程，此处不做过多赘述。
 
-接下来就没有什么难点了。然后来看render方法。
+接下来就没有什么难点了。然后来看`render`方法。
 ```java
 @Override
 public void render(EnderMan enderman, float rotation, float delta, PoseStack stack, MultiBufferSource bufferSource, int packedLight) {
@@ -273,7 +273,7 @@ public void render(EnderMan enderman, float rotation, float delta, PoseStack sta
 ```
 render方法重写的内容很简单，只是根据末影人的状态更新了模型的`carrying`和`creepy`两个boolean的值。  
 
-最后要讲的就是getRenderOffset方法。
+最后要讲的就是`getRenderOffset`方法。
 ```java
 @Override
 public Vec3 getRenderOffset(EnderMan enderman, float delta) {
@@ -284,6 +284,6 @@ public Vec3 getRenderOffset(EnderMan enderman, float delta) {
     }
 }
 ```
-getRenderOffset方法的返回值被用来translate渲染实体用的PoseStack。因为末影人愤怒时身体会抖动，所以要重写此方法。  
+`getRenderOffset`方法的返回值被用来“translate”渲染实体用的`PoseStack`。因为末影人愤怒时身体会抖动，所以要重写此方法。  
 
 本节的内容就到此为止了，本章的内容也快要结束了。下一节我们再来讲一个更复杂的近战怪物的实例~
