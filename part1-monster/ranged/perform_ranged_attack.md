@@ -1,4 +1,4 @@
-# performRangedAttack - 远击の基础
+# performRangedAttack - 远程攻击の基础
 
 有请`performRangedAttack`登场！
 
