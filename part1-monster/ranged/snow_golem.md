@@ -65,6 +65,20 @@ public void setPumpkin(boolean pumpkin) {
 }
 ```  
 
+再来看AI。
+```java
+protected void registerGoals() {
+    goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25D, 20, 10.0F));
+    goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1.0D, 1.0000001E-5F)); // 1.0000001E-5F是散步的可能性，暂时不清楚为什么不直接使用1E-5F
+    goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 6.0F));
+    goalSelector.addGoal(4, new RandomLookAroundGoal(this));
+    targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Mob.class, 10, true, false, target -> {
+       return target instanceof Enemy;
+    }));
+}
+```
+注意一下RangedAttackGoal的参数。第二个参数`speedModifier`传入了1.25，意味着雪傀儡在攻击时的速度是基础移速的125%。其余参数的含义见1.2.2.1章节。
+
 接下来是雪傀儡实现远程攻击的核心部分——`performRangedAttack`，以下的内容**至关重要**，几乎所有远程攻击的底层实现都是下面代码的变体。  
 
 ```java
