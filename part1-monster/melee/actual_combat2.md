@@ -1,4 +1,4 @@
-#实战2 - 食尸鬼
+# 实战2 - 食尸鬼
 
 本节的最后一部分是一个稍复杂的近战怪物的实例（其实这个实例也不算难）。如果在实现要求的过程中遇到困难，可以先阅读源码，自己解决问题，实在没有思路再阅读“参考步骤”部分。
 
@@ -122,8 +122,8 @@ public static void onLivingHurt(LivingHurtEvent event) {
 
 到此我们就做完了食尸鬼的全部内容（此处省略效果图）。当然在模组开发中，近战怪物在实现逻辑上都不会很复杂，而真正复杂的实体往往是那些会“法术”的怪物。未来教程的难度也会稍有增大。  
 
-[源代码（Ghoul类）](https://github.com/Gravelord-Lych/polonium-ExampleMod/blob/main/src/main/java/lych/polonium/entity/monster/Ghoul.java)  
-[源代码（GhoulTargetAllMobsGoal类）](https://github.com/Gravelord-Lych/polonium-ExampleMod/blob/main/src/main/java/lych/polonium/entity/monster/ai/GhoulTargetAllMobsGoal.java)
+[源代码（`Ghoul`类）](https://github.com/Gravelord-Lych/polonium-ExampleMod/blob/main/src/main/java/lych/polonium/entity/monster/Ghoul.java)  
+[源代码（`GhoulTargetAllMobsGoal`类）](https://github.com/Gravelord-Lych/polonium-ExampleMod/blob/main/src/main/java/lych/polonium/entity/monster/ai/GhoulTargetAllMobsGoal.java)
 
 ---
 
@@ -132,4 +132,4 @@ public static void onLivingHurt(LivingHurtEvent event) {
 - 能否让食尸鬼的生命恢复速度**随生命值减少而增大**？  
 - 能否让凋灵**不攻击食尸鬼**？（提示：想想凋灵不攻击什么类型的生物）
 - 能否让食尸鬼击杀其他生物时召唤新的食尸鬼？
-- 能否使食尸鬼只能被阳光杀死？（也就是说，只要不被阳光照射，无论自己被砍多少刀都不会死亡）  
+- 能否使食尸鬼只能被阳光杀死？（也就是说，只要不被阳光照射，无论自己被攻击多少次都不会死亡）  

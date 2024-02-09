@@ -1,4 +1,9 @@
-#实战1 - 强化僵尸
+# 实战1 - 强化僵尸
+
+***注：***
+*为避免实战部分过于复杂与偏离主题，除特殊说明外，此部分对资源包与数据包部分（如掉落物、语言文件等）不做要求，感兴趣的读者可以学习相关的资源包、数据包相关知识，以及`DataGenerator`使用教程（非必须）后自行添加。*
+
+---
 
 让我们从一个最简单的实例开始。  
 
@@ -221,13 +226,14 @@ public class ModEntityRenderers {
 ```
 到此我们就做完了强化僵尸的全部内容。  
 
-[源代码（ReinforcedZombie类）](https://github.com/Gravelord-Lych/polonium-ExampleMod/blob/main/src/main/java/lych/polonium/entity/monster/ReinforcedZombie.java)  
-[源代码（ReinforcedZombieRenderer类）](https://github.com/Gravelord-Lych/polonium-ExampleMod/blob/main/src/main/java/lych/polonium/client/renderer/ReinforcedZombieRenderer.java)
+[源代码（`ReinforcedZombie`类）](https://github.com/Gravelord-Lych/polonium-ExampleMod/blob/main/src/main/java/lych/polonium/entity/monster/ReinforcedZombie.java)  
+[源代码（`ReinforcedZombieRenderer`类）](https://github.com/Gravelord-Lych/polonium-ExampleMod/blob/main/src/main/java/lych/polonium/client/renderer/ReinforcedZombieRenderer.java)
 
 ---
 
 ### 效果图（强化僵尸的材质使用了红眼的僵尸）
-![texture](result.webp)
+*强化僵尸攻击玩家*
+![强化僵尸攻击玩家](result.webp)
 
 ---
 
