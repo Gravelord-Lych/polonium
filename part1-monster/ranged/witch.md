@@ -288,7 +288,7 @@ public void handleEntityEvent(byte id) {
 
 最后是与袭击相关的内容。
 ```java
-// 该方法中的布尔值在该方法被调用时总是传入false,原版代码中也从未用到过这个值，因此暂不明确其作用
+// 该方法中的布尔值在该方法被调用时总是传入false，原版代码中也从未用到过这个值，因此暂不明确其作用
 @Override
 public void applyRaidBuffs(int nextWave, boolean alwaysFalse) {}
 
