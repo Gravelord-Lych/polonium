@@ -192,7 +192,7 @@ if (target instanceof Raider) {
     // （2）如果不满足（1）所述的条件，并且与攻击目标的距离大于8，同时目标没有缓慢效果，则一定选择迟缓药水
     potion = Potions.SLOWNESS;
 } else if (target.getHealth() >= 8.0F && !target.hasEffect(MobEffects.POISON)) {
-    // （3）如果不满足（2）所述的条件，并且攻击目标的生命值大于8，同时目标没有中毒效果，则一定选择迟缓药水
+    // （3）如果不满足（2）所述的条件，并且攻击目标的生命值大于8，同时目标没有中毒效果，则一定选择剧毒药水
     potion = Potions.POISON;
 } else if (distance <= 3.0D && !target.hasEffect(MobEffects.WEAKNESS) && random.nextFloat() < 0.25F) {
     // （4）如果不满足（3）所述的条件，并且与攻击目标的距离小于3，同时目标没有虚弱效果，则有25%的概率选择虚弱药水
