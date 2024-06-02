@@ -128,7 +128,7 @@ public boolean canBreakDoors() {
     return canBreakDoors;
 }
 ```
-如果你对Mob的AI不是很熟悉，推荐阅读[这篇教程](https://www.mcbbs.net/thread-1285618-1-1.html)（当然本文中不会涉及到`Brain`）。该文章中的后记也很好地解释了为什么大多数Boss都不会使用`Goal`和`Brain`。  
+如果你对Mob的AI不是很熟悉，推荐阅读[这篇教程](https://izzel.io/2021/12/19/living-things/)（当然本文中不会涉及到`Brain`）。该文章中的后记也很好地解释了为什么大多数Boss都不会使用`Goal`和`Brain`。  
 
 不难发现僵尸在注册AI的`registerGoals`方法中调用了`addBehaviourGoals`方法，这是一种多态（在`Husk`等`Zombie`的子类中将会重写这个方法），在`Zombie`类中大多数被定义为`protected`的方法都用到了多态的思想。
 注意这里**没有注册breakDoorGoal**，我们马上会讲到它。  
@@ -221,7 +221,7 @@ public void aiStep() {
         boolean shouldBurn = isSunSensitive() && isSunBurnTick();
         if (shouldBurn) {
             ItemStack helmet = getItemBySlot(EquipmentSlot.HEAD);
-        //  僵尸不是鬼，只要有了头盔就可以抵抗阳光~
+        //  僵尸只要有了头盔就可以抵抗阳光~
             if (!helmet.isEmpty()) {
                 if (helmet.isDamageableItem()) {
                     helmet.setDamageValue(helmet.getDamageValue() + random.nextInt(2));
