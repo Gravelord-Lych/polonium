@@ -365,4 +365,4 @@ protected void dropCustomDeathLoot(DamageSource source, int lootingLevel, boolea
     }
 }
 ```
-本节的内容就到此为止了，下一节将分析上面说过的骷髅的两个特殊的AI。
+本节的内容就到此为止了，下一节将分析上面说过的骷髅的两个特殊的AI以及骷髅远程攻击时所特有的行为。

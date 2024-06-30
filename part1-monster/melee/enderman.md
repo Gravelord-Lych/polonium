@@ -62,7 +62,7 @@ default float getStepHeight() {
 
 然后是`setPathfindingMalus(BlockPathTypes.WATER, -1.0F);`。  
 
-MC中使用了一个**基于“可变堆内元素位置”的二叉堆**（为什么要这样设计而不使用现成的`PriorityQueue`呢？因为`Node`是可变的）的A\*寻路算法。如果你对A\*算法比较陌生，你可以看看[这篇教程](https://zhuanlan.zhihu.com/p/54510444)，或者暂时跳过下面一段内容，因为本节的重点并不是寻路算法。
+MC中使用了一个**基于“可变堆内元素位置”的二叉堆**（为什么要这样设计而不使用现成的`PriorityQueue`呢？因为`Node`是可变的）的A\*寻路算法。如果你对A\*算法比较陌生，你可以看看[这篇教程](https://zhuanlan.zhihu.com/p/54510444)，或者暂时跳过下面一段内容，因为本节的重点并不是寻路算法。如果你想更深入地了解MC中的寻路系统，[这篇文章](https://www.bilibili.com/read/cv23090029/)或许对你有帮助。
 
 `setPathfindingMalus`方法**间接地影响了NodeEvaluator（路径节点计算器）对符合BlockPathTypes.WATER类型的Node（可以理解为水上的路径节点）计算的costMalus的结果**，`Node`的`costMalus`会影响`Node`的g值。这里简要说一下第二个参数一般的取值方式（以下内容将类名`BlockPathTypes`译为“方块路径类型”）。
 - 如果你的Mob**一定需要避免某一类方块**（例如对TA有严重的危险），就把那类方块对应的方块路径类型对应的malus设置为**-1**  
@@ -227,7 +227,7 @@ boolean isLookingAtMe(Player player) {
 
 就返回true，否则返回false。  
 
-可见**良好的数学基础在Mod开发中也起着重要作用**（~~虽然我数学不好~~）。这个方法的调用位置在末影人的AI里，下节再详细讲。  
+可见**良好的数学基础在Mod开发中也起着重要作用**。这个方法的调用位置在末影人的AI里，下节再详细讲。  
 
 在进入下一个重点前，先看三个Override。
 ```java
