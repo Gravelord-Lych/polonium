@@ -24,6 +24,7 @@ public abstract class AbstractZombieModel<T extends Monster> extends HumanoidMod
     @Override
     public void setupAnim(T zombie, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         super.setupAnim(zombie, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+        // 渲染僵尸的手臂的动画
         AnimationUtils.animateZombieArms(leftArm, rightArm, isAggressive(zombie), attackTime, ageInTicks);
     }
 
@@ -33,7 +34,7 @@ public abstract class AbstractZombieModel<T extends Monster> extends HumanoidMod
 不难发现，僵尸的模型`ZombieModel`只是继承了`AbstractZombieModel`抽象类并实现了抽象方法`isAggressive`。而在`AbstractZombieModel`中，也只是在`HumanoidModel`（旧称`BipedModel`，用来提供人形的模型）的基础上调用了`AnimationUtils.animateZombieArms`方法来重写手臂的动画（僵尸的手臂不会自然下垂，攻击玩家时会双手同时攻击）。  
 ``@OnlyIn(Dist.CLIENT)``用来标记只在客户端存在的包，类，成员变量或方法等，实体模型只会在客户端用到，因此**不要省略这个注解**。
 
-然后是僵尸的渲染
+然后是僵尸的渲染。
 ```java
 @OnlyIn(Dist.CLIENT)
 public class ZombieRenderer extends AbstractZombieRenderer<Zombie, ZombieModel<Zombie>> {

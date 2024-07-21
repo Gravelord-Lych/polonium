@@ -42,7 +42,7 @@ public static LayerDefinition createBodyLayer() {
     return LayerDefinition.create(meshDef, 64, 32); // 模型使用的材质的尺寸
 }
 ```
-这一部分声明了末影人使用的模型，虽然比较抽象，但理解难度不是特别大。**只要你的生物的模型与你继承的父类提供的模型有出入**（例如末影人的模型和一般的`HumanoidModel`不同）**，就需要重新写一个静态方法，用来创建LayerDefinition**。同时别忘了注册`LayerDefinition`。  
+这一部分声明了末影人使用的模型，虽然比较抽象，但理解难度不是特别大。**只要生物的模型与继承的父类提供的模型有出入**（例如末影人的模型和一般的`HumanoidModel`不同）**，就需要重新写一个静态方法，用来创建LayerDefinition**。同时别忘了注册`LayerDefinition`。  
 
 然后是`setUpAnim`，末影人的手臂的动画与other人形怪物不一样，所以需要重写这个方法。为方便阅读，调换了可调换的语句并删除了例如`x -= 0`的无意义的部分。
 ```java
@@ -132,7 +132,7 @@ hat.zRot = head.zRot;
 rightArm.setPos(-5.0F, -12.0F, 0.0F);
 leftArm.setPos(5.0F, -12.0F, 0.0F);
 ```
-接着是x旋转角度的限制，将xRot减半并把|xRot|限制在0.4，用于**减小动作幅度**，防止末影人做出一些“出格”的动作。  
+接着是绕x轴旋转角度的限制，将`xRot`减半并把|`xRot`|限制在0.4，用于**减小动作幅度**，防止末影人做出一些“出格”的动作。  
 ```java
 rightArm.xRot *= 0.5F;
 leftArm.xRot *= 0.5F;
