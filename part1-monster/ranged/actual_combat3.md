@@ -9,7 +9,7 @@
 
 ### 要求
 1. 发射器僵尸除`Attributes.SPAWN_REINFORCEMENTS_CHANCE`以外的所有属性同普通的僵尸，而且也会在阳光下燃烧
-2. 发射器僵尸除**不会以任何形式攻击海龟与海龟蛋**外，行为与普通的僵尸一致。
+2. 发射器僵尸除**不会以任何形式攻击海龟与海龟蛋**外，行为与普通的僵尸一致
 3. 发射器僵尸对**玩家**和**铁傀儡**会**射箭**进行攻击，对**敌对生物**则只会对其**发射雪球**以进行警告  
 4. 发射器僵尸攻击时**移速降低15%**，**每2s**攻击**1次**，攻击**半径**为**10格**
 5. 当发射器僵尸感知到**自身所在的方块坐标四周有红石信号**时，**在四周有概率生成红石粒子效果**，且**每秒**恢复**1点**生命值，
@@ -32,7 +32,7 @@ Arrow arrow = new Arrow(level(), this);
 arrow.shoot(...);
 level().addFreshEntity(arrow);
 ```
-制作发射器僵尸时不需要对箭做过多处理，但是当箭由弓发射时，需要根据所持有箭的种类与弓的种类来综合决定发射出的箭的类型，这一块在后续的章节中会进行讲解。  
+制作发射器僵尸时不需要对箭做过多处理，但是当箭由弓发射时，需要根据所持有箭的种类与弓的种类来综合决定发射出的箭的类型，这一块在后续的章节中会进行讲解  
 
 - 如何获取红石信号的大小呢？去`SignalGetter`类里寻找答案吧！
 
@@ -105,7 +105,7 @@ private Projectile findProjectileFor(LivingEntity target) {
     return new Arrow(level(), this);
 }
 ```
-接下来实现要求5。此处我们在发射器僵尸被tick时，调用`hasNeighborSignal`方法进行判断。
+接下来达到要求5。此处我们在发射器僵尸被tick时，调用`hasNeighborSignal`方法进行判断。
 ```java
 @Override
 public void tick() {
@@ -218,6 +218,8 @@ public class DispenserZombieHeadLayer extends RenderLayer<DispenserZombie, Zombi
     }
 }
 ```
+最后不要忘记实体的注册。  
+
 到此我们就做完了发射器僵尸的全部内容。  
 
 [源代码（`DispenserZombie`类）](https://github.com/Gravelord-Lych/polonium-ExampleMod/blob/main/src/main/java/lych/polonium/entity/monster/DispenserZombie.java)  

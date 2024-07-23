@@ -583,7 +583,7 @@ public double getMyRidingOffset() {
     return isBaby() ? 0.0D : -0.45D;
 }
 ```
-简单提及一下僵尸实体类型（`EntityType`）的注册  
+简单提及一下僵尸实体类型（`EntityType`）的注册。  
 ```java
 public static final EntityType<Zombie> ZOMBIE = register("zombie", EntityType.Builder.<Zombie>of(Zombie::new, MobCategory.MONSTER).sized(0.6F, 1.95F).clientTrackingRange(8));
 ```

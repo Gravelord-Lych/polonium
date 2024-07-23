@@ -284,7 +284,22 @@ public void handleEntityEvent(byte id) {
 ```
 这里又一次使用了复杂的条件判断语句，来决定应该喝下的药水种类。
 
-另外，此处通过`broadcastEntityEvent`与`handleEntityEvent`来实现服务端与客户端的数据同步，原版里这样的同步方式很常见，但是在**写模组时需要避免用这种方式同步数据**。首先我们有强大的`SimpleChannel`，其次这样做容易出现事件id冲突。
+另外，此处通过`broadcastEntityEvent`与`handleEntityEvent`来实现服务端与客户端的数据同步，原版里这样的同步方式很常见，但是在**写模组时需要避免用这种方式同步数据**。首先我们有强大的`SimpleChannel`，其次这样做容易出现事件id冲突。  
+
+女巫重写了`getDamageAfterMagicAbsorb`方法，来实现避免受到来自自身的伤害及对有`DamageTypeTags.WITCH_RESISTANT_TO`标签的（主要是魔法类）伤害减免85%。
+```java
+@Override
+protected float getDamageAfterMagicAbsorb(DamageSource source, float amount) {
+    amount = super.getDamageAfterMagicAbsorb(source, amount);
+    if (source.getEntity() == this) {
+        amount = 0.0F;
+    }
+    if (source.is(DamageTypeTags.WITCH_RESISTANT_TO)) {
+        amount *= 0.15F;
+    }
+    return amount;
+}
+```
 
 最后是与袭击相关的内容。
 ```java
