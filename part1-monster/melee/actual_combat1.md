@@ -233,7 +233,7 @@ public class ModEntityRenderers {
 
 ### 效果图（强化僵尸的材质使用了红眼的僵尸）
 *强化僵尸攻击玩家*
-![强化僵尸攻击玩家](result.webp)
+![强化僵尸攻击玩家](images/result.webp)
 
 ---
 

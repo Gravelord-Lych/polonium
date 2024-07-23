@@ -7,13 +7,13 @@
 *`ModelPart`中`xRot`，`yRot`，`zRot`分别表示绕**`ModelPart`的相对坐标系**的x、y、z轴旋转的**弧度**。以下三张图分别展示了骷髅头部绕x、y、z轴**正向**（指当`xRot`/`yRot`/`zRot`值增大时的旋转方向）旋转的效果。（图中的骷髅经过了特殊处理，不具有AI、装备且不会在阳光下燃烧）*  
 
 *x轴：*
-![xRot](xRot.webp)
+![xRot](images/xRot.webp)
 
 *y轴：*
-![yRot](yRot.webp)
+![yRot](images/yRot.webp)
 
 *z轴：*
-![zRot](zRot.webp)
+![zRot](images/zRot.webp)
 
 我们先来探讨一下要想制作骷髅的模型，除了一些实体模型共有的东西以外，还需要什么。  
 
@@ -58,7 +58,7 @@ leftArm.xRot = (-(float) Math.PI / 2F) + head.xRot;
 这两个方法中都将两只手臂抬高了90°，且又加上了一个`head.xRot`来确保手臂随头部抬高而抬高。在`yRot`的调节上，两个方法的处理则是互相“对称”的。当“右撇子”的骷髅射箭时，显然左臂的偏移角度应该大一些，所以`leftArm.yRot`额外向内旋转了0.4弧度，而当“左撇子”的骷髅射箭时则正好相反。下图展示了一个“右撇子”骷髅手持弓进行攻击时的姿势（图中的骷髅经过了特殊处理，不会在阳光下燃烧）  
 
 **“右撇子”骷髅手持弓进行攻击，可以很明显地发现它的左臂的旋转幅度更大**
-![“右撇子”骷髅手持弓进行攻击，可以很明显地发现它的左臂的旋转幅度更大](right-handed.webp)
+![“右撇子”骷髅手持弓进行攻击，可以很明显地发现它的左臂的旋转幅度更大](images/right-handed.webp)
 
 前面说过骷髅是一种既能远程攻击又能近战的生物，那么骷髅近战的时候手臂又是如何处理的呢？我们可以在`setupAnim`中找到答案。
 ```java
@@ -91,9 +91,9 @@ public void setupAnim(T skeleton, float limbSwing, float limbSwingAmount, float 
 附上`rightArm.yRot`和`rightArm.xRot`随`attackTime`变化的图象。  
 
 `rightArm.yRot`-`attackTime`图象：
-![yRot(attackTime)](yRot_function.webp)
+![yRot(attackTime)](images/yRot_function.webp)
 `rightArm.xRot`-`attackTime`图象：
-![xRot(attackTime)](xRot_function.webp)
+![xRot(attackTime)](images/xRot_function.webp)
 
 骷髅的手臂较细，所以`SkeletonModel`中还重写了`translateToHand`方法，给了骷髅拿在手上的东西一个小小的向内的位置偏移。
 ```java

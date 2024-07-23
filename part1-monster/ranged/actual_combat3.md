@@ -230,9 +230,9 @@ public class DispenserZombieHeadLayer extends RenderLayer<DispenserZombie, Zombi
 
 ### 效果图
 *发射器僵尸攻击铁傀儡，同时在有红石信号处恢复自身生命值*
-![发射器僵尸攻击铁傀儡，同时在有红石信号处恢复自身生命值](attack.webp)
+![发射器僵尸攻击铁傀儡，同时在有红石信号处恢复自身生命值](images/attack.webp)
 *发射器僵尸用雪球警告攻击自己的骷髅*
-![发射器僵尸用雪球警告攻击自己的骷髅](warn.webp)
+![发射器僵尸用雪球警告攻击自己的骷髅](images/warn.webp)
 
 ---
 
