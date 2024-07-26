@@ -440,7 +440,7 @@ public class SkeletonWizardRenderer extends SkeletonRenderer {
 
 ### 参考步骤#2
 
-下面正式开始“对付”要求8。还记得“提示”部分中留的那个小思考题吗？因为涉及到红色眼睛的渲染问题，所以**只用一个`booleaan`是不够的**。我们需要借助`SynchedEntityData`。
+下面正式开始“对付”要求8。还记得“提示”部分中留的那个小思考题吗？因为涉及到红色眼睛的渲染问题，所以**只用一个`boolean`是不够的**。我们需要借助`SynchedEntityData`。
 ```java
 private static final EntityDataAccessor<Boolean> REINFORCED = SynchedEntityData.defineId(SkeletonWizard.class, EntityDataSerializers.BOOLEAN);
 private static final String REINFORCED_TAG = "Reinforced";
@@ -618,7 +618,7 @@ public SkeletonWizardRenderer(EntityRendererProvider.Context context) {
 ---
 
 ### 思考与练习  
-- 在笔者试图让强化骷髅法师与铁傀儡1v1作战时，发现**用弓箭射击的阶段是强化骷髅法师的短板**，因此能否使**骷髅法师的射箭频率比一般的骷髅快**，且**强化骷髅法师射击地更快**？
+- 在笔者试图让强化骷髅法师与铁傀儡1v1作战时，发现**用弓箭射击的阶段是强化骷髅法师的短板**，因此能否使**骷髅法师的射箭频率比一般的骷髅高**，且**强化骷髅法师射击地更快**？
 - 能否让骷髅法师**每次在生命值恢复至超过一半时**，都**重新获得投掷药水的能力**（就像Java版中凋灵生命值恢复至超过一半时凋灵护甲自动消失那样）？
 - 能否让骷髅法师在**投掷药水前**，手上**展示将要投掷出的药水种类**？
 - 能否让骷髅法师在生命值**第一次**降低至**不高于最大生命值的一半时**，在四周**合适**的位置召唤**几个骷髅**协助自己作战？
