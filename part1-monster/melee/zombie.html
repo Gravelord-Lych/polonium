@@ -1,0 +1,1405 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>从原版僵尸开始 · Polonium 1.20 实体进阶教程</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Lych">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="zombie2.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    前言
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../notes.html">
+            
+                <a href="../../notes.html">
+            
+                    
+                        <b>1.1.1.</b>
+                    
+                    一些零散的笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    非Boss级怪物
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    近战攻击的怪物
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1.1" data-path="zombie.html">
+            
+                <a href="zombie.html">
+            
+                    
+                        <b>1.2.1.1.</b>
+                    
+                    从原版僵尸开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="zombie2.html">
+            
+                <a href="zombie2.html">
+            
+                    
+                        <b>1.2.1.2.</b>
+                    
+                    僵尸的模型与渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="actual_combat1.html">
+            
+                <a href="actual_combat1.html">
+            
+                    
+                        <b>1.2.1.3.</b>
+                    
+                    实战1 - 强化僵尸
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="neutral_mob.html">
+            
+                <a href="neutral_mob.html">
+            
+                    
+                        <b>1.2.1.4.</b>
+                    
+                    末影人与“中立”生物
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="enderman.html">
+            
+                <a href="enderman.html">
+            
+                    
+                        <b>1.2.1.5.</b>
+                    
+                    末影人的底层实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="enderman2.html">
+            
+                <a href="enderman2.html">
+            
+                    
+                        <b>1.2.1.6.</b>
+                    
+                    末影人的AI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="enderman3.html">
+            
+                <a href="enderman3.html">
+            
+                    
+                        <b>1.2.1.7.</b>
+                    
+                    末影人的模型与渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="actual_combat2.html">
+            
+                <a href="actual_combat2.html">
+            
+                    
+                        <b>1.2.1.8.</b>
+                    
+                    实战2 - 食尸鬼
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../ranged/">
+            
+                <a href="../ranged/">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    远程攻击的怪物（RangedAttackMob）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../ranged/perform_ranged_attack.html">
+            
+                <a href="../ranged/perform_ranged_attack.html">
+            
+                    
+                        <b>1.2.2.1.</b>
+                    
+                    performRangedAttack - 远程攻击の基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../ranged/snow_golem.html">
+            
+                <a href="../ranged/snow_golem.html">
+            
+                    
+                        <b>1.2.2.2.</b>
+                    
+                    相对简单的雪傀儡
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../ranged/snow_golem2.html">
+            
+                <a href="../ranged/snow_golem2.html">
+            
+                    
+                        <b>1.2.2.3.</b>
+                    
+                    雪傀儡的模型与渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../ranged/actual_combat3.html">
+            
+                <a href="../ranged/actual_combat3.html">
+            
+                    
+                        <b>1.2.2.4.</b>
+                    
+                    实战3 - 发射器僵尸
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../ranged/witch.html">
+            
+                <a href="../ranged/witch.html">
+            
+                    
+                        <b>1.2.2.5.</b>
+                    
+                    令人头疼的女巫
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../ranged/witch2.html">
+            
+                <a href="../ranged/witch2.html">
+            
+                    
+                        <b>1.2.2.6.</b>
+                    
+                    女巫的渲染细节
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="../ranged/skeleton.html">
+            
+                <a href="../ranged/skeleton.html">
+            
+                    
+                        <b>1.2.2.7.</b>
+                    
+                    全能的骷髅
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.8" data-path="../ranged/skeleton2.html">
+            
+                <a href="../ranged/skeleton2.html">
+            
+                    
+                        <b>1.2.2.8.</b>
+                    
+                    骷髅的“聪明之处”
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.9" data-path="../ranged/skeleton3.html">
+            
+                <a href="../ranged/skeleton3.html">
+            
+                    
+                        <b>1.2.2.9.</b>
+                    
+                    骷髅的模型（与渲染）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.10" data-path="../ranged/actual_combat4.html">
+            
+                <a href="../ranged/actual_combat4.html">
+            
+                    
+                        <b>1.2.2.10.</b>
+                    
+                    实战4 - 骷髅法师
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../ranged-special/">
+            
+                <a href="../ranged-special/">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    远程攻击的怪物（非RangedAttackMob）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../ranged-special/blaze.html">
+            
+                <a href="../ranged-special/blaze.html">
+            
+                    
+                        <b>1.2.3.1.</b>
+                    
+                    热爱高温的烈焰人
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" >
+            
+                <span>
+            
+                    
+                        <b>1.2.3.2.</b>
+                    
+                    (WIP)
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../flyer-special/">
+            
+                <a href="../flyer-special/">
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    (WIP) 飞行的怪物（不使用FlyingMoveControl的飞行生物）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../exercises/">
+            
+                <a href="../exercises/">
+            
+                    
+                        <b>1.2.5.</b>
+                    
+                    本章练习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../exercises/exercise1.html">
+            
+                <a href="../exercises/exercise1.html">
+            
+                    
+                        <b>1.2.5.1.</b>
+                    
+                    练习1 - 狗头人
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../part2-neutral/">
+            
+                <a href="../../part2-neutral/">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    (WIP) 友好生物与被动生物
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../part3-projectile/">
+            
+                <a href="../../part3-projectile/">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    (WIP) 弹射物和功能性实体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../part4-boss/">
+            
+                <a href="../../part4-boss/">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    (WIP) Boss级怪物
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../part4-boss/wither/">
+            
+                <a href="../../part4-boss/wither/">
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    (WIP) 凋灵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../part4-boss/ender_dragon/">
+            
+                <a href="../../part4-boss/ender_dragon/">
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    (WIP) 末影龙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" >
+            
+                <span>
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    （WIP）
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../part5-miscellaneous/">
+            
+                <a href="../../part5-miscellaneous/">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    杂项
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >从原版僵尸开始</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x4ECE;&#x539F;&#x7248;&#x50F5;&#x5C38;&#x5F00;&#x59CB;">&#x4ECE;&#x539F;&#x7248;&#x50F5;&#x5C38;&#x5F00;&#x59CB;</h1>
+<p><strong><em>&#x6CE8;&#xFF1A;</em></strong></p>
+<ol>
+<li><em>&#x5728;&#x4EE5;&#x540E;&#x7684;&#x5B9E;&#x4F53;&#x5206;&#x6790;&#x4E2D;&#xFF0C;&#x6240;&#x6709;&#x8F83;&#x91CD;&#x8981;&#x7684;&#x5185;&#x5BB9;&#x4F1A;&#x5199;&#x8FDB;&#x6B63;&#x6587;&#x91CC;&#xFF0C;&#x6B21;&#x91CD;&#x8981;&#x7684;&#x5185;&#x5BB9;&#x4EE5;&#x53CA;&#x5BF9;&#x539F;&#x7248;&#x4EE3;&#x7801;&#x7684;&#x8865;&#x5145;&#x8BF4;&#x660E;&#x5219;&#x4F1A;&#x653E;&#x5728;&#x6CE8;&#x91CA;&#x4E2D;&#x3002;</em></li>
+<li><em>&#x53EF;&#x80FD;&#x4F1A;&#x5BF9;&#x5F15;&#x7528;&#x7684;&#x539F;&#x7248;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x5305;&#x62EC;&#x4F46;&#x4E0D;&#x9650;&#x4E8E;&#x4EE5;&#x4E0B;&#x64CD;&#x4F5C;&#x4EE5;&#x65B9;&#x4FBF;&#x9605;&#x8BFB;&#xFF1A;</em><ul>
+<li><em>&#x7ED9;&#x91CD;&#x5199;&#x4E86;&#x7236;&#x7C7B;&#x65B9;&#x6CD5;&#x7684;&#x65B9;&#x6CD5;&#x6DFB;&#x52A0;@Override&#x6CE8;&#x89E3;</em></li>
+<li><em>&#x91CD;&#x547D;&#x540D;&#x5F62;&#x53C2;&#x548C;&#x5C40;&#x90E8;&#x53D8;&#x91CF;</em></li>
+<li><em>&#x66F4;&#x6539;&#x539F;&#x7248;&#x4EE3;&#x7801;&#x7684;&#x7F29;&#x8FDB;&#xFF0C;&#x6362;&#x884C;&#x7B49;&#x683C;&#x5F0F;</em></li>
+<li><em>&#x7701;&#x7565;&#x53EF;&#x4EE5;&#x7701;&#x7565;&#x7684;this</em></li>
+<li><em>&#x5982;&#x679C;&#x53EF;&#x4EE5;&#x66FF;&#x6362;&#xFF0C;&#x5C31;&#x628A;&#x5168;&#x9650;&#x5B9A;&#x7C7B;&#x540D;&#x6362;&#x6210;&#x975E;&#x9650;&#x5B9A;&#x7C7B;&#x540D;</em></li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>&#x50F5;&#x5C38;&#x662F;&#x5927;&#x5BB6;&#x6700;&#x719F;&#x6089;&#x7684;&#x8FD1;&#x6218;&#x602A;&#x7269;&#x4E4B;&#x4E00;&#x3002;&#x8FD9;&#x8282;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x7ED3;&#x5408;&#x50F5;&#x5C38;&#x7684;&#x6E90;&#x7801;&#x5206;&#x6790;&#x50F5;&#x5C38;&#x7684;&#x884C;&#x4E3A;&#x548C;&#x5E95;&#x5C42;&#x5B9E;&#x73B0;&#x3002;  </p>
+<p>&#x5148;&#x6765;&#x770B;&#x4E0B;&#x9762;&#x4E24;&#x884C;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Zombie</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Monster</span> </span>{}
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Monster</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">PathfinderMob</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Enemy</span> </span>{}
+</code></pre>
+<p>&#x5176;&#x4E2D;<code>PathFinderMob</code>&#x5728;&#x666E;&#x901A;&#x7684;<code>Mob</code>&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x6DFB;&#x52A0;&#x4E86;&#x62F4;&#x7EF3;&#x76F8;&#x5173;&#x7684;&#x884C;&#x4E3A;&#xFF08;&#x91CD;&#x5199;&#x4E86;<code>tickLeash()</code>&#x65B9;&#x6CD5;&#xFF09;
+&#x800C;<code>Enemy</code>&#x63A5;&#x53E3;&#xFF0C;&#x5219;&#x662F;&#x5728;<strong>&#x5199;&#x4EFB;&#x4F55;&#x602A;&#x7269;&#x65F6;&#x90FD;&#x5FC5;&#x987B;&#x76F4;&#x63A5;&#x6216;&#x95F4;&#x63A5;&#x5B9E;&#x73B0;&#x7684;&#x4E00;&#x4E2A;&#x6807;&#x8BB0;&#x63A5;&#x53E3;</strong>&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;Minecraft&#x5BF9;&#x5B9E;&#x73B0;<code>Enemy</code>&#x63A5;&#x53E3;&#x7684;&#x5B9E;&#x4F53;&#xFF08;&#x4EE5;&#x4E0B;&#x7B80;&#x79F0;Enemy&#xFF09;&#x89C4;&#x5B9A;&#x4E86;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x7684;&#x6027;&#x8D28;&#x4E0E;&#x884C;&#x4E3A;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<ul>
+<li>&#x94C1;&#x5080;&#x5121;&#x4F1A;&#x4E3B;&#x52A8;&#x653B;&#x51FB;Enemy</li>
+<li>Enemy&#x4E0D;&#x80FD;&#x88AB;&#x6813;&#x7EF3;&#x7275;&#x5F15;</li>
+<li>&#x6F6E;&#x6D8C;&#x6838;&#x5FC3;&#x4F1A;&#x5BF9;Enemy&#x9020;&#x6210;&#x4F24;&#x5BB3;</li>
+<li>......</li>
+</ul>
+<p>&#x76F8;&#x8F83;&#x4E8E;<code>Enemy</code>&#x63A5;&#x53E3;&#xFF0C;<code>Monster</code>&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x53EF;&#x7EE7;&#x627F;&#x53EF;&#x4E0D;&#x7EE7;&#x627F;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;<code>Monster</code>&#x7C7B;&#x4E2D;&#x53EA;&#x91CD;&#x5199;&#x4E86;&#x4E00;&#x4E9B;&#x65B9;&#x6CD5;&#xFF0C;&#x6BD4;&#x5982;<code>isPreventingPlayerRest(Player)</code>&#xFF0C;&#x5E76;&#x66F4;&#x6539;&#x4E86;&#x4E00;&#x4E9B;&#x97F3;&#x6548;&#xFF08;&#x4F7F;&#x7528;&#x654C;&#x5BF9;&#x751F;&#x7269;&#x7684;&#x97F3;&#x6548;&#xFF09;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x770B;&#x4E0B;&#x9762;&#x7684;&#x5E38;&#x91CF;&#x4E0E;&#x53D8;&#x91CF;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x5C0F;&#x50F5;&#x5C38;&#x7684;&#x901F;&#x5EA6;&#x63D0;&#x5347;&#x7684;&#x4FEE;&#x9970;&#x7B26;&#xFF08;AttributeModifier&#xFF0C;&#x8BD1;&#x540D;&#x4FEE;&#x9970;&#x7B26;&#xFF09;&#x7684;UUID</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> UUID SPEED_MODIFIER_BABY_UUID = UUID.fromString(<span class="hljs-string">&quot;B9766B59-9566-4402-BC1F-2EE2A276D836&quot;</span>);
+<span class="hljs-comment">// &#x5C0F;&#x50F5;&#x5C38;&#x7684;&#x901F;&#x5EA6;&#x63D0;&#x5347;&#x7684;&#x4FEE;&#x9970;&#x7B26;&#xFF08;&#x57FA;&#x7840;&#x503C;&#x53D8;&#x4E3A;&#x539F;&#x6765;&#x7684;1.5&#x500D;&#xFF09;</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> AttributeModifier SPEED_MODIFIER_BABY = <span class="hljs-keyword">new</span> AttributeModifier(SPEED_MODIFIER_BABY_UUID, <span class="hljs-string">&quot;Baby speed boost&quot;</span>, <span class="hljs-number">0.5</span>D, AttributeModifier.Operation.MULTIPLY_BASE);
+<span class="hljs-comment">// &#x51B3;&#x5B9A;&#x4E86;&#x50F5;&#x5C38;&#x662F;&#x5426;&#x4E3A;&#x5C0F;&#x50F5;&#x5C38;&#xFF0C;&#x503C;&#x4E3A;true&#x5219;&#x4E3A;&#x5C0F;&#x50F5;&#x5C38;</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> EntityDataAccessor&lt;Boolean&gt; DATA_BABY_ID = SynchedEntityData.defineId(Zombie.class, EntityDataSerializers.BOOLEAN);
+<span class="hljs-comment">// &#x6682;&#x65E0;&#x5B9E;&#x9645;&#x7528;&#x9014;</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> EntityDataAccessor&lt;Integer&gt; DATA_SPECIAL_TYPE_ID = SynchedEntityData.defineId(Zombie.class, EntityDataSerializers.INT);
+<span class="hljs-comment">// &#x51B3;&#x5B9A;&#x4E86;&#x50F5;&#x5C38;&#x662F;&#x5426;&#x6B63;&#x5728;&#x8F6C;&#x5316;&#x4E3A;&#x6EBA;&#x5C38;&#xFF0C;&#x503C;&#x4E3A;true&#x5219;&#x6B63;&#x5728;&#x8F6C;&#x5316;</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> EntityDataAccessor&lt;Boolean&gt; DATA_DROWNED_CONVERSION_ID = SynchedEntityData.defineId(Zombie.class, EntityDataSerializers.BOOLEAN);
+<span class="hljs-comment">// &#x5F53;&#x96BE;&#x5EA6;&#x4E3A;&#x56F0;&#x96BE;&#x65F6;&#xFF0C;&#x50F5;&#x5C38;&#x53EF;&#x4EE5;&#x7834;&#x95E8;</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Predicate&lt;Difficulty&gt; DOOR_BREAKING_PREDICATE = difficulty -&gt; difficulty == Difficulty.HARD;
+
+<span class="hljs-comment">// &#x50F5;&#x5C38;&#x7834;&#x95E8;&#x7684;AI</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> BreakDoorGoal breakDoorGoal = <span class="hljs-keyword">new</span> BreakDoorGoal(<span class="hljs-keyword">this</span>, DOOR_BREAKING_PREDICATE);
+<span class="hljs-comment">// &#x51B3;&#x5B9A;&#x4E86;&#x50F5;&#x5C38;&#x662F;&#x5426;&#x80FD;&#x7834;&#x95E8;&#xFF0C;&#x503C;&#x4E3A;true&#x5219;&#x8BF4;&#x660E;&#x53EF;&#x4EE5;&#x7834;&#x95E8;</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> canBreakDoors;
+<span class="hljs-comment">// &#x50F5;&#x5C38;&#x6CE1;&#x5728;&#x6C34;&#x91CC;&#x7684;&#x65F6;&#x95F4;&#xFF08;&#x65E0;&#x7279;&#x6B8A;&#x8BF4;&#x660E;&#x5355;&#x4F4D;&#x90FD;&#x4E3A;tick&#xFF09;</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> inWaterTime;
+<span class="hljs-comment">// &#x50F5;&#x5C38;&#x8F6C;&#x5316;&#x4E3A;&#x6EBA;&#x5C38;&#xFF08;&#x6216;&#x5C38;&#x58F3;&#x8F6C;&#x5316;&#x4E3A;&#x50F5;&#x5C38;&#xFF09;&#x5269;&#x4F59;&#x7684;&#x65F6;&#x95F4;</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> conversionTime;
+</code></pre>
+<p>&#x5927;&#x5BB6;&#x5E94;&#x8BE5;&#x77E5;&#x9053;<code>EntityDataAccessor</code>&#xFF08;&#x539F;&#x540D;DataParameter&#xFF09;&#x5177;&#x6709;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x4E4B;&#x95F4;&#x81EA;&#x52A8;&#x540C;&#x6B65;&#x6570;&#x636E;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x4E0D;&#x8FC7;&#x5F53;&#x6570;&#x636E;<strong>&#x65E0;&#x9700;&#x540C;&#x6B65;</strong>&#x65F6;&#xFF0C;&#x4F7F;&#x7528;<code>EntityDataAccessor</code>&#x5374;&#x662F;&#x591A;&#x4F59;&#x7684;&#x3002;&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x5C0F;&#x50F5;&#x5C38;&#x548C;&#x50F5;&#x5C38;&#x7684;<strong>&#x6A21;&#x578B;&#x4E0D;&#x540C;</strong>&#xFF0C;&#x4F46;<strong>&#x50F5;&#x5C38;&#x7684;&#x5C3A;&#x5BF8;&#x5374;&#x662F;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#x51B3;&#x5B9A;&#x7684;</strong>&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x540C;&#x6B65;&#x6570;&#x636E;&#xFF0C;&#x5728;&#x50F5;&#x5C38;&#x8F6C;&#x5316;&#x4E3A;&#x6EBA;&#x5C38;&#x65F6;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;<strong>&#x53EA;&#x9700;&#x8981;&#x77E5;&#x9053;&#x662F;&#x5426;&#x5F00;&#x59CB;&#x4E86;&#x8F6C;&#x5316;</strong>&#xFF08;&#x6B63;&#x5728;&#x8F6C;&#x5316;&#x7684;&#x50F5;&#x5C38;&#x4F1A;&#x98A4;&#x6296;&#xFF09;&#xFF0C;<strong>&#x4E0D;&#x9700;&#x8981;&#x77E5;&#x9053;&#x50F5;&#x5C38;&#x6CE1;&#x5728;&#x6C34;&#x91CC;&#x7684;&#x65F6;&#x95F4;&#x548C;&#x8F6C;&#x5316;&#x5269;&#x4F59;&#x7684;&#x65F6;&#x95F4;</strong>&#xFF0C;&#x56E0;&#x6B64;<code>inWaterTime</code>&#x548C;<code>conversionTime</code>&#x5E76;&#x6CA1;&#x6709;&#x540C;&#x6B65;&#xFF0C;&#x53EA;&#x540C;&#x6B65;&#x4E86;<code>DATA_DROWNED_CONVERSION_ID</code>&#x3002;&#x8FD8;&#x6709;&#xFF0C;&#x4E0D;&#x8981;&#x5FD8;&#x8BB0;&#x5728;<code>defineSynchedData</code>&#x65B9;&#x6CD5;&#x6216;&#x5B9E;&#x4F53;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x4E2D;&#x5B9A;&#x4E49;<code>EntityDataAccessor</code>&#x3002;</p>
+<p>&#x540C;&#x65F6;&#x6211;&#x4EEC;&#x8FD8;&#x8981;&#x7559;&#x610F;&#x5230;&#x4EE5;&#x4E0B;&#x5173;&#x4E8E;&#x50F5;&#x5C38;&#x4F53;&#x578B;&#x8BBE;&#x7F6E;&#x7684;&#x7EC6;&#x8282;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setBaby</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> baby)</span> </span>{
+    getEntityData().set(DATA_BABY_ID, baby);
+    <span class="hljs-keyword">if</span> (level() != <span class="hljs-keyword">null</span> &amp;&amp; !level().isClientSide) {
+        AttributeInstance instance = getAttribute(Attributes.MOVEMENT_SPEED);
+        instance.removeModifier(SPEED_MODIFIER_BABY);
+        <span class="hljs-keyword">if</span> (baby) {
+            instance.addTransientModifier(SPEED_MODIFIER_BABY);
+        }
+    }
+}
+
+<span class="hljs-meta">@Override</span> <span class="hljs-comment">// @Override&#x4E3A;&#x624B;&#x52A8;&#x6DFB;&#x52A0;&#xFF0C;&#x4E0B;&#x540C;</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onSyncedDataUpdated</span><span class="hljs-params">(EntityDataAccessor&lt;?&gt; accessor)</span> </span>{
+    <span class="hljs-keyword">if</span> (DATA_BABY_ID.equals(accessor)) {
+<span class="hljs-comment">//      &#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x7684;dimension&#x6307;&#x5C3A;&#x5BF8;&#x800C;&#x4E0D;&#x662F;&#x7EF4;&#x5EA6;</span>
+        refreshDimensions();
+    }
+    <span class="hljs-keyword">super</span>.onSyncedDataUpdated(accessor);
+}
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getExperienceReward</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">if</span> (isBaby()) {
+<span class="hljs-comment">//      &#x5C0F;&#x50F5;&#x5C38;&#x6389;&#x843D;&#x7684;xp&#x662F;&#x666E;&#x901A;&#x50F5;&#x5C38;&#x7684;2.5&#x500D;</span>
+        xpReward = (<span class="hljs-keyword">int</span>) ((<span class="hljs-keyword">double</span>) xpReward * <span class="hljs-number">2.5</span>D);
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">super</span>.getExperienceReward();
+}
+</code></pre>
+<p>&#x9996;&#x5148;&#x8981;&#x7559;&#x610F;&#x5230;<code>setBaby</code>&#x65B9;&#x6CD5;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;&#x8BBE;&#x7F6E;&#x4E86;<code>DATA_BABY_ID</code>&#x7684;&#x503C;&#xFF0C;&#x800C;&#x662F;&#x5728;&#x8FD9;&#x4E4B;&#x540E;&#x8FD8;&#x8FDB;&#x884C;&#x4E86;&#x8FD9;&#x6837;&#x4E00;&#x6B65;&#xFF1A;&#x79FB;&#x9664;&#x50F5;&#x5C38;&#x8EAB;&#x4E0A;&#x7684;<code>SPEED_MODIFIER_BABY</code>&#xFF0C;&#x5982;&#x679C;&#x50F5;&#x5C38;&#x662F;&#x5C0F;&#x50F5;&#x5C38;&#xFF0C;&#x5C31;&#x7ED9;&#x8BE5;&#x50F5;&#x5C38;<strong>&#x4E34;&#x65F6;</strong>&#x6DFB;&#x52A0;&#x8FD9;&#x4E2A;&#x4FEE;&#x9970;&#x7B26;&#x3002;<code>AttributeInstance</code>&#x7C7B;&#x4E2D;&#x8FD8;&#x6709;<code>addPermanentModifier</code>&#x65B9;&#x6CD5;&#xFF08;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x6DFB;&#x52A0;&#x7684;&#x4FEE;&#x9970;&#x7B26;&#x5C06;&#x4F1A;&#x4FDD;&#x5B58;&#x5230;&#x5B9E;&#x4F53;&#x7684;NBT&#x4E2D;&#xFF09;&#xFF0C;&#x4F46;&#x56E0;&#x4E3A;<code>setBaby</code>&#x65B9;&#x6CD5;&#x8FD8;&#x4F1A;&#x5728;<code>readAdditionalSaveData</code>&#x65B9;&#x6CD5;&#x4E2D;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x5230;&#x5B9E;&#x4F53;&#x7684;&#x6C38;&#x4E45;&#x4FEE;&#x9970;&#x7B26;&#x4E2D;&#x3002;</p>
+<p>&#x5176;&#x6B21;&#x8FD8;&#x8981;&#x6CE8;&#x610F;<code>onSyncedDataUpdated</code>&#x65B9;&#x6CD5;&#xFF0C;&#x5728;<code>DATA_BABY_ID</code>&#x6539;&#x53D8;&#x540E;&#xFF0C;&#x5B9E;&#x4F53;&#x7684;&#x5C3A;&#x5BF8;&#x4E5F;&#x8981;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x968F;&#x4E4B;&#x6539;&#x53D8;&#xFF0C;&#x56E0;&#x6B64;&#x8981;&#x8C03;&#x7528;<code>refreshDimensions</code>&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x50F5;&#x5C38;&#x7684;AI&#x4E0E;&#x5C5E;&#x6027;&#x6CE8;&#x518C;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">registerGoals</span><span class="hljs-params">()</span> </span>{
+    goalSelector.addGoal(<span class="hljs-number">4</span>, <span class="hljs-keyword">new</span> Zombie.ZombieAttackTurtleEggGoal(<span class="hljs-keyword">this</span>, <span class="hljs-number">1.0</span>D, <span class="hljs-number">3</span>));
+    goalSelector.addGoal(<span class="hljs-number">8</span>, <span class="hljs-keyword">new</span> LookAtPlayerGoal(<span class="hljs-keyword">this</span>, Player.class, <span class="hljs-number">8.0F</span>));
+    goalSelector.addGoal(<span class="hljs-number">8</span>, <span class="hljs-keyword">new</span> RandomLookAroundGoal(<span class="hljs-keyword">this</span>));
+    addBehaviourGoals();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addBehaviourGoals</span><span class="hljs-params">()</span> </span>{
+    goalSelector.addGoal(<span class="hljs-number">2</span>, <span class="hljs-keyword">new</span> ZombieAttackGoal(<span class="hljs-keyword">this</span>, <span class="hljs-number">1.0</span>D, <span class="hljs-keyword">false</span>));
+    goalSelector.addGoal(<span class="hljs-number">6</span>, <span class="hljs-keyword">new</span> MoveThroughVillageGoal(<span class="hljs-keyword">this</span>, <span class="hljs-number">1.0</span>D, <span class="hljs-keyword">true</span>, <span class="hljs-number">4</span>, <span class="hljs-keyword">this</span>::canBreakDoors));
+    goalSelector.addGoal(<span class="hljs-number">7</span>, <span class="hljs-keyword">new</span> WaterAvoidingRandomStrollGoal(<span class="hljs-keyword">this</span>, <span class="hljs-number">1.0</span>D));
+    targetSelector.addGoal(<span class="hljs-number">1</span>, (<span class="hljs-keyword">new</span> HurtByTargetGoal(<span class="hljs-keyword">this</span>)).setAlertOthers(ZombifiedPiglin.class));
+    targetSelector.addGoal(<span class="hljs-number">2</span>, <span class="hljs-keyword">new</span> NearestAttackableTargetGoal&lt;&gt;(<span class="hljs-keyword">this</span>, Player.class, <span class="hljs-keyword">true</span>));
+    targetSelector.addGoal(<span class="hljs-number">3</span>, <span class="hljs-keyword">new</span> NearestAttackableTargetGoal&lt;&gt;(<span class="hljs-keyword">this</span>, AbstractVillager.class, <span class="hljs-keyword">false</span>));
+    targetSelector.addGoal(<span class="hljs-number">3</span>, <span class="hljs-keyword">new</span> NearestAttackableTargetGoal&lt;&gt;(<span class="hljs-keyword">this</span>, IronGolem.class, <span class="hljs-keyword">true</span>));
+<span class="hljs-comment">//  Turtle.BABY_ON_LAND_SELECTOR&#x662F;&#x7528;&#x6765;&#x9009;&#x62E9;&#x53EF;&#x653B;&#x51FB;&#x7684;&#x6D77;&#x9F9F;&#x7684;Predicate&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x50F5;&#x5C38;&#x53EA;&#x4F1A;&#x653B;&#x51FB;&#x5CB8;&#x4E0A;&#x7684;&#x5C0F;&#xFF08;baby&#xFF09;&#x6D77;&#x9F9F;&#xFF09;</span>
+    targetSelector.addGoal(<span class="hljs-number">5</span>, <span class="hljs-keyword">new</span> NearestAttackableTargetGoal&lt;&gt;(<span class="hljs-keyword">this</span>, Turtle.class, <span class="hljs-number">10</span>, <span class="hljs-keyword">true</span>, <span class="hljs-keyword">false</span>, Turtle.BABY_ON_LAND_SELECTOR));
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> AttributeSupplier.<span class="hljs-function">Builder <span class="hljs-title">createAttributes</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-comment">//  createMonsterAttributes&#x65B9;&#x6CD5;&#x4E2D;&#x5305;&#x542B;&#x5BF9;Attributes.MAX_HEALTH&#x7684;&#x6CE8;&#x518C;&#xFF08;&#x4E8B;&#x5B9E;&#x4E0A;createLivingAttributes&#x65B9;&#x6CD5;&#x5C31;&#x6CE8;&#x518C;&#x4E86;&#xFF09;</span>
+<span class="hljs-comment">//  &#x800C;&#x50F5;&#x5C38;&#x7684;&#x6700;&#x5927;&#x751F;&#x547D;&#x503C;&#x5C31;&#x662F;20&#xFF0C;&#x56E0;&#x6B64;&#x65E0;&#x9700;&#x91CD;&#x590D;&#x6CE8;&#x518C;</span>
+    <span class="hljs-keyword">return</span> Monster.createMonsterAttributes()
+        .add(Attributes.FOLLOW_RANGE, <span class="hljs-number">35.0</span>D)
+        .add(Attributes.MOVEMENT_SPEED, (<span class="hljs-keyword">double</span>) <span class="hljs-number">0.23F</span>)
+        .add(Attributes.ATTACK_DAMAGE, <span class="hljs-number">3.0</span>D)
+        .add(Attributes.ARMOR, <span class="hljs-number">2.0</span>D)
+        <span class="hljs-comment">// &#x4E0D;&#x4F20;&#x5165;double&#x53C2;&#x6570;&#x5219;&#x4F1A;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x7684;&#x9ED8;&#x8BA4;&#x503C;</span>
+        .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">canBreakDoors</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> canBreakDoors;
+}
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x5BF9;Mob&#x7684;AI&#x4E0D;&#x662F;&#x5F88;&#x719F;&#x6089;&#xFF0C;&#x63A8;&#x8350;&#x9605;&#x8BFB;<a href="https://izzel.io/2021/12/19/living-things/" target="_blank">&#x8FD9;&#x7BC7;&#x6559;&#x7A0B;</a>&#xFF08;&#x5F53;&#x7136;&#x672C;&#x6587;&#x4E2D;&#x4E0D;&#x4F1A;&#x6D89;&#x53CA;&#x5230;<code>Brain</code>&#xFF09;&#x3002;&#x8BE5;&#x6587;&#x7AE0;&#x4E2D;&#x7684;&#x540E;&#x8BB0;&#x4E5F;&#x5F88;&#x597D;&#x5730;&#x89E3;&#x91CA;&#x4E86;&#x4E3A;&#x4EC0;&#x4E48;&#x5927;&#x591A;&#x6570;Boss&#x90FD;&#x4E0D;&#x4F1A;&#x4F7F;&#x7528;<code>Goal</code>&#x548C;<code>Brain</code>&#x3002;  </p>
+<p>&#x4E0D;&#x96BE;&#x53D1;&#x73B0;&#x50F5;&#x5C38;&#x5728;&#x6CE8;&#x518C;AI&#x7684;<code>registerGoals</code>&#x65B9;&#x6CD5;&#x4E2D;&#x8C03;&#x7528;&#x4E86;<code>addBehaviourGoals</code>&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x591A;&#x6001;&#xFF08;&#x5728;<code>Husk</code>&#x7B49;<code>Zombie</code>&#x7684;&#x5B50;&#x7C7B;&#x4E2D;&#x5C06;&#x4F1A;&#x91CD;&#x5199;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF09;&#xFF0C;&#x5728;<code>Zombie</code>&#x7C7B;&#x4E2D;&#x5927;&#x591A;&#x6570;&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;<code>protected</code>&#x7684;&#x65B9;&#x6CD5;&#x90FD;&#x7528;&#x5230;&#x4E86;&#x591A;&#x6001;&#x7684;&#x601D;&#x60F3;&#x3002;
+&#x6CE8;&#x610F;&#x8FD9;&#x91CC;<strong>&#x6CA1;&#x6709;&#x6CE8;&#x518C;breakDoorGoal</strong>&#xFF0C;&#x6211;&#x4EEC;&#x9A6C;&#x4E0A;&#x4F1A;&#x8BB2;&#x5230;&#x5B83;&#x3002;  </p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x662F;<code>setCanBreakDoors</code>&#x65B9;&#x6CD5;&#x3002;<code>setCanBreakDoors</code>&#x65B9;&#x6CD5;&#x5C06;&#x5728;&#x50F5;&#x5C38;&#x7684;<code>finalizeSpawn</code>&#x4E2D;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x800C;&#x540E;&#x8005;&#x662F;&#x5728;<code>Mob</code>&#x5373;&#x5C06;&#x751F;&#x6210;&#x5B8C;&#x6BD5;&#x65F6;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x6211;&#x4EEC;&#x540E;&#x9762;&#x518D;&#x8BB2;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setCanBreakDoors</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> canBreakDoors)</span> </span>{
+<span class="hljs-comment">//  &#x5982;&#x679C;Mob&#x7684;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;mob&#x4F7F;&#x7528;&#x7684;PathNavigation&#x662F;GroundPathNavigation&#x7684;&#x5B9E;&#x4F8B;&#xFF08;instanceof GroundPathNavigation&#xFF09;&#xFF0C;GoalUtils.hasGroundPathNavigation(mob) &#x5C31;&#x4F1A;&#x8FD4;&#x56DE;true</span>
+    <span class="hljs-keyword">if</span> (supportsBreakDoorGoal() &amp;&amp; GoalUtils.hasGroundPathNavigation(<span class="hljs-keyword">this</span>)) {
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.canBreakDoors != canBreakDoors) {
+            <span class="hljs-keyword">this</span>.canBreakDoors = canBreakDoors;
+            ((GroundPathNavigation) getNavigation()).setCanOpenDoors(canBreakDoors);
+            <span class="hljs-keyword">if</span> (canBreakDoors) {
+                goalSelector.addGoal(<span class="hljs-number">1</span>, breakDoorGoal);
+            } <span class="hljs-keyword">else</span> {
+                goalSelector.removeGoal(breakDoorGoal);
+            }
+        }
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.canBreakDoors) {
+        goalSelector.removeGoal(breakDoorGoal);
+        <span class="hljs-keyword">this</span>.canBreakDoors = <span class="hljs-keyword">false</span>;
+    }
+}
+
+<span class="hljs-comment">// &#x540C;&#x6837;&#x662F;&#x591A;&#x6001;&#xFF08;&#x6EBA;&#x5C38;&#x5C31;&#x4E0D;&#x53EF;&#x80FD;&#x7834;&#x95E8;&#xFF09;</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">supportsBreakDoorGoal</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+}
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#xFF0C;&#x5B9E;&#x9645;&#x6CE8;&#x518C;&#x4E0E;&#x66F4;&#x65B0;&#x4E86;<code>breakDoorGoal</code>&#x7684;&#x4F4D;&#x7F6E;&#x5C31;&#x662F;&#x5728;<code>setCanBreakDoors</code>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x91CC;&#x3002;&#x8FD9;&#x8BF4;&#x660E;&#x4E86;<strong>Mob&#x7684;AI&#x7684;&#x6CE8;&#x518C;&#x4E0E;&#x66F4;&#x65B0;&#x4E0D;&#x53EA;&#x5C40;&#x9650;&#x5728;registerGoals&#x4E2D;</strong>&#xFF08;&#x4F46;&#x6CE8;&#x610F;<code>isClientSide</code>&#x7684;&#x5224;&#x65AD;&#xFF0C;&#x4E0D;&#x8981;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x6CE8;&#x518C;&#x4E0E;&#x66F4;&#x65B0;&#x5B9E;&#x4F53;AI&#xFF09;&#x3002;  </p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x4E00;&#x90E8;&#x5206;&#x662F;&#x5B9E;&#x4F53;&#x7684;&#x66F4;&#x65B0;&#xFF0C;<strong>&#x5B9E;&#x4F53;&#x6BCF;tick&#x7684;&#x66F4;&#x65B0;&#x6781;&#x5176;&#x91CD;&#x8981;</strong>&#xFF0C;&#x4E0D;&#x8BBA;&#x662F;<code>Mob</code>&#x7684;AI&#x3001;&#x5BFB;&#x8DEF;&#x7CFB;&#x7EDF;&#xFF0C;&#x8FD8;&#x662F;&#x5F39;&#x5C04;&#x7269;&#x7684;&#x98DE;&#x884C;&#xFF0C;&#x90FD;&#x5728;&#x5B9E;&#x4F53;&#x6BCF;tick&#x7684;&#x66F4;&#x65B0;&#x4E2D;&#x5B8C;&#x6210;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">tick</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">if</span> (!level().isClientSide &amp;&amp; isAlive() &amp;&amp; !isNoAi()) {
+    <span class="hljs-comment">//  &#x5982;&#x679C;&#x8F6C;&#x5316;&#x6B63;&#x5728;&#x53D1;&#x751F;...</span>
+        <span class="hljs-keyword">if</span> (isUnderWaterConverting()) {
+            --conversionTime;
+            <span class="hljs-comment">// ForgeEventFactory.canLivingConvert&#x7684;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x662F;Consumer&lt;Integer&gt;</span>
+            <span class="hljs-keyword">if</span> (conversionTime &lt; <span class="hljs-number">0</span> &amp;&amp; ForgeEventFactory.canLivingConvert(<span class="hljs-keyword">this</span>, EntityType.DROWNED, timer -&gt; conversionTime = timer)) {
+                doUnderWaterConversion();
+            }
+        }
+    <span class="hljs-comment">//  &#x5982;&#x679C;&#x8F6C;&#x5316;&#x53EF;&#x4EE5;&#x53D1;&#x751F;&#x4F46;&#x8FD8;&#x6CA1;&#x53D1;&#x751F;...</span>
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (convertsInWater()) {
+            <span class="hljs-keyword">if</span> (isEyeInFluid(FluidTags.WATER)) {
+                ++inWaterTime;
+                <span class="hljs-keyword">if</span> (inWaterTime &gt;= <span class="hljs-number">600</span>) {
+                <span class="hljs-comment">//  &#x5F00;&#x59CB;&#x5427;&#xFF01;</span>
+                    startUnderWaterConversion(<span class="hljs-number">300</span>);
+                }
+            } <span class="hljs-keyword">else</span> {
+                inWaterTime = -<span class="hljs-number">1</span>;
+            }
+        }
+    }
+    <span class="hljs-keyword">super</span>.tick();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">convertsInWater</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+}  
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">startUnderWaterConversion</span><span class="hljs-params">(<span class="hljs-keyword">int</span> conversionTime)</span> </span>{
+    <span class="hljs-keyword">this</span>.conversionTime = conversionTime;
+    getEntityData().set(DATA_DROWNED_CONVERSION_ID, <span class="hljs-keyword">true</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doUnderWaterConversion</span><span class="hljs-params">()</span> </span>{
+    convertToZombieType(EntityType.DROWNED);
+    <span class="hljs-keyword">if</span> (!isSilent()) {
+<span class="hljs-comment">//      &#x5E7F;&#x64AD;1040&#x53F7;&#x4E8B;&#x4EF6;&#x4F1A;&#x64AD;&#x653E;SoundEvents.ZOMBIE_CONVERTED_TO_DROWNED&#xFF08;1041&#x53F7;&#x4E8B;&#x4EF6;&#x5219;&#x662F;&#x64AD;&#x653E;SoundEvents.HUSK_CONVERTED_TO_ZOMBIE&#xFF09;</span>
+        level().levelEvent(<span class="hljs-keyword">null</span>, <span class="hljs-number">1040</span>, blockPosition(), <span class="hljs-number">0</span>);
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">convertToZombieType</span><span class="hljs-params">(EntityType&lt;? extends Zombie&gt; zombieType)</span> </span>{
+    Zombie zombie = convertTo(zombieType, <span class="hljs-keyword">true</span>);
+    <span class="hljs-keyword">if</span> (zombie != <span class="hljs-keyword">null</span>) {
+        zombie.handleAttributes(zombie.level().getCurrentDifficultyAt(zombie.blockPosition()).getSpecialMultiplier());
+        zombie.setCanBreakDoors(zombie.supportsBreakDoorGoal() &amp;&amp; canBreakDoors());
+        ForgeEventFactory.onLivingConvert(<span class="hljs-keyword">this</span>, zombie);
+    }
+}
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">aiStep</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">if</span> (isAlive()) {
+        <span class="hljs-keyword">boolean</span> shouldBurn = isSunSensitive() &amp;&amp; isSunBurnTick();
+        <span class="hljs-keyword">if</span> (shouldBurn) {
+            ItemStack helmet = getItemBySlot(EquipmentSlot.HEAD);
+        <span class="hljs-comment">//  &#x50F5;&#x5C38;&#x53EA;&#x8981;&#x6709;&#x4E86;&#x5934;&#x76D4;&#x5C31;&#x53EF;&#x4EE5;&#x62B5;&#x6297;&#x9633;&#x5149;~</span>
+            <span class="hljs-keyword">if</span> (!helmet.isEmpty()) {
+                <span class="hljs-keyword">if</span> (helmet.isDamageableItem()) {
+                    helmet.setDamageValue(helmet.getDamageValue() + random.nextInt(<span class="hljs-number">2</span>));
+                    <span class="hljs-keyword">if</span> (helmet.getDamageValue() &gt;= helmet.getMaxDamage()) {
+                        broadcastBreakEvent(EquipmentSlot.HEAD);
+                        setItemSlot(EquipmentSlot.HEAD, ItemStack.EMPTY);
+                    }
+                }
+                shouldBurn = <span class="hljs-keyword">false</span>;
+            }
+            <span class="hljs-keyword">if</span> (shouldBurn) {
+                setSecondsOnFire(<span class="hljs-number">8</span>);
+            }
+        }
+    }
+    <span class="hljs-keyword">super</span>.aiStep();
+}
+</code></pre>
+<p>&#x5982;&#x679C;&#x4E00;&#x4E2A;<code>LivingEntity</code>&#x672A;&#x88AB;&#x79FB;&#x9664;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x5B9E;&#x4F53;&#x7684;<code>aiStep</code>&#x65B9;&#x6CD5;&#x4F1A;&#x5728;<code>LivingEntity</code>&#x7684;<code>tick</code>&#x65B9;&#x6CD5;&#x4E2D;&#x88AB;&#x8C03;&#x7528;&#xFF08;&#x5373;&#x6BCF;tick&#x8C03;&#x7528;1&#x6B21;&#xFF09;&#xFF0C;&#x5728;&#x8C03;&#x7528;&#x5B8C;<code>aiStep</code>&#x540E;&#xFF0C;&#x5C06;&#x4F1A;&#x66F4;&#x65B0;&#x5B9E;&#x4F53;&#x7684;&#x65CB;&#x8F6C;&#x89D2;&#x5EA6;&#x3002;<br>&#x8FD9;&#x91CC;&#x91CD;&#x5199;&#x7684;<code>tick</code>&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x4E3B;&#x8981;&#x66F4;&#x65B0;&#x4E86;&#x50F5;&#x5C38;&#x7684;&#x8F6C;&#x5316;&#xFF08;&#x5C38;&#x58F3;-&gt;&#x50F5;&#x5C38;-&gt;&#x6EBA;&#x5C38;&#xFF09;&#xFF1B;&#x800C;&#x8FD9;&#x91CC;&#x91CD;&#x5199;&#x7684;<code>aiStep</code>&#x65B9;&#x6CD5;&#xFF0C;&#x4F7F;&#x50F5;&#x5C38;&#x5728;&#x9633;&#x5149;&#x4E0B;&#x7740;&#x706B;&#xFF08;&#x540C;&#x6837;&#x7684;&#x903B;&#x8F91;&#x5728;<code>AbstractSkeleton</code>&#x91CC;&#xFF0C;&#x4EE5;&#x51E0;&#x4E4E;&#x4E00;&#x6837;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x53C8;&#x51FA;&#x73B0;&#x4E86;&#x4E00;&#x6B21;...&#xFF09;&#x3002;  </p>
+<p>&#x7136;&#x540E;&#x5C31;&#x5230;&#x4E86;&#x5206;&#x522B;&#x4E0E;&#x53D7;&#x51FB;&#x548C;&#x653B;&#x51FB;&#x6709;&#x5173;&#x7684;<code>hurt</code>&#x548C;<code>doHurtTarget</code>&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x5728;&#x590D;&#x6742;&#x5B9E;&#x4F53;&#x7684;&#x5F00;&#x53D1;&#x4E2D;&#x4E5F;&#x975E;&#x5E38;&#x5E38;&#x7528;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">hurt</span><span class="hljs-params">(DamageSource source, <span class="hljs-keyword">float</span> amount)</span> </span>{
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">super</span>.hurt(source, amount)) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!(level() <span class="hljs-keyword">instanceof</span> ServerLevel)) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    } <span class="hljs-keyword">else</span> {
+        ServerLevel level = (ServerLevel) level();
+        LivingEntity target = getTarget();
+        <span class="hljs-keyword">if</span> (target == <span class="hljs-keyword">null</span> &amp;&amp; source.getEntity() <span class="hljs-keyword">instanceof</span> LivingEntity) {
+            target = (LivingEntity) source.getEntity();
+        }
+
+        <span class="hljs-keyword">int</span> x = Mth.floor(getX());
+        <span class="hljs-keyword">int</span> y = Mth.floor(getY());
+        <span class="hljs-keyword">int</span> z = Mth.floor(getZ());
+        ZombieEvent.SummonAidEvent event = ForgeEventFactory.fireZombieSummonAid(<span class="hljs-keyword">this</span>, level(), x, y, z, target, getAttribute(Attributes.SPAWN_REINFORCEMENTS_CHANCE).getValue());
+        <span class="hljs-keyword">if</span> (event.getResult() == Event.Result.DENY) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+        }
+
+<span class="hljs-comment">//      &#x5927;&#x81F4;&#x89E3;&#x91CA;&#x4E00;&#x4E0B;&#x8FD9;&#x4E2A;&#x8D85;&#x957F;&#x6761;&#x4EF6;&#xFF1A;</span>
+<span class="hljs-comment">//      &#x5982;&#x679C;&#x5C06;&#x4E8B;&#x4EF6;SummonAidEvent&#x7684;&#x7ED3;&#x679C;&#x8BBE;&#x7F6E;&#x4E3A;ALLOW&#xFF0C;&#x5219;&#x50F5;&#x5C38;&#x4E00;&#x5B9A;&#x4F1A;&#x547C;&#x53EB;&#x589E;&#x63F4;</span>
+<span class="hljs-comment">//      &#x5426;&#x5219;&#x6267;&#x884C;&#x539F;&#x7248;&#x903B;&#x8F91;&#xFF1A;&#x82E5;&#x6E38;&#x620F;&#x96BE;&#x5EA6;&#x662F;&#x56F0;&#x96BE;&#x3001;&#x6E38;&#x620F;&#x89C4;&#x5219;doMobSpawning&#x4E3A;true&#x5E76;&#x4E14;&#x88AB;&#x6253;&#x65F6;&#x653B;&#x51FB;&#x76EE;&#x6807;&#x6216;&#x4F24;&#x5BB3;&#x81EA;&#x5DF1;&#x8005;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x751F;&#x6210;&#x4E00;&#x4E2A;[0, 1)&#x7684;&#x968F;&#x673A;&#x6D6E;&#x70B9;&#x6570;&#xFF08;&#x8BB0;&#x4E3A;n&#xFF09;&#xFF0C;</span>
+<span class="hljs-comment">//                      &#x5982;&#x679C;n&#x5C0F;&#x4E8E;Attributes.SPAWN_REINFORCEMENTS_CHANCE&#x5C31;&#x547C;&#x53EB;&#x589E;&#x63F4;</span>
+        <span class="hljs-keyword">if</span> (event.getResult() == Event.Result.ALLOW  || target != <span class="hljs-keyword">null</span>
+                &amp;&amp; level().getDifficulty() == Difficulty.HARD
+                &amp;&amp; (<span class="hljs-keyword">double</span>) random.nextFloat() &lt; getAttribute(Attributes.SPAWN_REINFORCEMENTS_CHANCE).getValue()
+                &amp;&amp; level().getGameRules().getBoolean(GameRules.RULE_DOMOBSPAWNING)) {
+             Zombie zombie = event.getCustomSummonedAid() != <span class="hljs-keyword">null</span> &amp;&amp; event.getResult() == Event.Result.ALLOW ? event.getCustomSummonedAid() : EntityType.ZOMBIE.create(level());
+
+<span class="hljs-comment">//           &#x5C1D;&#x8BD5;50&#x6B21;</span>
+             <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">50</span>; ++i) {
+                 <span class="hljs-keyword">int</span> randomX = x + Mth.nextInt(random, <span class="hljs-number">7</span>, <span class="hljs-number">40</span>) * Mth.nextInt(random, -<span class="hljs-number">1</span>, <span class="hljs-number">1</span>);
+                 <span class="hljs-keyword">int</span> randomY = y + Mth.nextInt(random, <span class="hljs-number">7</span>, <span class="hljs-number">40</span>) * Mth.nextInt(random, -<span class="hljs-number">1</span>, <span class="hljs-number">1</span>);
+                 <span class="hljs-keyword">int</span> randomZ = z + Mth.nextInt(random, <span class="hljs-number">7</span>, <span class="hljs-number">40</span>) * Mth.nextInt(random, -<span class="hljs-number">1</span>, <span class="hljs-number">1</span>);
+                 BlockPos spawnPos = <span class="hljs-keyword">new</span> BlockPos(randomX, randomY, randomZ);
+                 EntityType&lt;?&gt; zombieType = zombie.getType();
+                 SpawnPlacements.Type placementType = SpawnPlacements.getPlacementType(zombieType);
+                 <span class="hljs-keyword">if</span> (NaturalSpawner.isSpawnPositionOk(placementType, level(), spawnPos, zombieType) &amp;&amp; SpawnPlacements.checkSpawnRules(zombieType, level, MobSpawnType.REINFORCEMENT, spawnPos, level().random)) {
+                     zombie.setPos(randomX, randomY, randomZ);
+<span class="hljs-comment">//                   &#x53C8;&#x4E00;&#x4E2A;&#x957F;&#x6761;&#x4EF6;&#xFF0C;&#x5927;&#x81F4;&#x89E3;&#x91CA;&#x4E00;&#x4E0B;&#xFF1A;</span>
+<span class="hljs-comment">//                   &#x5982;&#x679C;&#x50F5;&#x5C38;&#x7684;&#x751F;&#x6210;&#x4F4D;&#x7F6E;7&#x683C;&#x4E4B;&#x5185;&#x6CA1;&#x6709;&#xFF08;&#x6D3B;&#x7684;&#xFF09;&#x73A9;&#x5BB6;&#xFF0C;&#x540C;&#x65F6;&#x751F;&#x6210;&#x7684;&#x50F5;&#x5C38;&#x7684;&#x78B0;&#x649E;&#x7BB1;&#x5185;&#x65E2;&#x6CA1;&#x6709;&#x969C;&#x788D;&#x7269;&#xFF0C;&#x4E5F;&#x6CA1;&#x6709;&#x6DB2;&#x4F53;&#xFF0C;&#x5C31;&#x5141;&#x8BB8;&#x751F;&#x6210;&#x652F;&#x63F4;&#x7684;&#x50F5;&#x5C38;</span>
+                     <span class="hljs-keyword">if</span> (!level().hasNearbyAlivePlayer(randomX, randomY, randomZ, <span class="hljs-number">7.0</span>D)
+                             &amp;&amp; level().isUnobstructed(zombie)
+                             &amp;&amp; level().noCollision(zombie)
+                             &amp;&amp; !level().containsAnyLiquid(zombie.getBoundingBox())) {
+                         <span class="hljs-keyword">if</span> (target != <span class="hljs-keyword">null</span>) {
+                             zombie.setTarget(target);
+                         }
+                         zombie.finalizeSpawn(level, level().getCurrentDifficultyAt(zombie.blockPosition()), MobSpawnType.REINFORCEMENT, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>);
+                         level.addFreshEntityWithPassengers(zombie);
+                    <span class="hljs-comment">//   &#x964D;&#x4F4E;&#x65B0;&#x751F;&#x6210;&#x7684;&#x50F5;&#x5C38;&#x7684;&#x53EC;&#x5524;&#x63F4;&#x52A9;&#x6982;&#x7387;</span>
+                         getAttribute(Attributes.SPAWN_REINFORCEMENTS_CHANCE).addPermanentModifier(<span class="hljs-keyword">new</span> AttributeModifier(<span class="hljs-string">&quot;Zombie reinforcement caller charge&quot;</span>, -<span class="hljs-number">0.05F</span>, AttributeModifier.Operation.ADDITION));
+                         zombie.getAttribute(Attributes.SPAWN_REINFORCEMENTS_CHANCE).addPermanentModifier(<span class="hljs-keyword">new</span> AttributeModifier(<span class="hljs-string">&quot;Zombie reinforcement callee charge&quot;</span>, -<span class="hljs-number">0.05F</span>, AttributeModifier.Operation.ADDITION));
+                         <span class="hljs-keyword">break</span>;
+                     }
+                 }
+             }
+         }
+         <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+    }
+}
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">doHurtTarget</span><span class="hljs-params">(Entity target)</span> </span>{
+    <span class="hljs-keyword">boolean</span> success = <span class="hljs-keyword">super</span>.doHurtTarget(target);
+<span class="hljs-comment">//  &#x53EA;&#x6709;&#x6210;&#x529F;&#x9020;&#x6210;&#x4E86;&#x4F24;&#x5BB3;&#x624D;&#x4F1A;&#x4F20;&#x706B;</span>
+    <span class="hljs-keyword">if</span> (success) {
+        <span class="hljs-keyword">float</span> difficulty = level().getCurrentDifficultyAt(blockPosition()).getEffectiveDifficulty();
+        <span class="hljs-keyword">if</span> (getMainHandItem().isEmpty() &amp;&amp; isOnFire() &amp;&amp; random.nextFloat() &lt; difficulty * <span class="hljs-number">0.3F</span>) {
+        <span class="hljs-comment">//  &#x4F20;&#x706B;~</span>
+            target.setSecondsOnFire(<span class="hljs-number">2</span> * (<span class="hljs-keyword">int</span>) difficulty);
+        }
+    }
+    <span class="hljs-keyword">return</span> success;
+}
+</code></pre>
+<p>&#x91CD;&#x5199;<code>hurt</code>&#x65B9;&#x6CD5;&#x8BA9;&#x50F5;&#x5C38;&#x6709;&#x4E86;&#x547C;&#x53EB;&#x589E;&#x63F4;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x7B80;&#x5355;&#x8BF4;&#x4E00;&#x4E0B;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x50F5;&#x5C38;&#x7684;&#x547C;&#x53EB;&#x589E;&#x63F4;&#xFF0C;&#x8FD9;&#x4E2A;&#x601D;&#x8DEF;&#x4E5F;&#x662F;&#x4E0D;&#x5C11;&#x53EC;&#x5524;&#x578B;Boss&#x6240;&#x91C7;&#x7528;&#x7684;&#x3002;</p>
+<ol>
+<li>&#x83B7;&#x53D6;&#x653B;&#x51FB;&#x7684;&#x76EE;&#x6807;</li>
+<li>&#x5224;&#x65AD;&#x662F;&#x5426;&#x6EE1;&#x8DB3;&#x547C;&#x53EB;&#x589E;&#x63F4;&#x7684;&#x6761;&#x4EF6;</li>
+<li>&#x91CD;&#x590D;&#x5C1D;&#x8BD5;50&#x6B21;&#xFF0C;&#x5982;&#x679C;&#x6210;&#x529F;&#xFF08;&#x968F;&#x673A;&#x9009;&#x62E9;&#x7684;&#x4F4D;&#x7F6E;&#x7B26;&#x5408;&#x8981;&#x6C42;&#xFF09;&#x7ACB;&#x5373;break  </li>
+</ol>
+<p>&#x5176;&#x4E2D;<strong>&#x91CD;&#x590D;&#x5C1D;&#x8BD5;&#x7684;&#x601D;&#x60F3;&#x662F;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x601D;&#x60F3;</strong>&#xFF0C;&#x6211;&#x4EEC;&#x5728;1.2.1.5&#x8282;&#x8FD8;&#x4F1A;&#x53BB;&#x8BB2;&#x3002;&#x5F80;&#x5F80;&#x5F53;&#x4F60;&#x82E6;&#x4E8E;&#x5982;&#x4F55;&#x751F;&#x6210;&#x6EE1;&#x8DB3;&#x8981;&#x6C42;&#x7684;&#x968F;&#x673A;&#x5750;&#x6807;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x6D3E;&#x4E0A;&#x5927;&#x7528;&#x573A;&#x3002;&#x690D;&#x7269;&#x9B54;&#x6CD5;&#x4E2D;<a href="https://github.com/VazkiiMods/Botania/blob/1.20.x/Xplat/src/main/java/vazkii/botania/common/entity/GaiaGuardianEntity.java" target="_blank">&#x76D6;&#x4E9A;&#x5B88;&#x62A4;&#x8005;&#x7684;&#x968F;&#x673A;&#x4F20;&#x9001;&#x4F4D;&#x7F6E;&#x7684;&#x9009;&#x5B9A;</a>&#xFF08;&#x7B2C;917&#x884C;&#xFF09;&#xFF0C;&#x5C31;&#x7528;&#x5230;&#x4E86;&#x8FD9;&#x79CD;&#x601D;&#x60F3;&#x3002;  </p>
+<p>&#x91CD;&#x5199;<code>doHurtTarget</code>&#x65B9;&#x6CD5;&#x4E3B;&#x8981;&#x76EE;&#x7684;&#x662F;&#x4E3A;&#x4E86;&#x8BA9;&#x50F5;&#x5C38;&#x80FD;&#x5728;&#x4E00;&#x5B9A;&#x96BE;&#x5EA6;&#x4E0B;&#x4F20;&#x706B;&#x7ED9;&#x50F5;&#x5C38;&#x653B;&#x51FB;&#x7684;&#x76EE;&#x6807;&#x3002;&#x8FD9;&#x91CC;&#x7684;&#x4EE3;&#x7801;&#x4E0D;&#x96BE;&#x7406;&#x89E3;&#xFF0C;&#x5173;&#x4E8E;&#x533A;&#x57DF;&#x96BE;&#x5EA6;&#x7684;&#x8BA1;&#x7B97;&#x4E0D;&#x662F;&#x672C;&#x6559;&#x7A0B;&#x7684;&#x91CD;&#x70B9;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x611F;&#x5174;&#x8DA3;&#xFF0C;&#x53EF;&#x4EE5;&#x9605;&#x8BFB;<code>DifficultyInstance</code>&#x7C7B;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x3002;</p>
+<p><code>doHurtTarget</code>&#x548C;<code>hurt</code>&#x65B9;&#x6CD5;&#x90FD;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x5982;&#x679C;&#x6210;&#x529F;&#x9020;&#x6210;&#x4E86;&#x4F24;&#x5BB3;&#xFF08;<code>doHurtTarget</code>&#xFF09;&#x6216;&#x53D7;&#x5230;&#x4E86;&#x4F24;&#x5BB3;&#xFF08;<code>hurt</code>&#xFF09;&#xFF0C;&#x5C31;&#x5E94;&#x8BE5;&#x8FD4;&#x56DE;true&#xFF0C;&#x5426;&#x5219;&#x4E00;&#x822C;&#x8FD4;&#x56DE;false</p>
+<p><em>&#x8FD8;&#x6709;&#x4E00;&#x70B9;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x4E0A;&#x6587;&#x6240;&#x8FF0;&#x7684;&#x4EE3;&#x7801;&#x9AD8;&#x5EA6;&#x91CD;&#x590D;&#xFF0C;&#x8FD8;&#x662F;&#x8FD9;&#x90E8;&#x5206;&#x51FA;&#x73B0;&#x7684;if&#x8BED;&#x53E5;&#x4E2D;&#x4F7F;&#x7528;&#x957F;&#x6761;&#x4EF6;&#xFF0C;&#x90FD;&#x662F;&#x4E0D;&#x597D;&#x7684;&#x5F00;&#x53D1;&#x4E60;&#x60EF;&#xFF0C;&#x9700;&#x8981;<strong>&#x5C3D;&#x91CF;&#x907F;&#x514D;</strong>&#x3002;&#x6BD5;&#x7ADF;&#x5F00;&#x53D1;Mod&#x4E0D;&#x662F;&#x53C2;&#x52A0;OI&#xFF08;&#x8FD9;&#x79CD;&#x7B97;&#x6CD5;&#x7ADE;&#x8D5B;&#x4E2D;&#x53EA;&#x8981;&#x4F60;&#x80FD;AC&#xFF0C;&#x4F60;&#x5168;&#x7528;&#x5355;&#x5B57;&#x6BCD;&#x53D8;&#x91CF;&#x540D;&#x4E0E;&#x51FD;&#x6570;&#x540D;&#x90FD;&#x6CA1;&#x4EBA;&#x7BA1;&#x4F60;&#xFF09;&#xFF0C;&#x8981;&#x4FDD;&#x8BC1;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#x3002;</em></p>
+<p>&#x63A5;&#x7740;&#x662F;<code>killedEntity</code>&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x867D;&#x4E0D;&#x7ECF;&#x5E38;&#x88AB;&#x91CD;&#x5199;&#xFF0C;&#x4F46;&#x5BF9;&#x4E8E;&#x50F5;&#x5C38;&#x4F9D;&#x7136;&#x91CD;&#x8981;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">killedEntity</span><span class="hljs-params">(ServerLevel level, LivingEntity entity)</span> </span>{
+    <span class="hljs-keyword">boolean</span> killed = <span class="hljs-keyword">super</span>.killedEntity(level, entity);
+    <span class="hljs-keyword">if</span> ((level.getDifficulty() == Difficulty.NORMAL || level.getDifficulty() == Difficulty.HARD)
+            &amp;&amp; entity <span class="hljs-keyword">instanceof</span> Villager villager
+            &amp;&amp; ForgeEventFactory.canLivingConvert(entity, EntityType.ZOMBIE_VILLAGER, timer -&gt; {})) {
+ <span class="hljs-comment">//     &#x5373;&#x666E;&#x901A;&#x96BE;&#x5EA6;&#x4E0B;50%&#xFF0C;&#x56F0;&#x96BE;&#x96BE;&#x5EA6;&#x4E0B;100%&#x53EC;&#x5524;&#x50F5;&#x5C38;&#x6751;&#x6C11;</span>
+        <span class="hljs-keyword">if</span> (level.getDifficulty() != Difficulty.HARD &amp;&amp; random.nextBoolean()) {
+            <span class="hljs-keyword">return</span> killed;
+        }
+        ZombieVillager zombieVillager = villager.convertTo(EntityType.ZOMBIE_VILLAGER, <span class="hljs-keyword">false</span>);
+        <span class="hljs-keyword">if</span> (zombieVillager != <span class="hljs-keyword">null</span>) {
+ <span class="hljs-comment">//         &#x590D;&#x5236;&#x6751;&#x6C11;&#x7684;&#x90E8;&#x5206;&#x6570;&#x636E;&#x5230;&#x50F5;&#x5C38;&#x6751;&#x6C11;</span>
+            zombieVillager.finalizeSpawn(level, level.getCurrentDifficultyAt(zombieVillager.blockPosition()), MobSpawnType.CONVERSION, <span class="hljs-keyword">new</span> Zombie.ZombieGroupData(<span class="hljs-keyword">false</span>, <span class="hljs-keyword">true</span>), <span class="hljs-keyword">null</span>);
+            zombieVillager.setVillagerData(villager.getVillagerData());
+            zombieVillager.setGossips(villager.getGossips().store(NbtOps.INSTANCE));
+            zombieVillager.setTradeOffers(villager.getOffers().createTag());
+            zombieVillager.setVillagerXp(villager.getVillagerXp());
+            ForgeEventFactory.onLivingConvert(entity, zombieVillager);
+            <span class="hljs-keyword">if</span> (!isSilent()) {
+<span class="hljs-comment">//              &#x5E7F;&#x64AD;1026&#x53F7;&#x4E8B;&#x4EF6;&#x4F1A;&#x64AD;&#x653E;SoundEvents.ZOMBIE_INFECT</span>
+                level.levelEvent(<span class="hljs-keyword">null</span>, <span class="hljs-number">1026</span>, blockPosition(), <span class="hljs-number">0</span>);
+            }
+            killed = <span class="hljs-keyword">false</span>;
+        }
+    }
+    <span class="hljs-keyword">return</span> killed;
+}
+</code></pre>
+<p>Minecraft&#x4E2D;&#x5E76;&#x6CA1;&#x6709;&#x5F88;&#x597D;&#x7684;&#x590D;&#x5236;&#x5B9E;&#x4F53;&#x6570;&#x636E;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x5B9E;&#x4F53;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x6B64;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#x51FA;&#x73B0;&#x4E86;&#x8BB8;&#x591A;<code>a.set(b.get())</code>&#x7684;&#x64CD;&#x4F5C;&#x3002;  </p>
+<p>&#x6CE8;&#x610F;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4E5F;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x5982;&#x679C;&#x8FD4;&#x56DE;&#x4E86;<code>false</code>&#xFF08;MC&#x91CC;&#x8FD8;&#x6CA1;&#x8FD9;&#x6837;&#x5E72;&#x8FC7;&#xFF09;&#xFF0C;&#x90A3;&#x4E48;<code>GameEvent.ENTITY_DIE</code>&#xFF08;<code>GameEvent</code>&#x4E0E;&#x65B0;&#x7248;&#x672C;&#x7684;&#x201C;&#x58F0;&#x97F3;&#x201D;&#x6709;&#x5173;&#xFF09;&#x5C31;&#x4E0D;&#x4F1A;&#x88AB;&#x5E7F;&#x64AD;&#xFF0C;&#x5B9E;&#x4F53;&#x4E5F;&#x4E0D;&#x4F1A;&#x6709;&#x4EFB;&#x4F55;&#x6389;&#x843D;&#x7269;&#xFF08;&#x5305;&#x62EC;&#x51CB;&#x96F6;&#x73AB;&#x7470;&#xFF09;&#x3002;</p>
+<p>&#x7136;&#x540E;&#x662F;&#x6570;&#x636E;&#x4FDD;&#x5B58;&#x4E0E;&#x52A0;&#x8F7D;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addAdditionalSaveData</span><span class="hljs-params">(CompoundTag tag)</span> </span>{
+    <span class="hljs-keyword">super</span>.addAdditionalSaveData(tag);
+    tag.putBoolean(<span class="hljs-string">&quot;IsBaby&quot;</span>, isBaby());
+    tag.putBoolean(<span class="hljs-string">&quot;CanBreakDoors&quot;</span>, canBreakDoors());
+    tag.putInt(<span class="hljs-string">&quot;InWaterTime&quot;</span>, isInWater() ? inWaterTime : -<span class="hljs-number">1</span>);
+    tag.putInt(<span class="hljs-string">&quot;DrownedConversionTime&quot;</span>, isUnderWaterConverting() ? conversionTime : -<span class="hljs-number">1</span>);
+}
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">readAdditionalSaveData</span><span class="hljs-params">(CompoundTag tag)</span> </span>{
+    <span class="hljs-keyword">super</span>.readAdditionalSaveData(tag);
+    setBaby(tag.getBoolean(<span class="hljs-string">&quot;IsBaby&quot;</span>));
+    setCanBreakDoors(tag.getBoolean(<span class="hljs-string">&quot;CanBreakDoors&quot;</span>));
+    inWaterTime = tag.getInt(<span class="hljs-string">&quot;InWaterTime&quot;</span>);
+    <span class="hljs-comment">// 99&#x8868;&#x793A;&#x7684;&#x662F;&#x4EFB;&#x610F;&#x6570;&#x5B57;&#x578B;NBT&#x6807;&#x7B7E;</span>
+    <span class="hljs-keyword">if</span> (tag.contains(<span class="hljs-string">&quot;DrownedConversionTime&quot;</span>, <span class="hljs-number">99</span>) &amp;&amp; tag.getInt(<span class="hljs-string">&quot;DrownedConversionTime&quot;</span>) &gt; -<span class="hljs-number">1</span>) {
+        startUnderWaterConversion(tag.getInt(<span class="hljs-string">&quot;DrownedConversionTime&quot;</span>));
+    }
+}
+</code></pre>
+<p>&#x6570;&#x636E;&#x4FDD;&#x5B58;&#x7684;&#x90E8;&#x5206;&#x5728;&#x8F83;&#x57FA;&#x7840;&#x7684;&#x6559;&#x7A0B;&#x4E2D;&#x90FD;&#x6709;&#x6D89;&#x53CA;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x505A;&#x8FC7;&#x591A;&#x7684;&#x8D58;&#x8FF0;&#xFF0C;&#x7B49;&#x5230;&#x540E;&#x9762;&#x5982;&#x679C;&#x8BB2;&#x5230;&#x8F83;&#x590D;&#x6742;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF08;&#x5982;<code>List</code>&#xFF0C;<code>Map</code>&#xFF09;&#x7684;&#x4FDD;&#x5B58;&#x65F6;&#xFF0C;&#x518D;&#x8BB2;&#x4FDD;&#x5B58;&#x65B9;&#x5F0F;&#x3002;<br>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x7684;&#x521D;&#x59CB;&#x503C;&#x4E0D;&#x662F;&#x9ED8;&#x8BA4;&#x7684;&#x521D;&#x59CB;&#x503C;&#xFF08;<code>0</code>&#xFF0C;<code>false</code>&#xFF0C;<code>null</code>&#xFF09;&#x6216;&#x8005;&#x8BE5;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x5728;<code>addAdditionalSaveData</code>&#x4FDD;&#x5B58;&#x65F6;&#x4F7F;&#x7528;&#x4E86;&#x6761;&#x4EF6;&#xFF08;eg.<code>if (a != null) tag.put(a);</code>&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x5728;<code>readAdditionalSaveData</code>&#x4E2D;&#x5C31;<strong>&#x5FC5;&#x987B;&#x8FDB;&#x884C;tag.contains&#xFF08;UUID&#x53EF;&#x4EE5;&#x7528;tag.hasUUID&#xFF09;&#x7684;&#x68C0;&#x67E5;</strong>&#xFF08;&#x5426;&#x5219;&#x4E00;&#x8C03;&#x7528;&#x5B8C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5C31;&#x4F1A;&#x7ED9;&#x4F60;&#x6362;&#x6210;0&#xFF0C;false&#x6216;null&#xFF0C;&#x751A;&#x81F3;&#x7ED9;&#x4F60;&#x629B;&#x4E00;&#x4E2A;NPE&#xFF09;&#x3002;</p>
+<p>&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x91CD;&#x70B9;&#x4E86;&#xFF01;<code>finalizeSpawn</code>&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Nullable</span>
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> SpawnGroupData <span class="hljs-title">finalizeSpawn</span><span class="hljs-params">(ServerLevelAccessor accessor, DifficultyInstance difficulty, MobSpawnType spawnType, @Nullable SpawnGroupData spawnData, @Nullable CompoundTag spawnTag)</span> </span>{
+    RandomSource random = accessor.getRandom();
+
+<span class="hljs-comment">//  &#x6CE8;&#x610F;&#x4F60;&#x5728;&#x5199;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8981;&#x628A;&#x8FD9;&#x91CC;&#x6362;&#x6210;ForgeEventFactory.onFinalizeSpawn(this, accessor, difficulty, spawnType, spawnData, spawnTag);</span>
+    spawnData = <span class="hljs-keyword">super</span>.finalizeSpawn(accessor, difficulty, spawnType, spawnData, spawnTag);
+
+    <span class="hljs-keyword">float</span> specialMultiplier = difficulty.getSpecialMultiplier();
+    setCanPickUpLoot(random.nextFloat() &lt; <span class="hljs-number">0.55F</span> * specialMultiplier);
+    <span class="hljs-keyword">if</span> (spawnData == <span class="hljs-keyword">null</span>) {
+        spawnData = <span class="hljs-keyword">new</span> Zombie.ZombieGroupData(getSpawnAsBabyOdds(random), <span class="hljs-keyword">true</span>);
+    }
+
+    <span class="hljs-keyword">if</span> (spawnData <span class="hljs-keyword">instanceof</span> Zombie.ZombieGroupData data) {
+        <span class="hljs-keyword">if</span> (data.isBaby) {
+            setBaby(<span class="hljs-keyword">true</span>);
+
+            <span class="hljs-keyword">if</span> (data.canSpawnJockey) {
+                <span class="hljs-keyword">if</span> ((<span class="hljs-keyword">double</span>) random.nextFloat() &lt; <span class="hljs-number">0.05</span>D) {
+              <span class="hljs-comment">//    &#x5C1D;&#x8BD5;&#x9A91;&#x4E00;&#x53EA;&#x6CA1;&#x6709;&#x88AB;&#x9A91;&#x7684;&#x9E21;</span>
+                    List&lt;Chicken&gt; chickens = accessor.getEntitiesOfClass(Chicken.class, getBoundingBox().inflate(<span class="hljs-number">5.0</span>D, <span class="hljs-number">3.0</span>D, <span class="hljs-number">5.0</span>D), EntitySelector.ENTITY_NOT_BEING_RIDDEN);
+                    <span class="hljs-keyword">if</span> (!chickens.isEmpty()) {
+                        Chicken chicken = chickens.get(<span class="hljs-number">0</span>);
+                        chicken.setChickenJockey(<span class="hljs-keyword">true</span>);
+                        startRiding(chicken);
+                    }
+                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ((<span class="hljs-keyword">double</span>) random.nextFloat() &lt; <span class="hljs-number">0.05</span>D) {
+              <span class="hljs-comment">//    &#x5C1D;&#x8BD5;&#x81EA;&#x5DF1;&#x751F;&#x6210;&#x4E00;&#x53EA;&#x9E21;&#x9A91;</span>
+                    Chicken chicken = EntityType.CHICKEN.create(level());
+                    <span class="hljs-keyword">if</span> (chicken != <span class="hljs-keyword">null</span>) {
+                        chicken.moveTo(getX(), getY(), getZ(), getYRot(), <span class="hljs-number">0.0F</span>);
+                        chicken.finalizeSpawn(accessor, difficulty, MobSpawnType.JOCKEY, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>);
+                        chicken.setChickenJockey(<span class="hljs-keyword">true</span>);
+                        startRiding(chicken);
+                        accessor.addFreshEntity(chicken);
+                    }
+                }
+            }
+        }
+
+        setCanBreakDoors(supportsBreakDoorGoal() &amp;&amp; random.nextFloat() &lt; specialMultiplier * <span class="hljs-number">0.1F</span>);
+        populateDefaultEquipmentSlots(random, difficulty);
+        populateDefaultEquipmentEnchantments(random, difficulty);
+    }
+
+<span class="hljs-comment">//  &#x4E07;&#x5723;&#x8282;&#x7684;&#x5F69;&#x86CB;</span>
+    <span class="hljs-keyword">if</span> (getItemBySlot(EquipmentSlot.HEAD).isEmpty()) {
+        LocalDate date = LocalDate.now();
+        <span class="hljs-keyword">int</span> day = date.get(ChronoField.DAY_OF_MONTH);
+        <span class="hljs-keyword">int</span> month = date.get(ChronoField.MONTH_OF_YEAR);
+
+        <span class="hljs-keyword">if</span> (month == <span class="hljs-number">10</span> &amp;&amp; day == <span class="hljs-number">31</span> &amp;&amp; random.nextFloat() &lt; <span class="hljs-number">0.25F</span>) {
+            setItemSlot(EquipmentSlot.HEAD, <span class="hljs-keyword">new</span> ItemStack(random.nextFloat() &lt; <span class="hljs-number">0.1F</span> ? Blocks.JACK_O_LANTERN : Blocks.CARVED_PUMPKIN));
+        <span class="hljs-comment">//  &#x8FD9;&#x65F6;&#x5357;&#x74DC;&#x5934;&#x76D4;&#x4E0D;&#x53EF;&#x80FD;&#x6389;&#x843D;</span>
+            armorDropChances[EquipmentSlot.HEAD.getIndex()] = <span class="hljs-number">0.0F</span>;
+        }
+    }
+
+    handleAttributes(specialMultiplier);
+    <span class="hljs-keyword">return</span> spawnData;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">getSpawnAsBabyOdds</span><span class="hljs-params">(RandomSource random)</span> </span>{
+    <span class="hljs-keyword">return</span> random.nextFloat() &lt; ForgeConfig.SERVER.zombieBabyChance.get();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleAttributes</span><span class="hljs-params">(<span class="hljs-keyword">float</span> specialMultiplier)</span> </span>{
+    randomizeReinforcementsChance();
+    getAttribute(Attributes.KNOCKBACK_RESISTANCE).addPermanentModifier(<span class="hljs-keyword">new</span> AttributeModifier(<span class="hljs-string">&quot;Random spawn bonus&quot;</span>, random.nextDouble() * (<span class="hljs-keyword">double</span>) <span class="hljs-number">0.05F</span>, AttributeModifier.Operation.ADDITION));
+
+    <span class="hljs-keyword">double</span> bonusMultiplier = random.nextDouble() * <span class="hljs-number">1.5</span>D * (<span class="hljs-keyword">double</span>) specialMultiplier;
+    <span class="hljs-keyword">if</span> (bonusMultiplier &gt; <span class="hljs-number">1</span>) {
+        getAttribute(Attributes.FOLLOW_RANGE).addPermanentModifier(<span class="hljs-keyword">new</span> AttributeModifier(<span class="hljs-string">&quot;Random zombie-spawn bonus&quot;</span>, bonusMultiplier, AttributeModifier.Operation.MULTIPLY_TOTAL));
+    }
+
+<span class="hljs-comment">//  &#x5F3A;&#x5316;&#x201C;&#x9886;&#x5934;&#x201D;&#x50F5;&#x5C38;</span>
+    <span class="hljs-keyword">if</span> (random.nextFloat() &lt; specialMultiplier * <span class="hljs-number">0.05F</span>) {
+        getAttribute(Attributes.SPAWN_REINFORCEMENTS_CHANCE)
+            .addPermanentModifier(<span class="hljs-keyword">new</span> AttributeModifier(<span class="hljs-string">&quot;Leader zombie bonus&quot;</span>, random.nextDouble() * <span class="hljs-number">0.25</span>D + <span class="hljs-number">0.5</span>D, AttributeModifier.Operation.ADDITION));
+        getAttribute(Attributes.MAX_HEALTH)
+            .addPermanentModifier(<span class="hljs-keyword">new</span> AttributeModifier(<span class="hljs-string">&quot;Leader zombie bonus&quot;</span>, random.nextDouble() * <span class="hljs-number">3.0</span>D + <span class="hljs-number">1.0</span>D, AttributeModifier.Operation.MULTIPLY_TOTAL));
+        setCanBreakDoors(supportsBreakDoorGoal());
+    }
+}
+
+<span class="hljs-comment">//  Attributes.SPAWN_REINFORCEMENTS_CHANCE&#x7684;&#x503C;&#x662F;&#x5728;&#x8FD9;&#x91CC;&#x88AB;&#x8BBE;&#x7F6E;&#x7684;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5728;createAttributes&#x4E2D;&#xFF08;Attributes.SPAWN_REINFORCEMENTS_CHANCE&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x662F;0&#xFF09;</span>
+<span class="hljs-comment">//  createAttributes&#x53EA;&#x662F;&#x58F0;&#x660E;&#x4E86;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">randomizeReinforcementsChance</span><span class="hljs-params">()</span> </span>{
+    getAttribute(Attributes.SPAWN_REINFORCEMENTS_CHANCE).setBaseValue(random.nextDouble() * ForgeConfig.SERVER.zombieBaseSummonChance.get());
+}
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">populateDefaultEquipmentSlots</span><span class="hljs-params">(RandomSource random, DifficultyInstance difficulty)</span> </span>{
+    <span class="hljs-keyword">super</span>.populateDefaultEquipmentSlots(random, difficulty);
+    <span class="hljs-keyword">if</span> (random.nextFloat() &lt; (level().getDifficulty() == Difficulty.HARD ? <span class="hljs-number">0.05F</span> : <span class="hljs-number">0.01F</span>)) {
+        <span class="hljs-keyword">int</span> i = random.nextInt(<span class="hljs-number">3</span>);
+        <span class="hljs-keyword">if</span> (i == <span class="hljs-number">0</span>) {
+            setItemSlot(EquipmentSlot.MAINHAND, <span class="hljs-keyword">new</span> ItemStack(Items.IRON_SWORD));
+        } <span class="hljs-keyword">else</span> {
+            setItemSlot(EquipmentSlot.MAINHAND, <span class="hljs-keyword">new</span> ItemStack(Items.IRON_SHOVEL));
+        }
+    }
+}
+</code></pre>
+<p><code>finalizeSpawn</code>&#x65B9;&#x6CD5;&#x4E3A;<code>Mob</code>&#x7684;&#x6700;&#x7EC8;&#x751F;&#x6210;&#x505A;&#x4E86;&#x6700;&#x540E;&#x7684;&#x8C03;&#x6574;&#x3002;<code>Zombie</code>&#x7C7B;&#x91CD;&#x5199;&#x4E86;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x4F7F;&#x50F5;&#x5C38;&#x5728;&#x751F;&#x6210;&#x65F6;&#x83B7;&#x5F97;&#x4E86;&#x52A0;&#x5F3A;&#x3002;&#x5176;&#x4E2D;&#x7279;&#x522B;&#x5BB9;&#x6613;&#x9057;&#x5FD8;&#x7684;&#x4E00;&#x70B9;&#x662F;&#xFF0C;<code>populateDefaultEquipmentSlots</code>&#xFF08;&#x4E00;&#x822C;&#x7528;&#x6765;&#x7ED9;&#x4E88;Mob&#x751F;&#x6210;&#x65F6;&#x7684;&#x88C5;&#x5907;&#xFF09;&#x548C;<code>populateDefaultEquipmentEnchantments</code>&#xFF08;&#x4E00;&#x822C;&#x7528;&#x6765;&#x7ED9;Mob&#x751F;&#x6210;&#x65F6;&#x7684;&#x88C5;&#x5907;&#x9644;&#x9B54;&#xFF09;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x867D;&#x7136;&#x5728;<code>Mob</code>&#x7C7B;&#x4E2D;&#x5C31;&#x58F0;&#x660E;&#x4E86;&#xFF0C;&#x4F46;&#x662F;<strong>&#x5FC5;&#x987B;&#x5728;finalizeSpawn&#x65B9;&#x6CD5;&#x624B;&#x52A8;&#x8C03;&#x7528;</strong>&#x3002;&#x4E3E;&#x4E00;&#x4E2A;&#x6709;&#x5173;<code>finalizeSpawn</code>&#x65B9;&#x6CD5;&#x7528;&#x9014;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;&#x8718;&#x86DB;&#x751F;&#x6210;&#x65F6;&#x6240;&#x643A;&#x5E26;&#x7684;&#x836F;&#x6C34;&#x6548;&#x679C;&#xFF0C;&#x4FBF;&#x662F;&#x5728;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4E2D;&#x6DFB;&#x52A0;&#x7684;&#x3002;</p>
+<p><em>&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF1A;forge&#x660E;&#x786E;&#x8BF4;&#x660E;&#xFF1A;&#x5728;&#x76EE;&#x524D;&#x7684;forge&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;<strong>&#x53EA;&#x80FD;&#x88AB;&#x91CD;&#x5199;</strong>&#xFF0C;<strong>&#x76F4;&#x63A5;&#x8C03;&#x7528;finalizeSpawn&#x65B9;&#x6CD5;&#x4F1A;&#x5BFC;&#x81F4;StackOverflowError</strong>&#xFF01;&#x56E0;&#x6B64;<strong>&#x4E00;&#x5B9A;&#x8981;&#x4F7F;&#x7528;ForgeEventFactory.onFinalizeSpawn</strong>&#xFF01;</em></p>
+<p>&#x7136;&#x540E;&#x662F;<code>dropCustomDeathLoot</code>&#xFF0C;&#x672C;&#x8282;&#x7684;&#x5185;&#x5BB9;&#x4E5F;&#x63A5;&#x8FD1;&#x5C3E;&#x58F0;&#x4E86;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">dropCustomDeathLoot</span><span class="hljs-params">(DamageSource source, <span class="hljs-keyword">int</span> lootingLevel, <span class="hljs-keyword">boolean</span> killedByPlayer)</span> </span>{
+    <span class="hljs-keyword">super</span>.dropCustomDeathLoot(source, lootingLevel, killedByPlayer);
+    Entity entity = source.getEntity();
+    <span class="hljs-keyword">if</span> (entity <span class="hljs-keyword">instanceof</span> Creeper creeper) {
+        <span class="hljs-keyword">if</span> (creeper.canDropMobsSkull()) {
+            ItemStack skull = getSkull();
+            <span class="hljs-keyword">if</span> (!skull.isEmpty()) {
+                creeper.increaseDroppedSkulls();
+                spawnAtLocation(skull);
+            }
+        }
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">protected</span> ItemStack <span class="hljs-title">getSkull</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> ItemStack(Items.ZOMBIE_HEAD);
+}
+</code></pre>
+<p><code>dropCustomDeathLoot</code>&#x4E3B;&#x8981;&#x8BA9;<code>LivingEntity</code>&#x53EF;&#x4EE5;&#x6389;&#x843D;<strong>&#x8F83;&#x590D;&#x6742;&#x7684;&#xFF0C;&#x5E38;&#x89C4;&#x6218;&#x5229;&#x54C1;&#x8868;&#x96BE;&#x4EE5;&#x5B9E;&#x73B0;&#x7684;</strong>&#x6389;&#x843D;&#x7269;&#xFF08;&#x6BD4;&#x5982;&#x88AB;&#x7279;&#x6B8A;&#x7684;&#xFF08;&#x9AD8;&#x538B;&#x4E14;&#x6CA1;&#x70B8;&#x6389;&#x8FC7;&#x5934;&#x7684;&#xFF09;&#x82E6;&#x529B;&#x6015;&#x70B8;&#x6B7B;&#x65F6;&#x4F1A;&#x6389;&#x843D;&#x5934;&#x9885;&#xFF09;&#xFF0C;&#x5F53;&#x7136;&#x80FD;&#x7528;&#x6218;&#x5229;&#x54C1;&#x8868;&#x5C31;&#x7528;&#x6218;&#x5229;&#x54C1;&#x8868;&#xFF0C;&#x4E0D;&#x8981;&#x6389;&#x4EC0;&#x4E48;&#x90FD;&#x7528;<code>dropCustomDeathLoot</code>&#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x6700;&#x540E;&#x662F;&#x4E00;&#x4E9B;&#x6742;&#x9879;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> SoundEvent <span class="hljs-title">getAmbientSound</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> SoundEvents.ZOMBIE_AMBIENT;
+}
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> SoundEvent <span class="hljs-title">getHurtSound</span><span class="hljs-params">(DamageSource source)</span> </span>{
+    <span class="hljs-keyword">return</span> SoundEvents.ZOMBIE_HURT;
+}
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> SoundEvent <span class="hljs-title">getDeathSound</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> SoundEvents.ZOMBIE_DEATH;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">protected</span> SoundEvent <span class="hljs-title">getStepSound</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> SoundEvents.ZOMBIE_STEP;
+}
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">playStepSound</span><span class="hljs-params">(BlockPos pos, BlockState state)</span> </span>{
+    playSound(getStepSound(), <span class="hljs-number">0.15F</span>, <span class="hljs-number">1.0F</span>);
+}
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> MobType <span class="hljs-title">getMobType</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> MobType.UNDEAD;
+}
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">float</span> <span class="hljs-title">getStandingEyeHeight</span><span class="hljs-params">(Pose pose, EntityDimensions dimensions)</span> </span>{
+    <span class="hljs-keyword">return</span> isBaby() ? <span class="hljs-number">0.93F</span> : <span class="hljs-number">1.74F</span>;
+}
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">canHoldItem</span><span class="hljs-params">(ItemStack stack)</span> </span>{
+    <span class="hljs-keyword">return</span> stack.is(Items.EGG) &amp;&amp; isBaby() &amp;&amp; isPassenger() ? <span class="hljs-keyword">false</span> : <span class="hljs-keyword">super</span>.canHoldItem(stack);
+}
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">wantsToPickUp</span><span class="hljs-params">(ItemStack stack)</span> </span>{
+    <span class="hljs-keyword">return</span> stack.is(Items.GLOW_INK_SAC) ? <span class="hljs-keyword">false</span> : <span class="hljs-keyword">super</span>.wantsToPickUp(stack);
+}
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">getMyRidingOffset</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> isBaby() ? <span class="hljs-number">0.0</span>D : -<span class="hljs-number">0.45</span>D;
+}
+</code></pre>
+<p>&#x7B80;&#x5355;&#x63D0;&#x53CA;&#x4E00;&#x4E0B;&#x50F5;&#x5C38;&#x5B9E;&#x4F53;&#x7C7B;&#x578B;&#xFF08;<code>EntityType</code>&#xFF09;&#x7684;&#x6CE8;&#x518C;&#x3002;  </p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> EntityType&lt;Zombie&gt; ZOMBIE = register(<span class="hljs-string">&quot;zombie&quot;</span>, EntityType.Builder.&lt;Zombie&gt;of(Zombie::<span class="hljs-keyword">new</span>, MobCategory.MONSTER).sized(<span class="hljs-number">0.6F</span>, <span class="hljs-number">1.95F</span>).clientTrackingRange(<span class="hljs-number">8</span>));
+</code></pre>
+<p>&#x8FD9;&#x90E8;&#x5206;&#x7406;&#x89E3;&#x96BE;&#x5EA6;&#x4E0D;&#x5927;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x57FA;&#x7840;&#x7684;&#x6559;&#x7A0B;&#x4E2D;&#x4E5F;&#x63D0;&#x5230;&#x4E86;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x4E0D;&#x8FC7;&#x5C24;&#x5176;&#x8981;&#x6CE8;&#x610F;&#x4E00;&#x70B9;&#xFF1A;<strong>&#x5343;&#x4E07;&#x4E0D;&#x8981;&#x5FFD;&#x89C6;&#x8FD9;&#x4E9B;&#x7EC6;&#x8282;</strong>&#xFF01;&#x8BB8;&#x591A;&#x4F18;&#x79C0;&#x7684;Mod&#xFF0C;&#x4FBF;&#x4F18;&#x79C0;&#x5728;&#x5BF9;&#x7EC6;&#x8282;&#x7684;&#x91CD;&#x89C6;&#x3002;<br>&#x987A;&#x4FBF;&#x8BF4;&#x4E00;&#x4E0B;<code>clientTrackingRange</code>&#xFF08;&#x5355;&#x4F4D;&#x4E3A;&#x533A;&#x5757;&#xFF09;&#xFF0C;<strong>&#x5F53;&#x4E00;&#x4E2A;&#x5B9E;&#x4F53;&#x5728;&#x8FD9;&#x4E2A;&#x8FFD;&#x8E2A;&#x8DDD;&#x79BB;&#x5185;&#x65F6;&#xFF0C;&#x8FD9;&#x4E2A;&#x5B9E;&#x4F53;&#x5C06;&#x4F1A;&#x88AB;&#x66F4;&#x65B0;</strong>&#x3002;&#x4E00;&#x822C;&#x201C;&#x6218;&#x573A;&#x201D;&#x9762;&#x79EF;&#x8D8A;&#x5927;&#x7684;&#x5B9E;&#x4F53;&#xFF0C;<code>clientTrackingRange</code>&#x8D8A;&#x5927;&#xFF08;&#x6BD4;&#x5982;&#x672B;&#x5F71;&#x6C34;&#x6676;&#x662F;16&#xFF09;</p>
+<p>&#x50F5;&#x5C38;&#x7684;&#x884C;&#x4E3A;&#x548C;&#x5E95;&#x5C42;&#x5B9E;&#x73B0;&#x4FBF;&#x5206;&#x6790;&#x5230;&#x8FD9;&#x91CC;&#x4E86;&#x3002;&#x867D;&#x7136;&#x50F5;&#x5C38;&#x770B;&#x4E0A;&#x53BB;&#x5F88;&#x5BB9;&#x6613;&#x5B9E;&#x73B0;&#xFF08;&#x4E5F;&#x597D;&#x6253;&#xFF09;&#xFF0C;&#x53EF;&#x662F;&#x4E0E;&#x50F5;&#x5C38;&#x76F8;&#x5173;&#x7684;&#x5B9E;&#x73B0;&#x7EC6;&#x8282;&#x5374;&#x4E0D;&#x5C11;&#xFF0C;&#x9700;&#x8981;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x624D;&#x80FD;&#x7406;&#x6E05;&#x695A;&#x3002;  </p>
+<p>&#x4E0B;&#x4E00;&#x8282;&#x5C06;&#x4F1A;&#x5206;&#x6790;&#x50F5;&#x5C38;&#x7684;&#x6A21;&#x578B;&#x53CA;&#x6E32;&#x67D3;&#x3002;23333333333~~</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 近战攻击的怪物">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="zombie2.html" class="navigation navigation-next " aria-label="Next page: 僵尸的模型与渲染">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"从原版僵尸开始","level":"1.2.1.1","depth":3,"next":{"title":"僵尸的模型与渲染","level":"1.2.1.2","depth":3,"path":"part1-monster/melee/zombie2.md","ref":"part1-monster/melee/zombie2.md","articles":[]},"previous":{"title":"近战攻击的怪物","level":"1.2.1","depth":2,"path":"part1-monster/melee/README.md","ref":"part1-monster/melee/README.md","articles":[{"title":"从原版僵尸开始","level":"1.2.1.1","depth":3,"path":"part1-monster/melee/zombie.md","ref":"part1-monster/melee/zombie.md","articles":[]},{"title":"僵尸的模型与渲染","level":"1.2.1.2","depth":3,"path":"part1-monster/melee/zombie2.md","ref":"part1-monster/melee/zombie2.md","articles":[]},{"title":"实战1 - 强化僵尸","level":"1.2.1.3","depth":3,"path":"part1-monster/melee/actual_combat1.md","ref":"part1-monster/melee/actual_combat1.md","articles":[]},{"title":"末影人与“中立”生物","level":"1.2.1.4","depth":3,"path":"part1-monster/melee/neutral_mob.md","ref":"part1-monster/melee/neutral_mob.md","articles":[]},{"title":"末影人的底层实现","level":"1.2.1.5","depth":3,"path":"part1-monster/melee/enderman.md","ref":"part1-monster/melee/enderman.md","articles":[]},{"title":"末影人的AI","level":"1.2.1.6","depth":3,"path":"part1-monster/melee/enderman2.md","ref":"part1-monster/melee/enderman2.md","articles":[]},{"title":"末影人的模型与渲染","level":"1.2.1.7","depth":3,"path":"part1-monster/melee/enderman3.md","ref":"part1-monster/melee/enderman3.md","articles":[]},{"title":"实战2 - 食尸鬼","level":"1.2.1.8","depth":3,"path":"part1-monster/melee/actual_combat2.md","ref":"part1-monster/melee/actual_combat2.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","-sharing","back-to-top-button","chapter-fold","code","hide-element","insert-logo","katex","search-pro","sharing-plus","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":true,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 80px","url":"https://lych.top/images/polonium.png"}},"theme":"default","author":"Lych","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Polonium 1.20 实体进阶教程","language":"zh-hans","gitbook":"*","description":"给Mod开发的初学者提供一个对实体的更深入的了解"},"file":{"path":"part1-monster/melee/zombie.md","mtime":"2024-07-23T07:21:18.093Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-31T16:11:27.558Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
