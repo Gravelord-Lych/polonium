@@ -512,12 +512,27 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3.2" >
+        <li class="chapter " data-level="1.2.3.2" data-path="../ranged-special/blaze2.html">
+            
+                <a href="../ranged-special/blaze2.html">
+            
+                    
+                        <b>1.2.3.2.</b>
+                    
+                    烈焰人小火球的“三连发”
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" >
             
                 <span>
             
                     
-                        <b>1.2.3.2.</b>
+                        <b>1.2.3.3.</b>
                     
                     (WIP)
             
@@ -848,7 +863,7 @@ snowball.shoot(dx, yModifier + dy, dz, <span class="hljs-number">1.6F</span>, <s
 </code></pre>
 <p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x8BA1;&#x7B97;&#x4E86;&#x5230;&#x76EE;&#x6807;&#x7684;&#x8DDD;&#x79BB;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x8BA1;&#x7B97;&#x8DDD;&#x79BB;&#x5462;&#xFF1F;&#x6839;&#x636E;&#x7269;&#x7406;&#x77E5;&#x8BC6;&#xFF0C;&#x7269;&#x4F53;&#x505A;&#x659C;&#x629B;&#x8FD0;&#x52A8;&#x65F6;&#xFF0C;<strong>&#x82E5;&#x521D;&#x901F;&#x5EA6;&#x65B9;&#x5411;&#x4E0E;&#x5730;&#x9762;&#x7684;&#x5939;&#x89D2;&#x5C0F;&#x4E8E;45&#xB0;&#xFF0C;&#x5219;&#x5F00;&#x59CB;&#x65F6;&#x629B;&#x5F97;&#x8D8A;&#x9AD8;&#xFF0C;&#x6700;&#x7EC8;&#x6254;&#x5F97;&#x8D8A;&#x8FDC;</strong>&#xFF0C;&#x5728;MC&#x4E2D;&#x4E5F;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x7B26;&#x5408;&#x8FD9;&#x4E2A;&#x89C4;&#x5F8B;&#x3002;&#x56E0;&#x6B64;&#x5F53;&#x76EE;&#x6807;&#x79BB;&#x96EA;&#x5080;&#x5121;&#x8F83;&#x8FDC;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x628A;&#x96EA;&#x7403;&#x6254;&#x9AD8;&#x4E00;&#x4E9B;&#xFF0C;&#x4ECE;&#x800C;&#x80FD;&#x51FB;&#x4E2D;&#x8F83;&#x8FDC;&#x7684;&#x76EE;&#x6807;&#x3002;&#x540C;&#x65F6;&#x6211;&#x4EEC;&#x5C06;&#x5230;&#x76EE;&#x6807;&#x7684;&#x8DDD;&#x79BB;&#x4E58;&#x4E0A;&#x4E86;0.2&#x5BF9;dy&#xFF08;&#x5373;&#x4E0A;&#x6587;&#x6240;&#x8BF4;&#x7684;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>y</mi><mn>2</mn></msub><mo>&#x2212;</mo><msub><mi>y</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">y_2-y_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.58333em;"></span><span class="strut bottom" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mbin">&#x2212;</span><span class="mord"><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">1</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span>&#xFF09;&#x8FDB;&#x884C;&#x4FEE;&#x6B63;&#xFF0C;&#x6765;&#x9632;&#x6B62;&#x6254;&#x5F97;&#x8FC7;&#x9AD8;&#x4F7F;&#x5C04;&#x7A0B;&#x53CD;&#x800C;&#x53D8;&#x77ED;&#x3002;  </p>
 <p>&#x4F46;&#x662F;<code>shoot</code>&#x65B9;&#x6CD5;&#x8FD8;&#x6709;2&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x90A3;&#x4E48;&#x540E;&#x4E24;&#x4E2A;<code>float</code>&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#x662F;&#x5E72;&#x4EC0;&#x4E48;&#x7684;&#x5462;&#xFF1F;  </p>
-<p><code>Projectile</code>&#x7C7B;&#xFF1A;</p>
+<p><code>Projectile</code>&#xFF1A;</p>
 <pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">shoot</span><span class="hljs-params">(<span class="hljs-keyword">double</span> x, <span class="hljs-keyword">double</span> y, <span class="hljs-keyword">double</span> z, <span class="hljs-keyword">float</span> scale, <span class="hljs-keyword">float</span> deviation)</span> </span>{
     Vec3 shootVector = <span class="hljs-keyword">new</span> Vec3(x, y, z).normalize()
             .add(random.triangle(<span class="hljs-number">0</span>, <span class="hljs-number">0.0172275</span> * (<span class="hljs-keyword">double</span>) deviation),
@@ -863,7 +878,7 @@ snowball.shoot(dx, yModifier + dy, dz, <span class="hljs-number">1.6F</span>, <s
     xRotO = getXRot();
 }
 </code></pre>
-<p><code>RandomSource</code>&#x7C7B;&#xFF08;&#x7528;&#x6CD5;&#x4E0E;<code>Random</code>&#x7C7B;&#x76F8;&#x8FD1;&#xFF09;&#xFF1A;  </p>
+<p><code>RandomSource</code>&#xFF08;&#x7528;&#x6CD5;&#x4E0E;<code>Random</code>&#x7C7B;&#x76F8;&#x8FD1;&#xFF09;&#xFF1A;  </p>
 <pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">default</span> <span class="hljs-keyword">double</span> <span class="hljs-title">triangle</span><span class="hljs-params">(<span class="hljs-keyword">double</span> baseValue, <span class="hljs-keyword">double</span> scale)</span> </span>{
     <span class="hljs-keyword">return</span> baseValue + scale * (nextDouble() - nextDouble());
 }
@@ -1036,7 +1051,7 @@ level().addFreshEntity(snowball);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"相对简单的雪傀儡","level":"1.2.2.2","depth":3,"next":{"title":"雪傀儡的模型与渲染","level":"1.2.2.3","depth":3,"path":"part1-monster/ranged/snow_golem2.md","ref":"part1-monster/ranged/snow_golem2.md","articles":[]},"previous":{"title":"performRangedAttack - 远程攻击の基础","level":"1.2.2.1","depth":3,"path":"part1-monster/ranged/perform_ranged_attack.md","ref":"part1-monster/ranged/perform_ranged_attack.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","chapter-fold","code","hide-element","insert-logo","katex","search-pro","sharing-plus","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":true,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 80px","url":"https://lych.top/images/polonium.png"}},"theme":"default","author":"Lych","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Polonium 1.20 实体进阶教程","language":"zh-hans","gitbook":"*","description":"给Mod开发的初学者提供一个对实体的更深入的了解"},"file":{"path":"part1-monster/ranged/snow_golem.md","mtime":"2024-06-01T18:54:30.827Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-31T16:21:50.787Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"相对简单的雪傀儡","level":"1.2.2.2","depth":3,"next":{"title":"雪傀儡的模型与渲染","level":"1.2.2.3","depth":3,"path":"part1-monster/ranged/snow_golem2.md","ref":"part1-monster/ranged/snow_golem2.md","articles":[]},"previous":{"title":"performRangedAttack - 远程攻击の基础","level":"1.2.2.1","depth":3,"path":"part1-monster/ranged/perform_ranged_attack.md","ref":"part1-monster/ranged/perform_ranged_attack.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","chapter-fold","code","hide-element","insert-logo","katex","search-pro","sharing-plus","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":true,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 80px","url":"https://lych.top/images/polonium.png"}},"theme":"default","author":"Lych","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Polonium 1.20 实体进阶教程","language":"zh-hans","gitbook":"*","description":"给Mod开发的初学者提供一个对实体的更深入的了解"},"file":{"path":"part1-monster/ranged/snow_golem.md","mtime":"2024-09-17T14:40:10.257Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-09-17T14:42:21.277Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

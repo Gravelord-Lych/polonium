@@ -1,0 +1,1143 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>烈焰人小火球的“三连发” · Polonium 1.20 实体进阶教程</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Lych">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="blaze.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    前言
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../notes.html">
+            
+                <a href="../../notes.html">
+            
+                    
+                        <b>1.1.1.</b>
+                    
+                    一些零散的笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    非Boss级怪物
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../melee/">
+            
+                <a href="../melee/">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    近战攻击的怪物
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../melee/zombie.html">
+            
+                <a href="../melee/zombie.html">
+            
+                    
+                        <b>1.2.1.1.</b>
+                    
+                    从原版僵尸开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../melee/zombie2.html">
+            
+                <a href="../melee/zombie2.html">
+            
+                    
+                        <b>1.2.1.2.</b>
+                    
+                    僵尸的模型与渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../melee/actual_combat1.html">
+            
+                <a href="../melee/actual_combat1.html">
+            
+                    
+                        <b>1.2.1.3.</b>
+                    
+                    实战1 - 强化僵尸
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../melee/neutral_mob.html">
+            
+                <a href="../melee/neutral_mob.html">
+            
+                    
+                        <b>1.2.1.4.</b>
+                    
+                    末影人与“中立”生物
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../melee/enderman.html">
+            
+                <a href="../melee/enderman.html">
+            
+                    
+                        <b>1.2.1.5.</b>
+                    
+                    末影人的底层实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="../melee/enderman2.html">
+            
+                <a href="../melee/enderman2.html">
+            
+                    
+                        <b>1.2.1.6.</b>
+                    
+                    末影人的AI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="../melee/enderman3.html">
+            
+                <a href="../melee/enderman3.html">
+            
+                    
+                        <b>1.2.1.7.</b>
+                    
+                    末影人的模型与渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="../melee/actual_combat2.html">
+            
+                <a href="../melee/actual_combat2.html">
+            
+                    
+                        <b>1.2.1.8.</b>
+                    
+                    实战2 - 食尸鬼
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../ranged/">
+            
+                <a href="../ranged/">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    远程攻击的怪物（RangedAttackMob）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../ranged/perform_ranged_attack.html">
+            
+                <a href="../ranged/perform_ranged_attack.html">
+            
+                    
+                        <b>1.2.2.1.</b>
+                    
+                    performRangedAttack - 远程攻击の基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../ranged/snow_golem.html">
+            
+                <a href="../ranged/snow_golem.html">
+            
+                    
+                        <b>1.2.2.2.</b>
+                    
+                    相对简单的雪傀儡
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../ranged/snow_golem2.html">
+            
+                <a href="../ranged/snow_golem2.html">
+            
+                    
+                        <b>1.2.2.3.</b>
+                    
+                    雪傀儡的模型与渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../ranged/actual_combat3.html">
+            
+                <a href="../ranged/actual_combat3.html">
+            
+                    
+                        <b>1.2.2.4.</b>
+                    
+                    实战3 - 发射器僵尸
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../ranged/witch.html">
+            
+                <a href="../ranged/witch.html">
+            
+                    
+                        <b>1.2.2.5.</b>
+                    
+                    令人头疼的女巫
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../ranged/witch2.html">
+            
+                <a href="../ranged/witch2.html">
+            
+                    
+                        <b>1.2.2.6.</b>
+                    
+                    女巫的渲染细节
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="../ranged/skeleton.html">
+            
+                <a href="../ranged/skeleton.html">
+            
+                    
+                        <b>1.2.2.7.</b>
+                    
+                    全能的骷髅
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.8" data-path="../ranged/skeleton2.html">
+            
+                <a href="../ranged/skeleton2.html">
+            
+                    
+                        <b>1.2.2.8.</b>
+                    
+                    骷髅的“聪明之处”
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.9" data-path="../ranged/skeleton3.html">
+            
+                <a href="../ranged/skeleton3.html">
+            
+                    
+                        <b>1.2.2.9.</b>
+                    
+                    骷髅的模型（与渲染）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.10" data-path="../ranged/actual_combat4.html">
+            
+                <a href="../ranged/actual_combat4.html">
+            
+                    
+                        <b>1.2.2.10.</b>
+                    
+                    实战4 - 骷髅法师
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    远程攻击的怪物（非RangedAttackMob）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="blaze.html">
+            
+                <a href="blaze.html">
+            
+                    
+                        <b>1.2.3.1.</b>
+                    
+                    热爱高温的烈焰人
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3.2" data-path="blaze2.html">
+            
+                <a href="blaze2.html">
+            
+                    
+                        <b>1.2.3.2.</b>
+                    
+                    烈焰人小火球的“三连发”
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" >
+            
+                <span>
+            
+                    
+                        <b>1.2.3.3.</b>
+                    
+                    (WIP)
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../flyer-special/">
+            
+                <a href="../flyer-special/">
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    (WIP) 飞行的怪物（不使用FlyingMoveControl的飞行生物）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../exercises/">
+            
+                <a href="../exercises/">
+            
+                    
+                        <b>1.2.5.</b>
+                    
+                    本章练习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../exercises/exercise1.html">
+            
+                <a href="../exercises/exercise1.html">
+            
+                    
+                        <b>1.2.5.1.</b>
+                    
+                    练习1 - 狗头人
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../part2-neutral/">
+            
+                <a href="../../part2-neutral/">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    (WIP) 友好生物与被动生物
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../part3-projectile/">
+            
+                <a href="../../part3-projectile/">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    (WIP) 弹射物和功能性实体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../part4-boss/">
+            
+                <a href="../../part4-boss/">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    (WIP) Boss级怪物
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../part4-boss/wither/">
+            
+                <a href="../../part4-boss/wither/">
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    (WIP) 凋灵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../part4-boss/ender_dragon/">
+            
+                <a href="../../part4-boss/ender_dragon/">
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    (WIP) 末影龙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" >
+            
+                <span>
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    （WIP）
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../part5-miscellaneous/">
+            
+                <a href="../../part5-miscellaneous/">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    杂项
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >烈焰人小火球的“三连发”</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x70C8;&#x7130;&#x4EBA;&#x5C0F;&#x706B;&#x7403;&#x7684;&#x4E09;&#x8FDE;&#x53D1;">&#x70C8;&#x7130;&#x4EBA;&#x5C0F;&#x706B;&#x7403;&#x7684;&#x201C;&#x4E09;&#x8FDE;&#x53D1;&#x201D;</h1>
+<p>&#x70C8;&#x7130;&#x4EBA;&#x6BCF;&#x6B21;&#x653B;&#x51FB;&#x65F6;&#xFF0C;&#x4EE5;&#x8F83;&#x77ED;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x8FDE;&#x7EED;&#x53D1;&#x5C04;3&#x4E2A;&#x5C0F;&#x706B;&#x7403;&#x5C04;&#x51FB;&#x76EE;&#x6807;&#x3002;&#x8FD9;&#x4E2A;&#x653B;&#x51FB;&#x65B9;&#x5F0F;&#x7684;&#x5B9E;&#x73B0;&#x4F4D;&#x4E8E;&#x70C8;&#x7130;&#x4EBA;&#x7684;&#x4E00;&#x4E2A;AI<code>Blaze.BlazeAttackGoal</code>&#x4E2D;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;AI&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x8FD9;&#x6837;&#x51E0;&#x4E2A;<code>int</code>&#x7C7B;&#x578B;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x653B;&#x51FB;&#x9636;&#x6BB5;&#xFF08;&#x53EF;&#x80FD;&#x53D6;&#x503C;&#x4E3A;0&#xFF0C;1&#xFF0C;2&#xFF0C;3&#xFF0C;4&#xFF0C;5&#xFF09;</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> attackStep;
+<span class="hljs-comment">// &#x653B;&#x51FB;&#x51B7;&#x5374;&#x65F6;&#x95F4;&#xFF08;&#x5355;&#x4F4D;&#xFF1A;tick&#xFF09;</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> attackTime;
+<span class="hljs-comment">// &#x8DDD;&#x79BB;&#x4E0A;&#x6B21;&#x770B;&#x5230;&#x653B;&#x51FB;&#x76EE;&#x6807;&#x8FC7;&#x53BB;&#x7684;&#x65F6;&#x95F4;&#xFF08;&#x5355;&#x4F4D;&#xFF1A;tick&#xFF09;&#xFF0C;&#x5982;&#x679C;&#x70C8;&#x7130;&#x4EBA;&#x80FD;&#x770B;&#x5230;&#x76EE;&#x6807;&#x5219;&#x8BE5;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x4E3A;0</span>
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> lastSeen;
+</code></pre>
+<p>&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x4E2D;&#x4E3A;AI&#x8BBE;&#x7F6E;&#x4E86;<code>Flag.MOVE</code>&#x548C;<code>Flag.LOOK</code>&#x4E24;&#x4E2A;<code>Flag</code>&#xFF0C;&#x4E00;&#x822C;&#x63A7;&#x5236;&#x751F;&#x7269;&#x653B;&#x51FB;&#x7684;AI&#x90FD;&#x4F1A;&#x8BBE;&#x7F6E;&#x8FD9;&#x4E24;&#x4E2A;<code>Flag</code>&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">BlazeAttackGoal</span><span class="hljs-params">(Blaze blaze)</span> </span>{
+    <span class="hljs-keyword">this</span>.blaze = blaze;
+    setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
+}
+</code></pre>
+<p>&#x7136;&#x540E;&#x662F;AI&#x4F7F;&#x7528;&#x7684;&#x6761;&#x4EF6;&#x4E0E;&#x5F00;&#x59CB;&#x7ED3;&#x675F;&#x65F6;&#x7684;&#x884C;&#x4E3A;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">canUse</span><span class="hljs-params">()</span> </span>{
+    LivingEntity entity = blaze.getTarget();
+    <span class="hljs-keyword">return</span> entity != <span class="hljs-keyword">null</span> &amp;&amp; entity.isAlive() &amp;&amp; blaze.canAttack(entity);
+}
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">start</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">// &#x91CD;&#x7F6E;attackStep&#xFF0C;&#x610F;&#x5473;&#x7740;&#x5F00;&#x59CB;&#x65B0;&#x7684;&#x7684;&#x4E00;&#x8F6E;&#x653B;&#x51FB;</span>
+    attackStep = <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">// &#x8BA9;&#x70C8;&#x7130;&#x4EBA;&#x8EAB;&#x4E0A;&#x7684;&#x706B;&#x7184;&#x706D;</span>
+    blaze.setCharged(<span class="hljs-keyword">false</span>);
+    lastSeen = <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>&#x8FD9;&#x4E2A;AI&#x6BCF;&#x4E2A;&#x6E38;&#x620F;&#x523B;&#x90FD;&#x9700;&#x8981;&#x66F4;&#x65B0;&#xFF08;&#x5305;&#x62EC;&#x524D;&#x9762;&#x8BF4;&#x8FC7;&#x7684;<code>RangedAttackGoal</code>&#x5728;&#x5185;&#x7684;&#x51E0;&#x4E4E;&#x6240;&#x6709;&#x63A7;&#x5236;&#x751F;&#x7269;&#x653B;&#x51FB;&#x7684;AI&#x4E5F;&#x662F;&#x8FD9;&#x6837;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x91CD;&#x5199;<code>requiresUpdateEveryTick</code>&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">requiresUpdateEveryTick</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+}
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x8BF4;&#x7684;<code>tick</code>&#x65B9;&#x6CD5;&#x662F;&#x8FD9;&#x4E2A;AI&#x7684;&#x5173;&#x952E;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">tick</span><span class="hljs-params">()</span> </span>{
+    --attackTime;
+    LivingEntity target = blaze.getTarget();
+    <span class="hljs-keyword">if</span> (target != <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">boolean</span> canSeeTarget = blaze.getSensing().hasLineOfSight(target);
+        <span class="hljs-keyword">if</span> (canSeeTarget) {
+            lastSeen = <span class="hljs-number">0</span>;
+        } <span class="hljs-keyword">else</span> {
+            ++lastSeen;
+        }
+
+        <span class="hljs-keyword">double</span> distSqrToTarget = blaze.distanceToSqr(target);
+        <span class="hljs-keyword">if</span> (distSqrToTarget &lt; <span class="hljs-number">4.0</span>D) {
+            <span class="hljs-keyword">if</span> (!canSeeTarget) {
+                <span class="hljs-keyword">return</span>;
+            }
+            <span class="hljs-keyword">if</span> (attackTime &lt;= <span class="hljs-number">0</span>) {
+                attackTime = <span class="hljs-number">20</span>;
+                blaze.doHurtTarget(target);
+            }
+            blaze.getMoveControl().setWantedPosition(target.getX(), target.getY(), target.getZ(), <span class="hljs-number">1.0</span>D);
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (distSqrToTarget &lt; getFollowDistance() * getFollowDistance() &amp;&amp; canSeeTarget) {
+            <span class="hljs-keyword">double</span> dx = target.getX() - blaze.getX();
+            <span class="hljs-keyword">double</span> dy = target.getY(<span class="hljs-number">0.5</span>D) - blaze.getY(<span class="hljs-number">0.5</span>D);
+            <span class="hljs-keyword">double</span> dz = target.getZ() - blaze.getZ();
+
+            <span class="hljs-keyword">if</span> (attackTime &lt;= <span class="hljs-number">0</span>) {
+                ++attackStep;
+                <span class="hljs-keyword">if</span> (attackStep == <span class="hljs-number">1</span>) {
+                    attackTime = <span class="hljs-number">60</span>;
+                    blaze.setCharged(<span class="hljs-keyword">true</span>);
+                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (attackStep &lt;= <span class="hljs-number">4</span>) {
+                    attackTime = <span class="hljs-number">6</span>;
+                } <span class="hljs-keyword">else</span> {
+                    attackTime = <span class="hljs-number">100</span>;
+                    attackStep = <span class="hljs-number">0</span>;
+                    blaze.setCharged(<span class="hljs-keyword">false</span>);
+                }
+
+                <span class="hljs-keyword">if</span> (attackStep &gt; <span class="hljs-number">1</span>) {
+                    <span class="hljs-keyword">double</span> horizontalOffset = Math.sqrt(Math.sqrt(distSqrToTarget)) * <span class="hljs-number">0.5</span>D;
+                    <span class="hljs-keyword">if</span> (!blaze.isSilent()) {
+                        blaze.level().levelEvent(<span class="hljs-keyword">null</span>, <span class="hljs-number">1018</span>, blaze.blockPosition(), <span class="hljs-number">0</span>);
+                    }
+                    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1</span>; ++i) {
+                        SmallFireball fireball = <span class="hljs-keyword">new</span> SmallFireball(blaze.level(),
+                                blaze,
+                                blaze.getRandom().triangle(dx, <span class="hljs-number">2.297</span>D * horizontalOffset),
+                                dy,
+                                blaze.getRandom().triangle(dz, <span class="hljs-number">2.297</span>D * horizontalOffset));
+                        fireball.setPos(fireball.getX(), blaze.getY(<span class="hljs-number">0.5</span>D) + <span class="hljs-number">0.5</span>D, fireball.getZ());
+                        blaze.level().addFreshEntity(fireball);
+                    }
+                }
+            }
+            blaze.getLookControl().setLookAt(target, <span class="hljs-number">10.0F</span>, <span class="hljs-number">10.0F</span>);
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (lastSeen &lt; <span class="hljs-number">5</span>) {
+            blaze.getMoveControl().setWantedPosition(target.getX(), target.getY(), target.getZ(), <span class="hljs-number">1.0</span>D);
+        }
+
+        <span class="hljs-comment">// Goal&#x7C7B;&#x7684;tick&#x65B9;&#x6CD5;&#x7684;&#x65B9;&#x6CD5;&#x4F53;&#x662F;&#x7A7A;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x4E0B;&#x9762;&#x8C03;&#x7528;super.tick()&#x5176;&#x5B9E;&#x662F;&#x975E;&#x5FC5;&#x8981;&#x7684;&#x3002;&#x4E0B;&#x6587;&#x4E2D;&#x5206;&#x6BB5;&#x5206;&#x6790;&#x65F6;&#x4E0D;&#x518D;&#x63D0;&#x53CA;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x3002;</span>
+        <span class="hljs-keyword">super</span>.tick();
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">double</span> <span class="hljs-title">getFollowDistance</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> blaze.getAttributeValue(Attributes.FOLLOW_RANGE);
+}
+</code></pre>
+<p>&#x4E0E;&#x4E4B;&#x524D;&#x5206;&#x6790;&#x8F83;&#x590D;&#x6742;AI&#x7684;&#x65B9;&#x5F0F;&#x4E00;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;<code>if (target != null) {...}</code>&#x91CC;&#x7684;&#x5185;&#x5BB9;&#x5206;&#x4E3A;4&#x4E2A;&#x90E8;&#x5206;&#x6765;&#x5206;&#x6790;&#x3002;  </p>
+<p>&#x7B2C;&#x4E00;&#x90E8;&#x5206;&#x7528;&#x6765;&#x66F4;&#x65B0;<code>attackTime</code>&#x548C;<code>lastSeen</code>&#x3002;&#x8FD9;&#x4E24;&#x4E2A;&#x53D8;&#x91CF;&#x7684;&#x4F5C;&#x7528;&#x521A;&#x624D;&#x63D0;&#x5230;&#x8FC7;&#xFF0C;&#x56E0;&#x6B64;&#x6B64;&#x5904;&#x4E0D;&#x518D;&#x8D58;&#x8FF0;&#x3002;   </p>
+<pre><code class="lang-java">--attackTime;
+<span class="hljs-keyword">boolean</span> canSeeTarget = blaze.getSensing().hasLineOfSight(target);
+<span class="hljs-keyword">if</span> (canSeeTarget) {
+    lastSeen = <span class="hljs-number">0</span>;
+} <span class="hljs-keyword">else</span> {
+    ++lastSeen;
+}
+</code></pre>
+<p>&#x7B2C;&#x4E8C;&#x90E8;&#x5206;&#x53CA;&#x4EE5;&#x540E;&#x7684;&#x90E8;&#x5206;&#x7528;&#x6765;&#x6839;&#x636E;&#x70C8;&#x7130;&#x4EBA;&#x4E0E;&#x76EE;&#x6807;&#x7684;&#x4F4D;&#x7F6E;&#x5173;&#x7CFB;&#x8C03;&#x6574;&#x70C8;&#x7130;&#x4EBA;&#x7684;&#x884C;&#x4E3A;&#x3002;&#x5176;&#x4E2D;&#x7B2C;&#x4E8C;&#x90E8;&#x5206;&#x63A7;&#x5236;&#x70C8;&#x7130;&#x4EBA;&#x5728;&#x4E0E;&#x76EE;&#x6807;&#x7684;&#x8DDD;&#x79BB;&#x5C0F;&#x4E8E;2&#x65F6;&#x5C1D;&#x8BD5;&#x8FD1;&#x6218;&#x653B;&#x51FB;&#x76EE;&#x6807;&#xFF0C;&#x5E76;&#x4E14;&#x6BCF;&#x79D2;&#x53EF;&#x4EE5;&#x653B;&#x51FB;&#x4E00;&#x6B21;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">double</span> distSqrToTarget = blaze.distanceToSqr(target);
+<span class="hljs-keyword">if</span> (distSqrToTarget &lt; <span class="hljs-number">4.0</span>D) {
+    <span class="hljs-comment">// &#x4EC5;&#x5728;&#x80FD;&#x770B;&#x89C1;&#x76EE;&#x6807;&#x7684;&#x6761;&#x4EF6;&#x4E0B;&#x53D1;&#x52A8;&#x653B;&#x51FB;</span>
+    <span class="hljs-keyword">if</span> (!canSeeTarget) {
+        <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">if</span> (attackTime &lt;= <span class="hljs-number">0</span>) {
+        attackTime = <span class="hljs-number">20</span>;
+        <span class="hljs-comment">// &#x53D1;&#x52A8;&#x8FD1;&#x6218;&#x653B;&#x51FB;</span>
+        blaze.doHurtTarget(target);
+    }
+    <span class="hljs-comment">// &#x4F7F;&#x70C8;&#x7130;&#x4EBA;&#x79FB;&#x5411;&#x76EE;&#x6807;</span>
+    blaze.getMoveControl().setWantedPosition(target.getX(), target.getY(), target.getZ(), <span class="hljs-number">1.0</span>D);
+}
+</code></pre>
+<p>&#x5982;&#x679C;&#x4E0D;&#x6EE1;&#x8DB3;&#x8FD1;&#x6218;&#x653B;&#x51FB;&#x7684;&#x6761;&#x4EF6;&#xFF0C;&#x70C8;&#x7130;&#x4EBA;&#x4F1A;&#x4F7F;&#x7528;&#x201C;&#x5C0F;&#x706B;&#x7403;&#x4E09;&#x8FDE;&#x53D1;&#x201D;&#x3002;&#x7B2C;&#x4E09;&#x90E8;&#x5206;&#x4E2D;&#x5219;&#x5B9E;&#x73B0;&#x4E86;&#x8FD9;&#x6837;&#x5B50;&#x7684;&#x4E09;&#x8FDE;&#x53D1;&#x5C0F;&#x706B;&#x7403;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (distSqrToTarget &lt; getFollowDistance() * getFollowDistance() &amp;&amp; canSeeTarget) {
+    <span class="hljs-keyword">double</span> dx = target.getX() - blaze.getX();
+    <span class="hljs-keyword">double</span> dy = target.getY(<span class="hljs-number">0.5</span>D) - blaze.getY(<span class="hljs-number">0.5</span>D);
+    <span class="hljs-keyword">double</span> dz = target.getZ() - blaze.getZ();
+
+    <span class="hljs-keyword">if</span> (attackTime &lt;= <span class="hljs-number">0</span>) {
+        ++attackStep;
+        <span class="hljs-comment">// attackStep&#x4E3A;1&#xFF0C;&#x51C6;&#x5907;&#x8FDC;&#x7A0B;&#x653B;&#x51FB;</span>
+        <span class="hljs-keyword">if</span> (attackStep == <span class="hljs-number">1</span>) {
+            attackTime = <span class="hljs-number">60</span>;
+            blaze.setCharged(<span class="hljs-keyword">true</span>);
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (attackStep &lt;= <span class="hljs-number">4</span>) {
+            attackTime = <span class="hljs-number">6</span>; <span class="hljs-comment">// &#x6BCF;6&#x6E38;&#x620F;&#x523B;&#xFF08;0.3s&#xFF09;&#x653B;&#x51FB;&#x4E00;&#x6B21;</span>
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">// &#x7B49;&#x5F85;5s&#x518D;&#x53D1;&#x52A8;&#x4E0B;&#x4E00;&#x8F6E;&#x653B;&#x51FB;</span>
+            attackTime = <span class="hljs-number">100</span>;
+            <span class="hljs-comment">// &#x91CD;&#x7F6E;attackStep</span>
+            attackStep = <span class="hljs-number">0</span>;
+            blaze.setCharged(<span class="hljs-keyword">false</span>);
+        }
+
+        <span class="hljs-keyword">if</span> (attackStep &gt; <span class="hljs-number">1</span>) {
+            <span class="hljs-comment">// &#x4E3A;&#x706B;&#x7403;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x504F;&#x79FB;&#x91CF;&#xFF0C;&#x8FD9;&#x4E2A;&#x504F;&#x79FB;&#x91CF;&#x7684;&#x6700;&#x5927;&#x503C;&#x4E0E;&#x70C8;&#x7130;&#x4EBA;&#x5230;&#x653B;&#x51FB;&#x76EE;&#x6807;&#x8DDD;&#x79BB;&#x7684;&#x7B97;&#x672F;&#x5E73;&#x65B9;&#x6839;&#x6210;&#x6B63;&#x6BD4;</span>
+            <span class="hljs-keyword">double</span> horizontalOffset = Math.sqrt(Math.sqrt(distSqrToTarget)) * <span class="hljs-number">0.5</span>D;
+            <span class="hljs-keyword">if</span> (!blaze.isSilent()) {
+                <span class="hljs-comment">// &#x64AD;&#x653E;&#x70C8;&#x7130;&#x4EBA;&#x53D1;&#x5C04;&#x706B;&#x7403;&#x7684;&#x58F0;&#x97F3;</span>
+                blaze.level().levelEvent(<span class="hljs-keyword">null</span>, <span class="hljs-number">1018</span>, blaze.blockPosition(), <span class="hljs-number">0</span>);
+            }
+            <span class="hljs-comment">// &#x5176;&#x5B9E;&#x6211;&#x4E5F;&#x5F88;&#x597D;&#x5947;&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x91CC;&#x8981;&#x7528;&#x5230;for&#x5FAA;&#x73AF;&#xFF08;&#x6211;&#x8BA4;&#x4E3A;&#x8FD9;&#x91CC;&#x5B8C;&#x5168;&#x4E0D;&#x9700;&#x8981;&#x5FAA;&#x73AF;&#xFF09;</span>
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1</span>; ++i) {
+                SmallFireball fireball = <span class="hljs-keyword">new</span> SmallFireball(blaze.level(),
+                        blaze,
+                        blaze.getRandom().triangle(dx, <span class="hljs-number">2.297</span>D * horizontalOffset),
+                        dy,
+                        blaze.getRandom().triangle(dz, <span class="hljs-number">2.297</span>D * horizontalOffset));
+                <span class="hljs-comment">// &#x628A;&#x5C0F;&#x706B;&#x7403;&#x7684;y&#x5750;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x70C8;&#x7130;&#x4EBA;&#x4E2D;&#x5FC3;&#x7684;y&#x5750;&#x6807;&#x4E0A;&#x65B9;0.5&#x683C;</span>
+                fireball.setPos(fireball.getX(), blaze.getY(<span class="hljs-number">0.5</span>D) + <span class="hljs-number">0.5</span>D, fireball.getZ());
+                blaze.level().addFreshEntity(fireball);
+            }
+        }
+    }
+
+    <span class="hljs-comment">// &#x8BA9;&#x70C8;&#x7130;&#x4EBA;&#x770B;&#x5411;&#x76EE;&#x6807;&#xFF0C;&#x6CE8;&#x610F;&#x7531;&#x4E8E;&#x201C;&#x70C8;&#x7130;&#x4EBA;&#x7684;&#x5934;&#x4E0D;&#x592A;&#x7075;&#x6D3B;&#xFF0C;&#x4E0D;&#x80FD;&#x5927;&#x89D2;&#x5EA6;&#x65CB;&#x8F6C;&#x201D;&#xFF0C;&#x6240;&#x4EE5;yRot&#x548C;xRot&#x65CB;&#x8F6C;&#x91CF;&#x7684;&#x6700;&#x5927;&#x503C;&#x90FD;&#x53EA;&#x8BBE;&#x4E3A;&#x4E86;10&#xFF08;&#x5355;&#x4F4D;&#x4E3A;&#x89D2;&#x5EA6;&#xFF09;</span>
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// &#x8BF4;&#x5230;yRot&#x548C;xRot&#xFF08;zRot&#x4E0D;&#x5E38;&#x7528;&#xFF0C;&#x53EA;&#x6709;&#x9C7F;&#x9C7C;&#x7B49;&#x5C11;&#x6570;&#x751F;&#x7269;&#x9700;&#x8981;&#x4E0D;&#x65AD;&#x8C03;&#x6574;&#x81EA;&#x8EAB;&#x7684;zRot&#xFF09;&#xFF0C;&#x5C31;&#x987A;&#x5E26;&#x63D0;&#x4E00;&#x4E0B;&#x5728;&#x63A7;&#x5236;&#x5B9E;&#x4F53;&#x903B;&#x8F91;&#x7684;&#x7C7B;&#xFF08;&#x5982;Entity&#xFF09;&#x4E2D;&#x8FD9;&#x51E0;&#x4E2A;rot</span>
+    <span class="hljs-comment">// &#x4E00;&#x822C;&#x7528;&#x89D2;&#x5EA6;&#x8868;&#x793A;&#xFF0C;&#x800C;&#x5728;&#x63A7;&#x5236;&#x5B9E;&#x4F53;&#x6A21;&#x578B;&#x7684;&#x7C7B;&#xFF08;&#x5982;ModelPart&#xFF09;&#x4E2D;&#x5219;&#x7528;&#x5F27;&#x5EA6;&#x8868;&#x793A;&#x3002;&#x56E0;&#x6B64;&#x5728;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x89D2;&#x5EA6;&#x4E0E;&#x5F27;&#x5EA6;&#x95F4;&#x7684;&#x8F6C;&#x6362;</span>
+    blaze.getLookControl().setLookAt(target, <span class="hljs-number">10.0F</span>, <span class="hljs-number">10.0F</span>);
+}
+</code></pre>
+<p>&#x5148;&#x8BF4;&#x4E00;&#x4E0B;<code>attackStep</code>&#x7684;&#x5177;&#x4F53;&#x4F5C;&#x7528;&#x3002;  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">attackStep&#x7684;&#x503C;</th>
+<th style="text-align:center">&#x5BF9;&#x5E94;&#x7684;&#x70C8;&#x7130;&#x4EBA;&#x7684;&#x884C;&#x4E3A;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">&#x975E;&#x8FDC;&#x7A0B;&#x653B;&#x51FB;&#x72B6;&#x6001;</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">&#x51C6;&#x5907;&#x8FDC;&#x7A0B;&#x653B;&#x51FB;</td>
+</tr>
+<tr>
+<td style="text-align:center">2~4</td>
+<td style="text-align:center">&#x53D1;&#x5C04;&#x5C0F;&#x706B;&#x7403;</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">&#x7ED3;&#x675F;&#x8FDC;&#x7A0B;&#x653B;&#x51FB;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5F53;&#x70C8;&#x7130;&#x4EBA;&#x5904;&#x4E8E;&#x53EF;&#x4EE5;&#x8FDC;&#x7A0B;&#x653B;&#x51FB;&#x7684;&#x72B6;&#x6001;&#x65F6;&#xFF0C;&#x6BCF;&#x5F53;<code>attackTime</code>&#x4E3A;0&#x65F6;&#x90FD;&#x4F1A;&#x81EA;&#x589E;<code>attackStep</code>&#x3002;&#x5728;<code>attackStep</code>&#x88AB;&#x8BBE;&#x4E3A;1&#x65F6;&#xFF0C;&#x70C8;&#x7130;&#x4EBA;&#x4F1A;&#x4F7F;&#x81EA;&#x8EAB;&#x7740;&#x706B;&#xFF0C;&#x5E76;&#x5728;60tick&#xFF08;3s&#xFF09;&#x4E4B;&#x540E;&#x5F00;&#x59CB;&#x53D1;&#x5C04;&#x5C0F;&#x706B;&#x7403;&#x3002;&#x6BCF;&#x6B21;&#x53D1;&#x5C04;&#x5C0F;&#x706B;&#x7403;&#x540E;6tick&#xFF08;0.3s&#xFF09;&#x518D;&#x6B21;&#x53D1;&#x5C04;&#x5C0F;&#x706B;&#x7403;&#xFF0C;&#x5171;&#x91CD;&#x590D;3&#x6B21;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x3002;&#x6700;&#x540E;&#x5F53;<code>attackStep</code>&#x589E;&#x5927;&#x5230;5&#x65F6;&#xFF0C;&#x70C8;&#x7130;&#x4EBA;&#x7684;&#x6240;&#x6709;&#x653B;&#x51FB;&#x4F1A;&#x8FDB;&#x5165;100tick&#xFF08;5s&#xFF09;&#x7684;&#x51B7;&#x5374;&#x3002;  </p>
+<p>&#x53E6;&#x5916;&#x6CE8;&#x610F;&#x5982;&#x679C;&#x8FDC;&#x7A0B;&#x653B;&#x51FB;&#x65F6;&#x653B;&#x51FB;&#x76EE;&#x6807;&#x8DDD;&#x79BB;&#x81EA;&#x5DF1;&#x8FC7;&#x8FD1;&#xFF08;&#x8DDD;&#x79BB;&lt;2&#xFF09;&#xFF0C;&#x70C8;&#x7130;&#x4EBA;&#x4F1A;&#x6682;&#x65F6;&#x201C;&#x6682;&#x505C;&#x201D;&#x8FDC;&#x7A0B;&#x653B;&#x51FB;&#x6D41;&#x7A0B;&#x800C;&#x53BB;&#x8FD1;&#x6218;&#x653B;&#x51FB;&#x8BE5;&#x653B;&#x51FB;&#x76EE;&#x6807;&#x3002;  </p>
+<p>&#x4E0B;&#x9762;&#x6765;&#x8BF4;&#x8BA9;&#x751F;&#x7269;&#x53D1;&#x5C04;&#x5C0F;&#x706B;&#x7403;&#x7B49;&#x7EE7;&#x627F;&#x4E86;<code>AbstractHurtingProjectile</code>&#x7684;&#x5F39;&#x5C04;&#x7269;&#x7684;&#x5177;&#x4F53;&#x65B9;&#x5F0F;&#x3002;  </p>
+<p>&#x8BA1;&#x7B97;&#x53D1;&#x5C04;&#x65B9;&#x5411;&#x7684;&#x4E00;&#x6B65;&#x4E0E;&#x53D1;&#x5C04;&#x96EA;&#x7403;&#x7B49;&#x7EE7;&#x627F;&#x4E86;<code>ThrowableProjectile</code>&#x7684;&#x5F39;&#x5C04;&#x7269;&#x4EE5;&#x53CA;&#x5404;&#x79CD;&#x7BAD;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;&#x4E0E;&#x4E4B;&#x524D;&#x63D0;&#x5230;&#x8FC7;&#x7684;&#x96EA;&#x5080;&#x5121;&#x4E0D;&#x540C;&#xFF0C;&#x70C8;&#x7130;&#x4EBA;&#x53D1;&#x5C04;&#x706B;&#x7403;&#x524D;&#x8BA1;&#x7B97;y&#x5750;&#x6807;&#x7684;&#x5DEE;&#x503C;&#x7528;&#x7684;&#x662F;&#x653B;&#x51FB;&#x76EE;&#x6807;&#x78B0;&#x649E;&#x7BB1;&#x4E2D;&#x5FC3;&#x7684;y&#x5750;&#x6807;&#x51CF;&#x53BB;&#x70C8;&#x7130;&#x4EBA;&#x78B0;&#x649E;&#x7BB1;&#x4E2D;&#x5FC3;&#x7684;y&#x5750;&#x6807;&#xFF0C;&#x8FD9;&#x662F;&#x4E3A;&#x4E86;&#x4F7F;&#x5C0F;&#x706B;&#x7403;&#x5C3D;&#x91CF;&#x51FB;&#x4E2D;&#x76EE;&#x6807;&#x78B0;&#x649E;&#x7BB1;&#x4E2D;&#x90E8;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">double</span> dx = target.getX() - blaze.getX();
+<span class="hljs-keyword">double</span> dy = target.getY(<span class="hljs-number">0.5</span>D) - blaze.getY(<span class="hljs-number">0.5</span>D);
+<span class="hljs-keyword">double</span> dz = target.getZ() - blaze.getZ();
+</code></pre>
+<p><code>Entity</code>&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">getY</span><span class="hljs-params">(<span class="hljs-keyword">double</span> scale)</span> </span>{
+    <span class="hljs-keyword">return</span> position.y + (<span class="hljs-keyword">double</span>) getBbHeight() * scale;
+}
+
+<span class="hljs-comment">// getX(double), getZ(double)&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x662F;&#x7C7B;&#x4F3C;&#x7684;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x540E;&#x9762;&#x7684;getBbHeight()&#x88AB;&#x66FF;&#x6362;&#x4E3A;&#x4E86;getBbWidth()&#x3002;&#x8FD9;&#x513F;&#x4E00;&#x5E76;&#x7ED9;&#x51FA;&#x5427;~</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">getX</span><span class="hljs-params">(<span class="hljs-keyword">double</span> scale)</span> </span>{
+    <span class="hljs-keyword">return</span> position.x + (<span class="hljs-keyword">double</span>) getBbWidth() * scale;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">getZ</span><span class="hljs-params">(<span class="hljs-keyword">double</span> scale)</span> </span>{
+    <span class="hljs-keyword">return</span> position.z + (<span class="hljs-keyword">double</span>) getBbWidth() * scale;
+}
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x5219;&#x662F;&#x5B9E;&#x4F8B;&#x5316;&#x5F39;&#x5C04;&#x7269;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5728;&#x8BA1;&#x7B97;&#x53D1;&#x5C04;&#x65B9;&#x5411;&#x540E;&#x624D;&#x5B9E;&#x4F8B;&#x5316;&#x4E86;&#x5C0F;&#x706B;&#x7403;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x8981;&#x5411;&#x5C0F;&#x706B;&#x7403;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x4E2D;&#x4F20;&#x5165;&#x53D1;&#x5C04;&#x5C0F;&#x706B;&#x7403;&#x7684;&#x65B9;&#x5411;&#xFF08;&#x5BF9;&#x4E8E;&#x4E0B;&#x9762;&#x8C03;&#x7528;&#x7684;&#x8FD9;&#x4E2A;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x800C;&#x8A00;&#xFF0C;&#x5C0F;&#x706B;&#x7403;&#x88AB;&#x5B9E;&#x4F8B;&#x5316;&#x540E;&#x4F1A;&#x79FB;&#x52A8;&#x5230;&#x70C8;&#x7130;&#x4EBA;&#x7684;&#x5750;&#x6807;&#x5904;&#xFF0C;&#x5E76;&#x4EE5;&#x5411;&#x91CF;(<code>blaze.getRandom().triangle(dx, 2.297D * horizontalOffset)</code>, <code>dy</code>, <code>blaze.getRandom().triangle(dz, 2.297D * horizontalOffset)</code>)&#x4E3A;&#x5176;&#x5F39;&#x9053;&#x7684;&#x65B9;&#x5411;&#x5411;&#x91CF;&#xFF09;&#x3002;&#x8FD8;&#x6709;&#x5C0F;&#x706B;&#x7403;&#x7B49;&#x7EE7;&#x627F;&#x4E86;<code>AbstractHurtingProjectile</code>&#x7684;&#x5F39;&#x5C04;&#x7269;&#x90FD;&#x662F;&#x4E0D;&#x53D7;&#x91CD;&#x529B;&#x5F71;&#x54CD;&#x7684;&#x3002;</p>
+<pre><code class="lang-java">SmallFireball fireball = <span class="hljs-keyword">new</span> SmallFireball(blaze.level(),
+                        blaze,
+                        blaze.getRandom().triangle(dx, <span class="hljs-number">2.297</span>D * horizontalOffset),
+                        dy,
+                        blaze.getRandom().triangle(dz, <span class="hljs-number">2.297</span>D * horizontalOffset));
+<span class="hljs-comment">// &#x628A;&#x5C0F;&#x706B;&#x7403;&#x7684;y&#x5750;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x70C8;&#x7130;&#x4EBA;&#x4E2D;&#x5FC3;&#x7684;y&#x5750;&#x6807;&#x4E0A;&#x65B9;0.5&#x683C;</span>
+fireball.setPos(fireball.getX(), blaze.getY(<span class="hljs-number">0.5</span>D) + <span class="hljs-number">0.5</span>D, fireball.getZ());
+blaze.level().addFreshEntity(fireball);
+</code></pre>
+<p>&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x628A;&#x5C0F;&#x706B;&#x7403;&#x76F4;&#x63A5;&#x79FB;&#x52A8;&#x5230;&#x70C8;&#x7130;&#x4EBA;&#x7684;&#x201C;&#x811A;&#x201D;&#xFF08;&#x6307;&#x70C8;&#x7130;&#x4EBA;&#x78B0;&#x649E;&#x7BB1;&#x5DE6;&#x4E0B;&#x89D2;<del>&#xFF0C;&#x70C8;&#x7130;&#x4EBA;&#x54EA;&#x6709;&#x811A;&#xFF1F;</del>&#xFF09;&#x4E0A;&#x663E;&#x7136;&#x4E0D;&#x5408;&#x9002;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x628A;&#x706B;&#x7403;&#x79FB;&#x4E0A;&#x53BB;&#xFF08;&#x589E;&#x5927;&#x5176;y&#x5750;&#x6807;&#xFF09;&#x4E00;&#x70B9;&#x3002;  </p>
+<p>&#x6700;&#x540E;&#x6DFB;&#x52A0;&#x5C0F;&#x706B;&#x7403;&#x5230;&#x4E16;&#x754C;&#x4E2D;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x80FD;&#x770B;&#x5230;&#x70C8;&#x7130;&#x4EBA;&#x7684;&#x5C0F;&#x706B;&#x7403;&#x5C04;&#x5411;&#x653B;&#x51FB;&#x76EE;&#x6807;&#x5566;&#xFF01;  </p>
+<p>&#x56DE;&#x5230;&#x70C8;&#x7130;&#x4EBA;&#x7684;AI&#x3002;<code>tick</code>&#x65B9;&#x6CD5;&#x7684;&#x7B2C;&#x56DB;&#x90E8;&#x5206;&#x7528;&#x4E8E;&#x5728;&#x8FD1;&#x3001;&#x8FDC;&#x7A0B;&#x653B;&#x51FB;&#x7684;&#x6761;&#x4EF6;&#x90FD;&#x4E0D;&#x6EE1;&#x8DB3;&#xFF0C;&#x4F46;&#x662F;5tick&#xFF08;0.25s&#xFF09;&#x5185;&#x66FE;&#x770B;&#x5230;&#x8FC7;&#x653B;&#x51FB;&#x76EE;&#x6807;&#x7684;&#x6761;&#x4EF6;&#x4E0B;&#xFF0C;&#x8BA9;&#x70C8;&#x7130;&#x4EBA;&#x4EE5;1&#x500D;&#x901F;&#x79FB;&#x5411;&#x653B;&#x51FB;&#x76EE;&#x6807;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (lastSeen &lt; <span class="hljs-number">5</span>) {
+    blaze.getMoveControl().setWantedPosition(target.getX(), target.getY(), target.getZ(), <span class="hljs-number">1.0</span>D);
+}
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x70C8;&#x7130;&#x4EBA;&#x7684;AI&#x5C31;&#x5DEE;&#x4E0D;&#x591A;&#x8BB2;&#x5B8C;&#x4E86;&#x3002;  </p>
+<p>&#x4F60;&#x4E00;&#x5B9A;&#x5F88;&#x597D;&#x5947;&#x70C8;&#x7130;&#x4EBA;&#x7684;&#x6A21;&#x578B;&#x662F;&#x600E;&#x6837;&#x5236;&#x4F5C;&#x51FA;&#x6765;&#x7684;&#xFF0C;&#x4EE5;&#x53CA;&#x70C8;&#x7130;&#x4EBA;&#x4E3A;&#x4EC0;&#x4E48;&#x5728;&#x5B8C;&#x5168;&#x9ED1;&#x6697;&#x65F6;&#x8EAB;&#x4F53;&#x4E5F;&#x662F;&#x4EAE;&#x7740;&#x7684;&#x5427;233&#xFF0C;&#x4E0B;&#x4E00;&#x8282;&#x6211;&#x4EEC;&#x5C31;&#x6765;&#x7814;&#x7A76;&#x8FD9;&#x4E9B;&#x5185;&#x5BB9;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="blaze.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 热爱高温的烈焰人">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"烈焰人小火球的“三连发”","level":"1.2.3.2","depth":3,"next":{"title":"(WIP)","level":"1.2.3.3","depth":3,"ref":"","articles":[]},"previous":{"title":"热爱高温的烈焰人","level":"1.2.3.1","depth":3,"path":"part1-monster/ranged-special/blaze.md","ref":"part1-monster/ranged-special/blaze.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","chapter-fold","code","hide-element","insert-logo","katex","search-pro","sharing-plus","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":true,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 80px","url":"https://lych.top/images/polonium.png"}},"theme":"default","author":"Lych","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Polonium 1.20 实体进阶教程","language":"zh-hans","gitbook":"*","description":"给Mod开发的初学者提供一个对实体的更深入的了解"},"file":{"path":"part1-monster/ranged-special/blaze2.md","mtime":"2024-09-17T14:40:28.303Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-09-17T14:42:21.277Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

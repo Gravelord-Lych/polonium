@@ -114,7 +114,7 @@ snowball.shoot(dx, yModifier + dy, dz, 1.6F, 12.0F);
 
 但是`shoot`方法还有2个参数，那么后两个`float`类型的参数是干什么的呢？  
 
-`Projectile`类：
+`Projectile`：
 ```java
 public void shoot(double x, double y, double z, float scale, float deviation) {
     Vec3 shootVector = new Vec3(x, y, z).normalize()
@@ -131,7 +131,7 @@ public void shoot(double x, double y, double z, float scale, float deviation) {
 }
 ```
 
-`RandomSource`类（用法与`Random`类相近）：  
+`RandomSource`（用法与`Random`类相近）：  
 ```java
 default double triangle(double baseValue, double scale) {
     return baseValue + scale * (nextDouble() - nextDouble());

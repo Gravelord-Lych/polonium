@@ -67,7 +67,7 @@ static class EndermanFreezeWhenLookedAt extends Goal {
 //  P.S. canContinueToUse省略了，意味着返回值与canUse相同
 }
 ```
-_提示：构造方法内的`setFlags(EnumSet<Goal.Flag>)`很容易遗漏，在你设计生物的AI时需特别注意**是否需要添加Flag**，以防在禁用或启用Flag时（例如在被拴绳牵引时禁用Flag.MOVE）你的生物出现意料之外的问题_  
+_提示：构造方法内的`setFlags(EnumSet<Goal.Flag>)`很容易遗漏，在设计生物的AI时需特别注意**是否需要添加`Flag`**，以防在禁用或启用`Flag`时（例如在被拴绳牵引时`Flag.MOVE`会被禁用）生物出现意料之外的问题_  
 
 这个类比较简单，目的就是为了让末影人可以在攻击目标在不远处（16格内），且攻击目标正看向自己时看向其攻击目标。另外，这个AI的实时性不高，不需要每tick更新。  
 
