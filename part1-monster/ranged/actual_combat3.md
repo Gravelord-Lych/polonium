@@ -162,7 +162,6 @@ public void setBaby(boolean baby) {}
 
 渲染类也很简单，但是要新的`Layer`以渲染发射器的模型。
 ```java
-@OnlyIn(Dist.CLIENT)
 public class DispenserZombieRenderer extends AbstractZombieRenderer<DispenserZombie, ZombieModel<DispenserZombie>> {
     public DispenserZombieRenderer(EntityRendererProvider.Context context) {
         super(context,
@@ -176,7 +175,6 @@ public class DispenserZombieRenderer extends AbstractZombieRenderer<DispenserZom
 
 `DispenserZombieHeadLayer`只需要仿照`SnowGolemHeadLayer`来写就可以了。
 ```java
-@OnlyIn(Dist.CLIENT)
 public class DispenserZombieHeadLayer extends RenderLayer<DispenserZombie, ZombieModel<DispenserZombie>> {
     private final BlockRenderDispatcher blockRenderer;
     private final ItemRenderer itemRenderer;

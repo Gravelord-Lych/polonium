@@ -160,7 +160,6 @@ public final class ModEntities {
 ```
 对于模型，直接使用僵尸的模型即可，下面是渲染部分。
 ```java
-@OnlyIn(Dist.CLIENT)
 public class ReinforcedZombieRenderer extends ZombieRenderer {
     private static final ResourceLocation REINFORCED_ZOMBIE = Utils.prefix("textures/entity/reinforced_zombie.png");
 
@@ -178,7 +177,6 @@ public class ReinforcedZombieRenderer extends ZombieRenderer {
 }
 
 //  ModelLayer
-@OnlyIn(Dist.CLIENT)
 public final class ModModelLayers {
     public static final ModelLayerLocation REINFORCED_ZOMBIE = createMain(ModEntityNames.REINFORCED_ZOMBIE);
     public static final ModelLayerLocation REINFORCED_ZOMBIE_INNER_ARMOR = createInnerArmor(ModEntityNames.REINFORCED_ZOMBIE);

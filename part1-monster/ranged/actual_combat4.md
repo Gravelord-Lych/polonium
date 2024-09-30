@@ -413,7 +413,6 @@ protected SoundEvent getDeathSound() {
 
 渲染类`SkeletonWizardRenderer`非常普通，但后面会在里面加点内容。
 ```java
-@OnlyIn(Dist.CLIENT)
 public class SkeletonWizardRenderer extends SkeletonRenderer {
     private static final ResourceLocation SKELETON_WIZARD = Utils.prefix("textures/entity/skeleton_wizard/skeleton_wizard.png");
 
@@ -565,7 +564,6 @@ private void awardBow() {
 
 最后只剩下要求8-iv需要特殊处理了。由于骷髅法师的“红色眼睛”与末影人、蜘蛛等的眼睛不太相同，并且是否显示红眼与骷髅法师的自身状态有关，所以不能直接继承`EyesLayer`。
 ```java
-@OnlyIn(Dist.CLIENT)
 public class SkeletonWizardEyesLayer extends RenderLayer<AbstractSkeleton, SkeletonModel<AbstractSkeleton>> {
     private static final ResourceLocation SKELETON_WIZARD_EYES = Utils.prefix("textures/entity/skeleton_wizard/skeleton_wizard_eyes.png");
     private static final RenderType SKELETON_WIZARD_EYES_RENDER_TYPE = RenderType.entityCutoutNoCull(SKELETON_WIZARD_EYES);
