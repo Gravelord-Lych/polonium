@@ -38,13 +38,13 @@
 
 ### 提示
 
-- 这个实战所在的1.2.2.10节是非Boss级怪物中最重要（虽然不一定是最难）的前两章的最后一节，笔者想给这个实战略微上点难度，所以可能稍稍有一点复杂233
+- 这个实战所在的1.2.2.6节是非Boss级怪物中最重要（虽然不一定是最难）的前两章的最后一节，笔者想给这个实战略微上点难度，所以可能稍稍有一点复杂233
 
 - 可以用`ItemStack`类中的`enchant`方法来附魔物品
 
 - 想想骷髅法师的“强化”属性是不是用一个简单的`boolean`来表示就足够了……
 
-- 要求8-vi需要~~老老实实~~重写`mobInteract`方法来满足（~~别想找`Shearable`之类的捷径~~）
+- 要求8-vi需要老老实实地重写`mobInteract`方法来满足（~~别想找`Shearable`之类的捷径~~）
 
 - 滞留药水没有单独的实体类，要想扔出滞留药水需要将`ThrownPotion`的物品设置为`Items.LINGERING_POTION`，就像这样：
 ```java
@@ -56,7 +56,7 @@ thrownPotion.setItem(new ItemStack(Items.LINGERING_POTION));
 
 ---
 
-### 参考步骤#1
+### 参考步骤 \#1
 
 要求8十分复杂，我们先不管这个要求。参考步骤#1部分中标`// TODO`的部分在后面实现要求8中的内容时都会进行修改。
 
@@ -437,7 +437,7 @@ public class SkeletonWizardRenderer extends SkeletonRenderer {
 
 ---
 
-### 参考步骤#2
+### 参考步骤 \#2
 
 下面正式开始“对付”要求8。还记得“提示”部分中留的那个小思考题吗？因为涉及到红色眼睛的渲染问题，所以**只用一个`boolean`是不够的**。我们需要借助`SynchedEntityData`。
 ```java

@@ -1,0 +1,1295 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>烈焰人身体结构的奥秘 · Polonium 1.20 实体进阶教程</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Lych">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../evoker/" />
+    
+    
+    <link rel="prev" href="blaze2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    前言
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../../notes.html">
+            
+                <a href="../../../notes.html">
+            
+                    
+                        <b>1.1.1.</b>
+                    
+                    一些零散的笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    非Boss级怪物
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../melee/">
+            
+                <a href="../../melee/">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    近战攻击的怪物
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../../melee/zombie/">
+            
+                <a href="../../melee/zombie/">
+            
+                    
+                        <b>1.2.1.1.</b>
+                    
+                    从原版僵尸开始
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1" data-path="../../melee/zombie/zombie.html">
+            
+                <a href="../../melee/zombie/zombie.html">
+            
+                    
+                        <b>1.2.1.1.1.</b>
+                    
+                    僵尸的实现逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.2" data-path="../../melee/zombie/zombie2.html">
+            
+                <a href="../../melee/zombie/zombie2.html">
+            
+                    
+                        <b>1.2.1.1.2.</b>
+                    
+                    僵尸的模型与渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../../melee/actual_combat1.html">
+            
+                <a href="../../melee/actual_combat1.html">
+            
+                    
+                        <b>1.2.1.2.</b>
+                    
+                    实战1 - 强化僵尸
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../../melee/enderman/">
+            
+                <a href="../../melee/enderman/">
+            
+                    
+                        <b>1.2.1.3.</b>
+                    
+                    空间移动能力者——末影人
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.3.1" data-path="../../melee/enderman/neutral_mob.html">
+            
+                <a href="../../melee/enderman/neutral_mob.html">
+            
+                    
+                        <b>1.2.1.3.1.</b>
+                    
+                    末影人与“中立”生物
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.2" data-path="../../melee/enderman/enderman.html">
+            
+                <a href="../../melee/enderman/enderman.html">
+            
+                    
+                        <b>1.2.1.3.2.</b>
+                    
+                    末影人的基本实现逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.3" data-path="../../melee/enderman/enderman2.html">
+            
+                <a href="../../melee/enderman/enderman2.html">
+            
+                    
+                        <b>1.2.1.3.3.</b>
+                    
+                    末影人的AI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.4" data-path="../../melee/enderman/enderman3.html">
+            
+                <a href="../../melee/enderman/enderman3.html">
+            
+                    
+                        <b>1.2.1.3.4.</b>
+                    
+                    末影人的模型与渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../../melee/actual_combat2.html">
+            
+                <a href="../../melee/actual_combat2.html">
+            
+                    
+                        <b>1.2.1.4.</b>
+                    
+                    实战2 - 食尸鬼
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../ranged/">
+            
+                <a href="../../ranged/">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    远程攻击的怪物 #1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../../ranged/perform_ranged_attack.html">
+            
+                <a href="../../ranged/perform_ranged_attack.html">
+            
+                    
+                        <b>1.2.2.1.</b>
+                    
+                    RangedAttackMob接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../../ranged/snow_golem/">
+            
+                <a href="../../ranged/snow_golem/">
+            
+                    
+                        <b>1.2.2.2.</b>
+                    
+                    相对简单的雪傀儡
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.2.1" data-path="../../ranged/snow_golem/snow_golem.html">
+            
+                <a href="../../ranged/snow_golem/snow_golem.html">
+            
+                    
+                        <b>1.2.2.2.1.</b>
+                    
+                    雪傀儡的实现逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.2" data-path="../../ranged/snow_golem/snow_golem2.html">
+            
+                <a href="../../ranged/snow_golem/snow_golem2.html">
+            
+                    
+                        <b>1.2.2.2.2.</b>
+                    
+                    雪傀儡的模型与渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../../ranged/actual_combat3.html">
+            
+                <a href="../../ranged/actual_combat3.html">
+            
+                    
+                        <b>1.2.2.3.</b>
+                    
+                    实战3 - 发射器僵尸
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../../ranged/witch/">
+            
+                <a href="../../ranged/witch/">
+            
+                    
+                        <b>1.2.2.4.</b>
+                    
+                    令玩家头疼的女巫
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.4.1" data-path="../../ranged/witch/witch.html">
+            
+                <a href="../../ranged/witch/witch.html">
+            
+                    
+                        <b>1.2.2.4.1.</b>
+                    
+                    女巫的实现逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4.2" data-path="../../ranged/witch/witch2.html">
+            
+                <a href="../../ranged/witch/witch2.html">
+            
+                    
+                        <b>1.2.2.4.2.</b>
+                    
+                    女巫的渲染细节
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../../ranged/skeleton/">
+            
+                <a href="../../ranged/skeleton/">
+            
+                    
+                        <b>1.2.2.5.</b>
+                    
+                    全能的骷髅
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.5.1" data-path="../../ranged/skeleton/skeleton.html">
+            
+                <a href="../../ranged/skeleton/skeleton.html">
+            
+                    
+                        <b>1.2.2.5.1.</b>
+                    
+                    骷髅的实现逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5.2" data-path="../../ranged/skeleton/skeleton2.html">
+            
+                <a href="../../ranged/skeleton/skeleton2.html">
+            
+                    
+                        <b>1.2.2.5.2.</b>
+                    
+                    骷髅的“聪明之处”
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5.3" data-path="../../ranged/skeleton/skeleton3.html">
+            
+                <a href="../../ranged/skeleton/skeleton3.html">
+            
+                    
+                        <b>1.2.2.5.3.</b>
+                    
+                    骷髅的模型（与渲染）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../../ranged/actual_combat4.html">
+            
+                <a href="../../ranged/actual_combat4.html">
+            
+                    
+                        <b>1.2.2.6.</b>
+                    
+                    实战4 - 骷髅法师
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    远程攻击的怪物 #2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>1.2.3.1.</b>
+                    
+                    炽热的烈焰人
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1.1" data-path="blaze.html">
+            
+                <a href="blaze.html">
+            
+                    
+                        <b>1.2.3.1.1.</b>
+                    
+                    烈焰人的实现逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.2" data-path="blaze2.html">
+            
+                <a href="blaze2.html">
+            
+                    
+                        <b>1.2.3.1.2.</b>
+                    
+                    烈焰人小火球的“三连发”
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3.1.3" data-path="blaze3.html">
+            
+                <a href="blaze3.html">
+            
+                    
+                        <b>1.2.3.1.3.</b>
+                    
+                    烈焰人身体结构的奥秘
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../evoker/">
+            
+                <a href="../evoker/">
+            
+                    
+                        <b>1.2.3.2.</b>
+                    
+                    法力强大的唤魔者
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.2.1" data-path="../evoker/evoker.html">
+            
+                <a href="../evoker/evoker.html">
+            
+                    
+                        <b>1.2.3.2.1.</b>
+                    
+                    唤魔者的基本实现逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2.2" data-path="../evoker/spellcaster_ai.html">
+            
+                <a href="../evoker/spellcaster_ai.html">
+            
+                    
+                        <b>1.2.3.2.2.</b>
+                    
+                    (WIP) 施法AI的框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2.3" data-path="../evoker/evoker2.html">
+            
+                <a href="../evoker/evoker2.html">
+            
+                    
+                        <b>1.2.3.2.3.</b>
+                    
+                    (WIP) 唤魔者的三大魔法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2.4" data-path="../evoker/illager_arm_pose.html">
+            
+                <a href="../evoker/illager_arm_pose.html">
+            
+                    
+                        <b>1.2.3.2.4.</b>
+                    
+                    (WIP) 灾厄村民的手部动作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2.5" data-path="../evoker/evoker3.html">
+            
+                <a href="../evoker/evoker3.html">
+            
+                    
+                        <b>1.2.3.2.5.</b>
+                    
+                    (WIP) 唤魔者的渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" >
+            
+                <span>
+            
+                    
+                        <b>1.2.3.3.</b>
+                    
+                    (WIP)
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../flyer-special/">
+            
+                <a href="../../flyer-special/">
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    (WIP) 飞行的怪物
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../exercises/">
+            
+                <a href="../../exercises/">
+            
+                    
+                        <b>1.2.5.</b>
+                    
+                    本章练习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../../exercises/exercise1.html">
+            
+                <a href="../../exercises/exercise1.html">
+            
+                    
+                        <b>1.2.5.1.</b>
+                    
+                    练习1 - 狗头人
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../part2-neutral/">
+            
+                <a href="../../../part2-neutral/">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    (WIP) 友好生物与被动生物
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../part3-projectile/">
+            
+                <a href="../../../part3-projectile/">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    (WIP) 弹射物和功能性实体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../part4-boss/">
+            
+                <a href="../../../part4-boss/">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    (WIP) Boss级怪物
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../../part4-boss/wither/">
+            
+                <a href="../../../part4-boss/wither/">
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    (WIP) 凋灵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../../part4-boss/ender_dragon/">
+            
+                <a href="../../../part4-boss/ender_dragon/">
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    (WIP) 末影龙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" >
+            
+                <span>
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    (WIP)
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../../part5-miscellaneous/">
+            
+                <a href="../../../part5-miscellaneous/">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    杂项
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >烈焰人身体结构的奥秘</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x70C8;&#x7130;&#x4EBA;&#x8EAB;&#x4F53;&#x7ED3;&#x6784;&#x7684;&#x5965;&#x79D8;">&#x70C8;&#x7130;&#x4EBA;&#x8EAB;&#x4F53;&#x7ED3;&#x6784;&#x7684;&#x5965;&#x79D8;</h1>
+<p>&#x70C8;&#x7130;&#x4EBA;&#x7684;&#x8EAB;&#x4F53;&#x7531;&#x5206;&#x4E3A;3&#x5C42;&#x7684;&#xFF0C;&#x56F4;&#x7ED5;&#x4E00;&#x6761;&#x8F74;&#x65CB;&#x8F6C;&#x7684;&#x201C;&#x68D2;&#x68D2;&#x201D;&#x6784;&#x6210;&#x3002;&#x5176;&#x4E2D;&#x6240;&#x6709;&#x201C;&#x68D2;&#x68D2;&#x201D;&#x6C34;&#x5E73;&#x65B9;&#x5411;&#x4E0A;&#x7ED5;&#x8F74;&#x505A;&#x5300;&#x901F;&#x5706;&#x5468;&#x8FD0;&#x52A8;&#xFF0C;&#x7AD6;&#x76F4;&#x65B9;&#x5411;&#x4E0A;&#x505A;&#x7B80;&#x8C10;&#x8FD0;&#x52A8;&#xFF0C;&#x6BCF;&#x5C42;&#x201C;&#x68D2;&#x68D2;&#x201D;&#x7684;&#x8FD0;&#x52A8;&#x53C8;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x5DEE;&#x5F02;&#x3002;  </p>
+<p>&#x53E0;&#x52A0;&#x8D77;&#x6765;&#x770B;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF08;&#x56FE;&#x4E2D;&#x7684;&#x70C8;&#x7130;&#x4EBA;&#x7ECF;&#x8FC7;&#x4E86;&#x7279;&#x6B8A;&#x5904;&#x7406;&#xFF0C;&#x4E0D;&#x5177;&#x6709;AI&#x4E14;&#x8EAB;&#x4E0A;&#x6CA1;&#x6709;&#x9ED1;&#x70DF;&#xFF09;&#xFF0C;&#x672C;&#x6587;&#x4E2D;&#x6240;&#x6709;&#x52A8;&#x6001;&#x56FE;&#x7247;&#x90FD;&#x51CF;&#x901F;50%&#x64AD;&#x653E;&#xFF1A;
+<img src="../images/blaze_full.webp" alt="blaze_full"></p>
+<p><code>BlazeModel</code>&#x4E2D;&#x7684;<code>setupAnim</code>&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x4E86;&#x8FD9;&#x4E2A;&#x6548;&#x679C;&#x3002;&#x6211;&#x4EEC;&#x5BF9;&#x70C8;&#x7130;&#x4EBA;&#x9010;&#x201C;&#x5C42;&#x201D;&#x8FDB;&#x884C;&#x5206;&#x6790;&#x3002;<code>setupAnim</code>&#x5168;&#x90E8;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setupAnim</span><span class="hljs-params">(T blaze, <span class="hljs-keyword">float</span> limbSwing, <span class="hljs-keyword">float</span> limbSwingAmount, <span class="hljs-keyword">float</span> ageInTicks, <span class="hljs-keyword">float</span> netHeadYaw, <span class="hljs-keyword">float</span> headPitch)</span> </span>{
+    <span class="hljs-keyword">float</span> rotation = ageInTicks * (<span class="hljs-keyword">float</span>) Math.PI * -<span class="hljs-number">0.1F</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; ++i) {
+        upperBodyParts[i].y = -<span class="hljs-number">2.0F</span> + Mth.cos(((<span class="hljs-keyword">float</span>) (i * <span class="hljs-number">2</span>) + ageInTicks) * <span class="hljs-number">0.25F</span>);
+        upperBodyParts[i].x = Mth.cos(rotation) * <span class="hljs-number">9.0F</span>;
+        upperBodyParts[i].z = Mth.sin(rotation) * <span class="hljs-number">9.0F</span>;
+        ++rotation;
+    }
+
+    rotation = ((<span class="hljs-keyword">float</span>) Math.PI / <span class="hljs-number">4F</span>) + ageInTicks * (<span class="hljs-keyword">float</span>)Math.PI * <span class="hljs-number">0.03F</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">4</span>; j &lt; <span class="hljs-number">8</span>; ++j) {
+        upperBodyParts[j].y = <span class="hljs-number">2.0F</span> + Mth.cos(((<span class="hljs-keyword">float</span>) (j * <span class="hljs-number">2</span>) + ageInTicks) * <span class="hljs-number">0.25F</span>);
+        upperBodyParts[j].x = Mth.cos(rotation) * <span class="hljs-number">7.0F</span>;
+        upperBodyParts[j].z = Mth.sin(rotation) * <span class="hljs-number">7.0F</span>;
+        ++rotation;
+    }
+
+    rotation = <span class="hljs-number">0.47123894F</span> + ageInTicks * (<span class="hljs-keyword">float</span>) Math.PI * -<span class="hljs-number">0.05F</span>; <span class="hljs-comment">// &#x6CE8;&#xFF1A;0.47123894 = Math.PI * 0.15</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = <span class="hljs-number">8</span>; k &lt; <span class="hljs-number">12</span>; ++k) {
+        upperBodyParts[k].y = <span class="hljs-number">11.0F</span> + Mth.cos(((<span class="hljs-keyword">float</span>) k * <span class="hljs-number">1.5F</span> + ageInTicks) * <span class="hljs-number">0.5F</span>);
+        upperBodyParts[k].x = Mth.cos(rotation) * <span class="hljs-number">5.0F</span>;
+        upperBodyParts[k].z = Mth.sin(rotation) * <span class="hljs-number">5.0F</span>;
+        ++rotation;
+    }
+
+    <span class="hljs-comment">// &#x6700;&#x540E;&#x4E00;&#x90E8;&#x5206;&#x8C03;&#x6574;&#x4E86;&#x5934;&#x90E8;&#x65CB;&#x8F6C;&#xFF0C;&#x522B;&#x5FD8;&#x4E86;&#x628A;&#x89D2;&#x5EA6;&#x8F6C;&#x6362;&#x6210;&#x5F27;&#x5EA6;</span>
+    head.yRot = netHeadYaw * ((<span class="hljs-keyword">float</span>) Math.PI / <span class="hljs-number">180F</span>);
+    head.xRot = headPitch * ((<span class="hljs-keyword">float</span>) Math.PI / <span class="hljs-number">180F</span>);
+}
+</code></pre>
+<p>&#x6BCF;&#x5C42;&#x201C;&#x68D2;&#x68D2;&#x201D;&#x7AD6;&#x76F4;&#x65B9;&#x5411;&#x632F;&#x52A8;&#x7684;&#x632F;&#x5E45;&#x76F8;&#x7B49;&#xFF0C;&#x800C;&#x5706;&#x5468;&#x8FD0;&#x52A8;&#x7684;&#x534A;&#x5F84;&#x3001;&#x89D2;&#x901F;&#x5EA6;&#x548C;&#x7AD6;&#x76F4;&#x65B9;&#x5411;&#x632F;&#x52A8;&#x7684;&#x9891;&#x7387;&#x6EE1;&#x8DB3;&#x4E0B;&#x8868;&#xFF08;&#x4E0B;&#x8868;&#x4E2D;&#x6240;&#x6709;&#x6570;&#x503C;&#x4E3A;&#x76F8;&#x5BF9;&#x503C;&#xFF09;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x201C;&#x68D2;&#x68D2;&#x201D;&#x6240;&#x5728;&#x5C42;</th>
+<th style="text-align:center">&#x5706;&#x5468;&#x8FD0;&#x52A8;&#x7684;&#x534A;&#x5F84;</th>
+<th style="text-align:center">&#x5706;&#x5468;&#x8FD0;&#x52A8;&#x7684;&#x89D2;&#x901F;&#x5EA6;</th>
+<th style="text-align:center">&#x7AD6;&#x76F4;&#x65B9;&#x5411;&#x632F;&#x52A8;&#x7684;&#x9891;&#x7387;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&#x4E0A;&#x5C42;</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">-10</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x4E2D;&#x5C42;</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x4E0B;&#x5C42;</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">-5</td>
+<td style="text-align:center">2</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5148;&#x770B;&#x4E0A;&#x5C42;&#x201C;&#x68D2;&#x68D2;&#x201D;&#xFF1A;</p>
+<p><img src="../images/blaze_upper.webp" alt="blaze_upper"></p>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x4E0B;&#x9762;&#x4E00;&#x884C;&#x4E2D;&#xFF0C;-0.1F&#x4E3A;&#x89D2;&#x901F;&#x5EA6;</span>
+<span class="hljs-keyword">float</span> rotation = ageInTicks * (<span class="hljs-keyword">float</span>) Math.PI * -<span class="hljs-number">0.1F</span>;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; ++i) {
+    <span class="hljs-comment">// &#x4E0B;&#x9762;&#x4E00;&#x884C;&#x4E2D;&#xFF0C;-2.0F&#x4E3A;&#x7AD6;&#x76F4;&#x65B9;&#x5411;&#x7684;&#x504F;&#x79FB;&#x91CF;&#xFF0C;i * 2 * 0.25F&#x4E3A;&#x521D;&#x76F8;&#xFF0C;0.25F&#x4E3A;&#xFF08;&#x5706;&#xFF09;&#x9891;&#x7387;</span>
+    upperBodyParts[i].y = -<span class="hljs-number">2.0F</span> + Mth.cos(((<span class="hljs-keyword">float</span>) (i * <span class="hljs-number">2</span>) + ageInTicks) * <span class="hljs-number">0.25F</span>);
+    <span class="hljs-comment">// &#x4E0B;&#x9762;&#x4E24;&#x884C;&#x4E2D;&#xFF0C;9.0F&#x4E3A;&#x89D2;&#x901F;&#x5EA6;</span>
+    upperBodyParts[i].x = Mth.cos(rotation) * <span class="hljs-number">9.0F</span>;
+    upperBodyParts[i].z = Mth.sin(rotation) * <span class="hljs-number">9.0F</span>;
+    <span class="hljs-comment">// &#x81EA;&#x589E;rotation&#x6539;&#x53D8;&#x4E86;&#x6BCF;&#x6839;&#x201C;&#x68D2;&#x68D2;&#x201D;&#x6C34;&#x5E73;&#x65B9;&#x5411;&#x7684;&#x521D;&#x76F8;</span>
+    ++rotation;
+}
+</code></pre>
+<p>&#x8FD9;&#x91CC;<code>rotation</code>&#x53D8;&#x91CF;&#x6700;&#x540E;&#x4E58;&#x4E0A;&#x7684;&#x7CFB;&#x6570;&#x51B3;&#x5B9A;&#x4E86;&#x201C;&#x68D2;&#x68D2;&#x201D;&#x65CB;&#x8F6C;&#x7684;&#x89D2;&#x901F;&#x5EA6;&#xFF0C;<code>upperBodyParts[i].x</code>&#xFF0C;<code>upperBodyParts[i].z</code>&#x6700;&#x540E;&#x4E58;&#x4E0A;&#x7684;&#x7CFB;&#x6570;&#x51B3;&#x5B9A;&#x4E86;&#x201C;&#x68D2;&#x68D2;&#x201D;&#x65CB;&#x8F6C;&#x7684;&#x534A;&#x5F84;&#xFF0C;&#x800C;<code>upperBodyParts[i].y</code>&#x7684;&#x53D8;&#x5316;&#x51B3;&#x5B9A;&#x4E86;&#x201C;&#x68D2;&#x68D2;&#x201D;&#x7AD6;&#x76F4;&#x65B9;&#x5411;&#x4E0A;&#x505A;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x7B80;&#x8C10;&#x8FD0;&#x52A8;&#x3002;&#x6CE8;&#x610F;&#x6BCF;&#x6839;&#x201C;&#x68D2;&#x68D2;&#x201D;&#x7684;&#x521D;&#x59CB;&#x4F4D;&#x7F6E;&#xFF08;&#x521D;&#x76F8;&#xFF09;&#x4E0D;&#x540C;&#xFF0C;&#x56E0;&#x6B64;<code>rotation</code>&#x5728;&#x5FAA;&#x73AF;&#x672B;&#x5C3E;&#x4F1A;&#x81EA;&#x589E;&#xFF0C;&#x4E14;&#x63A7;&#x5236;<code>upperBodyParts[i].y</code>&#x53D8;&#x5316;&#x7684;&#x4F59;&#x5F26;&#x51FD;&#x6570;&#x52A0;&#x4E0A;&#x4E86;<code>i * 2</code>&#x4E00;&#x9879;&#x3002;  </p>
+<p>&#x7136;&#x540E;&#x770B;&#x4E2D;&#x5C42;&#x201C;&#x68D2;&#x68D2;&#x201D;&#xFF0C;&#x6CE8;&#x610F;&#x4E2D;&#x5C42;&#x201C;&#x68D2;&#x68D2;&#x201D;&#x4E0E;&#x4E0A;&#x4E0B;&#x4E24;&#x5C42;&#x201C;&#x68D2;&#x68D2;&#x201D;&#x65CB;&#x8F6C;&#x65B9;&#x5411;&#x76F8;&#x53CD;&#xFF1A;</p>
+<p><img src="../images/blaze_medium.webp" alt="blaze_medium"></p>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x4E0B;&#x9762;&#x4E00;&#x884C;&#x4E2D;&#xFF0C;Math.PI / 4F&#x4E3A;&#x521D;&#x76F8;&#xFF0C;0.03F&#x4E3A;&#x89D2;&#x901F;&#x5EA6;</span>
+rotation = ((<span class="hljs-keyword">float</span>) Math.PI / <span class="hljs-number">4F</span>) + ageInTicks * (<span class="hljs-keyword">float</span>) Math.PI * <span class="hljs-number">0.03F</span>;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">4</span>; j &lt; <span class="hljs-number">8</span>; ++j) {
+    <span class="hljs-comment">// &#x4E0B;&#x9762;&#x4E00;&#x884C;&#x4E2D;&#xFF0C;2.0F&#x4E3A;&#x7AD6;&#x76F4;&#x65B9;&#x5411;&#x7684;&#x504F;&#x79FB;&#x91CF;&#xFF0C;j * 2 * 0.25F&#x4E3A;&#x521D;&#x76F8;&#xFF0C;0.25F&#x4E3A;&#xFF08;&#x5706;&#xFF09;&#x9891;&#x7387;</span>
+    upperBodyParts[j].y = <span class="hljs-number">2.0F</span> + Mth.cos(((<span class="hljs-keyword">float</span>) (j * <span class="hljs-number">2</span>) + ageInTicks) * <span class="hljs-number">0.25F</span>);
+    <span class="hljs-comment">// &#x4E0B;&#x9762;&#x4E24;&#x884C;&#x4E2D;&#xFF0C;7.0F&#x4E3A;&#x89D2;&#x901F;&#x5EA6;</span>
+    upperBodyParts[j].x = Mth.cos(rotation) * <span class="hljs-number">7.0F</span>;
+    upperBodyParts[j].z = Mth.sin(rotation) * <span class="hljs-number">7.0F</span>;
+    ++rotation;
+}
+</code></pre>
+<p>&#x4EE3;&#x7801;&#x662F;&#x5927;&#x540C;&#x5C0F;&#x5F02;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x5C31;&#x4E0D;&#x989D;&#x5916;&#x89E3;&#x91CA;&#x4E86;&#x3002;  </p>
+<p>&#x8FD8;&#x6709;&#x4E0B;&#x5C42;&#x201C;&#x68D2;&#x68D2;&#x201D;&#xFF1A;</p>
+<p><img src="../images/blaze_lower.webp" alt="blaze_lower"></p>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x4E0B;&#x9762;&#x4E00;&#x884C;&#x4E2D;&#xFF0C;0.47123894F&#x4E3A;&#x521D;&#x76F8;&#xFF0C;-0.05F&#x4E3A;&#x89D2;&#x901F;&#x5EA6;</span>
+rotation = <span class="hljs-number">0.47123894F</span> + ageInTicks * (<span class="hljs-keyword">float</span>) Math.PI * -<span class="hljs-number">0.05F</span>; <span class="hljs-comment">// &#x6CE8;&#xFF1A;0.47123894 = Math.PI * 0.15</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = <span class="hljs-number">8</span>; k &lt; <span class="hljs-number">12</span>; ++k) {
+    <span class="hljs-comment">// &#x4E0B;&#x9762;&#x4E00;&#x884C;&#x4E2D;&#xFF0C;11.0F&#x4E3A;&#x7AD6;&#x76F4;&#x65B9;&#x5411;&#x7684;&#x504F;&#x79FB;&#x91CF;&#xFF0C;k * 1.5F * 0.5F&#x4E3A;&#x521D;&#x76F8;&#xFF0C;0.5F&#x4E3A;&#xFF08;&#x5706;&#xFF09;&#x9891;&#x7387;</span>
+    upperBodyParts[k].y = <span class="hljs-number">11.0F</span> + Mth.cos(((<span class="hljs-keyword">float</span>) k * <span class="hljs-number">1.5F</span> + ageInTicks) * <span class="hljs-number">0.5F</span>);
+    <span class="hljs-comment">// &#x4E0B;&#x9762;&#x4E24;&#x884C;&#x4E2D;&#xFF0C;5.0F&#x4E3A;&#x89D2;&#x901F;&#x5EA6;</span>
+    upperBodyParts[k].x = Mth.cos(rotation) * <span class="hljs-number">5.0F</span>;
+    upperBodyParts[k].z = Mth.sin(rotation) * <span class="hljs-number">5.0F</span>;
+    ++rotation;
+}
+</code></pre>
+<p>&#x5728;&#x521B;&#x5EFA;<code>LayerDefinition</code>&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x7ED9;&#x4E0A;&#x6587;&#x4E2D;<code>ageInTicks</code>&#x53D8;&#x91CF;&#x8D4B;&#x503C;0&#xFF0C;&#x5F97;&#x5230;&#x6BCF;&#x6839;&#x201C;&#x68D2;&#x68D2;&#x201D;&#x7684;&#x521D;&#x59CB;&#x72B6;&#x6001;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> LayerDefinition <span class="hljs-title">createBodyLayer</span><span class="hljs-params">()</span> </span>{
+    MeshDefinition meshDefinition = <span class="hljs-keyword">new</span> MeshDefinition();
+    PartDefinition partDefinition = meshDefinition.getRoot();
+    partDefinition.addOrReplaceChild(<span class="hljs-string">&quot;head&quot;</span>, CubeListBuilder.create().texOffs(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>).addBox(-<span class="hljs-number">4.0F</span>, -<span class="hljs-number">4.0F</span>, -<span class="hljs-number">4.0F</span>, <span class="hljs-number">8.0F</span>, <span class="hljs-number">8.0F</span>, <span class="hljs-number">8.0F</span>), PartPose.ZERO);
+    <span class="hljs-keyword">float</span> rotation = <span class="hljs-number">0.0F</span>;
+    CubeListBuilder builder = CubeListBuilder.create().texOffs(<span class="hljs-number">0</span>, <span class="hljs-number">16</span>).addBox
+    (<span class="hljs-number">0.0F</span>, <span class="hljs-number">0.0F</span>, <span class="hljs-number">0.0F</span>, <span class="hljs-number">2.0F</span>, <span class="hljs-number">8.0F</span>, <span class="hljs-number">2.0F</span>);
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">4</span>; ++i) {
+        <span class="hljs-keyword">float</span> x0 = Mth.cos(rotation) * <span class="hljs-number">9.0F</span>;
+        <span class="hljs-keyword">float</span> y0 = -<span class="hljs-number">2.0F</span> + Mth.cos((<span class="hljs-keyword">float</span>) (i * <span class="hljs-number">2</span>) * <span class="hljs-number">0.25F</span>);
+        <span class="hljs-keyword">float</span> z0 = Mth.sin(rotation) * <span class="hljs-number">9.0F</span>;
+        partDefinition.addOrReplaceChild(getPartName(i), builder, PartPose.offset(x0, y0, z0));
+        ++rotation;
+    }
+
+    rotation = ((<span class="hljs-keyword">float</span>) Math.PI / <span class="hljs-number">4F</span>);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">4</span>; j &lt; <span class="hljs-number">8</span>; ++j) {
+        <span class="hljs-keyword">float</span> x0 = Mth.cos(rotation) * <span class="hljs-number">7.0F</span>;
+        <span class="hljs-keyword">float</span> y0 = <span class="hljs-number">2.0F</span> + Mth.cos((<span class="hljs-keyword">float</span>) (j * <span class="hljs-number">2</span>) * <span class="hljs-number">0.25F</span>);
+        <span class="hljs-keyword">float</span> z0 = Mth.sin(rotation) * <span class="hljs-number">7.0F</span>;
+        partDefinition.addOrReplaceChild(getPartName(j), builder, PartPose.offset(x0, y0, z0));
+        ++rotation;
+    }
+
+    rotation = <span class="hljs-number">0.47123894F</span>;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k = <span class="hljs-number">8</span>; k &lt; <span class="hljs-number">12</span>; ++k) {
+        <span class="hljs-keyword">float</span> x0 = Mth.cos(rotation) * <span class="hljs-number">5.0F</span>;
+        <span class="hljs-keyword">float</span> y0 = <span class="hljs-number">11.0F</span> + Mth.cos((<span class="hljs-keyword">float</span>) k * <span class="hljs-number">1.5F</span> * <span class="hljs-number">0.5F</span>);
+        <span class="hljs-keyword">float</span> z0 = Mth.sin(rotation) * <span class="hljs-number">5.0F</span>;
+        partDefinition.addOrReplaceChild(getPartName(k), builder, PartPose.offset(x0, y0, z0));
+        ++rotation;
+    }
+    <span class="hljs-keyword">return</span> LayerDefinition.create(meshDefinition, <span class="hljs-number">64</span>, <span class="hljs-number">32</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">getPartName</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;part&quot;</span> + index;
+}
+</code></pre>
+<p>&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x4E2D;&#x5219;&#x521D;&#x59CB;&#x5316;&#x4E86;<code>upperBodyParts</code>&#x6570;&#x7EC4;&#x3002;  </p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">BlazeModel</span><span class="hljs-params">(ModelPart root)</span> </span>{
+    <span class="hljs-keyword">this</span>.root = root;
+    <span class="hljs-keyword">this</span>.head = root.getChild(<span class="hljs-string">&quot;head&quot;</span>);
+    <span class="hljs-keyword">this</span>.upperBodyParts = <span class="hljs-keyword">new</span> ModelPart[<span class="hljs-number">12</span>];
+    Arrays.setAll(upperBodyParts, index -&gt; root.getChild(getPartName(index)));
+}
+</code></pre>
+<p>&#x8FD8;&#x6709;&#x4E2A;&#x95EE;&#x9898;&#x662F;&#x70C8;&#x7130;&#x4EBA;&#x4E3A;&#x4F55;&#x53EF;&#x4EE5;&#x4E00;&#x76F4;&#x4FDD;&#x6301;&#x660E;&#x4EAE;&#xFF0C;&#x5176;&#x5B9E;&#x8FD9;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728;<code>BlazeRenderer</code>&#x4E2D;&#x91CD;&#x5199;<code>getBlockLightLevel</code>&#x65B9;&#x6CD5;&#xFF0C;&#x4F7F;&#x5176;&#x603B;&#x662F;&#x8FD4;&#x56DE;<code>15</code>&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getBlockLightLevel</span><span class="hljs-params">(Blaze blaze, BlockPos pos)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">15</span>;
+}
+</code></pre>
+<p><code>BlazeRenderer</code>&#x4E2D;&#x7684;&#x5176;&#x4ED6;&#x4EE3;&#x7801;&#x540C;&#x6837;&#x5F88;&#x5E38;&#x89C4;&#xFF0C;&#x8FD9;&#x91CC;&#x4E5F;&#x540C;&#x6837;&#x4E0D;&#x653E;&#x4EE3;&#x7801;&#x4E86;&#x3002;  </p>
+<p>&#x672C;&#x8282;&#x7684;&#x5185;&#x5BB9;&#x5DEE;&#x4E0D;&#x591A;&#x5C31;&#x662F;&#x8FD9;&#x4E9B;&#x4E86;&#xFF0C;&#x540E;&#x9762;&#x6211;&#x4EEC;&#x4F1A;&#x5F00;&#x59CB;&#x5206;&#x6790;&#x5524;&#x9B54;&#x8005;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="blaze2.html" class="navigation navigation-prev " aria-label="Previous page: 烈焰人小火球的“三连发”">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../evoker/" class="navigation navigation-next " aria-label="Next page: 法力强大的唤魔者">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"烈焰人身体结构的奥秘","level":"1.2.3.1.3","depth":4,"next":{"title":"法力强大的唤魔者","level":"1.2.3.2","depth":3,"path":"part1-monster/ranged-special/evoker/README.md","ref":"part1-monster/ranged-special/evoker/README.md","articles":[{"title":"唤魔者的基本实现逻辑","level":"1.2.3.2.1","depth":4,"path":"part1-monster/ranged-special/evoker/evoker.md","ref":"part1-monster/ranged-special/evoker/evoker.md","articles":[]},{"title":"(WIP) 施法AI的框架","level":"1.2.3.2.2","depth":4,"path":"part1-monster/ranged-special/evoker/spellcaster_ai.md","ref":"part1-monster/ranged-special/evoker/spellcaster_ai.md","articles":[]},{"title":"(WIP) 唤魔者的三大魔法","level":"1.2.3.2.3","depth":4,"path":"part1-monster/ranged-special/evoker/evoker2.md","ref":"part1-monster/ranged-special/evoker/evoker2.md","articles":[]},{"title":"(WIP) 灾厄村民的手部动作","level":"1.2.3.2.4","depth":4,"path":"part1-monster/ranged-special/evoker/illager_arm_pose.md","ref":"part1-monster/ranged-special/evoker/illager_arm_pose.md","articles":[]},{"title":"(WIP) 唤魔者的渲染","level":"1.2.3.2.5","depth":4,"path":"part1-monster/ranged-special/evoker/evoker3.md","ref":"part1-monster/ranged-special/evoker/evoker3.md","articles":[]}]},"previous":{"title":"烈焰人小火球的“三连发”","level":"1.2.3.1.2","depth":4,"path":"part1-monster/ranged-special/blaze/blaze2.md","ref":"part1-monster/ranged-special/blaze/blaze2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","chapter-fold","code","hide-element","insert-logo","katex","search-pro","sharing-plus","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":true,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 80px","url":"https://lych.top/images/polonium.png"}},"theme":"default","author":"Lych","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Polonium 1.20 实体进阶教程","language":"zh-hans","gitbook":"*","description":"给Mod开发的初学者提供一个对实体的更深入的了解"},"file":{"path":"part1-monster/ranged-special/blaze/blaze3.md","mtime":"2024-11-23T08:19:01.341Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-11-23T09:37:15.095Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

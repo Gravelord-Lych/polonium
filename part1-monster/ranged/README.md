@@ -1,4 +1,4 @@
-# 远程攻击的怪物（RangedAttackMob）
+# 远程攻击的怪物 \#1（`RangedAttackMob`）
 
 下面是远程攻击的怪物，这一部分我们分两块研究。制作一个实现`RangedAttackMob`接口的远程攻击的怪物相对简单，只需要为你的怪物添加一个AI，并实现该接口内的抽象方法`performRangedAttack`就可以。
 

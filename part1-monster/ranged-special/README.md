@@ -1,4 +1,4 @@
-# 远程攻击的怪物（非RangedAttackMob）
+# 远程攻击的怪物 \#2（非`RangedAttackMob`）
 
 一个`RangedAttackMob`接口提供的功能毕竟是有限的，`RangedAttackGoal`也不支持较为复杂的远程攻击形式。那么如果我们想让我们的怪物有更加复杂的远程攻击方式，该怎么办呢？这个时候往往需要自己写一个新的AI，以实现复杂的远程攻击方式。  
 

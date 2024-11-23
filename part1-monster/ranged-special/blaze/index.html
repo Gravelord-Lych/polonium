@@ -1,0 +1,1131 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>炽热的烈焰人 · Polonium 1.20 实体进阶教程</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Lych">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="blaze.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    前言
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../../notes.html">
+            
+                <a href="../../../notes.html">
+            
+                    
+                        <b>1.1.1.</b>
+                    
+                    一些零散的笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    非Boss级怪物
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../melee/">
+            
+                <a href="../../melee/">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    近战攻击的怪物
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../../melee/zombie/">
+            
+                <a href="../../melee/zombie/">
+            
+                    
+                        <b>1.2.1.1.</b>
+                    
+                    从原版僵尸开始
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1.1" data-path="../../melee/zombie/zombie.html">
+            
+                <a href="../../melee/zombie/zombie.html">
+            
+                    
+                        <b>1.2.1.1.1.</b>
+                    
+                    僵尸的实现逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.1.2" data-path="../../melee/zombie/zombie2.html">
+            
+                <a href="../../melee/zombie/zombie2.html">
+            
+                    
+                        <b>1.2.1.1.2.</b>
+                    
+                    僵尸的模型与渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../../melee/actual_combat1.html">
+            
+                <a href="../../melee/actual_combat1.html">
+            
+                    
+                        <b>1.2.1.2.</b>
+                    
+                    实战1 - 强化僵尸
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../../melee/enderman/">
+            
+                <a href="../../melee/enderman/">
+            
+                    
+                        <b>1.2.1.3.</b>
+                    
+                    空间移动能力者——末影人
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.3.1" data-path="../../melee/enderman/neutral_mob.html">
+            
+                <a href="../../melee/enderman/neutral_mob.html">
+            
+                    
+                        <b>1.2.1.3.1.</b>
+                    
+                    末影人与“中立”生物
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.2" data-path="../../melee/enderman/enderman.html">
+            
+                <a href="../../melee/enderman/enderman.html">
+            
+                    
+                        <b>1.2.1.3.2.</b>
+                    
+                    末影人的基本实现逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.3" data-path="../../melee/enderman/enderman2.html">
+            
+                <a href="../../melee/enderman/enderman2.html">
+            
+                    
+                        <b>1.2.1.3.3.</b>
+                    
+                    末影人的AI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3.4" data-path="../../melee/enderman/enderman3.html">
+            
+                <a href="../../melee/enderman/enderman3.html">
+            
+                    
+                        <b>1.2.1.3.4.</b>
+                    
+                    末影人的模型与渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../../melee/actual_combat2.html">
+            
+                <a href="../../melee/actual_combat2.html">
+            
+                    
+                        <b>1.2.1.4.</b>
+                    
+                    实战2 - 食尸鬼
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../ranged/">
+            
+                <a href="../../ranged/">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    远程攻击的怪物 #1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../../ranged/perform_ranged_attack.html">
+            
+                <a href="../../ranged/perform_ranged_attack.html">
+            
+                    
+                        <b>1.2.2.1.</b>
+                    
+                    RangedAttackMob接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../../ranged/snow_golem/">
+            
+                <a href="../../ranged/snow_golem/">
+            
+                    
+                        <b>1.2.2.2.</b>
+                    
+                    相对简单的雪傀儡
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.2.1" data-path="../../ranged/snow_golem/snow_golem.html">
+            
+                <a href="../../ranged/snow_golem/snow_golem.html">
+            
+                    
+                        <b>1.2.2.2.1.</b>
+                    
+                    雪傀儡的实现逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2.2" data-path="../../ranged/snow_golem/snow_golem2.html">
+            
+                <a href="../../ranged/snow_golem/snow_golem2.html">
+            
+                    
+                        <b>1.2.2.2.2.</b>
+                    
+                    雪傀儡的模型与渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../../ranged/actual_combat3.html">
+            
+                <a href="../../ranged/actual_combat3.html">
+            
+                    
+                        <b>1.2.2.3.</b>
+                    
+                    实战3 - 发射器僵尸
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../../ranged/witch/">
+            
+                <a href="../../ranged/witch/">
+            
+                    
+                        <b>1.2.2.4.</b>
+                    
+                    令玩家头疼的女巫
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.4.1" data-path="../../ranged/witch/witch.html">
+            
+                <a href="../../ranged/witch/witch.html">
+            
+                    
+                        <b>1.2.2.4.1.</b>
+                    
+                    女巫的实现逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4.2" data-path="../../ranged/witch/witch2.html">
+            
+                <a href="../../ranged/witch/witch2.html">
+            
+                    
+                        <b>1.2.2.4.2.</b>
+                    
+                    女巫的渲染细节
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="../../ranged/skeleton/">
+            
+                <a href="../../ranged/skeleton/">
+            
+                    
+                        <b>1.2.2.5.</b>
+                    
+                    全能的骷髅
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.5.1" data-path="../../ranged/skeleton/skeleton.html">
+            
+                <a href="../../ranged/skeleton/skeleton.html">
+            
+                    
+                        <b>1.2.2.5.1.</b>
+                    
+                    骷髅的实现逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5.2" data-path="../../ranged/skeleton/skeleton2.html">
+            
+                <a href="../../ranged/skeleton/skeleton2.html">
+            
+                    
+                        <b>1.2.2.5.2.</b>
+                    
+                    骷髅的“聪明之处”
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5.3" data-path="../../ranged/skeleton/skeleton3.html">
+            
+                <a href="../../ranged/skeleton/skeleton3.html">
+            
+                    
+                        <b>1.2.2.5.3.</b>
+                    
+                    骷髅的模型（与渲染）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="../../ranged/actual_combat4.html">
+            
+                <a href="../../ranged/actual_combat4.html">
+            
+                    
+                        <b>1.2.2.6.</b>
+                    
+                    实战4 - 骷髅法师
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    远程攻击的怪物 #2
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.3.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>1.2.3.1.</b>
+                    
+                    炽热的烈焰人
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1.1" data-path="blaze.html">
+            
+                <a href="blaze.html">
+            
+                    
+                        <b>1.2.3.1.1.</b>
+                    
+                    烈焰人的实现逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.2" data-path="blaze2.html">
+            
+                <a href="blaze2.html">
+            
+                    
+                        <b>1.2.3.1.2.</b>
+                    
+                    烈焰人小火球的“三连发”
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.1.3" data-path="blaze3.html">
+            
+                <a href="blaze3.html">
+            
+                    
+                        <b>1.2.3.1.3.</b>
+                    
+                    烈焰人身体结构的奥秘
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../evoker/">
+            
+                <a href="../evoker/">
+            
+                    
+                        <b>1.2.3.2.</b>
+                    
+                    法力强大的唤魔者
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.2.1" data-path="../evoker/evoker.html">
+            
+                <a href="../evoker/evoker.html">
+            
+                    
+                        <b>1.2.3.2.1.</b>
+                    
+                    唤魔者的基本实现逻辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2.2" data-path="../evoker/spellcaster_ai.html">
+            
+                <a href="../evoker/spellcaster_ai.html">
+            
+                    
+                        <b>1.2.3.2.2.</b>
+                    
+                    (WIP) 施法AI的框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2.3" data-path="../evoker/evoker2.html">
+            
+                <a href="../evoker/evoker2.html">
+            
+                    
+                        <b>1.2.3.2.3.</b>
+                    
+                    (WIP) 唤魔者的三大魔法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2.4" data-path="../evoker/illager_arm_pose.html">
+            
+                <a href="../evoker/illager_arm_pose.html">
+            
+                    
+                        <b>1.2.3.2.4.</b>
+                    
+                    (WIP) 灾厄村民的手部动作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2.5" data-path="../evoker/evoker3.html">
+            
+                <a href="../evoker/evoker3.html">
+            
+                    
+                        <b>1.2.3.2.5.</b>
+                    
+                    (WIP) 唤魔者的渲染
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.3" >
+            
+                <span>
+            
+                    
+                        <b>1.2.3.3.</b>
+                    
+                    (WIP)
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../flyer-special/">
+            
+                <a href="../../flyer-special/">
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    (WIP) 飞行的怪物
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../exercises/">
+            
+                <a href="../../exercises/">
+            
+                    
+                        <b>1.2.5.</b>
+                    
+                    本章练习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../../exercises/exercise1.html">
+            
+                <a href="../../exercises/exercise1.html">
+            
+                    
+                        <b>1.2.5.1.</b>
+                    
+                    练习1 - 狗头人
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../part2-neutral/">
+            
+                <a href="../../../part2-neutral/">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    (WIP) 友好生物与被动生物
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../part3-projectile/">
+            
+                <a href="../../../part3-projectile/">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    (WIP) 弹射物和功能性实体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../part4-boss/">
+            
+                <a href="../../../part4-boss/">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    (WIP) Boss级怪物
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../../part4-boss/wither/">
+            
+                <a href="../../../part4-boss/wither/">
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    (WIP) 凋灵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../../part4-boss/ender_dragon/">
+            
+                <a href="../../../part4-boss/ender_dragon/">
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    (WIP) 末影龙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" >
+            
+                <span>
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    (WIP)
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../../part5-miscellaneous/">
+            
+                <a href="../../../part5-miscellaneous/">
+            
+                    
+                        <b>1.6.</b>
+                    
+                    杂项
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >炽热的烈焰人</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x70BD;&#x70ED;&#x7684;&#x70C8;&#x7130;&#x4EBA;">&#x70BD;&#x70ED;&#x7684;&#x70C8;&#x7130;&#x4EBA;</h1>
+<p><em>&#x70C8;&#x7130;&#x4EBA;&#xFF08;Blaze&#xFF09;&#x662F;&#x751F;&#x6210;&#x5728;&#x4E0B;&#x754C;&#x7684;&#x98DE;&#x884C;&#x654C;&#x5BF9;&#x751F;&#x7269;&#x3002; &#x2014;&#x2014;Minecraft Wiki</em></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: 远程攻击的怪物 #2">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="blaze.html" class="navigation navigation-next " aria-label="Next page: 烈焰人的实现逻辑">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"炽热的烈焰人","level":"1.2.3.1","depth":3,"next":{"title":"烈焰人的实现逻辑","level":"1.2.3.1.1","depth":4,"path":"part1-monster/ranged-special/blaze/blaze.md","ref":"part1-monster/ranged-special/blaze/blaze.md","articles":[]},"previous":{"title":"远程攻击的怪物 #2","level":"1.2.3","depth":2,"path":"part1-monster/ranged-special/README.md","ref":"part1-monster/ranged-special/README.md","articles":[{"title":"炽热的烈焰人","level":"1.2.3.1","depth":3,"path":"part1-monster/ranged-special/blaze/README.md","ref":"part1-monster/ranged-special/blaze/README.md","articles":[{"title":"烈焰人的实现逻辑","level":"1.2.3.1.1","depth":4,"path":"part1-monster/ranged-special/blaze/blaze.md","ref":"part1-monster/ranged-special/blaze/blaze.md","articles":[]},{"title":"烈焰人小火球的“三连发”","level":"1.2.3.1.2","depth":4,"path":"part1-monster/ranged-special/blaze/blaze2.md","ref":"part1-monster/ranged-special/blaze/blaze2.md","articles":[]},{"title":"烈焰人身体结构的奥秘","level":"1.2.3.1.3","depth":4,"path":"part1-monster/ranged-special/blaze/blaze3.md","ref":"part1-monster/ranged-special/blaze/blaze3.md","articles":[]}]},{"title":"法力强大的唤魔者","level":"1.2.3.2","depth":3,"path":"part1-monster/ranged-special/evoker/README.md","ref":"part1-monster/ranged-special/evoker/README.md","articles":[{"title":"唤魔者的基本实现逻辑","level":"1.2.3.2.1","depth":4,"path":"part1-monster/ranged-special/evoker/evoker.md","ref":"part1-monster/ranged-special/evoker/evoker.md","articles":[]},{"title":"(WIP) 施法AI的框架","level":"1.2.3.2.2","depth":4,"path":"part1-monster/ranged-special/evoker/spellcaster_ai.md","ref":"part1-monster/ranged-special/evoker/spellcaster_ai.md","articles":[]},{"title":"(WIP) 唤魔者的三大魔法","level":"1.2.3.2.3","depth":4,"path":"part1-monster/ranged-special/evoker/evoker2.md","ref":"part1-monster/ranged-special/evoker/evoker2.md","articles":[]},{"title":"(WIP) 灾厄村民的手部动作","level":"1.2.3.2.4","depth":4,"path":"part1-monster/ranged-special/evoker/illager_arm_pose.md","ref":"part1-monster/ranged-special/evoker/illager_arm_pose.md","articles":[]},{"title":"(WIP) 唤魔者的渲染","level":"1.2.3.2.5","depth":4,"path":"part1-monster/ranged-special/evoker/evoker3.md","ref":"part1-monster/ranged-special/evoker/evoker3.md","articles":[]}]},{"title":"(WIP)","level":"1.2.3.3","depth":3,"ref":"","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","chapter-fold","code","hide-element","insert-logo","katex","search-pro","sharing-plus","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":true,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 80px","url":"https://lych.top/images/polonium.png"}},"theme":"default","author":"Lych","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Polonium 1.20 实体进阶教程","language":"zh-hans","gitbook":"*","description":"给Mod开发的初学者提供一个对实体的更深入的了解"},"file":{"path":"part1-monster/ranged-special/blaze/README.md","mtime":"2024-11-23T08:31:18.733Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-11-23T09:37:15.095Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

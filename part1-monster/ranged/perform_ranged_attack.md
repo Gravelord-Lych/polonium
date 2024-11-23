@@ -1,13 +1,13 @@
-# performRangedAttack - 远程攻击の基础
+# `RangedAttackMob`接口
 
-有请`performRangedAttack`登场！
+本章节中介绍的远程攻击的怪物都实现了这个接口（当然为模组中新增的友好或中立生物实现这个接口也是可以的），这个接口可以用于实现远程攻击方式较简单且**每次远程攻击在1游戏刻之内完成**的生物。
 
 ```java
 public interface RangedAttackMob {
     void performRangedAttack(LivingEntity target, float power);
 }
 ```
-`RangedAttackMob`类很简单，只有这个抽象方法（*可不要把它当函数式接口使用哦*）。这个方法中一共有2个参数，第一个参数是攻击目标，表示应该攻击谁，第二个参数是攻击的“力量”，使用较少，只在弓箭手型生物中被用来确定射出的箭的伤害。  
+`RangedAttackMob`接口很简单，只有这个抽象方法（*可不要把它当函数式接口使用哦*）。这个方法中一共有2个参数，第一个参数是攻击目标，表示应该攻击谁，第二个参数是攻击的“力量”，使用较少，只在弓箭手型生物中被用来确定射出的箭的伤害。  
 
 然后来看`RangedAttackGoal`的构造方法与全局变量：
 
