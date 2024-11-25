@@ -329,7 +329,7 @@ public boolean doHurtTarget(Entity target) {
 2. 判断是否满足呼叫增援的条件
 3. 重复尝试50次，如果成功（随机选择的位置符合要求）立即break  
 
-其中**重复尝试的思想是一个重要的思想**，我们在1.2.1.5节还会去讲。往往当你苦于如何生成满足要求的随机坐标时，它会派上大用场。植物魔法中[盖亚守护者的随机传送位置的选定](https://github.com/VazkiiMods/Botania/blob/1.20.x/Xplat/src/main/java/vazkii/botania/common/entity/GaiaGuardianEntity.java)（第917行），就用到了这种思想。  
+其中**重复尝试的思想是一个重要的思想**，我们在1.2.1.3.2节还会去讲。往往当你苦于如何生成满足要求的随机坐标时，它会派上大用场。植物魔法中[盖亚守护者的随机传送位置的选定](https://github.com/VazkiiMods/Botania/blob/1.20.x/Xplat/src/main/java/vazkii/botania/common/entity/GaiaGuardianEntity.java)（第917行），就用到了这种思想。  
 
 重写`doHurtTarget`方法主要目的是为了让僵尸能在一定难度下传火给僵尸攻击的目标。这里的代码不难理解，关于区域难度的计算不是本教程的重点，如果你感兴趣，可以阅读`DifficultyInstance`类的源代码。
 
