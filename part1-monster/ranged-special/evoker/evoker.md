@@ -48,7 +48,7 @@ protected void registerGoals() {
 ```
 可以发现`AvoidEntityGoal`（这个AI在1.2.2.5.1中提到过）的`walkSpeedModifier`以及`RandomStrollGoal`的`speedModifier`都只有0.6，也就是说唤魔者许多时候只会以60%的移动速度移动，因此唤魔者看上去移动得并不快（尽管唤魔者试图逃离近战的玩家时可以全速逃跑）。
 
-一个需要关注的方法是`isAlledTo`方法。
+一个需要关注的方法是`isAlliedTo`方法。
 ```java
 @Override
 public boolean isAlliedTo(Entity entity) {
