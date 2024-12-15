@@ -1,13 +1,13 @@
 # 烈焰人的实现逻辑
 
-大家可以先想一想烈焰人和雪傀儡、女巫、骷髅等攻击方式的区别。  
+读者可以先想一想烈焰人和雪傀儡、女巫、骷髅等攻击方式的区别。  
 
 不难发现，烈焰人的小火球可以“三连发”，但后面三者每次攻击只能发射1个弹射物，这是由于`performRangeAttack`方法只能在远程攻击的那一游戏刻被调用一次的特性决定的。因此如果要实现烈焰人的“三连发”必须另起炉灶，自己写一个远程攻击的AI。  
 
 ```java
 // 允许的最大自己与攻击目标间的高度差，当目标比自己高的距离大于这个值时烈焰人（绝大多数情况下）会向上运动
 private float allowedHeightOffset = 0.5F;
-// 剩余的重置allowedHeightOffset的时间（单位：tick），当这个值为零时会重置allowedHeightOffset的值
+// 剩余的重置allowedHeightOffset的时间（单位：tick），当这个值为0时会重置allowedHeightOffset的值
 private int nextHeightOffsetChangeTick;
 // 决定了烈焰人是否在准备攻击，如果这个值是奇数则表示烈焰人正准备攻击
 private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(Blaze.class, EntityDataSerializers.BYTE);
