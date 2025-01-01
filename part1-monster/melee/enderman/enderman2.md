@@ -176,7 +176,7 @@ static class EndermanTakeBlockGoal extends Goal {
     }
 }
 ```
-_可以发现，`ForgeEventFactory.getMobGriefingEvent(enderman.level(), enderman)`总是在canUse中被调用。这首先是因为**GameRule只是标签**，在操作前一定要确认GameRule允许你的行为，其次也因为**Forge提供了EntityMobGriefingEvent这一事件**。如果Forge有相关的事件（例如上面有EntityMobGriefingEvent和EntityPlaceEvent），不要忘记直接或间接post它们。_  
+_可以发现，`ForgeEventFactory.getMobGriefingEvent(enderman.level(), enderman)`总是在canUse中被调用。这首先是因为**GameRule只是标签**，在操作前一定要确认GameRule是否允许这一行为，其次也因为**Forge提供了EntityMobGriefingEvent这一事件**。如果Forge有相关的事件（例如上面有EntityMobGriefingEvent和EntityPlaceEvent），不要忘记直接或间接post它们。_  
 
 `EndermanLeaveBlockGoal`相对容易理解一些。每两刻如果AI可用，首先会生成一个随机方块坐标，然后检查这个方块坐标是否可以放下手中的方块。如果可以，那么`canContinueToUse`就会返回`false`，这个AI就会`stop`，否则这个AI就会继续运行并寻找方块。  
 

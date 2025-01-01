@@ -38,7 +38,7 @@
 
 ### 提示
 
-- 这个实战所在的1.2.2.6节是非Boss级怪物中最重要（虽然不一定是最难）的前两章的最后一节，笔者想给这个实战略微上点难度，所以可能稍稍有一点复杂233
+- 这个实战所在的1.2.2.6节是非Boss级怪物中最基础的前两章的最后一节，笔者想给这个实战略微上点难度，所以可能稍稍有一点复杂233
 
 - 可以用`ItemStack`类中的`enchant`方法来附魔物品
 
@@ -597,9 +597,7 @@ public SkeletonWizardRenderer(EntityRendererProvider.Context context) {
 }
 ```
 
-这样我们的“杂交实验”就成功完成了。虽然这个实体看似非常复杂，但实际上任何一个Boss级生物都可能比这个实体复杂得多，而且制作这个实体所真正涉及的知识点并不多（例如自定义弹射物都没用上）。尽管如此，如果读者能够在阅读该教程的最前一部分后，独立制作出这种复杂程度的实体，那么笔者还是会为此而感到欣慰的，因为这让笔者知道了自己的努力没有白费。  
-
-1.2的内容到此已经过去一大半了，接下来的1.2.3与1.2.4不是特别重要，可能篇幅短一些。
+这样我们的“杂交实验”就成功完成了。
 
 [源代码（`SkeletonWizard`类）](https://github.com/Gravelord-Lych/polonium-ExampleMod/blob/main/src/main/java/lych/polonium/entity/monster/SkeletonWizard.java)  
 [源代码（`SkeletonWizardRenderer`类）](https://github.com/Gravelord-Lych/polonium-ExampleMod/blob/main/src/main/java/lych/polonium/client/renderer/SkeletonWizardRenderer.java)  

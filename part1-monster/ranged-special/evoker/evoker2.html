@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>(WIP) 唤魔者的三大魔法 · Polonium 1.20 实体进阶教程</title>
+        <title>唤魔者的三大魔法 · Polonium 1.20 实体进阶教程</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -77,6 +77,7 @@
         
     
     
+    
     <meta name="HandheldFriendly" content="true"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -89,6 +90,17 @@
     
     
     <link rel="prev" href="spellcaster_ai.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../../../https:/s2.loli.net/2025/01/01/4qSVHBYiXnAuGDd.webp' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../../https:/s2.loli.net/2025/01/01/4qSVHBYiXnAuGDd.webp' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../../https:/s2.loli.net/2025/01/01/4qSVHBYiXnAuGDd.webp'>
+    
     
 
     </head>
@@ -721,7 +733,7 @@
                     
                         <b>1.2.3.2.3.</b>
                     
-                    (WIP) 唤魔者的三大魔法
+                    唤魔者的三大魔法
             
                 </a>
             
@@ -949,6 +961,27 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../part5-miscellaneous/summoning.html">
+            
+                <a href="../../../part5-miscellaneous/summoning.html">
+            
+                    
+                        <b>1.6.1.</b>
+                    
+                    实体的召唤
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
 
@@ -981,7 +1014,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >(WIP) 唤魔者的三大魔法</a>
+        <a href="../../.." >唤魔者的三大魔法</a>
     </h1>
 </div>
 
@@ -1000,6 +1033,208 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x5524;&#x9B54;&#x8005;&#x7684;&#x4E09;&#x5927;&#x9B54;&#x6CD5;">&#x5524;&#x9B54;&#x8005;&#x7684;&#x4E09;&#x5927;&#x9B54;&#x6CD5;</h1>
+<p>&#x5524;&#x9B54;&#x8005;&#x4F1A;&#x4F7F;&#x7528;&#x7684;&#x6CD5;&#x672F;&#x5171;&#x5206;&#x4E3A;3&#x79CD;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4EE5;&#x4E0B;&#x7684;&#x8868;&#x683C;&#x6765;&#x7B80;&#x5355;&#x6982;&#x62EC;&#xFF1A;  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x65BD;&#x6CD5;AI&#x7C7B;&#x540D;</th>
+<th style="text-align:center">&#x4F5C;&#x7528;</th>
+<th style="text-align:center">&#x4F18;&#x5148;&#x7EA7;</th>
+<th style="text-align:center">&#x51C6;&#x5907;&#x65F6;&#x95F4;</th>
+<th style="text-align:center">&#x603B;&#x7528;&#x65F6;</th>
+<th style="text-align:center">&#x51B7;&#x5374;&#x65F6;&#x95F4;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>EvokerSummonSpellGoal</code></td>
+<td style="text-align:center">&#x53EC;&#x5524;&#x607C;&#x9B3C;</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">20</td>
+<td style="text-align:center">40</td>
+<td style="text-align:center">340</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>EvokerAttackSpellGoal</code></td>
+<td style="text-align:center">&#x53EC;&#x5524;&#x5524;&#x9B54;&#x8005;&#x5C16;&#x7259;</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">20</td>
+<td style="text-align:center">100</td>
+<td style="text-align:center">100</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>EvokerWololoSpellGoal</code></td>
+<td style="text-align:center">&#x628A;&#x84DD;&#x8272;&#x7EF5;&#x7F8A;&#x53D8;&#x6210;&#x7EA2;&#x8272;</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">40</td>
+<td style="text-align:center">60</td>
+<td style="text-align:center">140</td>
+</tr>
+</tbody>
+</table>
+<p><em>&#x6CE8;&#xFF1A;</em></p>
+<ul>
+<li><em>&#x4E0A;&#x8868;&#x4E2D;&#x6240;&#x6709;&#x65F6;&#x95F4;&#x7684;&#x5355;&#x4F4D;&#x5747;&#x4E3A;tick</em></li>
+<li><em>&#x4F18;&#x5148;&#x7EA7;&#xFF1A;&#x6570;&#x5B57;&#x8D8A;&#x4F4E;&#xFF0C;&#x4F18;&#x5148;&#x7EA7;&#x8D8A;&#x9AD8;&#xFF0C;&#x5F53;&#x591A;&#x4E2A;AI&#x51B7;&#x5374;&#x5B8C;&#x6BD5;&#x65F6;&#xFF0C;&#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#x7684;AI&#x4F18;&#x5148;&#x6267;&#x884C;</em></li>
+<li><em>&#x51C6;&#x5907;&#x65F6;&#x95F4;&#xFF1A;&#x5373;<code>getCastWarmupTime</code>&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x539F;&#x7248;&#x4E2D;&#x8BE5;&#x65B9;&#x6CD5;&#x603B;&#x662F;&#x8FD4;&#x56DE;&#x5E38;&#x6570;</em></li>
+<li><em>&#x603B;&#x7528;&#x65F6;&#xFF1A;&#x5373;<code>getCastingTime</code>&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x539F;&#x7248;&#x4E2D;&#x8BE5;&#x65B9;&#x6CD5;&#x603B;&#x662F;&#x8FD4;&#x56DE;&#x5E38;&#x6570;</em></li>
+<li><em>&#x51B7;&#x5374;&#x65F6;&#x95F4;&#xFF1A;&#x5373;<code>getCastingInterval</code>&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x539F;&#x7248;&#x4E2D;&#x8BE5;&#x65B9;&#x6CD5;&#x603B;&#x662F;&#x8FD4;&#x56DE;&#x5E38;&#x6570;</em></li>
+</ul>
+<p>&#x4E0A;&#x4E00;&#x8282;&#x4E2D;&#x8BB2;&#x8FC7;<code>SpellcasterUseSpellGoal</code>&#xFF0C;&#x5176;&#x4E2D;&#x7684;<code>canUse</code>&#x65B9;&#x6CD5;&#x4FDD;&#x8BC1;&#x65BD;&#x6CD5;AI&#x4E4B;&#x95F4;&#x662F;&#x4E92;&#x65A5;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x540C;&#x4E00;&#x65F6;&#x523B;&#x53EA;&#x4F1A;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x65BD;&#x6CD5;AI&#xFF0C;&#x4E14;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#x7684;&#x65BD;&#x6CD5;AI&#x5148;&#x6267;&#x884C;&#x3002;  </p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x5177;&#x4F53;&#x5206;&#x6790;&#x6BCF;&#x4E00;&#x79CD;AI&#x65F6;&#xFF0C;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x6587;&#x7AE0;&#x5197;&#x4F59;&#xFF0C;&#x7B14;&#x8005;&#x5C06;&#x4F1A;&#x53EA;&#x5206;&#x6790;&#x9664;<code>getCastWarmupTime</code>&#x3001;<code>getCastingTime</code>&#x4E0E;<code>getCastingInterval</code>&#x5916;&#x7684;&#xFF0C;&#x5BF9;&#x65BD;&#x6CD5;AI&#x7684;&#x5E95;&#x5C42;&#x5B9E;&#x73B0;&#x6709;&#x91CD;&#x8981;&#x610F;&#x4E49;&#x7684;&#x65B9;&#x6CD5;&#x3002;  </p>
+<h3 id="&#x53EC;&#x5524;&#x607C;&#x9B3C;&#xFF08;evokersummonspellgoal&#xFF09;">&#x53EC;&#x5524;&#x607C;&#x9B3C;&#xFF08;<code>EvokerSummonSpellGoal</code>&#xFF09;</h3>
+<p>&#x8FD9;&#x662F;&#x4E2A;&#x201C;&#x5F88;&#x4E0D;&#x53D7;&#x73A9;&#x5BB6;&#x559C;&#x6B22;&#x201D;&#x7684;&#x6CD5;&#x672F;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E5F;&#x662F;&#x5E95;&#x5C42;&#x903B;&#x8F91;&#x5341;&#x5206;&#x7B80;&#x5355;&#x7684;&#x6CD5;&#x672F;~  </p>
+<p>&#x5524;&#x9B54;&#x8005;&#x53EA;&#x4F1A;&#x5728;&#x81EA;&#x8EAB;&#x78B0;&#x649E;&#x7BB1;&#x5411;6&#x4E2A;&#x65B9;&#x5411;&#x6269;&#x5C55;16&#x683C;&#x540E;&#x5F62;&#x6210;&#x7684;&#x957F;&#x65B9;&#x4F53;&#x5185;&#x607C;&#x9B3C;&#x6570;&#x91CF;&#x5C0F;&#x4E8E;8&#x65F6;&#x53EC;&#x5524;&#x607C;&#x9B3C;&#xFF0C;&#x4E14;&#x56DB;&#x5468;&#x7684;&#x607C;&#x9B3C;&#x8D8A;&#x591A;&#xFF0C;&#x4F7F;&#x7528;&#x8BE5;&#x6CD5;&#x672F;&#x7684;&#x6982;&#x7387;&#x8D8A;&#x5C0F;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">canUse</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">super</span>.canUse()) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">int</span> i = level().getNearbyEntities(Vex.class, vexCountTargeting, Evoker.<span class="hljs-keyword">this</span>, getBoundingBox().inflate(<span class="hljs-number">16.0</span>D)).size();
+        <span class="hljs-keyword">return</span> random.nextInt(<span class="hljs-number">8</span>) + <span class="hljs-number">1</span> &gt; i;
+    }
+}
+</code></pre>
+<p>&#x7136;&#x540E;&#x662F;<code>performSpellCasting</code>&#x3002;&#x8BE5;&#x65B9;&#x6CD5;&#x4F1A;&#x5728;&#x5524;&#x9B54;&#x8005;&#x56DB;&#x5468;&#x56FA;&#x5B9A;&#x751F;&#x6210;3&#x53EA;&#x607C;&#x9B3C;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">performSpellCasting</span><span class="hljs-params">()</span> </span>{
+    ServerLevel serverLevel = (ServerLevel) level();
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; ++i) {
+        <span class="hljs-comment">// &#x9009;&#x53D6;&#x81EA;&#x8EAB;&#x56DB;&#x5468;&#x7684;&#x968F;&#x673A;&#x4F4D;&#x7F6E;&#xFF0C;&#x6CE8;&#x610F;&#x53EC;&#x5524;&#x51FA;&#x7684;&#x607C;&#x9B3C;&#x7684;y&#x5750;&#x6807;&#x6C38;&#x8FDC;&#x662F;&#x5524;&#x9B54;&#x8005;&#x7684;y&#x5750;&#x6807;+1</span>
+        BlockPos pos = blockPosition().offset(-<span class="hljs-number">2</span> + random.nextInt(<span class="hljs-number">5</span>), <span class="hljs-number">1</span>, -<span class="hljs-number">2</span> + random.nextInt(<span class="hljs-number">5</span>));
+        Vex vex = EntityType.VEX.create(level());
+        <span class="hljs-keyword">if</span> (vex != <span class="hljs-keyword">null</span>) { <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x6709;&#x4E2A;null-check&#xFF0C;&#x662F;&#x56E0;&#x4E3A;EntityTyoe&#x7684;create&#x65B9;&#x6CD5;&#x662F;@Nullable&#x7684;&#x3002;&#x4E0D;&#x8FC7;&#x7EDD;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;create&#x65B9;&#x6CD5;&#x90FD;&#x4E0D;&#x4F1A;&#x8FD4;&#x56DE;null</span>
+            vex.moveTo(pos, <span class="hljs-number">0.0F</span>, <span class="hljs-number">0.0F</span>);
+            vex.finalizeSpawn(serverLevel, level().getCurrentDifficultyAt(pos), MobSpawnType.MOB_SUMMONED, <span class="hljs-keyword">null</span>, <span class="hljs-keyword">null</span>);
+            vex.setOwner(Evoker.<span class="hljs-keyword">this</span>);
+            <span class="hljs-comment">// &#x9650;&#x5236;&#x607C;&#x9B3C;&#x7684;&#x6D3B;&#x52A8;&#x8303;&#x56F4;</span>
+            vex.setBoundOrigin(pos);
+            <span class="hljs-comment">// &#x4F7F;&#x607C;&#x9B3C;&#x5728;&#x4E00;&#x5B9A;&#x65F6;&#x95F4;&#x540E;&#x4E0D;&#x65AD;&#x53D7;&#x5230;&#x4F24;&#x5BB3;</span>
+            vex.setLimitedLife(<span class="hljs-number">20</span> * (<span class="hljs-number">30</span> + random.nextInt(<span class="hljs-number">90</span>)));
+            serverLevel.addFreshEntityWithPassengers(vex);
+        }
+    }
+}
+</code></pre>
+<h3 id="&#x628A;&#x84DD;&#x8272;&#x7EF5;&#x7F8A;&#x53D8;&#x6210;&#x7EA2;&#x8272;&#xFF08;evokerwololospellgoal&#xFF09;">&#x628A;&#x84DD;&#x8272;&#x7EF5;&#x7F8A;&#x53D8;&#x6210;&#x7EA2;&#x8272;&#xFF08;<code>EvokerWololoSpellGoal</code>&#xFF09;</h3>
+<p>&#x8FD9;&#x4E2A;&#x6CD5;&#x672F;&#x672C;&#x8EAB;&#x4E5F;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x53EA;&#x662F;<code>canUse</code>&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x800C;&#x5DF2;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">canUse</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">// &#x663E;&#x7136;&#x5524;&#x9B54;&#x8005;&#x5728;&#x6218;&#x6597;&#x7684;&#x65F6;&#x5019;&#x6CA1;&#x6709;&#x95F2;&#x5FC3;&#x8C03;&#x6559;&#x7EF5;&#x7F8A;</span>
+    <span class="hljs-keyword">if</span> (getTarget() != <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (isCastingSpell()) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    } 
+    <span class="hljs-comment">// &#x8FD9;&#x4E2A;AI&#x5F7B;&#x5E95;&#x91CD;&#x5199;&#x4E86;canUse&#x65B9;&#x6CD5;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x91CD;&#x65B0;&#x5224;&#x65AD;&#x6CD5;&#x672F;&#x662F;&#x5426;&#x5728;&#x51B7;&#x5374;</span>
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (tickCount &lt; nextAttackTickCount) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    } 
+    <span class="hljs-comment">// &#x518D;&#x6B21;&#x63D0;&#x9192;&#x8BFB;&#x8005;&#x4E0D;&#x8981;&#x5FD8;&#x8BB0;&#x786E;&#x8BA4;GameRule&#x662F;&#x5426;&#x5141;&#x8BB8;&#x5B9E;&#x4F53;&#x7684;&#x884C;&#x4E3A;</span>
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!ForgeEventFactory.getMobGriefingEvent(level(), Evoker.<span class="hljs-keyword">this</span>)) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    } 
+    <span class="hljs-keyword">else</span> {
+        List&lt;Sheep&gt; list = level().getNearbyEntities(Sheep.class, wololoTargeting, Evoker.<span class="hljs-keyword">this</span>, getBoundingBox().inflate(<span class="hljs-number">16.0</span>D, <span class="hljs-number">4.0</span>D, <span class="hljs-number">16.0</span>D));
+        <span class="hljs-keyword">if</span> (list.isEmpty()) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">// wololoTarget&#x548C;target&#x662F;&#x72EC;&#x7ACB;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x80FD;&#x66FF;&#x6362;&#x4E3A;setTarget</span>
+            setWololoTarget(list.get(random.nextInt(list.size())));
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+        }
+    }
+}
+
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">canContinueToUse</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> getWololoTarget() != <span class="hljs-keyword">null</span> &amp;&amp; attackWarmupDelay &gt; <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p><code>performSpellCasting</code>&#x4E2D;&#x7B80;&#x5355;&#x5730;&#x6539;&#x53D8;&#x4E86;&#x7EF5;&#x7F8A;&#x7684;&#x989C;&#x8272;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">performSpellCasting</span><span class="hljs-params">()</span> </span>{
+    Sheep sheep = Evoker.<span class="hljs-keyword">this</span>.getWololoTarget();
+    <span class="hljs-keyword">if</span> (sheep != <span class="hljs-keyword">null</span> &amp;&amp; sheep.isAlive()) {
+        sheep.setColor(DyeColor.RED);
+    }
+}
+</code></pre>
+<p>&#x6700;&#x540E;&#x4E0D;&#x8981;&#x5FD8;&#x4E86;&#x91CD;&#x7F6E;<code>wololoTarget</code>&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">super</span>.stop();
+    Evoker.<span class="hljs-keyword">this</span>.setWololoTarget((Sheep)<span class="hljs-keyword">null</span>);
+}
+</code></pre>
+<h3 id="&#x53EC;&#x5524;&#x5524;&#x9B54;&#x8005;&#x5C16;&#x7259;&#xFF08;evokerattackspellgoal&#xFF09;">&#x53EC;&#x5524;&#x5524;&#x9B54;&#x8005;&#x5C16;&#x7259;&#xFF08;<code>EvokerAttackSpellGoal</code>&#xFF09;</h3>
+<p>&#x8FD9;&#x770B;&#x4E0A;&#x53BB;&#x662F;&#x5524;&#x9B54;&#x8005;&#x4F7F;&#x7528;&#x7684;&#x6700;&#x6734;&#x7D20;&#x7684;&#x6CD5;&#x672F;&#xFF0C;&#x53EF;&#x5176;&#x5B9E;&#x8FD9;&#x4E2A;&#x6CD5;&#x672F;&#x5728;&#x201C;&#x4EE3;&#x7801;&#x610F;&#x4E49;&#x201D;&#x4E0A;&#x624D;&#x662F;&#x6700;&#x590D;&#x6742;&#x7684;&#x6CD5;&#x672F;&#x3002;&#x590D;&#x6742;&#x5C31;&#x590D;&#x6742;&#x5728;&#x5C16;&#x7259;&#x7684;&#x4F4D;&#x7F6E;&#x7684;&#x786E;&#x5B9A;&#x3002;  </p>
+<p>&#x5148;&#x8003;&#x8651;&#x5355;&#x4E2A;&#x6C34;&#x5E73;&#x4F4D;&#x7F6E;&#xFF08;x&#x4E0E;z&#xFF09;&#x5DF2;&#x88AB;&#x786E;&#x5B9A;&#x7684;&#x5C16;&#x7259;&#x3002;&#x5C16;&#x7259;&#x7684;y&#x5750;&#x6807;&#x662F;&#x5982;&#x4F55;&#x786E;&#x5B9A;&#x7684;&#x5462;&#xFF1F;&#x8BFB;&#x8005;&#x53EF;&#x80FD;&#x4F1A;&#x8BA4;&#x4E3A;&#xFF0C;&#x4F7F;&#x7528;&#x5730;&#x9762;&#x7684;y&#x5750;&#x6807;&#x503C;&#x4E0D;&#x5C31;&#x884C;&#x4E86;&#x5417;&#xFF1F;&#x4F46;&#x95EE;&#x9898;&#x662F;&#x54EA;&#x91CC;&#x624D;&#x662F;&#x6240;&#x8C13;&#x7684;&#x201C;&#x5730;&#x9762;&#x201D;&#x5462;&#xFF1F;  </p>
+<p>&#x56DE;&#x987E;1.2.1.3.2&#x4E2D;&#x63D0;&#x5230;&#x7684;&#x627E;y&#x5750;&#x6807;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;<strong>&#x7528;<code>MutableBlockPos</code>&#x8C03;&#x6574;</strong>&#x6216;<strong>&#x901A;&#x8FC7;<code>Heightmap</code>&#x83B7;&#x53D6;</strong>&#x3002;&#x5982;&#x679C;&#x501F;&#x52A9;&#x9AD8;&#x5EA6;&#x56FE;&#xFF08;<code>Heightmap</code>&#xFF09;&#x83B7;&#x53D6;&#xFF0C;&#x663E;&#x7136;&#x56E0;&#x4E3A;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x56E0;&#x4E3A;&#x901A;&#x8FC7;&#x83B7;&#x53D6;&#x6C34;&#x5E73;&#x4F4D;&#x7F6E;&#x4E0A;&#x56FA;&#x4F53;&#x65B9;&#x5757;&#x7684;&#x6700;&#x5927;y&#x5750;&#x6807;&#x503C;&#x6765;&#x786E;&#x5B9A;&#x5750;&#x6807;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x5BA4;&#x5185;&#x73AF;&#x5883;&#x7B49;&#x73AF;&#x5883;&#x4E0B;&#x5E76;&#x4E0D;&#x9002;&#x7528;&#x3002;  </p>
+<p>&#x6240;&#x4EE5;&#x53EA;&#x80FD;&#x91C7;&#x7528;&#x524D;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x4E0D;&#x65AD;&#x68C0;&#x67E5;&#x5C16;&#x7259;&#x751F;&#x6210;&#x4F4D;&#x7F6E;&#x5E76;&#x4EE5;&#x6B64;&#x8C03;&#x6574;y&#x5750;&#x6807;&#x3002;&#x539F;&#x7248;&#x7684;&#x5B9E;&#x73B0;&#x4E2D;&#x6CA1;&#x6709;&#x4F7F;&#x7528;<code>MutableBlockPos</code>&#xFF0C;&#x4F46;&#x662F;&#x601D;&#x60F3;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;&#x539F;&#x7248;&#x5BF9;&#x4E00;&#x5B9A;y&#x5750;&#x6807;&#x8303;&#x56F4;&#x5185;&#x7684;&#x65B9;&#x5757;&#x8FDB;&#x884C;&#x4E86;&#x68C0;&#x67E5;&#xFF0C;&#x5982;&#x679C;&#x68C0;&#x6D4B;&#x5230;&#x5408;&#x9002;&#x7684;&#x53EF;&#x751F;&#x6210;&#x5C16;&#x7259;&#x7684;&#x4F4D;&#x7F6E;&#x5C31;&#x751F;&#x6210;&#x5C16;&#x7259;&#x3002;  </p>
+<pre><code class="lang-java"><span class="hljs-comment">// warmupDelayTicks&#x662F;&#x5C16;&#x7259;&#x51FA;&#x73B0;&#x7684;&#x989D;&#x5916;&#x7684;&#x5EF6;&#x8FDF;&#x65F6;&#x95F4;&#xFF0C;&#x7B97;&#x4E0A;&#x65BD;&#x6CD5;&#x672C;&#x8EAB;&#x7684;&#x51C6;&#x5907;&#x65F6;&#x95F4;&#xFF0C;&#x5728;tps&#x4E3A;20&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E00;&#x4E2A;warmupDelayTicks&#x4E3A;5&#x7684;&#x5C16;&#x7259;&#x4F1A;&#x5728;&#x4ECE;&#x5524;&#x9B54;&#x8005;&#x4E3E;&#x8D77;&#x624B;&#x5F00;&#x59CB;1.25s&#x540E;&#x51FA;&#x73B0;</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">createSpellEntity</span><span class="hljs-params">(<span class="hljs-keyword">double</span> x, <span class="hljs-keyword">double</span> z, <span class="hljs-keyword">double</span> minY, <span class="hljs-keyword">double</span> maxY, <span class="hljs-keyword">float</span> rotation, <span class="hljs-keyword">int</span> warmupDelayTicks)</span> </span>{
+    BlockPos pos = BlockPos.containing(x, maxY, z);
+    <span class="hljs-keyword">boolean</span> foundSuitablePos = <span class="hljs-keyword">false</span>;
+    <span class="hljs-keyword">double</span> dy = <span class="hljs-number">0.0</span>D;
+
+    do {
+        BlockPos belowPos = pos.below();
+        BlockState belowState = level().getBlockState(belowPos);
+        <span class="hljs-comment">// &#x68C0;&#x67E5;&#x8BE5;&#x4F4D;&#x7F6E;&#x4E0B;&#x65B9;&#x7684;&#x65B9;&#x5757;&#x662F;&#x5426;&#x80FD;&#x591F;&#x4E3A;&#x8BE5;&#x4F4D;&#x7F6E;&#x7684;&#x65B9;&#x5757;&#x63D0;&#x4F9B;SupportType.FULL&#xFF0C;&#x7528;&#x4E8E;&#x68C0;&#x67E5;&#x8BE5;&#x4F4D;&#x7F6E;&#x65B9;&#x5757;&#x662F;&#x5426;&#x201C;&#x4E0D;&#x900F;&#x660E;&#x201D;&#x3002;</span>
+        <span class="hljs-keyword">if</span> (belowState.isFaceSturdy(level(), belowPos, Direction.UP)) {
+            <span class="hljs-keyword">if</span> (!level().isEmptyBlock(pos)) {
+                BlockState state = level().getBlockState(pos);
+                VoxelShape shape = state.getCollisionShape(level(), pos);
+                <span class="hljs-keyword">if</span> (!shape.isEmpty()) {
+                    dy = shape.max(Direction.Axis.Y);
+                }
+            }
+            foundSuitablePos = <span class="hljs-keyword">true</span>;
+            <span class="hljs-keyword">break</span>;
+        }
+        pos = pos.below();
+    } <span class="hljs-keyword">while</span> (pos.getY() &gt;= Mth.floor(minY) - <span class="hljs-number">1</span>);
+
+    <span class="hljs-keyword">if</span> (foundSuitablePos) {
+        level().addFreshEntity(<span class="hljs-keyword">new</span> EvokerFangs(level(), x, (<span class="hljs-keyword">double</span>) pos.getY() + dy, z, rotation, warmupDelayTicks, Evoker.<span class="hljs-keyword">this</span>));
+    }
+}
+</code></pre>
+<p><em>&#x9644;&#x4E0A;Wiki&#x7684;&#x63CF;&#x8FF0;&#xFF1A;&#x5C16;&#x7259;&#x53EA;&#x4F1A;&#x751F;&#x6210;&#x5728;&#x4E0D;&#x4F4E;&#x4E8E;&#x4F4D;&#x7F6E;&#x6700;&#x4F4E;&#x7684;&#x76EE;&#x6807;&#x7684;&#x811A;&#x3001;&#x4E0D;&#x9AD8;&#x4E8E;&#x4F4D;&#x7F6E;&#x6700;&#x9AD8;&#x7684;&#x76EE;&#x6807;&#x7684;&#x811A;&#x4E0A;&#x65B9;1&#x683C;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x5C16;&#x7259;&#x4F1A;&#x5C1D;&#x8BD5;&#x5728;&#x8FD9;&#x4E00;&#x533A;&#x57DF;&#x7684;&#x4E0D;&#x900F;&#x660E;&#x65B9;&#x5757;&#x4E0A;&#x751F;&#x6210;&#xFF0C;&#x4F46;&#x5F53;&#x8FD9;&#x4E2A;&#x65B9;&#x5757;&#x88AB;&#x56FA;&#x4F53;&#x65B9;&#x5757;&#x6321;&#x4F4F;&#x65F6;&#x4F1A;&#x751F;&#x6210;&#x5931;&#x8D25;&#x3002;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x53EC;&#x5524;&#x7684;&#x5C16;&#x7259;&#x65E0;&#x6CD5;&#x751F;&#x6210;&#x5728;&#x6DF1;&#x5751;&#x91CC;&#x6216;&#x9AD8;&#x5899;&#x9876;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x5524;&#x9B54;&#x8005;&#x5728;&#x6DF1;&#x5751;&#x7684;&#x5E95;&#x90E8;&#x800C;&#x76EE;&#x6807;&#x5728;&#x4E0A;&#x65B9;&#xFF0C;&#x5B83;&#x4F1A;&#x8BD5;&#x56FE;&#x8D70;&#x5230;&#x9876;&#x90E8;&#x4EE5;&#x53D1;&#x52A8;&#x653B;&#x51FB;&#xFF0C;&#x53CD;&#x4E4B;&#x4EA6;&#x7136;&#x3002;</em></p>
+<p>&#x7136;&#x540E;&#x8003;&#x8651;&#x5C16;&#x7259;&#x6C34;&#x5E73;&#x4F4D;&#x7F6E;&#x7684;&#x786E;&#x5B9A;&#x3002;&#x6C34;&#x5E73;&#x4F4D;&#x7F6E;&#x7684;&#x786E;&#x5B9A;&#x5219;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x53EA;&#x8981;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x4E09;&#x89D2;&#x51FD;&#x6570;&#x7684;&#x8FD0;&#x7B97;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;  </p>
+<p>&#x4E0B;&#x56FE;&#x5C55;&#x793A;&#x4E86;&#x5524;&#x9B54;&#x8005;&#x5C16;&#x7259;&#x7684;&#x6C34;&#x5E73;&#x4F4D;&#x7F6E;&#x7684;&#x5927;&#x81F4;&#x786E;&#x5B9A;&#x65B9;&#x5F0F;&#x3002;
+<img src="../images/evoker_fang_position.png" alt="evoker_fang_position"></p>
+<p>&#x4EE5;&#x53CA;&#x76F8;&#x5173;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">performSpellCasting</span><span class="hljs-params">()</span> </span>{
+    LivingEntity target = getTarget();
+    <span class="hljs-keyword">double</span> minY = Math.min(target.getY(), getY());
+    <span class="hljs-keyword">double</span> maxY = Math.max(target.getY(), getY()) + <span class="hljs-number">1.0</span>D;
+    <span class="hljs-keyword">float</span> facingAngle = (<span class="hljs-keyword">float</span>) Mth.atan2(target.getZ() - getZ(), target.getX() - getX());
+    <span class="hljs-comment">// &#x5BF9;&#x8DDD;&#x79BB;&#x8F83;&#x8FD1;&#x7684;&#x76EE;&#x6807;&#xFF1A;&#x53EC;&#x5524;&#x4E24;&#x5708;&#x5C16;&#x7259;</span>
+    <span class="hljs-keyword">if</span> (distanceToSqr(target) &lt; <span class="hljs-number">9.0</span>D) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; ++i) {
+            <span class="hljs-keyword">float</span> rotation = facingAngle + (<span class="hljs-keyword">float</span>) i * (<span class="hljs-keyword">float</span>) Math.PI * <span class="hljs-number">0.4F</span>;
+            createSpellEntity(getX() + (<span class="hljs-keyword">double</span>) Mth.cos(rotation) * <span class="hljs-number">1.5</span>D, getZ() + (<span class="hljs-keyword">double</span>) Mth.sin(rotation) * <span class="hljs-number">1.5</span>D, minY, maxY, rotation, <span class="hljs-number">0</span>);
+        }
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = <span class="hljs-number">0</span>; k &lt; <span class="hljs-number">8</span>; ++k) {
+            <span class="hljs-comment">// &#x6CE8;&#xFF1A;1.2566371F = Math.PI * 0.4F</span>
+            <span class="hljs-keyword">float</span> rotation = facingAngle + (<span class="hljs-keyword">float</span>) k * (<span class="hljs-keyword">float</span>) Math.PI * <span class="hljs-number">2.0F</span> / <span class="hljs-number">8.0F</span> + <span class="hljs-number">1.2566371F</span>;
+            createSpellEntity(getX() + (<span class="hljs-keyword">double</span>) Mth.cos(rotation) * <span class="hljs-number">2.5</span>D, getZ() + (<span class="hljs-keyword">double</span>) Mth.sin(rotation) * <span class="hljs-number">2.5</span>D, minY, maxY, rotation, <span class="hljs-number">3</span>);
+        }
+    } 
+    <span class="hljs-comment">// &#x5BF9;&#x8DDD;&#x79BB;&#x8F83;&#x8FDC;&#x7684;&#x76EE;&#x6807;&#xFF1A;&#x53EC;&#x5524;&#x4E00;&#x6392;&#x5C16;&#x7259;</span>
+    <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> l = <span class="hljs-number">0</span>; l &lt; <span class="hljs-number">16</span>; ++l) {
+            <span class="hljs-keyword">double</span> distanceToSelf = <span class="hljs-number">1.25</span>D * (<span class="hljs-keyword">double</span>) (l + <span class="hljs-number">1</span>);
+            <span class="hljs-keyword">int</span> warmupDelayTicks = <span class="hljs-number">1</span> * l;
+            createSpellEntity(getX() + (<span class="hljs-keyword">double</span>) Mth.cos(facingAngle) * distanceToSelf, getZ() + (<span class="hljs-keyword">double</span>) Mth.sin(facingAngle) * distanceToSelf, minY, maxY, facingAngle, warmupDelayTicks);
+        }
+    }
+}
+</code></pre>
+<p>&#x90A3;&#x4E48;&#x5524;&#x9B54;&#x8005;&#x7684;&#x903B;&#x8F91;&#x90E8;&#x5206;&#x5230;&#x8FD9;&#x91CC;&#x5C31;&#x7ED3;&#x675F;&#x4E86;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x5219;&#x662F;&#x5524;&#x9B54;&#x8005;&#x7684;&#x6E32;&#x67D3;&#x90E8;&#x5206;&#x3002;</p>
 
                                 
                                 </section>
@@ -1059,7 +1294,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"(WIP) 唤魔者的三大魔法","level":"1.2.3.2.3","depth":4,"next":{"title":"(WIP) 灾厄村民的手部动作","level":"1.2.3.2.4","depth":4,"path":"part1-monster/ranged-special/evoker/illager_arm_pose.md","ref":"part1-monster/ranged-special/evoker/illager_arm_pose.md","articles":[]},"previous":{"title":"施法AI的框架","level":"1.2.3.2.2","depth":4,"path":"part1-monster/ranged-special/evoker/spellcaster_ai.md","ref":"part1-monster/ranged-special/evoker/spellcaster_ai.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","chapter-fold","code","hide-element","insert-logo","katex","search-pro","sharing-plus","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":true,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 80px","url":"https://lych.top/images/polonium.png"}},"theme":"default","author":"Lych","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Polonium 1.20 实体进阶教程","language":"zh-hans","gitbook":"*","description":"给Mod开发的初学者提供一个对实体的更深入的了解"},"file":{"path":"part1-monster/ranged-special/evoker/evoker2.md","mtime":"2024-11-23T08:23:55.796Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-12-15T08:07:29.455Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"唤魔者的三大魔法","level":"1.2.3.2.3","depth":4,"next":{"title":"(WIP) 灾厄村民的手部动作","level":"1.2.3.2.4","depth":4,"path":"part1-monster/ranged-special/evoker/illager_arm_pose.md","ref":"part1-monster/ranged-special/evoker/illager_arm_pose.md","articles":[]},"previous":{"title":"施法AI的框架","level":"1.2.3.2.2","depth":4,"path":"part1-monster/ranged-special/evoker/spellcaster_ai.md","ref":"part1-monster/ranged-special/evoker/spellcaster_ai.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","chapter-fold","code","favicon","hide-element","insert-logo","katex","search-pro","sharing-plus","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"https://s2.loli.net/2025/01/01/4qSVHBYiXnAuGDd.webp","bookmark":"https://s2.loli.net/2025/01/01/4qSVHBYiXnAuGDd.webp","appleTouch":"https://s2.loli.net/2025/01/01/4qSVHBYiXnAuGDd.webp"},"back-to-top-button":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":true,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"insert-logo":{"style":"background: none; max-height: 140px; min-height: 100px","url":"https://s2.loli.net/2025/01/01/4qSVHBYiXnAuGDd.webp"}},"theme":"default","author":"Lych","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Polonium 1.20 实体进阶教程","language":"zh-hans","gitbook":"*","description":"给Mod开发的初学者提供一个对实体的更深入的了解"},"file":{"path":"part1-monster/ranged-special/evoker/evoker2.md","mtime":"2025-01-01T08:41:37.590Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-01T10:21:35.984Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

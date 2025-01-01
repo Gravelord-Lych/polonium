@@ -286,4 +286,4 @@ public Vec3 getRenderOffset(EnderMan enderman, float delta) {
 ```
 `getRenderOffset`方法的返回值被用来“translate”渲染实体用的`PoseStack`。因为末影人愤怒时身体会抖动，所以要重写此方法。  
 
-本节的内容就到此为止了，本章的内容也快要结束了。下一节我们再来讲一个更复杂的近战怪物的实例~
+本节的内容就到此为止了，本章的内容也快要结束了。下一节我们再来讲一个自定义的近战怪物的实例~

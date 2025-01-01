@@ -77,6 +77,7 @@
         
     
     
+    
     <meta name="HandheldFriendly" content="true"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -89,6 +90,17 @@
     
     
     <link rel="prev" href="skeleton/skeleton3.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../../https:/s2.loli.net/2025/01/01/4qSVHBYiXnAuGDd.webp' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../https:/s2.loli.net/2025/01/01/4qSVHBYiXnAuGDd.webp' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../https:/s2.loli.net/2025/01/01/4qSVHBYiXnAuGDd.webp'>
+    
     
 
     </head>
@@ -721,7 +733,7 @@
                     
                         <b>1.2.3.2.3.</b>
                     
-                    (WIP) 唤魔者的三大魔法
+                    唤魔者的三大魔法
             
                 </a>
             
@@ -949,6 +961,27 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../part5-miscellaneous/summoning.html">
+            
+                <a href="../../part5-miscellaneous/summoning.html">
+            
+                    
+                        <b>1.6.1.</b>
+                    
+                    实体的召唤
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
 
@@ -1039,7 +1072,7 @@
 <hr>
 <h3 id="&#x63D0;&#x793A;">&#x63D0;&#x793A;</h3>
 <ul>
-<li><p>&#x8FD9;&#x4E2A;&#x5B9E;&#x6218;&#x6240;&#x5728;&#x7684;1.2.2.6&#x8282;&#x662F;&#x975E;Boss&#x7EA7;&#x602A;&#x7269;&#x4E2D;&#x6700;&#x91CD;&#x8981;&#xFF08;&#x867D;&#x7136;&#x4E0D;&#x4E00;&#x5B9A;&#x662F;&#x6700;&#x96BE;&#xFF09;&#x7684;&#x524D;&#x4E24;&#x7AE0;&#x7684;&#x6700;&#x540E;&#x4E00;&#x8282;&#xFF0C;&#x7B14;&#x8005;&#x60F3;&#x7ED9;&#x8FD9;&#x4E2A;&#x5B9E;&#x6218;&#x7565;&#x5FAE;&#x4E0A;&#x70B9;&#x96BE;&#x5EA6;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x80FD;&#x7A0D;&#x7A0D;&#x6709;&#x4E00;&#x70B9;&#x590D;&#x6742;233</p>
+<li><p>&#x8FD9;&#x4E2A;&#x5B9E;&#x6218;&#x6240;&#x5728;&#x7684;1.2.2.6&#x8282;&#x662F;&#x975E;Boss&#x7EA7;&#x602A;&#x7269;&#x4E2D;&#x6700;&#x57FA;&#x7840;&#x7684;&#x524D;&#x4E24;&#x7AE0;&#x7684;&#x6700;&#x540E;&#x4E00;&#x8282;&#xFF0C;&#x7B14;&#x8005;&#x60F3;&#x7ED9;&#x8FD9;&#x4E2A;&#x5B9E;&#x6218;&#x7565;&#x5FAE;&#x4E0A;&#x70B9;&#x96BE;&#x5EA6;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x80FD;&#x7A0D;&#x7A0D;&#x6709;&#x4E00;&#x70B9;&#x590D;&#x6742;233</p>
 </li>
 <li><p>&#x53EF;&#x4EE5;&#x7528;<code>ItemStack</code>&#x7C7B;&#x4E2D;&#x7684;<code>enchant</code>&#x65B9;&#x6CD5;&#x6765;&#x9644;&#x9B54;&#x7269;&#x54C1;</p>
 </li>
@@ -1541,8 +1574,7 @@ thrownPotion.setItem(<span class="hljs-keyword">new</span> ItemStack(Items.LINGE
     addLayer(<span class="hljs-keyword">new</span> SkeletonWizardEyesLayer(<span class="hljs-keyword">this</span>));
 }
 </code></pre>
-<p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x7684;&#x201C;&#x6742;&#x4EA4;&#x5B9E;&#x9A8C;&#x201D;&#x5C31;&#x6210;&#x529F;&#x5B8C;&#x6210;&#x4E86;&#x3002;&#x867D;&#x7136;&#x8FD9;&#x4E2A;&#x5B9E;&#x4F53;&#x770B;&#x4F3C;&#x975E;&#x5E38;&#x590D;&#x6742;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x4E0A;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;Boss&#x7EA7;&#x751F;&#x7269;&#x90FD;&#x53EF;&#x80FD;&#x6BD4;&#x8FD9;&#x4E2A;&#x5B9E;&#x4F53;&#x590D;&#x6742;&#x5F97;&#x591A;&#xFF0C;&#x800C;&#x4E14;&#x5236;&#x4F5C;&#x8FD9;&#x4E2A;&#x5B9E;&#x4F53;&#x6240;&#x771F;&#x6B63;&#x6D89;&#x53CA;&#x7684;&#x77E5;&#x8BC6;&#x70B9;&#x5E76;&#x4E0D;&#x591A;&#xFF08;&#x4F8B;&#x5982;&#x81EA;&#x5B9A;&#x4E49;&#x5F39;&#x5C04;&#x7269;&#x90FD;&#x6CA1;&#x7528;&#x4E0A;&#xFF09;&#x3002;&#x5C3D;&#x7BA1;&#x5982;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x8BFB;&#x8005;&#x80FD;&#x591F;&#x5728;&#x9605;&#x8BFB;&#x8BE5;&#x6559;&#x7A0B;&#x7684;&#x6700;&#x524D;&#x4E00;&#x90E8;&#x5206;&#x540E;&#xFF0C;&#x72EC;&#x7ACB;&#x5236;&#x4F5C;&#x51FA;&#x8FD9;&#x79CD;&#x590D;&#x6742;&#x7A0B;&#x5EA6;&#x7684;&#x5B9E;&#x4F53;&#xFF0C;&#x90A3;&#x4E48;&#x7B14;&#x8005;&#x8FD8;&#x662F;&#x4F1A;&#x4E3A;&#x6B64;&#x800C;&#x611F;&#x5230;&#x6B23;&#x6170;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x8BA9;&#x7B14;&#x8005;&#x77E5;&#x9053;&#x4E86;&#x81EA;&#x5DF1;&#x7684;&#x52AA;&#x529B;&#x6CA1;&#x6709;&#x767D;&#x8D39;&#x3002;  </p>
-<p>1.2&#x7684;&#x5185;&#x5BB9;&#x5230;&#x6B64;&#x5DF2;&#x7ECF;&#x8FC7;&#x53BB;&#x4E00;&#x5927;&#x534A;&#x4E86;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x7684;1.2.3&#x4E0E;1.2.4&#x4E0D;&#x662F;&#x7279;&#x522B;&#x91CD;&#x8981;&#xFF0C;&#x53EF;&#x80FD;&#x7BC7;&#x5E45;&#x77ED;&#x4E00;&#x4E9B;&#x3002;</p>
+<p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x7684;&#x201C;&#x6742;&#x4EA4;&#x5B9E;&#x9A8C;&#x201D;&#x5C31;&#x6210;&#x529F;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
 <p><a href="https://github.com/Gravelord-Lych/polonium-ExampleMod/blob/main/src/main/java/lych/polonium/entity/monster/SkeletonWizard.java" target="_blank">&#x6E90;&#x4EE3;&#x7801;&#xFF08;<code>SkeletonWizard</code>&#x7C7B;&#xFF09;</a><br><a href="https://github.com/Gravelord-Lych/polonium-ExampleMod/blob/main/src/main/java/lych/polonium/client/renderer/SkeletonWizardRenderer.java" target="_blank">&#x6E90;&#x4EE3;&#x7801;&#xFF08;<code>SkeletonWizardRenderer</code>&#x7C7B;&#xFF09;</a><br><a href="https://github.com/Gravelord-Lych/polonium-ExampleMod/blob/main/src/main/java/lych/polonium/client/layer/SkeletonWizardEyesLayer.java" target="_blank">&#x6E90;&#x4EE3;&#x7801;&#xFF08;<code>SkeletonWizardEyesLayer</code>&#x7C7B;&#xFF09;</a></p>
 <hr>
 <h3 id="&#x6548;&#x679C;&#x56FE;&#xFF08;&#x975E;&#x5F3A;&#x5316;&#x7684;&#x9AB7;&#x9AC5;&#x6CD5;&#x5E08;&#x4F7F;&#x7528;&#x4E86;&#x767D;&#x773C;&#x3001;&#x9EC4;&#x68D5;&#x8272;&#x8EAF;&#x4F53;&#x7684;&#x9AB7;&#x9AC5;&#x7684;&#x6750;&#x8D28;&#xFF09;">&#x6548;&#x679C;&#x56FE;&#xFF08;&#x975E;&#x5F3A;&#x5316;&#x7684;&#x9AB7;&#x9AC5;&#x6CD5;&#x5E08;&#x4F7F;&#x7528;&#x4E86;&#x767D;&#x773C;&#x3001;&#x9EC4;&#x68D5;&#x8272;&#x8EAF;&#x4F53;&#x7684;&#x9AB7;&#x9AC5;&#x7684;&#x6750;&#x8D28;&#xFF09;</h3>
@@ -1617,7 +1649,7 @@ thrownPotion.setItem(<span class="hljs-keyword">new</span> ItemStack(Items.LINGE
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"实战4 - 骷髅法师","level":"1.2.2.6","depth":3,"next":{"title":"远程攻击的怪物 #2","level":"1.2.3","depth":2,"path":"part1-monster/ranged-special/README.md","ref":"part1-monster/ranged-special/README.md","articles":[{"title":"炽热的烈焰人","level":"1.2.3.1","depth":3,"path":"part1-monster/ranged-special/blaze/README.md","ref":"part1-monster/ranged-special/blaze/README.md","articles":[{"title":"烈焰人的实现逻辑","level":"1.2.3.1.1","depth":4,"path":"part1-monster/ranged-special/blaze/blaze.md","ref":"part1-monster/ranged-special/blaze/blaze.md","articles":[]},{"title":"烈焰人小火球的“三连发”","level":"1.2.3.1.2","depth":4,"path":"part1-monster/ranged-special/blaze/blaze2.md","ref":"part1-monster/ranged-special/blaze/blaze2.md","articles":[]},{"title":"烈焰人身体结构的奥秘","level":"1.2.3.1.3","depth":4,"path":"part1-monster/ranged-special/blaze/blaze3.md","ref":"part1-monster/ranged-special/blaze/blaze3.md","articles":[]}]},{"title":"法力强大的唤魔者","level":"1.2.3.2","depth":3,"path":"part1-monster/ranged-special/evoker/README.md","ref":"part1-monster/ranged-special/evoker/README.md","articles":[{"title":"唤魔者的基本实现逻辑","level":"1.2.3.2.1","depth":4,"path":"part1-monster/ranged-special/evoker/evoker.md","ref":"part1-monster/ranged-special/evoker/evoker.md","articles":[]},{"title":"施法AI的框架","level":"1.2.3.2.2","depth":4,"path":"part1-monster/ranged-special/evoker/spellcaster_ai.md","ref":"part1-monster/ranged-special/evoker/spellcaster_ai.md","articles":[]},{"title":"(WIP) 唤魔者的三大魔法","level":"1.2.3.2.3","depth":4,"path":"part1-monster/ranged-special/evoker/evoker2.md","ref":"part1-monster/ranged-special/evoker/evoker2.md","articles":[]},{"title":"(WIP) 灾厄村民的手部动作","level":"1.2.3.2.4","depth":4,"path":"part1-monster/ranged-special/evoker/illager_arm_pose.md","ref":"part1-monster/ranged-special/evoker/illager_arm_pose.md","articles":[]},{"title":"(WIP) 唤魔者的渲染","level":"1.2.3.2.5","depth":4,"path":"part1-monster/ranged-special/evoker/evoker3.md","ref":"part1-monster/ranged-special/evoker/evoker3.md","articles":[]}]},{"title":"(WIP)","level":"1.2.3.3","depth":3,"ref":"","articles":[]}]},"previous":{"title":"骷髅的模型（与渲染）","level":"1.2.2.5.3","depth":4,"path":"part1-monster/ranged/skeleton/skeleton3.md","ref":"part1-monster/ranged/skeleton/skeleton3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","chapter-fold","code","hide-element","insert-logo","katex","search-pro","sharing-plus","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":true,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"insert-logo":{"style":"background: none; max-height: 80px; min-height: 80px","url":"https://lych.top/images/polonium.png"}},"theme":"default","author":"Lych","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Polonium 1.20 实体进阶教程","language":"zh-hans","gitbook":"*","description":"给Mod开发的初学者提供一个对实体的更深入的了解"},"file":{"path":"part1-monster/ranged/actual_combat4.md","mtime":"2024-11-26T13:42:55.856Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-12-15T08:07:29.455Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"实战4 - 骷髅法师","level":"1.2.2.6","depth":3,"next":{"title":"远程攻击的怪物 #2","level":"1.2.3","depth":2,"path":"part1-monster/ranged-special/README.md","ref":"part1-monster/ranged-special/README.md","articles":[{"title":"炽热的烈焰人","level":"1.2.3.1","depth":3,"path":"part1-monster/ranged-special/blaze/README.md","ref":"part1-monster/ranged-special/blaze/README.md","articles":[{"title":"烈焰人的实现逻辑","level":"1.2.3.1.1","depth":4,"path":"part1-monster/ranged-special/blaze/blaze.md","ref":"part1-monster/ranged-special/blaze/blaze.md","articles":[]},{"title":"烈焰人小火球的“三连发”","level":"1.2.3.1.2","depth":4,"path":"part1-monster/ranged-special/blaze/blaze2.md","ref":"part1-monster/ranged-special/blaze/blaze2.md","articles":[]},{"title":"烈焰人身体结构的奥秘","level":"1.2.3.1.3","depth":4,"path":"part1-monster/ranged-special/blaze/blaze3.md","ref":"part1-monster/ranged-special/blaze/blaze3.md","articles":[]}]},{"title":"法力强大的唤魔者","level":"1.2.3.2","depth":3,"path":"part1-monster/ranged-special/evoker/README.md","ref":"part1-monster/ranged-special/evoker/README.md","articles":[{"title":"唤魔者的基本实现逻辑","level":"1.2.3.2.1","depth":4,"path":"part1-monster/ranged-special/evoker/evoker.md","ref":"part1-monster/ranged-special/evoker/evoker.md","articles":[]},{"title":"施法AI的框架","level":"1.2.3.2.2","depth":4,"path":"part1-monster/ranged-special/evoker/spellcaster_ai.md","ref":"part1-monster/ranged-special/evoker/spellcaster_ai.md","articles":[]},{"title":"唤魔者的三大魔法","level":"1.2.3.2.3","depth":4,"path":"part1-monster/ranged-special/evoker/evoker2.md","ref":"part1-monster/ranged-special/evoker/evoker2.md","articles":[]},{"title":"(WIP) 灾厄村民的手部动作","level":"1.2.3.2.4","depth":4,"path":"part1-monster/ranged-special/evoker/illager_arm_pose.md","ref":"part1-monster/ranged-special/evoker/illager_arm_pose.md","articles":[]},{"title":"(WIP) 唤魔者的渲染","level":"1.2.3.2.5","depth":4,"path":"part1-monster/ranged-special/evoker/evoker3.md","ref":"part1-monster/ranged-special/evoker/evoker3.md","articles":[]}]},{"title":"(WIP)","level":"1.2.3.3","depth":3,"ref":"","articles":[]}]},"previous":{"title":"骷髅的模型（与渲染）","level":"1.2.2.5.3","depth":4,"path":"part1-monster/ranged/skeleton/skeleton3.md","ref":"part1-monster/ranged/skeleton/skeleton3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","chapter-fold","code","favicon","hide-element","insert-logo","katex","search-pro","sharing-plus","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"https://s2.loli.net/2025/01/01/4qSVHBYiXnAuGDd.webp","bookmark":"https://s2.loli.net/2025/01/01/4qSVHBYiXnAuGDd.webp","appleTouch":"https://s2.loli.net/2025/01/01/4qSVHBYiXnAuGDd.webp"},"back-to-top-button":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":true,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"insert-logo":{"style":"background: none; max-height: 140px; min-height: 100px","url":"https://s2.loli.net/2025/01/01/4qSVHBYiXnAuGDd.webp"}},"theme":"default","author":"Lych","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Polonium 1.20 实体进阶教程","language":"zh-hans","gitbook":"*","description":"给Mod开发的初学者提供一个对实体的更深入的了解"},"file":{"path":"part1-monster/ranged/actual_combat4.md","mtime":"2025-01-01T08:48:29.972Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-01T10:21:35.984Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

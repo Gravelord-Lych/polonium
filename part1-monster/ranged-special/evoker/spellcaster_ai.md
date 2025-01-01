@@ -289,5 +289,5 @@ protected abstract IllagerSpell getSpell();
 
 看到这里，读者也应该大致知道为什么实现一个新的施法类灾厄村民不应该直接继承`SpellcasterIllager`了吧。这是因为`IllagerSpell`是枚举类，我们无法添加新的`IllagerSpell`，而`IllagerSpell`在继承了`SpellcasterIllager`的施法类灾厄村民中是非常重要的，比如它决定了施法时的粒子效果的颜色，我们也必须重写`SpellcasterUseSpellGoal`中的`getSpell`方法并使其返回一个非空的值。因此，直接继承`SpellcasterIllager`无法实现新的拥有自定义法术的施法类灾厄村民，我们“从头开始”的时候也要自己写一个功能与`SpellcasterUseSpellGoal`类似的施法AI。
 
-本节的内容就是这么多了，下一节我们将会介绍唤魔者的施法AI的具体实现逻辑。
+本节的内容就是这么多了，下一节将会介绍唤魔者的施法AI的具体实现逻辑。
 

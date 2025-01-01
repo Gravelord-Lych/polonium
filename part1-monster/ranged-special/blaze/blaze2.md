@@ -256,7 +256,7 @@ SmallFireball fireball = new SmallFireball(blaze.level(),
 fireball.setPos(fireball.getX(), blaze.getY(0.5D) + 0.5D, fireball.getZ());
 blaze.level().addFreshEntity(fireball);
 ```
-但是我们把小火球直接移动到烈焰人的“脚”（指烈焰人碰撞箱左下角~~，烈焰人哪有脚？~~）上显然不合适，所以要把火球移上去（增大其y坐标）一点。  
+但是我们把小火球直接移动到烈焰人的“脚”（指烈焰人碰撞箱底面中心~~，烈焰人哪有脚？~~）上显然不合适，所以要把火球移上去（增大其y坐标）一点。  
 
 最后添加小火球到世界中，这样就能看到烈焰人的小火球射向攻击目标啦！  
 

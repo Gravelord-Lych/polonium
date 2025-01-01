@@ -1,6 +1,6 @@
 # 实战2 - 食尸鬼
 
-本节的最后一部分是一个稍复杂的近战怪物的实例（其实这个实例也不算难）。如果在实现某个“要求”中的功能/特性的过程中遇到困难，可以先阅读源码，自己解决问题，实在没有思路再阅读“参考步骤”部分。
+本节的最后一部分是一个自定义的近战怪物的实例。
 
 ### 任务
 **制作一种新的怪物——食尸鬼**
@@ -120,7 +120,7 @@ public static void onLivingHurt(LivingHurtEvent event) {
 ```
 食尸鬼的注册以及模型与渲染就省略不写了（总体与强化僵尸差不多，当然如果你有好的idea，模型与渲染部分可以发挥自己的创意，结合一些渲染方面的教程自己完成~）
 
-到此我们就做完了食尸鬼的全部内容（此处省略效果图）。当然在模组开发中，近战怪物在实现逻辑上都不会很复杂，而真正复杂的实体往往是那些会“法术”的怪物。未来教程的难度也会稍有增大。  
+到此我们就做完了食尸鬼的全部内容（此处省略效果图）。当然在模组开发中，近战怪物在实现逻辑上都不会很复杂，而真正复杂的实体往往是那些有复杂行为的动物和会“法术”的怪物。
 
 [源代码（`Ghoul`类）](https://github.com/Gravelord-Lych/polonium-ExampleMod/blob/main/src/main/java/lych/polonium/entity/monster/Ghoul.java)  
 [源代码（`GhoulTargetAllMobsGoal`类）](https://github.com/Gravelord-Lych/polonium-ExampleMod/blob/main/src/main/java/lych/polonium/entity/monster/ai/GhoulTargetAllMobsGoal.java)

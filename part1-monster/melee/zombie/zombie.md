@@ -592,4 +592,4 @@ public static final EntityType<Zombie> ZOMBIE = register("zombie", EntityType.Bu
 
 僵尸的行为和底层实现便分析到这里了。虽然僵尸看上去很容易实现（也好打），可是与僵尸相关的实现细节却不少，需要一段时间才能理清楚。  
 
-下一节将会分析僵尸的模型及渲染。23333333333~~
+下一节将会分析僵尸的模型及渲染。
