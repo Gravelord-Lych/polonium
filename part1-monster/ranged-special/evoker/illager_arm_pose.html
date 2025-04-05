@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>(WIP) 灾厄村民的手部动作 · Polonium 1.20 实体进阶教程</title>
+        <title>灾厄村民的手臂动作 · Polonium 1.20 实体进阶教程</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -757,7 +757,7 @@
                     
                         <b>1.2.3.2.4.</b>
                     
-                    (WIP) 灾厄村民的手部动作
+                    灾厄村民的手臂动作
             
                 </a>
             
@@ -1023,7 +1023,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >(WIP) 灾厄村民的手部动作</a>
+        <a href="../../.." >灾厄村民的手臂动作</a>
     </h1>
 </div>
 
@@ -1041,8 +1041,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x707E;&#x5384;&#x6751;&#x6C11;&#x7684;&#x624B;&#x90E8;&#x52A8;&#x4F5C;">&#x707E;&#x5384;&#x6751;&#x6C11;&#x7684;&#x624B;&#x90E8;&#x52A8;&#x4F5C;</h1>
-<p><code>IllagerArmPose</code>&#x7C7B;&#x662F;<code>AbstractIllager</code>&#x7C7B;&#x7684;&#x5185;&#x90E8;&#x7C7B;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x707E;&#x5384;&#x6751;&#x6C11;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x624B;&#x90E8;&#x52A8;&#x4F5C;</p>
+                                <h1 id="&#x707E;&#x5384;&#x6751;&#x6C11;&#x7684;&#x624B;&#x81C2;&#x52A8;&#x4F5C;">&#x707E;&#x5384;&#x6751;&#x6C11;&#x7684;&#x624B;&#x81C2;&#x52A8;&#x4F5C;</h1>
+<p>&#x5728;&#x4ECB;&#x7ECD;&#x5524;&#x9B54;&#x8005;&#x7684;&#x6E32;&#x67D3;&#x90E8;&#x5206;&#x524D;&#xFF0C;&#x5148;&#x63D0;&#x4E00;&#x4E0B;&#x6A21;&#x578B;&#x65B9;&#x9762;&#x7684;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x5185;&#x5BB9;&#x3002;  </p>
+<p><code>IllagerArmPose</code>&#x7C7B;&#x662F;<code>AbstractIllager</code>&#x7C7B;&#x7684;&#x5185;&#x90E8;&#x7C7B;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x707E;&#x5384;&#x6751;&#x6C11;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;&#x624B;&#x81C2;&#x52A8;&#x4F5C;&#x3002;  </p>
 <pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">enum</span> IllagerArmPose {
     CROSSED,
     ATTACKING,
@@ -1054,6 +1055,191 @@
     NEUTRAL;
 }
 </code></pre>
+<p>&#x5177;&#x4F53;&#x6839;&#x636E;&#x8FD9;&#x4E9B;&#x52A8;&#x4F5C;&#x8C03;&#x6574;&#x707E;&#x5384;&#x6751;&#x6C11;&#x6A21;&#x578B;&#x7684;&#x5730;&#x65B9;&#x5728;<code>IllagerModel</code>&#x7C7B;&#x4E2D;&#x7684;<code>setupAnim</code>&#x65B9;&#x6CD5;&#x91CC;&#xFF0C;&#x8BE5;&#x7C7B;&#x7684;&#x5176;&#x4ED6;&#x90E8;&#x5206;&#x76F8;&#x5BF9;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#xFF0C;&#x56E0;&#x6B64;&#x672C;&#x8282;&#x4E0D;&#x518D;&#x8D58;&#x8FF0;&#x3002;  </p>
+<p>&#x6240;&#x6709;&#x624B;&#x90E8;&#x52A8;&#x4F5C;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x56FE;&#x7247;&#x6240;&#x793A;&#x3002;</p>
+<h3 id="crossed"><code>CROSSED</code></h3>
+<p><code>CROSSED</code>&#x662F;&#x53CC;&#x624B;&#x4EA4;&#x53C9;&#x653E;&#x5728;&#x80F8;&#x524D;&#x7684;&#x52A8;&#x4F5C;&#x3002;
+<img src="../images/crossed.webp" alt="crossed"></p>
+<p>&#x76F8;&#x5173;&#x4EE3;&#x7801;&#xFF08;&#x8FD9;&#x90E8;&#x5206;&#x4EE3;&#x7801;&#x5728;&#x6574;&#x4E2A;<code>setupAnim</code>&#x65B9;&#x6CD5;&#x7684;&#x6700;&#x540E;&#x9762;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">boolean</span> crossedArms = pose == IllagerArmPose.CROSSED;
+arms.visible = crossedArms;
+leftArm.visible = !crossedArms;
+rightArm.visible = !crossedArms;
+</code></pre>
+<p>&#x53E6;&#x5916;<code>CROSSED</code>&#x662F;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x7279;&#x6B8A;&#x7684;&#x52A8;&#x4F5C;&#xFF0C;&#x5728;&#x624B;&#x81C2;&#x52A8;&#x4F5C;&#x4E3A;<code>CROSSED</code>&#x72B6;&#x6001;&#x4E0B;&#xFF0C;&#x539F;&#x5148;&#x7684;&#x53CC;&#x81C2;&#x662F;&#x4E0D;&#x6E32;&#x67D3;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x6E32;&#x67D3;&#x4EE3;&#x8868;&#x201C;&#x4EA4;&#x53C9;&#x5728;&#x80F8;&#x524D;&#x7684;&#x53CC;&#x81C2;&#x201D;&#x7684;&#x540D;&#x79F0;&#x4E3A;<code>arms</code>&#x7684;&#x53E6;&#x5916;&#x4E00;&#x4E2A;<code>ModelPart</code>&#x3002;&#x5F53;&#x5B9E;&#x4F53;&#x6750;&#x8D28;&#x4E0A;&#x7684;&#x8FD9;&#x4E2A;<code>ModelPart</code>&#x7684;&#x76F8;&#x5E94;&#x4F4D;&#x7F6E;&#x7F3A;&#x5931;&#x6750;&#x8D28;&#x65F6;&#xFF0C;&#x4EA4;&#x53C9;&#x7684;&#x624B;&#x81C2;&#x662F;&#x4E0D;&#x4F1A;&#x6E32;&#x67D3;&#x7684;&#x3002;&#x4ED4;&#x7EC6;&#x89C2;&#x5BDF;&#x5B9E;&#x4F53;&#x6750;&#x8D28;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x63A0;&#x593A;&#x8005;&#x7684;&#x6750;&#x8D28;&#x4E0E;&#x536B;&#x9053;&#x58EB;&#x3001;&#x5524;&#x9B54;&#x8005;&#x7B49;&#x707E;&#x5384;&#x6751;&#x6C11;&#x7684;&#x6750;&#x8D28;&#x76F8;&#x6BD4;&#x201C;&#x5C11;&#x4E00;&#x5757;&#x201D;&#xFF0C;&#x5C11;&#x7684;&#x8FD9;&#x90E8;&#x5206;&#x5C31;&#x662F;<code>arms</code>&#x5BF9;&#x5E94;&#x7684;&#x6750;&#x8D28;&#x3002;&#x56E0;&#x6B64;&#x5C06;&#x63A0;&#x593A;&#x8005;&#x7684;&#x624B;&#x81C2;&#x52A8;&#x4F5C;&#x8BBE;&#x7F6E;&#x4E3A;<code>CROSSED</code>&#x65F6;&#x4F1A;&#x51FA;&#x73B0;&#x4E0D;&#x6E32;&#x67D3;&#x624B;&#x81C2;&#x7684;&#x73B0;&#x8C61;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#x3002;    </p>
+<p><img src="../images/crossed_pillager.webp" alt="crossed_pillager"></p>
+<h3 id="attacking"><code>ATTACKING</code></h3>
+<p>&#x5F53;&#x624B;&#x90E8;&#x52A8;&#x4F5C;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;<code>ATTACKING</code>&#x65F6;&#xFF0C;&#x4F1A;&#x6839;&#x636E;&#x624B;&#x4E0A;&#x6709;&#x65E0;&#x7269;&#x54C1;&#x6765;&#x8C03;&#x6574;&#x6210;&#x4E0D;&#x540C;&#x7684;&#x52A8;&#x4F5C;&#x3002;&#x624B;&#x4E0A;&#x6CA1;&#x6709;&#x7269;&#x54C1;&#x65F6;&#x5219;&#x4F1A;&#x53CC;&#x81C2;&#x524D;&#x4F38;&#xFF0C;&#x6446;&#x51FA;&#x7C7B;&#x4F3C;&#x50F5;&#x5C38;&#x653B;&#x51FB;&#x7684;&#x59FF;&#x52BF;&#x3002;  </p>
+<p>&#x624B;&#x4E0A;&#x6709;&#x6B66;&#x5668;&#x65F6;&#x7684;&#x52A8;&#x4F5C;&#xFF1A;
+<img src="../images/attacking.webp" alt="attacking"></p>
+<p>&#x624B;&#x4E0A;&#x65E0;&#x6B66;&#x5668;&#x65F6;&#x7684;&#x52A8;&#x4F5C;&#xFF1A;
+<img src="../images/attacking_unweaponed.webp" alt="attacking_unweaponed"></p>
+<p>&#x76F8;&#x5173;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">if</span> (illager.getMainHandItem().isEmpty()) {
+    AnimationUtils.animateZombieArms(leftArm, rightArm, <span class="hljs-keyword">true</span>, attackTime, ageInTicks); <span class="hljs-comment">// &#x4E2D;&#x95F4;&#x7684;&#x5E03;&#x5C14;&#x503C;&#x53C2;&#x6570;&#x4F20;&#x5165;true&#x4F1A;&#x4F7F;&#x624B;&#x81C2;&#x62AC;&#x9AD8;&#xFF0C;&#x5C31;&#x50CF;&#x50F5;&#x5C38;&#x5728;&#x653B;&#x51FB;&#x72B6;&#x6001;&#x4E0B;&#x4E00;&#x6837;&#xFF08;&#x53EF;&#x4EE5;&#x53C2;&#x8003;1.2.1.1.2&#x8282;&#xFF09;</span>
+} <span class="hljs-keyword">else</span> {
+    AnimationUtils.swingWeaponDown(rightArm, leftArm, illager, attackTime, ageInTicks);
+}
+</code></pre>
+<h3 id="spellcasting"><code>SPELLCASTING</code></h3>
+<p><code>SPELLCASTING</code>&#x662F;&#x707E;&#x5384;&#x6751;&#x6C11;&#x65BD;&#x6CD5;&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x52A8;&#x4F5C;&#x3002;
+<img src="../images/spellcasting.webp" alt="spellcasting"></p>
+<p>&#x76F8;&#x5173;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java">rightArm.z = <span class="hljs-number">0.0F</span>;
+rightArm.x = -<span class="hljs-number">5.0F</span>;
+leftArm.z = <span class="hljs-number">0.0F</span>;
+leftArm.x = <span class="hljs-number">5.0F</span>;
+rightArm.xRot = Mth.cos(ageInTicks * <span class="hljs-number">0.6662F</span>) * <span class="hljs-number">0.25F</span>;
+leftArm.xRot = Mth.cos(ageInTicks * <span class="hljs-number">0.6662F</span>) * <span class="hljs-number">0.25F</span>;
+rightArm.zRot = <span class="hljs-number">2.3561945F</span>; <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x589E;&#x5927;zRot&#x7684;&#x7EDD;&#x5BF9;&#x503C;&#x6765;&#x4E0A;&#x62AC;&#x624B;&#x81C2;&#xFF0C;&#x6CE8;&#xFF1A;2.3561945 = Math.PI * 0.75</span>
+leftArm.zRot = -<span class="hljs-number">2.3561945F</span>;
+rightArm.yRot = <span class="hljs-number">0.0F</span>;
+leftArm.yRot = <span class="hljs-number">0.0F</span>;
+</code></pre>
+<h3 id="bowandarrow"><code>BOW_AND_ARROW</code></h3>
+<p><code>BOW_AND_ARROW</code>&#x662F;&#x707E;&#x5384;&#x6751;&#x6C11;&#x4F7F;&#x7528;&#x5F13;&#x7BAD;&#x8FDB;&#x884C;&#x653B;&#x51FB;&#x65F6;&#x7684;&#x52A8;&#x4F5C;&#x3002;
+<img src="../images/bow_and_arrow.webp" alt="bow_and_arrow"></p>
+<p>&#x76F8;&#x5173;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java">rightArm.yRot = -<span class="hljs-number">0.1F</span> + head.yRot;
+rightArm.xRot = (-(<span class="hljs-keyword">float</span>) Math.PI / <span class="hljs-number">2F</span>) + head.xRot;
+leftArm.xRot = -<span class="hljs-number">0.9424779F</span> + head.xRot; <span class="hljs-comment">// &#x6CE8;&#xFF1A;0.9424779 = Math.PI * 0.3</span>
+leftArm.yRot = head.yRot - <span class="hljs-number">0.4F</span>;
+leftArm.zRot = ((<span class="hljs-keyword">float</span>) Math.PI / <span class="hljs-number">2F</span>);
+</code></pre>
+<h3 id="crossbowhold"><code>CROSSBOW_HOLD</code></h3>
+<p><code>CROSSBOW_HOLD</code>&#x662F;&#x707E;&#x5384;&#x6751;&#x6C11;&#x624B;&#x6301;&#x5F29;&#x4F46;&#x5E76;&#x672A;&#x5904;&#x4E8E;&#x88C5;&#x586B;&#x72B6;&#x6001;&#x65F6;&#x7684;&#x52A8;&#x4F5C;&#x3002;
+<img src="../images/crossbow_hold.webp" alt="crossbow_hold"></p>
+<p>&#x76F8;&#x5173;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java">AnimationUtils.animateCrossbowHold(rightArm, leftArm, head, <span class="hljs-keyword">true</span>); <span class="hljs-comment">// true&#x8868;&#x793A;&#x6E32;&#x67D3;&#x53F3;&#x624B;&#x6301;&#x5F29;&#x65F6;&#x7684;&#x624B;&#x90E8;&#x52A8;&#x4F5C;&#xFF0C;false&#x5219;&#x4E3A;&#x5DE6;&#x624B;</span>
+</code></pre>
+<h3 id="crossbowcharge"><code>CROSSBOW_CHARGE</code></h3>
+<p><code>CROSSBOW_CHARGE</code>&#x662F;&#x707E;&#x5384;&#x6751;&#x6C11;&#x88C5;&#x586B;&#x5F29;&#x65F6;&#x7684;&#x52A8;&#x4F5C;&#x3002;
+<img src="../images/crossbow_charge.webp" alt="crossbow_charge"></p>
+<p>&#x76F8;&#x5173;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java">AnimationUtils.animateCrossbowCharge(rightArm, leftArm, illager, <span class="hljs-keyword">true</span>);; <span class="hljs-comment">// true&#x8868;&#x793A;&#x6E32;&#x67D3;&#x53F3;&#x624B;&#x6301;&#x5F29;&#x65F6;&#x7684;&#x624B;&#x90E8;&#x52A8;&#x4F5C;&#xFF0C;false&#x5219;&#x4E3A;&#x5DE6;&#x624B;</span>
+</code></pre>
+<h3 id="celebrating"><code>CELEBRATING</code></h3>
+<p><code>CELEBRATING</code>&#x662F;&#x707E;&#x5384;&#x6751;&#x6C11;&#x5E86;&#x795D;&#x88AD;&#x51FB;&#xFF08;&#x4ECE;&#x707E;&#x5384;&#x6751;&#x6C11;&#x7684;&#x89D2;&#x5EA6;&#x800C;&#x8A00;&#xFF09;&#x80DC;&#x5229;&#x65F6;&#x7684;&#x52A8;&#x4F5C;&#x3002;&#x4E0E;<code>SPELLCASTING</code>&#x7684;&#x5DEE;&#x522B;&#x5728;&#x4E8E;&#x8FD9;&#x65F6;&#x5019;&#x707E;&#x5384;&#x6751;&#x6C11;&#x7684;&#x624B;&#x81C2;&#x59FF;&#x52BF;&#x4E0D;&#x662F;&#x8F74;&#x5BF9;&#x79F0;&#x7684;&#xFF0C;&#x624B;&#x81C2;&#x632F;&#x5E45;&#x66F4;&#x5C0F;&#xFF0C;&#x800C;&#x4E14;&#x624B;&#x81C2;&#x4F38;&#x5F97;&#x66F4;&#x9AD8;&#x3002;
+<img src="../images/celebrating.webp" alt="celebrating"></p>
+<p>&#x76F8;&#x5173;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java">rightArm.z = <span class="hljs-number">0.0F</span>;
+rightArm.x = -<span class="hljs-number">5.0F</span>;
+rightArm.xRot = Mth.cos(ageInTicks * <span class="hljs-number">0.6662F</span>) * <span class="hljs-number">0.05F</span>;
+rightArm.zRot = <span class="hljs-number">2.670354F</span>; <span class="hljs-comment">// &#x6CE8;&#xFF1A;2.670354 = Math.PI * 0.85</span>
+rightArm.yRot = <span class="hljs-number">0.0F</span>;
+leftArm.z = <span class="hljs-number">0.0F</span>;
+leftArm.x = <span class="hljs-number">5.0F</span>;
+leftArm.xRot = Mth.cos(ageInTicks * <span class="hljs-number">0.6662F</span>) * <span class="hljs-number">0.05F</span>;
+leftArm.zRot = -<span class="hljs-number">2.3561945F</span>; <span class="hljs-comment">// &#x4E24;&#x4E2A;zRot&#x7684;&#x7EDD;&#x5BF9;&#x503C;&#x4E0D;&#x76F8;&#x7B49;&#xFF0C;&#x4F7F;&#x624B;&#x81C2;&#x5448;&#x73B0;&#x975E;&#x5BF9;&#x79F0;&#x7684;&#x59FF;&#x52BF;</span>
+leftArm.yRot = <span class="hljs-number">0.0F</span>;
+</code></pre>
+<h3 id="neutral"><code>NEUTRAL</code></h3>
+<p><code>NEUTRAL</code>&#x662F;&#x707E;&#x5384;&#x6751;&#x6C11;&#x624B;&#x81C2;&#x81EA;&#x7136;&#x4E0B;&#x5782;&#x65F6;&#x7684;&#x52A8;&#x4F5C;&#x3002;&#x8FD9;&#x662F;&#x63A0;&#x593A;&#x8005;&#x624B;&#x4E0A;&#x7269;&#x54C1;&#x975E;&#x5F29;&#x65F6;&#x7684;&#x9ED8;&#x8BA4;&#x624B;&#x81C2;&#x52A8;&#x4F5C;&#xFF0C;&#x800C;&#x536B;&#x9053;&#x58EB;&#x3001;&#x5524;&#x9B54;&#x8005;&#x3001;&#x5E7B;&#x672F;&#x5E08;&#x7684;&#x9ED8;&#x8BA4;&#x624B;&#x81C2;&#x52A8;&#x4F5C;&#x5219;&#x4E3A;<code>CROSSED</code>&#x3002;
+<img src="../images/neutral.webp" alt="neutral"></p>
+<p>&#x76F8;&#x5173;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java">rightArm.xRot = Mth.cos(limbSwing * <span class="hljs-number">0.6662F</span> + (<span class="hljs-keyword">float</span>) Math.PI) * <span class="hljs-number">2.0F</span> * limbSwingAmount * <span class="hljs-number">0.5F</span>;
+rightArm.yRot = <span class="hljs-number">0.0F</span>;
+rightArm.zRot = <span class="hljs-number">0.0F</span>;
+leftArm.xRot = Mth.cos(limbSwing * <span class="hljs-number">0.6662F</span>) * <span class="hljs-number">2.0F</span> * limbSwingAmount * <span class="hljs-number">0.5F</span>;
+leftArm.yRot = <span class="hljs-number">0.0F</span>;
+leftArm.zRot = <span class="hljs-number">0.0F</span>;
+</code></pre>
+<p>&#x6700;&#x540E;&#x9644;&#x4E0A;<code>IllagerModel</code>&#x7C7B;&#x4E2D;&#x7684;&#x6574;&#x4E2A;<code>setupAnim</code>&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setupAnim</span><span class="hljs-params">(T illager, <span class="hljs-keyword">float</span> limbSwing, <span class="hljs-keyword">float</span> limbSwingAmount, <span class="hljs-keyword">float</span> ageInTicks, <span class="hljs-keyword">float</span> netHeadYaw, <span class="hljs-keyword">float</span> headPitch)</span> </span>{
+    head.yRot = netHeadYaw * ((<span class="hljs-keyword">float</span>) Math.PI / <span class="hljs-number">180F</span>);
+    head.xRot = headPitch * ((<span class="hljs-keyword">float</span>) Math.PI / <span class="hljs-number">180F</span>);
+
+    <span class="hljs-keyword">if</span> (riding) {
+        rightArm.xRot = (-(<span class="hljs-keyword">float</span>) Math.PI / <span class="hljs-number">5F</span>);
+        rightArm.yRot = <span class="hljs-number">0.0F</span>;
+        rightArm.zRot = <span class="hljs-number">0.0F</span>;
+        leftArm.xRot = (-(<span class="hljs-keyword">float</span>) Math.PI / <span class="hljs-number">5F</span>);
+        leftArm.yRot = <span class="hljs-number">0.0F</span>;
+        leftArm.zRot = <span class="hljs-number">0.0F</span>;
+        rightLeg.xRot = -<span class="hljs-number">1.4137167F</span>; <span class="hljs-comment">// &#x6CE8;&#xFF1A;1.4137167 = Math.PI * 0.45</span>
+        rightLeg.yRot = ((<span class="hljs-keyword">float</span>) Math.PI / <span class="hljs-number">10F</span>);
+        rightLeg.zRot = <span class="hljs-number">0.07853982F</span>; <span class="hljs-comment">// &#x6CE8;&#xFF1A;0.07853982 = Math.PI * 0.025</span>
+        leftLeg.xRot = -<span class="hljs-number">1.4137167F</span>;
+        leftLeg.yRot = (-(<span class="hljs-keyword">float</span>) Math.PI / <span class="hljs-number">10F</span>);
+        leftLeg.zRot = -<span class="hljs-number">0.07853982F</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// NEUTRAl</span>
+        rightArm.xRot = Mth.cos(limbSwing * <span class="hljs-number">0.6662F</span> + (<span class="hljs-keyword">float</span>) Math.PI) * <span class="hljs-number">2.0F</span> * limbSwingAmount * <span class="hljs-number">0.5F</span>;
+        rightArm.yRot = <span class="hljs-number">0.0F</span>;
+        rightArm.zRot = <span class="hljs-number">0.0F</span>;
+        leftArm.xRot = Mth.cos(limbSwing * <span class="hljs-number">0.6662F</span>) * <span class="hljs-number">2.0F</span> * limbSwingAmount * <span class="hljs-number">0.5F</span>;
+        leftArm.yRot = <span class="hljs-number">0.0F</span>;
+        leftArm.zRot = <span class="hljs-number">0.0F</span>;
+        <span class="hljs-comment">// &#x4E0B;&#x9762;&#x5219;&#x662F;&#x817F;&#x90E8;&#x52A8;&#x4F5C;&#xFF0C;&#x6240;&#x6709;&#x624B;&#x81C2;&#x52A8;&#x4F5C;&#x5BF9;&#x5E94;&#x7684;&#x817F;&#x90E8;&#x52A8;&#x4F5C;&#x90FD;&#x4E00;&#x6837;</span>
+        rightLeg.xRot = Mth.cos(limbSwing * <span class="hljs-number">0.6662F</span>) * <span class="hljs-number">1.4F</span> * limbSwingAmount * <span class="hljs-number">0.5F</span>;
+        rightLeg.yRot = <span class="hljs-number">0.0F</span>;
+        rightLeg.zRot = <span class="hljs-number">0.0F</span>;
+        leftLeg.xRot = Mth.cos(limbSwing * <span class="hljs-number">0.6662F</span> + (<span class="hljs-keyword">float</span>) Math.PI) * <span class="hljs-number">1.4F</span> * limbSwingAmount * <span class="hljs-number">0.5F</span>;
+        leftLeg.yRot = <span class="hljs-number">0.0F</span>;
+        leftLeg.zRot = <span class="hljs-number">0.0F</span>;
+    }
+
+    IllagerArmPose pose = illager.getArmPose();
+    <span class="hljs-comment">// ATTACKING</span>
+    <span class="hljs-keyword">if</span> (pose == IllagerArmPose.ATTACKING) {
+        <span class="hljs-keyword">if</span> (illager.getMainHandItem().isEmpty()) {
+            AnimationUtils.animateZombieArms(leftArm, rightArm, <span class="hljs-keyword">true</span>, attackTime, ageInTicks);
+        } <span class="hljs-keyword">else</span> {
+            AnimationUtils.swingWeaponDown(rightArm, leftArm, illager, attackTime, ageInTicks);
+        }
+    } 
+    <span class="hljs-comment">// SPELLCASTING</span>
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (pose == IllagerArmPose.SPELLCASTING) {
+        rightArm.z = <span class="hljs-number">0.0F</span>;
+        rightArm.x = -<span class="hljs-number">5.0F</span>;
+        leftArm.z = <span class="hljs-number">0.0F</span>;
+        leftArm.x = <span class="hljs-number">5.0F</span>;
+        rightArm.xRot = Mth.cos(ageInTicks * <span class="hljs-number">0.6662F</span>) * <span class="hljs-number">0.25F</span>;
+        leftArm.xRot = Mth.cos(ageInTicks * <span class="hljs-number">0.6662F</span>) * <span class="hljs-number">0.25F</span>;
+        rightArm.zRot = <span class="hljs-number">2.3561945F</span>;
+        leftArm.zRot = -<span class="hljs-number">2.3561945F</span>;
+        rightArm.yRot = <span class="hljs-number">0.0F</span>;
+        leftArm.yRot = <span class="hljs-number">0.0F</span>;
+    }
+    <span class="hljs-comment">// BOW_AND_ARROW </span>
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (pose == IllagerArmPose.BOW_AND_ARROW) {
+        rightArm.yRot = -<span class="hljs-number">0.1F</span> + head.yRot;
+        rightArm.xRot = (-(<span class="hljs-keyword">float</span>) Math.PI / <span class="hljs-number">2F</span>) + head.xRot;
+        leftArm.xRot = -<span class="hljs-number">0.9424779F</span> + head.xRot;
+        leftArm.yRot = head.yRot - <span class="hljs-number">0.4F</span>;
+        leftArm.zRot = ((<span class="hljs-keyword">float</span>) Math.PI / <span class="hljs-number">2F</span>);
+    } 
+    <span class="hljs-comment">// CROSSBOW_HOLD</span>
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (pose == IllagerArmPose.CROSSBOW_HOLD) {
+        AnimationUtils.animateCrossbowHold(rightArm, leftArm, head, <span class="hljs-keyword">true</span>);
+    } 
+    <span class="hljs-comment">// CROSSBOW_CHARGE</span>
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (pose == IllagerArmPose.CROSSBOW_CHARGE) {
+        AnimationUtils.animateCrossbowCharge(rightArm, leftArm, illager, <span class="hljs-keyword">true</span>);
+    } 
+    <span class="hljs-comment">// CELEBRATING</span>
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (pose == IllagerArmPose.CELEBRATING) {
+        rightArm.z = <span class="hljs-number">0.0F</span>;
+        rightArm.x = -<span class="hljs-number">5.0F</span>;
+        rightArm.xRot = Mth.cos(ageInTicks * <span class="hljs-number">0.6662F</span>) * <span class="hljs-number">0.05F</span>;
+        rightArm.zRot = <span class="hljs-number">2.670354F</span>;
+        rightArm.yRot = <span class="hljs-number">0.0F</span>;
+        leftArm.z = <span class="hljs-number">0.0F</span>;
+        leftArm.x = <span class="hljs-number">5.0F</span>;
+        leftArm.xRot = Mth.cos(ageInTicks * <span class="hljs-number">0.6662F</span>) * <span class="hljs-number">0.05F</span>;
+        leftArm.zRot = -<span class="hljs-number">2.3561945F</span>;
+        leftArm.yRot = <span class="hljs-number">0.0F</span>;
+    }
+
+    <span class="hljs-comment">// CROSSED</span>
+    <span class="hljs-keyword">boolean</span> crossedArms = pose == IllagerArmPose.CROSSED;
+    arms.visible = crossedArms;
+    leftArm.visible = !crossedArms;
+    rightArm.visible = !crossedArms;
+}
+</code></pre>
+<p>&#x672C;&#x8282;&#x7684;&#x5185;&#x5BB9;&#x5230;&#x8FD9;&#x91CC;&#x5C31;&#x7ED3;&#x675F;&#x4E86;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x5C06;&#x4F1A;&#x5206;&#x6790;&#x5524;&#x9B54;&#x8005;&#x7684;&#x6E32;&#x67D3;&#x3002;</p>
 
                                 
                                 </section>
@@ -1113,7 +1299,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"(WIP) 灾厄村民的手部动作","level":"1.2.3.2.4","depth":4,"next":{"title":"(WIP) 唤魔者的渲染","level":"1.2.3.2.5","depth":4,"path":"part1-monster/ranged-special/evoker/evoker3.md","ref":"part1-monster/ranged-special/evoker/evoker3.md","articles":[]},"previous":{"title":"唤魔者的三大魔法","level":"1.2.3.2.3","depth":4,"path":"part1-monster/ranged-special/evoker/evoker2.md","ref":"part1-monster/ranged-special/evoker/evoker2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","chapter-fold","code","favicon-absolute","hide-element","insert-logo","katex","search-pro","sharing-plus","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"favicon-absolute":{"adsense":"ca-pub-7787441319194104","appleTouchIconMore":{},"appleTouchIconPrecomposed152":"https://s2.loli.net/2025/01/01/4qSVHBYiXnAuGDd.webp","appleTouchIconPrecomposedMore":{},"favicon":"https://lych.top/images/polonium_favicon.ico"},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":true,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"insert-logo":{"style":"background: none; max-height: 140px; min-height: 100px","url":"https://s2.loli.net/2025/01/01/4qSVHBYiXnAuGDd.webp"}},"theme":"default","author":"Lych","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Polonium 1.20 实体进阶教程","language":"zh-hans","gitbook":"*","description":"给Mod开发的初学者提供一个对实体的更深入的了解"},"file":{"path":"part1-monster/ranged-special/evoker/illager_arm_pose.md","mtime":"2025-02-12T12:19:27.148Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-02-12T12:31:15.249Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"灾厄村民的手臂动作","level":"1.2.3.2.4","depth":4,"next":{"title":"(WIP) 唤魔者的渲染","level":"1.2.3.2.5","depth":4,"path":"part1-monster/ranged-special/evoker/evoker3.md","ref":"part1-monster/ranged-special/evoker/evoker3.md","articles":[]},"previous":{"title":"唤魔者的三大魔法","level":"1.2.3.2.3","depth":4,"path":"part1-monster/ranged-special/evoker/evoker2.md","ref":"part1-monster/ranged-special/evoker/evoker2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","back-to-top-button","chapter-fold","code","favicon-absolute","hide-element","insert-logo","katex","search-pro","sharing-plus","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"favicon-absolute":{"adsense":"ca-pub-7787441319194104","appleTouchIconMore":{},"appleTouchIconPrecomposed152":"https://s2.loli.net/2025/01/01/4qSVHBYiXnAuGDd.webp","appleTouchIconPrecomposedMore":{},"favicon":"https://lych.top/images/polonium_favicon.ico"},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":false,"facebook":true,"weibo":true,"twitter":true,"pocket":false,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"insert-logo":{"style":"background: none; max-height: 140px; min-height: 100px","url":"https://s2.loli.net/2025/01/01/4qSVHBYiXnAuGDd.webp"}},"theme":"default","author":"Lych","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Polonium 1.20 实体进阶教程","language":"zh-hans","gitbook":"*","description":"给Mod开发的初学者提供一个对实体的更深入的了解"},"file":{"path":"part1-monster/ranged-special/evoker/illager_arm_pose.md","mtime":"2025-04-05T07:24:56.406Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-04-05T07:25:00.333Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
