@@ -99,7 +99,7 @@ AnimationUtils.animateCrossbowHold(rightArm, leftArm, head, true); // true表示
 
 相关代码：
 ```java
-AnimationUtils.animateCrossbowCharge(rightArm, leftArm, illager, true);; // true表示渲染右手持弩时的手部动作，false则为左手
+AnimationUtils.animateCrossbowCharge(rightArm, leftArm, illager, true); // true表示渲染右手持弩时的手部动作，false则为左手
 ```
 
 ### `CELEBRATING`
@@ -155,7 +155,7 @@ public void setupAnim(T illager, float limbSwing, float limbSwingAmount, float a
         leftLeg.yRot = (-(float) Math.PI / 10F);
         leftLeg.zRot = -0.07853982F;
     } else {
-        // NEUTRAl
+        // NEUTRAL
         rightArm.xRot = Mth.cos(limbSwing * 0.6662F + (float) Math.PI) * 2.0F * limbSwingAmount * 0.5F;
         rightArm.yRot = 0.0F;
         rightArm.zRot = 0.0F;
