@@ -21,7 +21,7 @@
 7. 骷髅法师**免疫来自自己的伤害**，对**有`DamageTypeTags.WITCH_RESISTANT_TO`标签的伤害**减免**85%**，受到来自**铁傀儡**的伤害**减半**
 8. 骷髅法师可以被“强化”，具体细节如下：
     1. 强化骷髅法师的**生命值、护甲值和攻击力翻倍**
-    2. 强化骷髅法师不再免疫**正面**状态效果，但依然免疫所有**负面**状态效果，不过保持免疫**中毒**和**生命恢复**效果不变。
+    2. 强化骷髅法师不再免疫**正面**状态效果，但依然免疫所有**负面**状态效果，不过保持免疫**中毒**和**生命恢复**效果不变
     3. 强化骷髅法师**100%**扔出**二级药水**【对于**虚弱药水**，则扔出**虚弱药水（延长版）**，因为原版没有“虚弱药水 II”】，扔出**滞留药水**的概率增加到**30%**
     4. 强化骷髅法师的**眼睛**是**红色**的并且**亮度不受环境影响**，且眼睛**在强化骷髅法师本体隐身的条件下不可见**
     5. 当强化骷髅法师的生命值不高于最大生命值的一半时，骷髅法师主手获得的弓的附魔变为**力量V**，但强化骷髅法师**射击的速度与非强化的骷髅法师相同**
@@ -563,6 +563,7 @@ private void awardBow() {
 ```
 
 最后只剩下要求8-iv需要特殊处理了。由于骷髅法师的“红色眼睛”与末影人、蜘蛛等的眼睛不太相同，并且是否显示红眼与骷髅法师的自身状态有关，所以不能直接继承`EyesLayer`。
+
 ```java
 public class SkeletonWizardEyesLayer extends RenderLayer<AbstractSkeleton, SkeletonModel<AbstractSkeleton>> {
     private static final ResourceLocation SKELETON_WIZARD_EYES = Utils.prefix("textures/entity/skeleton_wizard/skeleton_wizard_eyes.png");
@@ -608,8 +609,8 @@ public SkeletonWizardRenderer(EntityRendererProvider.Context context) {
 ### 效果图（非强化的骷髅法师使用了白眼、黄棕色躯体的骷髅的材质）
 *1个非强化的骷髅法师向玩家投掷滞留型瞬间伤害药水*
 ![1个非强化的骷髅法师向玩家投掷滞留型瞬间伤害药水](images/attacking_player.webp)
-*2个强化骷髅法师与2个铁傀儡激烈交战*
-![2个强化骷髅法师与2个铁傀儡激烈交战](images/attacking_iron_golem.webp)
+*2个强化骷髅法师与2个铁傀儡“激烈”交战*
+![2个强化骷髅法师与2个铁傀儡“激烈”交战](images/attacking_iron_golem.webp)
 
 ---
 
